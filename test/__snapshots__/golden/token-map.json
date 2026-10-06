@@ -1,6 +1,6 @@
 {
   "prefix": "--x-",
-  "count": 5723,
+  "count": 5726,
   "transform": "Each Figma path becomes a CSS variable: join the segments with '-' and prepend '--x-'.",
   "categories": {
     "ctl/brand/background/idle": 1,
@@ -4755,6 +4755,7 @@
     "duration": 11,
     "motion": 62,
     "icon": 3,
+    "avatar": 3,
     "content": 3,
     "dataviz": 36,
     "pole": 7,
@@ -10194,6 +10195,9 @@
     "icon/spot/sm": "--x-icon-spot-sm",
     "icon/spot/md": "--x-icon-spot-md",
     "icon/spot/lg": "--x-icon-spot-lg",
+    "avatar/xs": "--x-avatar-xs",
+    "avatar/sm": "--x-avatar-sm",
+    "avatar/md": "--x-avatar-md",
     "content/disabled": "--x-content-disabled",
     "dataviz/surface": "--x-dataviz-surface",
     "dataviz/grid": "--x-dataviz-grid",

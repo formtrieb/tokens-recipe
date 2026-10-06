@@ -591,6 +591,13 @@ export const RecipeSchema = z
         spot: z.record(name, px).describe('Spot-Icons ohne Text: sm · md · lg'),
       })
       .describe('Icons außerhalb von Controls.'),
+    avatar: z
+      .object({
+        sizes: z.record(name, px).describe('Avatar-Größen in px auf der Größenskala: xs · sm · md'),
+      })
+      .describe(
+        'Avatare: Spot-Größen ohne Text und ohne Coarse-Sprung. Ein Avatar als Button nimmt die Control-Höhe.',
+      ),
     identity: z
       .object({
         hues: z.array(name).describe('Ramps in Hash-Reihenfolge'),

@@ -5950,6 +5950,9 @@
   --x-icon-spot-sm: var(--x-size-32);
   --x-icon-spot-md: var(--x-size-48);
   --x-icon-spot-lg: var(--x-size-64);
+  --x-avatar-xs: var(--x-size-24);
+  --x-avatar-sm: var(--x-size-32);
+  --x-avatar-md: var(--x-size-40);
   --x-easing-standard: cubic-bezier(0.2, 0, 0.38, 0.9);
   --x-easing-enter: cubic-bezier(0, 0, 0.38, 0.9);
   --x-easing-exit: cubic-bezier(0.2, 0, 1, 0.9);
