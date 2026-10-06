@@ -5,14 +5,13 @@ All notable changes to `@formtrieb/tokens-recipe` are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.2.0] — 2026-10-06
 
 ### Added
 
-- `@formtrieb/tokens-recipe/editor`: the recipe editor's API as types —
-  panel, gallery, `PanelState`, the iframe protocol (`v: 1`, ready first,
-  exact origin) and the render-rule functions `simulate` and `toggleSpecs`.
-  The package is marked `sideEffects: false`.
+- `@formtrieb/tokens-recipe/editor`: a second entry with the recipe editor
+  for the browser, without a framework; the main entry stays free of the
+  DOM. The package is marked `sideEffects: false`.
 - `mountGallery`: the generic preview of a model, drawn into a shadow root
   from the run in a `PanelState`; contrast badges measured as rendered,
   with the colour maths of `@formtrieb/tokens-core`. Every text taken from a
