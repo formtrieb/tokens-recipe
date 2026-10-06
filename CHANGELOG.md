@@ -5,6 +5,15 @@ All notable changes to `@formtrieb/tokens-recipe` are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- Colour conversion, gamut mapping, WCAG contrast, CIEDE2000, compositing
+  and alpha now come from `@formtrieb/tokens-core` 1.6. Same procedure, same
+  numbers: every generated artefact is byte-identical. `culori` is no longer
+  a direct dependency.
+
 ## [0.1.1] — 2026-10-06
 
 ### Fixed

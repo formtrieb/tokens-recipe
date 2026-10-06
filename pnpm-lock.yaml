@@ -9,14 +9,11 @@ importers:
   .:
     dependencies:
       '@formtrieb/tokens-core':
-        specifier: ^1.5.0
-        version: 1.5.0
+        specifier: ^1.6.0
+        version: 1.6.0
       '@formtrieb/tokens-render':
         specifier: ^0.2.0
         version: 0.2.0
-      culori:
-        specifier: ^4.0.0
-        version: 4.0.2
       zod:
         specifier: ^4.0.0
         version: 4.6.5
@@ -189,8 +186,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@formtrieb/tokens-core@1.5.0':
-    resolution: {integrity: sha512-YinKsQQs3JeDJG2HswjOBK5KjgkrhQMebN4lkh13RvjhwmoBK7F+sG7JndWI42aN2uGFYeYNVu/+edGgEDYw9Q==}
+  '@formtrieb/tokens-core@1.6.0':
+    resolution: {integrity: sha512-lJpWnj/zcEg6JHy5GnDCRyvKYdh6f4pGrCDdH4pk4iTZfArkN8gDaj7+nwZLXrInUeL8YJW+WCRByxj4GmjX1w==}
 
   '@formtrieb/tokens-render@0.2.0':
     resolution: {integrity: sha512-YDeB2qq3QkB9y7kpGIx8E3oHUjb4qjMSN1Tms4bus7iq7DaBRowGh9iBwBnwIP24e4ceTfPRONNkmBBGctiNlQ==}
@@ -699,13 +696,13 @@ snapshots:
   '@esbuild/win32-x64@0.28.2':
     optional: true
 
-  '@formtrieb/tokens-core@1.5.0':
+  '@formtrieb/tokens-core@1.6.0':
     dependencies:
       culori: 4.0.2
 
   '@formtrieb/tokens-render@0.2.0':
     dependencies:
-      '@formtrieb/tokens-core': 1.5.0
+      '@formtrieb/tokens-core': 1.6.0
 
   '@jridgewell/sourcemap-codec@1.6.0': {}
 
