@@ -10,8 +10,7 @@
  * (`@formtrieb/tokens-recipe`) stays DOM-free, and nothing in it imports
  * from here.
  *
- * Implemented so far: `mountGallery`. The other functions follow; their
- * signatures are fixed here as types.
+ * The functions below implement the types of this module.
  */
 import type { RenderRule } from '@formtrieb/tokens-render';
 import type { GenerateOptions, ModelOutput } from '../model.js';
@@ -99,7 +98,10 @@ export interface ReadyMessage {
 export interface StateMessage {
   type: 'tokens-recipe:state';
   v: 1;
+  /** `run` is left out when it has not changed since the last message; see `keepRun` */
   state: PanelState;
+  /** the run is the one sent before: the receiver keeps it */
+  keepRun?: true;
 }
 
 export type EditorMessage = ReadyMessage | StateMessage;
@@ -150,4 +152,8 @@ export interface ToggleSpec {
 /** Every attribute the rules select on, except `data-mode{attributeSuffix}`. Knows no recipe. */
 export type ToggleSpecs = (rules: readonly RenderRule[], options: { attributeSuffix: string }) => ToggleSpec[];
 
+export { mountRecipePanel } from './panel.js';
 export { mountGallery } from './gallery.js';
+export { applyState } from './apply.js';
+export { connectFrame, receiveState } from './frame.js';
+export { simulate, toggleSpecs } from './render-rules.js';

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recipe editor</title>
+    <style>
+      html, body { margin: 0; block-size: 100%; }
+      body { display: grid; grid-template-columns: minmax(380px, 520px) 1fr; }
+      #panel { overflow: auto; padding: 12px; border-inline-end: 1px solid #f0d9c0; }
+      #preview { inline-size: 100%; block-size: 100%; border: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="panel"></div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

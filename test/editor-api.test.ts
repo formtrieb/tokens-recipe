@@ -40,7 +40,9 @@ export function typeChecks(state: PanelState, rules: RenderRule[]): void {
 }
 
 describe('@formtrieb/tokens-recipe/editor', () => {
-  it('ships the functions implemented so far', async () => {
-    expect(Object.keys(await import('../src/editor/index.js'))).toEqual(['mountGallery']);
+  it('ships every function the API names', async () => {
+    expect(Object.keys(await import('../src/editor/index.js')).sort()).toEqual(
+      ['applyState', 'connectFrame', 'mountGallery', 'mountRecipePanel', 'receiveState', 'simulate', 'toggleSpecs'],
+    );
   });
 });
