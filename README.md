@@ -135,11 +135,14 @@ these tokens.
 
 `@formtrieb/tokens-recipe/editor` is the recipe editor for the browser,
 without a framework. Its API is fixed; so far the entry exports the types
-only, and the functions follow.
+only, and the functions follow. The example shows them as they will be
+called; their signatures are the types `MountRecipePanel`, `MountGallery`,
+`ApplyState`, `ConnectFrame`, `ReceiveState`, `Simulate` and `ToggleSpecs`.
 
 ```ts
-import type { MountRecipePanel, MountGallery } from '@formtrieb/tokens-recipe/editor';
+import { mountRecipePanel, mountGallery } from '@formtrieb/tokens-recipe/editor';
 
+const gallery = mountGallery(preview);
 const panel = mountRecipePanel(element, {
   recipe,                                   // the design system's overrides
   generate: { attributeSuffix: '-x' },      // default ''
