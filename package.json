@@ -47,7 +47,7 @@
     "prepublishOnly": "npm run build && vitest run"
   },
   "dependencies": {
-    "@formtrieb/tokens-core": "^1.5.0",
+    "@formtrieb/tokens-core": "^1.6.0",
     "@formtrieb/tokens-render": "^0.2.0",
     "zod": "^4.0.0"
   },
