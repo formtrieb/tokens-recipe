@@ -135,10 +135,8 @@ these tokens.
 ## Editor
 
 `@formtrieb/tokens-recipe/editor` is the recipe editor for the browser,
-without a framework. Its API is fixed. `mountGallery` is implemented; the
-other functions follow, and the example shows them as they will be called.
-Their signatures are the types `MountRecipePanel`, `ApplyState`,
-`ConnectFrame`, `ReceiveState`, `Simulate` and `ToggleSpecs`.
+without a framework: a panel that edits the recipe, and receivers that show
+the model it produces.
 
 ```ts
 import { mountRecipePanel, mountGallery } from '@formtrieb/tokens-recipe/editor';
@@ -155,8 +153,13 @@ const panel = mountRecipePanel(element, {
 panel.getState(); panel.setRecipe(doc); panel.undo(); panel.redo(); panel.destroy();
 ```
 
-**Panel and receiver.** The panel holds form, state, undo, file and report,
-and renders no preview. It hands out a `PanelState`: the model's CSS, the
+**Panel and receiver.** The panel holds the colours (hues, ladders, ramps
+with their contracts), the form built from the recipe schema, the JSON, the
+report, the defaults it overrides, undo and redo, file and link — and renders
+no preview. A model run follows an edit at once, then at most every 200 ms,
+and once more at the end; the last good run stays while the recipe is
+invalid. Edits within 600 ms, or within one pointer gesture, are one undo
+step; text fields keep the browser's own undo. It hands out a `PanelState`: the model's CSS, the
 mode, the overlay attributes, the attribute suffix, the last good run and
 whether a run is still pending. A receiver shows it:
 
@@ -173,7 +176,17 @@ Pages always come from the host.
 **The iframe protocol.** Messages are `{ type, v: 1, … }`. The page in the
 iframe sends `tokens-recipe:ready` first (`receiveState`); only then does the
 panel post `tokens-recipe:state` with the latest state (`connectFrame`). Both
-sides take an exact `origin`; `'*'` is refused, also by the type.
+sides take an exact `origin`; `'*'` is refused, also by the type. A run holds
+every file of the model, so a state carries its run only when the run is new
+(`keepRun` otherwise); the receiver keeps the last one.
+
+```ts
+// the page in the iframe
+receiveState((state) => {
+  applyState({ style, roots: [root] }, state);
+  gallery.update(state);
+}, { origin: 'https://editor.example' });
+```
 
 **Escaping.** A shared link is someone else's input. The recipe schema's
 grammars and the generator's declaration guard keep it out of the CSS; the
@@ -187,6 +200,10 @@ the attributes the rules select on. Both read render rules, never a recipe.
 
 **Entries.** The main entry stays free of the DOM, for the CLI and for Node;
 nothing in it imports from `editor`. `pnpm typecheck` checks both.
+
+**Standalone app.** `pnpm app` starts the editor on the test recipe: the
+panel, and the gallery in an iframe as receiver (`app/`, Vite, not part of
+the package).
 
 ## Relation to formtrieb/tokens
 

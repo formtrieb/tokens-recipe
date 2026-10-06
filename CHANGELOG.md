@@ -19,6 +19,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   recipe or report is escaped, every name in a variable reference checked.
 - `generateModel` returns the recipe the model was generated from, defaults
   applied (`ModelOutput.recipe`).
+- `mountRecipePanel`: the recipe editor without a preview — colours, the
+  form from the recipe schema, JSON, report, defaults, undo and redo,
+  file (File System Access or download, ZIP of the whole model) and the
+  recipe in the link; file and link can be switched off.
+- `applyState`, `connectFrame`, `receiveState`: showing a panel state in a
+  host's own pages or in an iframe (protocol `v: 1`, ready first, exact
+  origin; a run is sent only when it is new).
+- `simulate`, `toggleSpecs`: the preview's render table and its overlay
+  toggles, from render rules alone.
 
 ### Changed
 

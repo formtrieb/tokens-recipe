@@ -721,12 +721,17 @@ code { font-size: 11px; }
  */
 export function mountSchemaForm(
   element: HTMLElement,
-  options: { schema: JsonSchema; onChange(change: FieldChange): void },
+  options: {
+    schema: JsonSchema;
+    onChange(change: FieldChange): void;
+    /** where `schema` sits in the recipe, for a form of one section. Default `[]` */
+    path?: Path;
+  },
 ): SchemaForm {
   const root = element.shadowRoot ?? element.attachShadow({ mode: 'open' });
   const style = el('style');
   style.textContent = STYLES;
-  const field = new Field(options.schema, [], '', (c) => options.onChange(c));
+  const field = new Field(options.schema, options.path ?? [], '', (c) => options.onChange(c));
   root.replaceChildren(style, field.el);
   return {
     update(view) {
