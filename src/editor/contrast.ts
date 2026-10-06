@@ -16,6 +16,11 @@ const parentOf = (el: Element): Element | null =>
  * an element's text colour and its backdrop: its own and its ancestors'
  * backgrounds down to the first opaque one, on white. `undefined` when a
  * computed colour cannot be read.
+ *
+ * `opacity` fades the text only. A layer between text and backdrop that has
+ * both a translucent background and an opacity below 1 would also fade its
+ * own background; that is not modelled — the gallery has no such layer, and
+ * the lab measured the same way.
  */
 export function seen(el: Element): { fg: string; bg: string } | undefined {
   try {
