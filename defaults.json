@@ -41,5 +41,12 @@
     "legendMinDeltaE": 12,
     "apcaTextLc": 75,
     "apcaNonTextLc": 45
+  },
+  "avatar": {
+    "sizes": {
+      "xs": 24,
+      "sm": 32,
+      "md": 40
+    }
   }
 }

@@ -22750,6 +22750,20 @@
       }
     }
   },
+  "avatar": {
+    "xs": {
+      "$type": "dimension",
+      "$value": "{size.24}"
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "{size.32}"
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "{size.40}"
+    }
+  },
   "dataviz": {
     "surface": {
       "$type": "color",

@@ -40,11 +40,16 @@ and values replace the default as a whole.
 |---|---|---|
 | Foundation | `hues`, `modes`, `alpha`, `space`, `motion.scale` | ramps per mode, alpha ladder, `size-*`, `duration-*` |
 | Selection | `semanticHues`, `poles`, `onFill`, `mark` | per mode: `{hue}-{step}`, `pole-*`, state layers, `content-*` |
-| Roles | `hierarchies`, `status`, `feedback`, `spaceRoles`, `width`, `radius`, `type`, `control`, `motion`, `dataviz`, `identity`, … | `ctl-*`, `status-*`, `feedback-*`, `surface-*`, `space-*`, `type-*`, `control-*`, `motion-*`, … |
+| Roles | `hierarchies`, `status`, `feedback`, `spaceRoles`, `width`, `radius`, `type`, `control`, `motion`, `dataviz`, `identity`, `icon`, `avatar`, … | `ctl-*`, `status-*`, `feedback-*`, `surface-*`, `space-*`, `type-*`, `control-*`, `motion-*`, `icon-spot-*`, `avatar-*`, … |
 | Overlays | `radius.shapes`, `motion.characters`, `control.coarse` | sets switched by selector or media query: dark mode, RTL, reduced motion, forced colours, coarse pointer, shapes |
 
 Components read roles only. The Foundation is there for the roles to point
 at.
+
+Spot sizes stand without text: `icon-spot-*` for icons, `avatar-*` for
+avatars (default `xs` 24, `sm` 32, `md` 40). Both point at `size-*` and must
+lie on the size scale; neither steps up under a coarse pointer — an avatar is
+no hit target, and an avatar that is a button takes the control height.
 
 ## Output
 

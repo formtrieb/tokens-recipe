@@ -298,6 +298,12 @@ export interface Recipe {
    */
   icon?: { text: Record<string, number>; spot: Record<string, number> };
   /**
+   * Avatars: spot sizes without text (px, on the size scale). No coarse
+   * step — an avatar is no hit target; an avatar that is a button takes the
+   * control height, not its own.
+   */
+  avatar?: { sizes: Record<string, number> };
+  /**
    * Identity colours: mark someone or something
    * without meaning — avatars without a photo, user labels. Fixed list of
    * ramp hues (order = hash order), steps like the status chip: `strong` =

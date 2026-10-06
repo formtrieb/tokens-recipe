@@ -28,8 +28,9 @@ Datenvisualisierung: 6 Kategorien + other, 6 sequenziell, divergierend 2 × 7, 2
   · dark: diverging-rated Stufe 2 red↔green Fehlsicht-ΔE 2.8 < 8
   · dark: diverging-rated Stufe 3 red↔green Fehlsicht-ΔE 0.5 < 8
 Icons: 8 Text-Paare, Spot 32 · 48 · 64, Vertrag ok
+Avatare: xs 24 · sm 32 · md 40 (ohne Coarse-Sprung)
 Hochkontrast: 912 Umlegungen auf Systemfarben, Vertrag ok
 Kennfarben: 6 + neutral, strong/subtle, Vertrag ok
   · light: leise Flächen untereinander ΔE ≥ 2.3 — Unterscheidung über Text und Punkt
   · dark: leise Flächen untereinander ΔE ≥ 5.7 — Unterscheidung über Text und Punkt
-DTCG: 7080 Einträge, 5723 Pfade, 11 Sets, 16 Themes auf 7 Achsen; token-map 5723
+DTCG: 7083 Einträge, 5726 Pfade, 11 Sets, 16 Themes auf 7 Achsen; token-map 5726

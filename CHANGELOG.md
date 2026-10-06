@@ -5,6 +5,15 @@ All notable changes to `@formtrieb/tokens-recipe` are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- Avatar sizes: `avatar.sizes` in the recipe (default `xs` 24, `sm` 32,
+  `md` 40) becomes `--{prefix}avatar-{name}` → `var(--{prefix}size-{px})`.
+  Spot sizes without text and without a coarse-pointer step; a size off the
+  size scale is a recipe error at `avatar.sizes.<name>`.
+
 ## [0.2.0] — 2026-10-06
 
 ### Added

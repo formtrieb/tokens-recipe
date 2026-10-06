@@ -29,6 +29,7 @@
  *              --x-dataviz-{surface|grid|baseline|label|value|line|gap|marker|radius}
  *   Identity   --x-identity-{1…6|neutral}-{surface|content|indicator}-{strong|subtle} (avatar, user labels)
  *   Icons      --x-type-{role}-{step}-icon (icon next to that text) · --x-icon-spot-{sm|md|lg}
+ *   Avatars    --x-avatar-{xs|sm|md} (spot sizes, no coarse step)
  *   Forced     @media (forced-colors: active): selection/disabled/focus/edge/status dot/mark → system colours
  *   Motion     --x-duration-{instant|ms} · --x-easing-{standard|enter|exit|linear|spring}
  *              --x-motion-{role}-{duration|easing|move-duration|move-easing|distance|scale}
@@ -2067,6 +2068,14 @@ export function generateModel(
   const iconTokens = Object.entries(recipe.icon!.spot).map(([k, v]) =>
     decl(`icon.spot.${k}`, `var(--${P}size-${v})`),
   );
+  // ---------- Avatars ----------
+  // spot sizes without text, on the size scale; no coarse step — an avatar is no hit target
+  for (const [k, v] of Object.entries(recipe.avatar!.sizes))
+    if (!space.scale.includes(v))
+      recipeErrors.push(`avatar.sizes.${k}: ${v} px fehlt in der Größenskala`);
+  assertRecipe();
+  for (const [k, v] of Object.entries(recipe.avatar!.sizes))
+    decl(`avatar.${k}`, `var(--${P}size-${v})`);
   const iconFails: string[] = [];
   {
     const pairs = Object.entries(recipe.icon!.text)
@@ -3334,6 +3343,11 @@ export function generateModel(
     `Icons: ${Object.keys(recipe.icon!.text).length} Text-Paare, Spot ${Object.values(recipe.icon!.spot).join(' · ')}, Vertrag ${iconFails.length ? 'verletzt' : 'ok'}`,
   );
   for (const f of iconFails) log.push(`  ✗ ${f}`);
+  log.push(
+    `Avatare: ${Object.entries(recipe.avatar!.sizes)
+      .map(([k, v]) => `${k} ${v}`)
+      .join(' · ')} (ohne Coarse-Sprung)`,
+  );
   log.push(
     `Hochkontrast: ${forcedTokens.length} Umlegungen auf Systemfarben, Vertrag ${forcedFails.length ? 'verletzt' : 'ok'}`,
   );
