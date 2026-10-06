@@ -43,6 +43,4 @@ describe('@formtrieb/tokens-recipe/editor', () => {
   it('ships the functions implemented so far', async () => {
     expect(Object.keys(await import('../src/editor/index.js'))).toEqual(['mountGallery']);
   });
-
-  it.todo('shows a hierarchy named <img src=x onerror=alert(1)> as text in the form');
 });
