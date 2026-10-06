@@ -131,6 +131,56 @@ step has them as tokens of its own:
 values as the recipe wrote them, and no derived companion variables next to
 these tokens.
 
+## Editor
+
+`@formtrieb/tokens-recipe/editor` is the recipe editor for the browser,
+without a framework. Its API is fixed; so far the entry exports the types
+only, and the functions follow.
+
+```ts
+import type { MountRecipePanel, MountGallery } from '@formtrieb/tokens-recipe/editor';
+
+const panel = mountRecipePanel(element, {
+  recipe,                                   // the design system's overrides
+  generate: { attributeSuffix: '-x' },      // default ''
+  onChange(state) { gallery.update(state) },
+  onRecipe(doc) { store(doc) },             // a host that stores the recipe itself
+  file: false,                              // open/save/zip, default true
+  link: false,                              // recipe in the URL, default true
+});
+panel.getState(); panel.setRecipe(doc); panel.undo(); panel.redo(); panel.destroy();
+```
+
+**Panel and receiver.** The panel holds form, state, undo, file and report,
+and renders no preview. It hands out a `PanelState`: the model's CSS, the
+mode, the overlay attributes, the attribute suffix, the last good run and
+whether a run is still pending. A receiver shows it:
+
+- the gallery of this package: `mountGallery(element).update(state, { contrast })`;
+- a host with pages of its own: `applyState({ style, roots }, state)` writes
+  the CSS into a `<style>` and sets mode and overlays on its preview roots;
+- a page in an iframe, over `postMessage`.
+
+Pages always come from the host.
+
+**The iframe protocol.** Messages are `{ type, v: 1, … }`. The page in the
+iframe sends `tokens-recipe:ready` first (`receiveState`); only then does the
+panel post `tokens-recipe:state` with the latest state (`connectFrame`). Both
+sides take an exact `origin`; `'*'` is refused, also by the type.
+
+**Escaping.** A shared link is someone else's input. The recipe schema's
+grammars and the generator's declaration guard keep it out of the CSS; the
+editor escapes every text it takes from a recipe (names, font stacks, labels)
+before it reaches HTML.
+
+**Simulated media.** `simulate(rules)` turns media rules into attribute rules,
+`(pointer: coarse)` → `[data-sim-pointer="coarse"]`, so the preview's toggles
+decide instead of the device; `toggleSpecs(rules, { attributeSuffix })` lists
+the attributes the rules select on. Both read render rules, never a recipe.
+
+**Entries.** The main entry stays free of the DOM, for the CLI and for Node;
+nothing in it imports from `editor`. `pnpm typecheck` checks both.
+
 ## Relation to formtrieb/tokens
 
 This package depends on [formtrieb/tokens](https://github.com/formtrieb/tokens),

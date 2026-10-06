@@ -5,6 +5,15 @@ All notable changes to `@formtrieb/tokens-recipe` are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- `@formtrieb/tokens-recipe/editor`: the recipe editor's API as types —
+  panel, gallery, `PanelState`, the iframe protocol (`v: 1`, ready first,
+  exact origin) and the render-rule functions `simulate` and `toggleSpecs`.
+  No runtime code yet. The package is marked `sideEffects: false`.
+
 ## [0.1.4] — 2026-10-06
 
 ### Changed
