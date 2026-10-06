@@ -48,7 +48,8 @@ at.
 
 ## Output
 
-`generateModel(recipe, options)` returns `{ files, log }`:
+`generateModel(recipe, options)` returns `{ files, log, recipe }` — `recipe` is the
+recipe the model was generated from, defaults applied — with these files:
 
 | File | What |
 |---|---|
@@ -134,10 +135,10 @@ these tokens.
 ## Editor
 
 `@formtrieb/tokens-recipe/editor` is the recipe editor for the browser,
-without a framework. Its API is fixed; so far the entry exports the types
-only, and the functions follow. The example shows them as they will be
-called; their signatures are the types `MountRecipePanel`, `MountGallery`,
-`ApplyState`, `ConnectFrame`, `ReceiveState`, `Simulate` and `ToggleSpecs`.
+without a framework. Its API is fixed. `mountGallery` is implemented; the
+other functions follow, and the example shows them as they will be called.
+Their signatures are the types `MountRecipePanel`, `ApplyState`,
+`ConnectFrame`, `ReceiveState`, `Simulate` and `ToggleSpecs`.
 
 ```ts
 import { mountRecipePanel, mountGallery } from '@formtrieb/tokens-recipe/editor';
@@ -159,7 +160,10 @@ and renders no preview. It hands out a `PanelState`: the model's CSS, the
 mode, the overlay attributes, the attribute suffix, the last good run and
 whether a run is still pending. A receiver shows it:
 
-- the gallery of this package: `mountGallery(element).update(state, { contrast })`;
+- the gallery of this package: `mountGallery(element).update(state, { contrast })`.
+  It draws into a shadow root, paints the page surface and reads only the
+  model's variables; with `contrast` it badges every text with its WCAG ratio
+  as rendered (translucent layers and `opacity` included);
 - a host with pages of its own: `applyState({ style, roots }, state)` writes
   the CSS into a `<style>` and sets mode and overlays on its preview roots;
 - a page in an iframe, over `postMessage`.

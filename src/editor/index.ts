@@ -10,7 +10,8 @@
  * (`@formtrieb/tokens-recipe`) stays DOM-free, and nothing in it imports
  * from here.
  *
- * So far this module holds the types only; the functions follow.
+ * Implemented so far: `mountGallery`. The other functions follow; their
+ * signatures are fixed here as types.
  */
 import type { RenderRule } from '@formtrieb/tokens-render';
 import type { GenerateOptions, ModelOutput } from '../model.js';
@@ -148,3 +149,5 @@ export interface ToggleSpec {
 
 /** Every attribute the rules select on, except `data-mode{attributeSuffix}`. Knows no recipe. */
 export type ToggleSpecs = (rules: readonly RenderRule[], options: { attributeSuffix: string }) => ToggleSpec[];
+
+export { mountGallery } from './gallery.js';

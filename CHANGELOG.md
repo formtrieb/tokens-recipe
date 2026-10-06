@@ -12,7 +12,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `@formtrieb/tokens-recipe/editor`: the recipe editor's API as types —
   panel, gallery, `PanelState`, the iframe protocol (`v: 1`, ready first,
   exact origin) and the render-rule functions `simulate` and `toggleSpecs`.
-  No runtime code yet. The package is marked `sideEffects: false`.
+  The package is marked `sideEffects: false`.
+- `mountGallery`: the generic preview of a model, drawn into a shadow root
+  from the run in a `PanelState`; contrast badges measured as rendered,
+  with the colour maths of `@formtrieb/tokens-core`. Every text taken from a
+  recipe or report is escaped, every name in a variable reference checked.
+- `generateModel` returns the recipe the model was generated from, defaults
+  applied (`ModelOutput.recipe`).
+
+### Changed
+
+- Requires `@formtrieb/tokens-core` ^1.7.0.
 
 ## [0.1.4] — 2026-10-06
 
