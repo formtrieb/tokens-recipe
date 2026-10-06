@@ -12,8 +12,8 @@ importers:
         specifier: ^1.6.0
         version: 1.6.0
       '@formtrieb/tokens-render':
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.3.0
+        version: 0.3.0
       zod:
         specifier: ^4.0.0
         version: 4.6.5
@@ -189,8 +189,8 @@ packages:
   '@formtrieb/tokens-core@1.6.0':
     resolution: {integrity: sha512-lJpWnj/zcEg6JHy5GnDCRyvKYdh6f4pGrCDdH4pk4iTZfArkN8gDaj7+nwZLXrInUeL8YJW+WCRByxj4GmjX1w==}
 
-  '@formtrieb/tokens-render@0.2.0':
-    resolution: {integrity: sha512-YDeB2qq3QkB9y7kpGIx8E3oHUjb4qjMSN1Tms4bus7iq7DaBRowGh9iBwBnwIP24e4ceTfPRONNkmBBGctiNlQ==}
+  '@formtrieb/tokens-render@0.3.0':
+    resolution: {integrity: sha512-IpyCbPCSmdZlqvrjd5XXdBagIqWq/6CznrkKUPfvKZ8/cI7MMG5yS/3Nf8j/xOM1wEJl9tZWOiRRRBI/QorFqw==}
     engines: {node: '>=20'}
 
   '@jridgewell/sourcemap-codec@1.6.0':
@@ -700,7 +700,7 @@ snapshots:
     dependencies:
       culori: 4.0.2
 
-  '@formtrieb/tokens-render@0.2.0':
+  '@formtrieb/tokens-render@0.3.0':
     dependencies:
       '@formtrieb/tokens-core': 1.6.0
 
