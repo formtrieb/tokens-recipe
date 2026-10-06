@@ -10,6 +10,7 @@ export { overlay, parseRecipe, RecipeError, type RecipeIssue } from './recipe.js
 export { RecipeSchema, type RecipeShape } from './recipe.schema.js';
 export {
   MODES,
+  STEP_NAMES,
   buildRamps,
   checkContract,
   coverage,

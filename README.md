@@ -18,8 +18,10 @@ system (`ctl-primary-background-hover`, `space-gap-related`,
 
 The recipe is opinionated:
 
-- Every ramp has 12 OKLCH steps, and the steps have fixed meanings
-  (`canvas`, `subtle`, `tint`, … `fill`, `ink`).
+- Every ramp has the same 12 OKLCH steps with fixed names and meanings
+  (`canvas`, `subtle`, `tint`, … `fill`, `ink`; `STEP_NAMES`). A recipe
+  chooses their values (lightness ladder, chroma curve, hue, anchor), not
+  their number.
 - Role names are universal. A recipe assigns values to them, and a missing
   or invented name is an error.
 - Each control hierarchy is a hue × style pair (`primary` = accent, solid).
