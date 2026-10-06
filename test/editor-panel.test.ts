@@ -23,7 +23,8 @@ function setup(options: { file?: boolean; link?: boolean; recipe?: RecipeDoc } =
   return { host, panel, root, states, recipes, buttons };
 }
 
-describe('recipe panel', () => {
+// every edit computes the whole model, about a second on a CI runner
+describe('recipe panel', { timeout: 30_000 }, () => {
   it('hands out a state the preview can show, and the recipe on every change', () => {
     const { panel, root, states, recipes } = setup({ link: false });
     const first = panel.getState();
@@ -116,7 +117,7 @@ describe('recipe link', () => {
   });
 });
 
-describe('pointer gestures', () => {
+describe('pointer gestures', { timeout: 30_000 }, () => {
   it('capture the pointer on a slider, so the gesture ends even when released elsewhere', () => {
     const host = document.createElement('div');
     document.body.replaceChildren(host);

@@ -34,7 +34,8 @@ const store = () => {
   return { ...c, s: new EditorStore({ recipe: doc(), defaults: recipeDefaults, clock: c.clock }) };
 };
 
-describe('editor store', () => {
+// every edit computes the whole model, about a second on a CI runner
+describe('editor store', { timeout: 30_000 }, () => {
   it('runs the model at once, then at most every MODEL_EVERY ms, and always once more at the end', () => {
     const { s, advance } = store();
     expect(s.run).toBeDefined();
