@@ -64,7 +64,8 @@ import {
 } from '@formtrieb/tokens-core';
 import {
   renderVariables,
-  type RenderOptions,
+  type RenderFile,
+  type RenderFileOptions,
   type RenderRule,
   type TokenSystem,
 } from '@formtrieb/tokens-render';
@@ -99,11 +100,11 @@ export interface ModelOutput {
   log: string[];
 }
 
-/** what generateModel writes as render.json: the prefix and the render table */
-export interface RenderTable {
-  options: { prefix: string };
-  rules: RenderRule[];
-}
+/**
+ * what generateModel writes as render.json: the render options and the
+ * render table, in the render-file format of @formtrieb/tokens-render
+ */
+export type RenderTable = Extract<RenderFile, { rules: RenderRule[] }>;
 
 /** the whole model from one recipe — pure: no file system, no console */
 export function generateModel(
@@ -3361,8 +3362,9 @@ export function generateModel(
     references: true,
     file: 'model.css',
   });
+  const output = renderOptions(P);
   const render: RenderTable = {
-    options: { prefix: P },
+    options: output,
     rules: [
       ...MODES.map((m) =>
         rule(
@@ -3397,7 +3399,7 @@ export function generateModel(
   for (const [file, text] of renderVariables(
     tokenSystem(files),
     render.rules,
-    renderOptions(P),
+    output,
   ))
     files[file] = text;
   return { files, log };
@@ -3416,11 +3418,12 @@ export function tokenSystem(files: Record<string, string>): TokenSystem {
 }
 
 /**
- * The model's render options: the canonical dialect writes lengths and
- * colours as the recipe wrote them (px, em, ch; hex, system colours) and no
- * typography companions — the model carries tracking, case and numerals as
- * tokens of its own (`-tracking`, `-case`, `-numeric`).
+ * The model's render options, written to render.json and used for model.css:
+ * the canonical dialect writes lengths and colours as the recipe wrote them
+ * (px, em, ch; hex, system colours) and no typography companions — the model
+ * carries tracking, case and numerals as tokens of its own (`-tracking`,
+ * `-case`, `-numeric`).
  */
-export function renderOptions(prefix: string): RenderOptions {
+export function renderOptions(prefix: string): RenderFileOptions & { prefix: string } {
   return { prefix, dialect: 'canonical' };
 }

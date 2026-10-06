@@ -53,7 +53,7 @@ at.
 | File | What |
 |---|---|
 | `tokens/$metadata.json`, `tokens/$themes.json`, `tokens/<Set>.json` | the Tokens-Studio tree; Tokens Studio imports it, [`@formtrieb/tokens-mcp`](https://github.com/formtrieb/tokens/tree/main/packages/mcp) reads it |
-| `render.json` | the render table: which theme lands under which selector or media query |
+| `render.json` | the render table (which theme lands under which selector or media query) and the render options (`prefix`, `dialect: "canonical"`), in the render-file format of `@formtrieb/tokens-render`; the resolver CLI renders the tree as `model.css` does |
 | `model.css` | rendered from tree and table by `@formtrieb/tokens-render` |
 | `token-map.json` | Figma path → CSS variable |
 | `breakpoints.json`, `_breakpoints.scss`, `containers.json`, `_containers.scss` | for media and container queries, which cannot read variables |

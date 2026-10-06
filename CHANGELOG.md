@@ -5,6 +5,20 @@ All notable changes to `@formtrieb/tokens-recipe` are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.4] — 2026-10-06
+
+### Changed
+
+- `render.json` carries the dialect: `options` is now
+  `{ prefix, dialect: "canonical" }`, the same options `model.css` is
+  rendered with. A tree rendered by `@formtrieb/token-resolver` 0.7 from this
+  file comes out as `model.css` does instead of in the `style-dictionary`
+  dialect.
+- `RenderTable` is the object form of `RenderFile` from
+  `@formtrieb/tokens-render` instead of a type of its own;
+  `renderOptions()` returns `RenderFileOptions`. Requires
+  `@formtrieb/tokens-render` ^0.4.0.
+
 ## [0.1.3] — 2026-10-06
 
 ### Changed
