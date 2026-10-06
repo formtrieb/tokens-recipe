@@ -1,6 +1,7 @@
 {
   "options": {
-    "prefix": "x-"
+    "prefix": "x-",
+    "dialect": "canonical"
   },
   "rules": [
     {

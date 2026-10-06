@@ -5,7 +5,7 @@
  * table, the options, and that prefix and attribute names are parameters
  * that never reach the tree.
  */
-import { renderVariables } from '@formtrieb/tokens-render';
+import { parseRenderFile, renderVariables } from '@formtrieb/tokens-render';
 import { describe, expect, it } from 'vitest';
 import {
   generateModel,
@@ -31,6 +31,16 @@ describe('model.css from @formtrieb/tokens-render', () => {
     expect(out.files['model.css']).not.toMatch(
       /-(letter-spacing|text-transform|text-decoration|fvn): /,
     );
+  });
+
+  it('writes the canonical dialect into render.json', () => {
+    expect(table.options).toEqual({ prefix: 'x-', dialect: 'canonical' });
+  });
+
+  it('renders the same model.css from render.json alone', () => {
+    const { options, rules } = parseRenderFile(table);
+    const css = renderVariables(system, rules, { prefix: 'x-', ...options });
+    expect(css.get('model.css')).toBe(out.files['model.css']);
   });
 
   it('names only themes that $themes.json defines', () => {
