@@ -52,12 +52,13 @@
     "prepublishOnly": "npm run build && vitest run"
   },
   "dependencies": {
-    "@formtrieb/tokens-core": "^1.6.0",
+    "@formtrieb/tokens-core": "^1.7.0",
     "@formtrieb/tokens-render": "^0.4.0",
     "zod": "^4.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
+    "happy-dom": "^20.14.5",
     "typescript": "^5.0.0",
     "vitest": "^3.0.0"
   },

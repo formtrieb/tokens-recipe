@@ -1,5 +1,5 @@
 /**
- * The editor API is types only so far. These checks run under `tsc`
+ * The editor API, partly implemented. These checks run under `tsc`
  * (`pnpm typecheck`): the `@ts-expect-error` lines fail the build if the
  * types stop refusing what they refuse.
  */
@@ -40,9 +40,9 @@ export function typeChecks(state: PanelState, rules: RenderRule[]): void {
 }
 
 describe('@formtrieb/tokens-recipe/editor', () => {
-  it('ships no runtime code yet', async () => {
-    expect(Object.keys(await import('../src/editor/index.js'))).toEqual([]);
+  it('ships the functions implemented so far', async () => {
+    expect(Object.keys(await import('../src/editor/index.js'))).toEqual(['mountGallery']);
   });
 
-  it.todo('shows a hierarchy named <img src=x onerror=alert(1)> as text, in gallery and form');
+  it.todo('shows a hierarchy named <img src=x onerror=alert(1)> as text in the form');
 });

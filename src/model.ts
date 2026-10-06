@@ -98,6 +98,8 @@ export interface ModelOutput {
   files: Record<string, string>;
   /** the run's report, one line each (what the CLI prints) */
   log: string[];
+  /** the recipe the model was generated from, defaults applied */
+  recipe: Recipe;
 }
 
 /**
@@ -3402,7 +3404,7 @@ export function generateModel(
     output,
   ))
     files[file] = text;
-  return { files, log };
+  return { files, log, recipe };
 }
 
 /** the generated tree (`tokens/$metadata.json`, `tokens/$themes.json`, `tokens/<Set>.json`) as a TokenSystem */
