@@ -148,7 +148,7 @@ const panel = mountRecipePanel(element, {
   onChange(state) { gallery.update(state) },
   onRecipe(doc) { store(doc) },             // a host that stores the recipe itself
   file: false,                              // open/save/zip, default true
-  link: false,                              // recipe in the URL, default true
+  link: false,                              // recipe in the URL, default true; off where the address is the host's
 });
 panel.getState(); panel.setRecipe(doc); panel.undo(); panel.redo(); panel.destroy();
 ```

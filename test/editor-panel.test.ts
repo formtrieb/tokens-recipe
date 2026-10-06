@@ -103,3 +103,30 @@ describe('recipe panel', () => {
     panel.destroy();
   });
 });
+
+describe('recipe link', () => {
+  it('packs and unpacks a recipe, and refuses a link that unpacks to more than the limit', async () => {
+    const { pack, unpack } = await import('../src/editor/panel.js');
+    const doc = fixture() as RecipeDoc;
+    expect(await unpack(await pack(doc))).toEqual(doc);
+    // a few hundred bytes of link that inflate to megabytes
+    const bomb = await pack({ pad: 'x'.repeat(4 << 20) });
+    expect(bomb.length).toBeLessThan(20_000);
+    await expect(unpack(bomb)).rejects.toThrow(/more than/);
+  });
+});
+
+describe('pointer gestures', () => {
+  it('capture the pointer on a slider, so the gesture ends even when released elsewhere', () => {
+    const host = document.createElement('div');
+    document.body.replaceChildren(host);
+    const panel = mountRecipePanel(host, { recipe: fixture() as RecipeDoc, link: false });
+    const range = host.shadowRoot!.querySelector<HTMLInputElement>('td.hue input[type=range]')!;
+    const captured: number[] = [];
+    range.setPointerCapture = (id: number) => void captured.push(id);
+    range.dispatchEvent(new PointerEvent('pointerdown', { pointerId: 7, bubbles: true, composed: true }));
+    host.shadowRoot!.querySelector('button')!.dispatchEvent(new PointerEvent('pointerdown', { pointerId: 8, bubbles: true, composed: true }));
+    expect(captured).toEqual([7]);
+    panel.destroy();
+  });
+});

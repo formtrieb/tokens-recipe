@@ -31,10 +31,36 @@ export async function pack(doc: RecipeDoc): Promise<string> {
   for (const b of bytes) bin += String.fromCharCode(b);
   return btoa(bin).replaceAll('+', '-').replaceAll('/', '_').replace(/=+$/, '');
 }
-export async function unpack(text: string): Promise<RecipeDoc> {
+/**
+ * the most a link may unpack to: a recipe is a few dozen KB, and a shared
+ * link is someone else's input — a small link must not inflate into memory
+ */
+export const LINK_MAX_BYTES = 1 << 20;
+
+/** link text → recipe; throws on anything that unpacks to more than `max` bytes */
+export async function unpack(text: string, max = LINK_MAX_BYTES): Promise<RecipeDoc> {
   const bin = atob(text.replaceAll('-', '+').replaceAll('_', '/'));
   const stream = new Blob([Uint8Array.from(bin, (c) => c.charCodeAt(0))]).stream().pipeThrough(new DecompressionStream('deflate-raw'));
-  return JSON.parse(await new Response(stream).text());
+  const reader = stream.getReader();
+  const chunks: Uint8Array[] = [];
+  let size = 0;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    size += value.length;
+    if (size > max) {
+      await reader.cancel();
+      throw new Error(`the link unpacks to more than ${max} bytes`);
+    }
+    chunks.push(value);
+  }
+  const bytes = new Uint8Array(size);
+  let at = 0;
+  for (const c of chunks) {
+    bytes.set(c, at);
+    at += c.length;
+  }
+  return JSON.parse(new TextDecoder().decode(bytes));
 }
 
 /** the bit of the File System Access API the panel uses */
@@ -245,17 +271,29 @@ class Panel {
       // a number field would undo its own text as well
       e.preventDefault();
     };
-    // a pointer gesture (down … up) is one undo step
-    const down = () => this.store.startGesture();
+    // a pointer gesture (down … up) on a slider or a ladder point is one undo step.
+    // The control captures the pointer, so its up comes back here even when
+    // released over an iframe, where the window would never hear it.
+    const down = (e: PointerEvent) => {
+      const t = e.composedPath()[0];
+      const slider = t instanceof HTMLInputElement && t.type === 'range';
+      const point = t instanceof Element && t.matches('circle.pt');
+      if (!slider && !point) return;
+      this.store.startGesture();
+      (t as Element).setPointerCapture?.(e.pointerId);
+      (t as Element).addEventListener('lostpointercapture', up, { once: true });
+    };
     const up = () => this.store.endGesture();
     this.element.addEventListener('keydown', onKey);
     this.element.addEventListener('pointerdown', down);
+    this.element.addEventListener('pointerup', up);
     window.addEventListener('pointerup', up);
     window.addEventListener('pointercancel', up);
     window.addEventListener('blur', up);
     this.cleanup.push(() => {
       this.element.removeEventListener('keydown', onKey);
       this.element.removeEventListener('pointerdown', down);
+      this.element.removeEventListener('pointerup', up);
       window.removeEventListener('pointerup', up);
       window.removeEventListener('pointercancel', up);
       window.removeEventListener('blur', up);
