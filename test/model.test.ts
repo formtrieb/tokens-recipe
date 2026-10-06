@@ -67,6 +67,11 @@ describe('generateModel', () => {
     expect(() => generateModel(odd)).toThrow(/huge ist kein bekannter Name/);
   });
 
+  it('stops on a ladder that is not 12 steps, even past the schema', () => {
+    const odd = { ...recipe, steps: 14 };
+    expect(() => generateModel(odd)).toThrow(/steps: 14 — jede Ramp hat genau 12 Stufen/);
+  });
+
   it('refuses a value that would end its declaration, even past the schema', () => {
     const bad = structuredClone(recipe);
     bad.type!.families['text'] = 'Arial; } body { color: red';

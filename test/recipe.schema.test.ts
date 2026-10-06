@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { loadRecipe } from './fixture.js';
-import { RecipeSchema } from '../src/index.js';
+import { fixture, loadRecipe } from './fixture.js';
+import { overlay, parseRecipe, recipeDefaults, RecipeSchema } from '../src/index.js';
 
 describe('RecipeSchema', () => {
   const recipe = loadRecipe();
@@ -22,6 +22,12 @@ describe('RecipeSchema', () => {
     const r = RecipeSchema.safeParse({ ...recipe, shadows: {} });
     expect(r.success).toBe(false);
     expect(r.error!.issues[0].message).toMatch(/shadows/);
+  });
+
+  it('fixes steps at 12 and needs no recipe to say so', () => {
+    expect(RecipeSchema.safeParse({ ...recipe, steps: 10 }).success).toBe(false);
+    const { steps: _, ...rest } = fixture() as Record<string, unknown>;
+    expect(parseRecipe(overlay(recipeDefaults, rest)).steps).toBe(12);
   });
 
   it('rejects a ladder whose length is not steps', () => {

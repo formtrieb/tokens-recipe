@@ -73,6 +73,7 @@ import { cvdDeltaE, deltaE, VIZ } from './cvd.js';
 import { SET, THEME, emitDtcg, type TokenEntry } from './dtcg.js';
 import {
   MODES,
+  STEP_NAMES,
   buildRamps,
   checkContract,
   type Recipe,
@@ -212,20 +213,12 @@ export function generateModel(
       `contract.readingCh: ${READING_MAX} > 80 Zeichen (WCAG 1.4.8)`,
     );
   assertRecipe();
-  const NAMES = [
-    'canvas',
-    'subtle',
-    'tint',
-    'tint-hover',
-    'tint-pressed',
-    'line-subtle',
-    'line',
-    'line-strong',
-    'fill',
-    'fill-hover',
-    'ink-subtle',
-    'ink',
-  ];
+  // every step has a fixed name; a ladder of another length has no names to give
+  const NAMES = STEP_NAMES;
+  if (recipe.steps !== NAMES.length)
+    throw new RecipeError([
+      `steps: ${recipe.steps} — jede Ramp hat genau ${NAMES.length} Stufen (${NAMES.join(' · ')})`,
+    ]);
   const MODE_ATTR: Record<string, string> = { light: 'Light', dark: 'Dark' };
 
   /**

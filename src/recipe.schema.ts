@@ -86,10 +86,10 @@ export const RecipeSchema = z
   .object({
     $schema: z.string().optional(),
     steps: z
-      .number()
-      .int()
-      .min(2)
-      .describe('Stufen je Ramp (12). Die Leitern haben genau so viele Werte.'),
+      .literal(12)
+      .describe(
+        'Stufen je Ramp: immer 12, jede mit festem Namen (canvas, subtle, tint, tint-hover, tint-pressed, line-subtle, line, line-strong, fill, fill-hover, ink-subtle, ink). Frei sind die Werte je Stufe (Leitern, Farbton, Anker), nicht Anzahl und Namen.',
+      ),
     chromaMax: z
       .number()
       .min(0)

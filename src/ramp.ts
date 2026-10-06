@@ -100,6 +100,7 @@ export interface VizSlot {
 }
 
 export interface Recipe {
+  /** always 12 — one per entry of STEP_NAMES */
   steps: number;
   poles: Record<Mode, Poles>;
   /** content on `fill` per mode: a fixed colour, or 'auto' = higher contrast of white/black */
@@ -396,6 +397,26 @@ export interface Swatch {
 export type Ramps = Record<Mode, Record<string, Swatch[]>>;
 
 export const MODES: Mode[] = ['light', 'dark'];
+
+/**
+ * The names of the ramp steps, in order. They are the recipe's shared
+ * vocabulary: every design system has exactly these steps; what a recipe
+ * chooses is their values.
+ */
+export const STEP_NAMES = [
+  'canvas',
+  'subtle',
+  'tint',
+  'tint-hover',
+  'tint-pressed',
+  'line-subtle',
+  'line',
+  'line-strong',
+  'fill',
+  'fill-hover',
+  'ink-subtle',
+  'ink',
+] as const;
 
 const deltaE = differenceCiede2000();
 /**
