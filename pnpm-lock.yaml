@@ -14,9 +14,6 @@ importers:
       '@formtrieb/tokens-render':
         specifier: ^0.2.0
         version: 0.2.0
-      culori:
-        specifier: ^4.0.0
-        version: 4.0.2
       zod:
         specifier: ^4.0.0
         version: 4.6.5

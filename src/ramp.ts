@@ -6,13 +6,12 @@
  * No I/O in here.
  */
 import {
-  differenceCiede2000,
-  formatHex,
-  oklch,
-  parse,
-  toGamut,
-  wcagContrast,
-} from 'culori';
+  contrastWcag,
+  deltaE2000,
+  hexToOklch,
+  isInSrgbGamut,
+  oklchToHex,
+} from '@formtrieb/tokens-core';
 
 export type Mode = 'light' | 'dark';
 
@@ -418,23 +417,13 @@ export const STEP_NAMES = [
   'ink',
 ] as const;
 
-const deltaE = differenceCiede2000();
-/**
- * Gamut mapping as CSS Color 4 §13 specifies it — the algorithm core uses
- * too, so one OKLCH value gives one colour across the tools: reduce OKLCH
- * chroma until the clipped colour is within a just-noticeable difference
- * (ΔEOK 0.02), then clip. It keeps more chroma than a pure chroma clamp and
- * lets lightness and hue move a little; the step contract checks the result.
- */
-const toSrgb = toGamut('rgb', 'oklch');
-
 export function buildRamps(r: Recipe): Ramps {
   const out: Ramps = { light: {}, dark: {} };
   for (const mode of MODES) {
     const m = r.modes[mode];
     for (const hue of r.hues) {
       const anchor = hue.anchor?.[mode];
-      const anchorOk = anchor ? oklch(anchor.hex) : undefined;
+      const anchorOk = anchor ? hexToOklch(anchor.hex) : undefined;
       const h = anchorOk?.h ?? hue.hue;
       const scale =
         anchor && anchorOk
@@ -447,13 +436,20 @@ export function buildRamps(r: Recipe): Ramps {
           ? (anchorOk.c ?? 0)
           : r.chromaMax * (m.chromaCurve[i] ?? 0) * scale;
         const want = {
-          mode: 'oklch' as const,
           l: pinned ? anchorOk.l : m.lightness[i],
           c: requestedC,
           h,
         };
-        const hex = pinned ? anchor.hex.toLowerCase() : formatHex(toSrgb(want));
-        const got = pinned ? want : oklch(hex);
+        // Gamut mapping as CSS Color 4 §13 specifies it, from core, so one
+        // OKLCH value gives one colour across the tools: reduce OKLCH chroma
+        // until the clipped colour is within a just-noticeable difference
+        // (ΔEOK 0.02), then clip. It keeps more chroma than a pure chroma
+        // clamp and lets lightness and hue move a little; the step contract
+        // checks the result.
+        const hex = pinned
+          ? anchor.hex.toLowerCase()
+          : oklchToHex(want.l, want.c, want.h);
+        const got = pinned ? want : hexToOklch(hex);
         return {
           step: i + 1,
           l: got.l,
@@ -461,7 +457,8 @@ export function buildRamps(r: Recipe): Ramps {
           h: got.h ?? h,
           requestedC,
           hex,
-          clamped: !pinned && formatHex(want) !== hex,
+          clamped:
+            !pinned && !isInSrgbGamut(`oklch(${want.l} ${want.c} ${want.h})`),
           anchored: !!pinned,
         };
       });
@@ -510,7 +507,7 @@ export function checkContract(r: Recipe, ramps: Ramps): Finding[] {
       const at = (n: number) => s[n - 1].hex;
       for (const t of C.textSteps) {
         for (const b of C.surfaceSteps) {
-          const v = wcagContrast(at(t), at(b));
+          const v = contrastWcag(at(t), at(b));
           f.push({
             mode,
             hue: hue.name,
@@ -523,7 +520,7 @@ export function checkContract(r: Recipe, ramps: Ramps): Finding[] {
           });
         }
       }
-      const sv = wcagContrast(at(C.strokeStep), at(C.surfaceSteps[0]));
+      const sv = contrastWcag(at(C.strokeStep), at(C.surfaceSteps[0]));
       f.push({
         mode,
         hue: hue.name,
@@ -536,7 +533,7 @@ export function checkContract(r: Recipe, ramps: Ramps): Finding[] {
       });
       // the poles are not ladder steps: a card (paper) can sit inside the dark ladder
       const paper = r.poles[mode].paper;
-      const sp = wcagContrast(at(C.strokeStep), paper);
+      const sp = contrastWcag(at(C.strokeStep), paper);
       f.push({
         mode,
         hue: hue.name,
@@ -547,7 +544,7 @@ export function checkContract(r: Recipe, ramps: Ramps): Finding[] {
         detail: `≥ ${C.strokeMin}`,
       });
       if (C.paperMinDeltaE !== undefined) {
-        const d = differenceCiede2000()(parse(at(2))!, parse(paper)!);
+        const d = deltaE2000(at(2), paper);
         f.push({
           mode,
           hue: hue.name,
@@ -558,8 +555,8 @@ export function checkContract(r: Recipe, ramps: Ramps): Finding[] {
           detail: `ΔE ≥ ${C.paperMinDeltaE}`,
         });
       }
-      const w = wcagContrast('#ffffff', at(C.solidStep));
-      const k = wcagContrast('#000000', at(C.solidStep));
+      const w = contrastWcag('#ffffff', at(C.solidStep));
+      const k = contrastWcag('#000000', at(C.solidStep));
       const v = Math.max(w, k);
       f.push({
         mode,
@@ -615,7 +612,7 @@ export function coverage(
     let best = ramp[0];
     let bestD = Infinity;
     for (const s of ramp) {
-      const d = deltaE(todayHex, s.hex);
+      const d = deltaE2000(todayHex, s.hex);
       if (d < bestD) {
         bestD = d;
         best = s;

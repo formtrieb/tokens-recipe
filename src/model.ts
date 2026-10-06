@@ -55,13 +55,13 @@
  * from @formtrieb/tokens-render, fed with the DTCG tree and the render table.
  */
 import {
-  converter,
-  differenceCiede2000,
-  formatHex8,
-  parse,
-  wcagContrast,
-} from 'culori';
-import { parseThemes } from '@formtrieb/tokens-core';
+  composite,
+  contrastWcag,
+  deltaE2000,
+  hexToOklch,
+  parseThemes,
+  withAlpha,
+} from '@formtrieb/tokens-core';
 import {
   renderVariables,
   type RenderOptions,
@@ -312,7 +312,6 @@ export function generateModel(
         for (const edge of STICKY_EDGES)
           v[`elevation.sticky-${edge}-value`] = turnShadow(sh, edge);
       else v[`elevation.${lvl}-value`] = sh;
-    const ink = parse(p.ink)!;
     // Foundation: alpha ladder of this mode, 1-based like the ramps
     const alpha = (step: number) => recipe.alpha[mode][step - 1];
     recipe.alpha[mode].forEach((a, i) => (v[`alpha.${i + 1}`] = String(a)));
@@ -323,31 +322,28 @@ export function generateModel(
       v[`${hue}.on-fill`] =
         pref !== 'auto'
           ? pref
-          : wcagContrast('#ffffff', fill) >= wcagContrast('#000000', fill)
+          : contrastWcag('#ffffff', fill) >= contrastWcag('#000000', fill)
             ? '#ffffff'
             : '#000000';
     }
     // search hit: per mode a ramp step of the mark hue + alpha (recipe `mark`)
     for (const k of ['surface', 'current'] as const) {
       const [step, a] = recipe.mark![mode][k];
-      const c = parse(v[`${recipe.mark!.hue}.${step}`])!;
+      const c = v[`${recipe.mark!.hue}.${step}`];
       v[k === 'surface' ? 'mark.value' : 'mark.current-value'] =
-        a === 1 ? formatHex8(c).slice(0, 7) : formatHex8({ ...c, alpha: a });
+        a === 1 ? withAlpha(c, 1).slice(0, 7) : withAlpha(c, a);
     }
     // translucent ink edge: crisp on any surface and mode, never a frame
-    v['neutral.edge'] = formatHex8({ ...ink, alpha: alpha(ALPHA_STEP.edge) });
+    v['neutral.edge'] = withAlpha(p.ink, alpha(ALPHA_STEP.edge));
     for (const name of [
       'state-hover',
       'state-pressed',
       'state-selected',
     ] as const)
-      v[`neutral.${name}`] = formatHex8({
-        ...ink,
-        alpha: alpha(ALPHA_STEP[name]),
-      });
+      v[`neutral.${name}`] = withAlpha(p.ink, alpha(ALPHA_STEP[name]));
     for (const [lvl, step] of Object.entries(CONTENT_STEP))
       v[`content.${lvl}`] =
-        step === null ? p.ink : formatHex8({ ...ink, alpha: alpha(step) });
+        step === null ? p.ink : withAlpha(p.ink, alpha(step));
     // the inverted surface (toast, dark sidebar) behaves like a fill: pole ink is its surface
     v['inverted.fill'] = p.ink;
     v['inverted.on-fill'] = p.inkInverted;
@@ -357,8 +353,8 @@ export function generateModel(
     // button); the inverted surface sits at the pole already and has the
     // headroom for translucent on-fill layers.
     for (const hue of [...Object.keys(HUES), 'inverted']) {
-      const on = parse(v[`${hue}.on-fill`])!;
-      const layer = (a: number) => formatHex8({ ...on, alpha: a });
+      const on = v[`${hue}.on-fill`];
+      const layer = (a: number) => withAlpha(on, a);
       const ramp = hue !== 'inverted';
       const a = (k: keyof typeof ALPHA_STEP) => layer(alpha(ALPHA_STEP[k]));
       v[`${hue}.on-fill-hover`] = ramp
@@ -2202,7 +2198,7 @@ export function generateModel(
   const onFillOf = (mode: (typeof MODES)[number], fill: string) => {
     const pref = recipe.onFill?.[mode] ?? 'auto';
     if (pref !== 'auto') return pref;
-    return wcagContrast('#ffffff', fill) >= wcagContrast('#000000', fill)
+    return contrastWcag('#ffffff', fill) >= contrastWcag('#000000', fill)
       ? '#ffffff'
       : '#000000';
   };
@@ -2234,7 +2230,7 @@ export function generateModel(
         ['content-subtle', 'surface-subtle', C.textMin],
         ['indicator-subtle', 'surface-subtle', C.strokeMin],
       ] as const) {
-        const c = wcagContrast(g(n, a), g(n, b));
+        const c = contrastWcag(g(n, a), g(n, b));
         if (c < min)
           identFails.push(
             `${mode}: identity-${n} ${a} auf ${b} ${c.toFixed(2)} < ${min}`,
@@ -2323,7 +2319,6 @@ export function generateModel(
   const LEGEND_FLOOR = C.legendMinDeltaE!;
   const vizFails: string[] = [];
   const vizNotes: string[] = [];
-  const toOk = converter('oklch');
   const f1 = (n: number) => n.toFixed(1);
   for (const mode of MODES) {
     const cat = viz.categorical.map((s) => slotHex(mode, s));
@@ -2335,7 +2330,7 @@ export function generateModel(
     // labels its marks directly: noted, not a fail
     const surfaces = [p.paper, p.canvas];
     cat.forEach((hex, i) => {
-      const o = toOk(hex)!;
+      const o = hexToOklch(hex);
       if (o.l < lo || o.l > hi)
         vizFails.push(
           `${mode}: category-${i + 1} (${names[i]}) L ${o.l.toFixed(3)} außerhalb ${lo}–${hi}`,
@@ -2345,13 +2340,13 @@ export function generateModel(
           `${mode}: category-${i + 1} (${names[i]}) wirkt grau (C ${(o.c ?? 0).toFixed(3)})`,
         );
       for (const s of surfaces)
-        if (wcagContrast(hex, s) < VIZ.contrastMin)
+        if (contrastWcag(hex, s) < VIZ.contrastMin)
           vizFails.push(
-            `${mode}: category-${i + 1} (${names[i]}) ${wcagContrast(hex, s).toFixed(2)}:1 auf ${s}`,
+            `${mode}: category-${i + 1} (${names[i]}) ${contrastWcag(hex, s).toFixed(2)}:1 auf ${s}`,
           );
-      if (p.overlay && wcagContrast(hex, p.overlay) < VIZ.contrastMin)
+      if (p.overlay && contrastWcag(hex, p.overlay) < VIZ.contrastMin)
         vizNotes.push(
-          `${mode}: category-${i + 1} (${names[i]}) ${wcagContrast(hex, p.overlay).toFixed(2)}:1 auf overlay`,
+          `${mode}: category-${i + 1} (${names[i]}) ${contrastWcag(hex, p.overlay).toFixed(2)}:1 auf overlay`,
         );
     });
     for (let i = 1; i < cat.length; i++) {
@@ -2380,11 +2375,11 @@ export function generateModel(
       }
     // other: grey, visible, apart from every slot
     const other = slotHex(mode, viz.other);
-    if ((toOk(other)!.c ?? 0) > 0.02)
+    if ((hexToOklch(other).c) > 0.02)
       vizFails.push(`${mode}: other ist nicht grau`);
-    if (wcagContrast(other, p.paper) < VIZ.contrastMin)
+    if (contrastWcag(other, p.paper) < VIZ.contrastMin)
       vizFails.push(
-        `${mode}: other ${wcagContrast(other, p.paper).toFixed(2)}:1 auf paper`,
+        `${mode}: other ${contrastWcag(other, p.paper).toFixed(2)}:1 auf paper`,
       );
     for (const [i, hex] of cat.entries())
       if (deltaE(other, hex) < LEGEND_FLOOR)
@@ -2402,13 +2397,13 @@ export function generateModel(
         vizFails.push(
           `${mode}: sequential ${i}→${i + 1} ΔL ${Math.abs(seq[i].l - seq[i - 1].l).toFixed(3)} < 0,06 oder falsche Richtung`,
         );
-    if (wcagContrast(seq[seq.length - 1].hex, p.paper) < VIZ.contrastMin)
+    if (contrastWcag(seq[seq.length - 1].hex, p.paper) < VIZ.contrastMin)
       vizFails.push(`${mode}: sequential stärkste Klasse < 3:1`);
     // diverging: arms on the same steps (same lightness), grey midpoint lighter
     // than the first arm step towards the surface, poles apart in every vision
     const arm = viz.diverging.arm[mode];
     const mid = slotHex(mode, viz.diverging.mid);
-    if ((toOk(mid)!.c ?? 0) > 0.02)
+    if ((hexToOklch(mid).c) > 0.02)
       vizFails.push(`${mode}: diverging-mid ist nicht grau`);
     for (const [offer, ends] of Object.entries({
       neutral: viz.diverging.neutral,
@@ -2453,22 +2448,6 @@ export function generateModel(
       pillDecls(shape, SET.shape(name));
       sizeRadiusDecls(shape, SET.shape(name));
     }
-
-  /** composite a translucent layer (hex8) onto an opaque colour */
-  function over(layer: string, base: string): string {
-    const l = parse(layer)!,
-      b = parse(base)!;
-    const al = l.alpha ?? 1;
-    const ch = (k: 'r' | 'g' | 'b') =>
-      ((l as never)[k] as number) * al + ((b as never)[k] as number) * (1 - al);
-    return formatHex8({
-      mode: 'rgb',
-      r: ch('r'),
-      g: ch('g'),
-      b: ch('b'),
-      alpha: 1,
-    }).slice(0, 7);
-  }
 
   // ---------- contrast checks (accessibility is part of the contract) ----------
   interface Check {
@@ -2539,7 +2518,7 @@ export function generateModel(
       b: string,
       min: number,
     ) => {
-      const ratio = wcagContrast(a, b);
+      const ratio = contrastWcag(a, b);
       if (!opaqueHex(a) || !opaqueHex(b))
         throw new Error(`APCA braucht deckende Farben: ${rule} (${a} / ${b})`);
       apcaNote(
@@ -2577,7 +2556,7 @@ export function generateModel(
           `Text auf Suchtreffer (${k})`,
           `pole.ink / ${k} über ${surf}`,
           v['pole.ink'],
-          over(v[k], v[surf]),
+          composite(v[k], v[surf]),
           C.textMin,
         );
     }
@@ -2747,7 +2726,7 @@ export function generateModel(
           `Text auf ${hue}-Fläche über ${layer}`,
           `${hue}.on-fill / ${hue}.${layer} über ${hue}.fill`,
           on,
-          over(v[`${hue}.${layer}`], fill),
+          composite(v[`${hue}.${layer}`], fill),
           C.textMin,
         );
       add(
@@ -2814,7 +2793,7 @@ export function generateModel(
         add(
           `content.${lvl} auf ${name}`,
           `content.${lvl} / ${name}`,
-          over(v[`content.${lvl}`], bg),
+          composite(v[`content.${lvl}`], bg),
           bg,
           C.textMin,
         );
@@ -2843,7 +2822,7 @@ export function generateModel(
           `Fokus-Ring innen auf Zeile ${st} über ${surf}`,
           `focus.ring / neutral.${st} über ${surf}`,
           v[FOCUS_RING],
-          over(v[`neutral.${st}`], v[surf]),
+          composite(v[`neutral.${st}`], v[surf]),
           C.strokeMin,
         );
   }
@@ -2897,7 +2876,7 @@ export function generateModel(
         ? v[surf]
         : opaque(v[ref])
           ? v[ref].slice(0, 7)
-          : over(v[ref], v[surf]);
+          : composite(v[ref], v[surf]);
     const pageColour = (ref: string) => /^(pole|neutral|content)\./.test(ref);
     for (const [h, def] of Object.entries(HIERARCHIES)) {
       const refOf = (part: Part, c: Cell) => {
@@ -2927,7 +2906,7 @@ export function generateModel(
           const min = part === 'icon' ? C.strokeMin : C.textMin;
           for (const surf of surfaces) {
             const pair = `${fg} / ${beside ? surf : `${bg} über ${surf}`}`;
-            const ratio = wcagContrast(
+            const ratio = contrastWcag(
               onSurface(fg, surf),
               beside ? v[surf] : onSurface(bg, surf),
             );
@@ -2963,7 +2942,7 @@ export function generateModel(
               let best = 0;
               let bestPart = '';
               for (const part of ['background', 'stroke', 'track'] as Part[]) {
-                const ratio = wcagContrast(
+                const ratio = contrastWcag(
                   onSurface(refOf(part, on), surf),
                   onSurface(refOf(part, off), surf),
                 );
@@ -3023,7 +3002,7 @@ export function generateModel(
           : CELL_SURFACES.map((surf) => {
               const fg = opaqueHex(v[colour])
                 ? v[colour].slice(0, 7)
-                : over(v[colour], v[surf]);
+                : composite(v[colour], v[surf]);
               return [surf, apcaLc(fg, v[surf])];
             });
       const [weakestOn, lc] = places.reduce((a, b) => (b[1] < a[1] ? b : a));
@@ -3046,8 +3025,6 @@ export function generateModel(
 
   // surface contract: sunken darker than its parents; in Dark the overlay must be
   // visibly lighter than paper (elevation by lightness)
-  const lightness = converter('oklch');
-  const dE = differenceCiede2000();
   const surfaceFails: string[] = [];
   for (const mode of MODES) {
     const v = values[mode];
@@ -3055,24 +3032,24 @@ export function generateModel(
     // reads by hue (ΔE 12.5 at 1.18:1 is fine), Dark needs lightness (ΔE 16.6 at
     // 1.01:1 is not visible on a popover)
     for (const surf of ['pole.canvas', 'pole.paper', 'pole.overlay']) {
-      const hit = over(v['mark.value'], v[surf]);
-      const de = dE(hit, v[surf]);
-      const lr = wcagContrast(hit, v[surf]);
+      const hit = composite(v['mark.value'], v[surf]);
+      const de = deltaE2000(hit, v[surf]);
+      const lr = contrastWcag(hit, v[surf]);
       if (de < 10 || lr < 1.1)
         surfaceFails.push(
           `${mode}: Suchtreffer auf ${surf} kaum sichtbar (ΔE ${de.toFixed(1)}, ${lr.toFixed(2)}:1; Regel ΔE ≥ 10 und ≥ 1,1:1)`,
         );
     }
-    const L = (k: string) => lightness(v[k])!.l;
+    const L = (k: string) => hexToOklch(v[k]).l;
     for (const parent of ['pole.canvas', 'pole.paper'])
       if (L('pole.sunken') >= L(parent))
         surfaceFails.push(`${mode}: sunken nicht dunkler als ${parent}`);
     if (
       mode === 'dark' &&
-      dE(v['pole.overlay'], v['pole.paper']) < recipe.contract.paperMinDeltaE!
+      deltaE2000(v['pole.overlay'], v['pole.paper']) < recipe.contract.paperMinDeltaE!
     )
       surfaceFails.push(
-        `dark: overlay ↔ paper ΔE ${dE(v['pole.overlay'], v['pole.paper']).toFixed(1)} < ${recipe.contract.paperMinDeltaE}`,
+        `dark: overlay ↔ paper ΔE ${deltaE2000(v['pole.overlay'], v['pole.paper']).toFixed(1)} < ${recipe.contract.paperMinDeltaE}`,
       );
   }
 
