@@ -11,8 +11,13 @@
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     },
+    "./editor": {
+      "types": "./dist/editor/index.d.ts",
+      "default": "./dist/editor/index.js"
+    },
     "./defaults.json": "./defaults.json"
   },
+  "sideEffects": false,
   "bin": {
     "tokens-recipe": "dist/cli/build.js"
   },
@@ -42,7 +47,7 @@
   },
   "scripts": {
     "build": "rm -rf dist tsconfig.tsbuildinfo && tsc -p tsconfig.build.json",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.node.json",
     "test": "vitest run",
     "prepublishOnly": "npm run build && vitest run"
   },
