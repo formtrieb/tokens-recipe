@@ -1,0 +1,4055 @@
+{
+  "checks": [
+    {
+      "mode": "light",
+      "rule": "Label auf Seite",
+      "pair": "pole.ink / pole.canvas",
+      "ratio": 19.76,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Text auf Suchtreffer (mark.value)",
+      "pair": "pole.ink / mark.value über pole.canvas",
+      "ratio": 17.96,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Text auf Suchtreffer (mark.current-value)",
+      "pair": "pole.ink / mark.current-value über pole.canvas",
+      "ratio": 14.34,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Text auf Suchtreffer (mark.value)",
+      "pair": "pole.ink / mark.value über pole.paper",
+      "ratio": 17.96,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Text auf Suchtreffer (mark.current-value)",
+      "pair": "pole.ink / mark.current-value über pole.paper",
+      "ratio": 14.34,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Text auf Suchtreffer (mark.value)",
+      "pair": "pole.ink / mark.value über pole.overlay",
+      "ratio": 17.96,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Text auf Suchtreffer (mark.current-value)",
+      "pair": "pole.ink / mark.current-value über pole.overlay",
+      "ratio": 14.34,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Text auf Suchtreffer (mark.value)",
+      "pair": "pole.ink / mark.value über pole.sunken",
+      "ratio": 17.96,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Text auf Suchtreffer (mark.current-value)",
+      "pair": "pole.ink / mark.current-value über pole.sunken",
+      "ratio": 14.34,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Hilfetext auf Seite",
+      "pair": "neutral.ink-subtle / pole.canvas",
+      "ratio": 7.59,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Rand unausgewählt neutral (1.4.11)",
+      "pair": "neutral.line-strong / pole.canvas",
+      "ratio": 3.62,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Füllung brand (1.4.11)",
+      "pair": "brand.fill / pole.canvas",
+      "ratio": 6.08,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Haken/Ziffer auf Füllung brand",
+      "pair": "brand.on-fill / brand.fill",
+      "ratio": 6.46,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Rand unausgewählt brand (1.4.11)",
+      "pair": "brand.line-strong / pole.canvas",
+      "ratio": 3.87,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Titel/Ziffer brand auf Seite",
+      "pair": "brand.ink / pole.canvas",
+      "ratio": 12.04,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Füllung accent (1.4.11)",
+      "pair": "accent.fill / pole.canvas",
+      "ratio": 4.72,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Haken/Ziffer auf Füllung accent",
+      "pair": "accent.on-fill / accent.fill",
+      "ratio": 5.01,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Rand unausgewählt accent (1.4.11)",
+      "pair": "accent.line-strong / pole.canvas",
+      "ratio": 3.59,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Titel/Ziffer accent auf Seite",
+      "pair": "accent.ink / pole.canvas",
+      "ratio": 11.47,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Füllung negative (1.4.11)",
+      "pair": "negative.fill / pole.canvas",
+      "ratio": 5.21,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Haken/Ziffer auf Füllung negative",
+      "pair": "negative.on-fill / negative.fill",
+      "ratio": 5.54,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Rand unausgewählt negative (1.4.11)",
+      "pair": "negative.line-strong / pole.canvas",
+      "ratio": 3.97,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Titel/Ziffer negative auf Seite",
+      "pair": "negative.ink / pole.canvas",
+      "ratio": 12.16,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Füllung warning (1.4.11)",
+      "pair": "warning.fill / pole.canvas",
+      "ratio": 4.83,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Haken/Ziffer auf Füllung warning",
+      "pair": "warning.on-fill / warning.fill",
+      "ratio": 5.13,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Rand unausgewählt warning (1.4.11)",
+      "pair": "warning.line-strong / pole.canvas",
+      "ratio": 3.66,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Titel/Ziffer warning auf Seite",
+      "pair": "warning.ink / pole.canvas",
+      "ratio": 11.56,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Füllung positive (1.4.11)",
+      "pair": "positive.fill / pole.canvas",
+      "ratio": 4.46,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Haken/Ziffer auf Füllung positive",
+      "pair": "positive.on-fill / positive.fill",
+      "ratio": 4.74,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Rand unausgewählt positive (1.4.11)",
+      "pair": "positive.line-strong / pole.canvas",
+      "ratio": 3.39,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Titel/Ziffer positive auf Seite",
+      "pair": "positive.ink / pole.canvas",
+      "ratio": 11.16,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Meldungstext negative",
+      "pair": "negative.ink-subtle / pole.canvas",
+      "ratio": 8.13,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Meldungstext warning",
+      "pair": "warning.ink-subtle / pole.canvas",
+      "ratio": 7.68,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Meldungstext positive",
+      "pair": "positive.ink-subtle / pole.canvas",
+      "ratio": 7.16,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Readonly-Haken auf Tönung (1.4.11)",
+      "pair": "accent.ink / accent.tint",
+      "ratio": 9.69,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Feldrand auf Weiß (1.4.11)",
+      "pair": "neutral.line-strong / pole.paper",
+      "ratio": 3.84,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Platzhalter im Feld",
+      "pair": "neutral.ink-subtle / pole.paper",
+      "ratio": 8.06,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Readonly-Feld Text",
+      "pair": "pole.ink / neutral.subtle",
+      "ratio": 17.94,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Readonly-Feld Platzhalter",
+      "pair": "neutral.ink-subtle / neutral.subtle",
+      "ratio": 6.89,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Haken gewählte Zeile (1.4.11)",
+      "pair": "accent.ink / pole.paper",
+      "ratio": 12.18,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Rand gewählte Karte (1.4.11)",
+      "pair": "accent.fill / pole.paper",
+      "ratio": 5.01,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Destructive-subtle Rand (1.4.11)",
+      "pair": "negative.line-strong / pole.paper",
+      "ratio": 4.22,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Destructive-subtle Text",
+      "pair": "negative.ink-subtle / pole.paper",
+      "ratio": 8.64,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Destructive-subtle Text hover",
+      "pair": "negative.ink / negative.canvas",
+      "ratio": 11.49,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Auswahl-Indikator auf Karte (1.4.11)",
+      "pair": "accent.fill / pole.paper",
+      "ratio": 5.01,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Inaktiver Tab auf Karte",
+      "pair": "neutral.ink-subtle / pole.paper",
+      "ratio": 8.06,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Button-Text readonly auf Tönung",
+      "pair": "accent.ink / accent.tint",
+      "ratio": 9.69,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Haken erledigt auf tint accent (1.4.11)",
+      "pair": "accent.ink / accent.tint",
+      "ratio": 9.69,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Haken erledigt auf tint-hover accent (1.4.11)",
+      "pair": "accent.ink / accent.tint-hover",
+      "ratio": 9,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Haken erledigt auf tint-pressed accent (1.4.11)",
+      "pair": "accent.ink / accent.tint-pressed",
+      "ratio": 8.34,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Haken erledigt auf tint negative (1.4.11)",
+      "pair": "negative.ink / negative.tint",
+      "ratio": 9.79,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Haken erledigt auf tint-hover negative (1.4.11)",
+      "pair": "negative.ink / negative.tint-hover",
+      "ratio": 9.05,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Haken erledigt auf tint-pressed negative (1.4.11)",
+      "pair": "negative.ink / negative.tint-pressed",
+      "ratio": 8.25,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Haken erledigt auf tint warning (1.4.11)",
+      "pair": "warning.ink / warning.tint",
+      "ratio": 9.82,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Haken erledigt auf tint-hover warning (1.4.11)",
+      "pair": "warning.ink / warning.tint-hover",
+      "ratio": 9.09,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Haken erledigt auf tint-pressed warning (1.4.11)",
+      "pair": "warning.ink / warning.tint-pressed",
+      "ratio": 8.39,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Text auf brand-Fläche über on-fill-hover",
+      "pair": "brand.on-fill / brand.on-fill-hover über brand.fill",
+      "ratio": 6.78,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Text auf brand-Fläche über on-fill-pressed",
+      "pair": "brand.on-fill / brand.on-fill-pressed über brand.fill",
+      "ratio": 8.48,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Text auf brand-Fläche über on-fill-selected",
+      "pair": "brand.on-fill / brand.on-fill-selected über brand.fill",
+      "ratio": 6.78,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring auf brand-Fläche",
+      "pair": "brand.on-fill / brand.fill",
+      "ratio": 6.46,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Text auf inverted-Fläche über on-fill-hover",
+      "pair": "inverted.on-fill / inverted.on-fill-hover über inverted.fill",
+      "ratio": 16.48,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Text auf inverted-Fläche über on-fill-pressed",
+      "pair": "inverted.on-fill / inverted.on-fill-pressed über inverted.fill",
+      "ratio": 12.63,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Text auf inverted-Fläche über on-fill-selected",
+      "pair": "inverted.on-fill / inverted.on-fill-selected über inverted.fill",
+      "ratio": 14.55,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring auf inverted-Fläche",
+      "pair": "inverted.on-fill / inverted.fill",
+      "ratio": 21,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Status neutral subtle: Text auf Fläche",
+      "pair": "neutral.ink-subtle / neutral.subtle",
+      "ratio": 6.89,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Status neutral strong: Text auf Füllung",
+      "pair": "neutral.on-fill / neutral.fill",
+      "ratio": 5.02,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Status info subtle: Text auf Fläche",
+      "pair": "info.ink-subtle / info.subtle",
+      "ratio": 6.84,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Status info strong: Text auf Füllung",
+      "pair": "info.on-fill / info.fill",
+      "ratio": 5.07,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Status positive subtle: Text auf Fläche",
+      "pair": "positive.ink-subtle / positive.subtle",
+      "ratio": 6.62,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Status positive strong: Text auf Füllung",
+      "pair": "positive.on-fill / positive.fill",
+      "ratio": 4.74,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Status warning subtle: Text auf Fläche",
+      "pair": "warning.ink-subtle / warning.subtle",
+      "ratio": 6.98,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Status warning strong: Text auf Füllung",
+      "pair": "warning.on-fill / warning.fill",
+      "ratio": 5.13,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Status negative subtle: Text auf Fläche",
+      "pair": "negative.ink-subtle / negative.subtle",
+      "ratio": 7.02,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Status negative strong: Text auf Füllung",
+      "pair": "negative.on-fill / negative.fill",
+      "ratio": 5.54,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Feedback info: Text auf Fläche",
+      "pair": "info.ink-subtle / info.canvas",
+      "ratio": 7.46,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Feedback info: Icon auf Fläche (1.4.11)",
+      "pair": "info.fill / info.canvas",
+      "ratio": 4.68,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Feedback positive: Text auf Fläche",
+      "pair": "positive.ink-subtle / positive.canvas",
+      "ratio": 7.15,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Feedback positive: Icon auf Fläche (1.4.11)",
+      "pair": "positive.fill / positive.canvas",
+      "ratio": 4.45,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Feedback warning: Text auf Fläche",
+      "pair": "warning.ink-subtle / warning.canvas",
+      "ratio": 7.55,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Feedback warning: Icon auf Fläche (1.4.11)",
+      "pair": "warning.fill / warning.canvas",
+      "ratio": 4.74,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Feedback negative: Text auf Fläche",
+      "pair": "negative.ink-subtle / negative.canvas",
+      "ratio": 7.68,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Feedback negative: Icon auf Fläche (1.4.11)",
+      "pair": "negative.fill / negative.canvas",
+      "ratio": 4.92,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.primary auf pole.canvas",
+      "pair": "content.primary / pole.canvas",
+      "ratio": 19.76,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.primary auf pole.paper",
+      "pair": "content.primary / pole.paper",
+      "ratio": 21,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.primary auf surface.overlay",
+      "pair": "content.primary / surface.overlay",
+      "ratio": 21,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.primary auf surface.sunken",
+      "pair": "content.primary / surface.sunken",
+      "ratio": 17.94,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.primary auf neutral.subtle",
+      "pair": "content.primary / neutral.subtle",
+      "ratio": 17.94,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.primary auf neutral.tint",
+      "pair": "content.primary / neutral.tint",
+      "ratio": 16.83,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.primary auf accent.tint",
+      "pair": "content.primary / accent.tint",
+      "ratio": 16.7,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.primary auf feedback.info.surface",
+      "pair": "content.primary / feedback.info.surface",
+      "ratio": 19.37,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.primary auf feedback.positive.surface",
+      "pair": "content.primary / feedback.positive.surface",
+      "ratio": 19.73,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.primary auf feedback.warning.surface",
+      "pair": "content.primary / feedback.warning.surface",
+      "ratio": 19.41,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.primary auf feedback.negative.surface",
+      "pair": "content.primary / feedback.negative.surface",
+      "ratio": 18.67,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.primary auf status.neutral.surface.subtle",
+      "pair": "content.primary / status.neutral.surface.subtle",
+      "ratio": 17.94,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.primary auf status.info.surface.subtle",
+      "pair": "content.primary / status.info.surface.subtle",
+      "ratio": 17.74,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.primary auf status.positive.surface.subtle",
+      "pair": "content.primary / status.positive.surface.subtle",
+      "ratio": 18.28,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.primary auf status.warning.surface.subtle",
+      "pair": "content.primary / status.warning.surface.subtle",
+      "ratio": 17.96,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.primary auf status.negative.surface.subtle",
+      "pair": "content.primary / status.negative.surface.subtle",
+      "ratio": 17.07,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.secondary auf pole.canvas",
+      "pair": "content.secondary / pole.canvas",
+      "ratio": 6.1,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.secondary auf pole.paper",
+      "pair": "content.secondary / pole.paper",
+      "ratio": 6.19,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.secondary auf surface.overlay",
+      "pair": "content.secondary / surface.overlay",
+      "ratio": 6.19,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.secondary auf surface.sunken",
+      "pair": "content.secondary / surface.sunken",
+      "ratio": 5.89,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.secondary auf neutral.subtle",
+      "pair": "content.secondary / neutral.subtle",
+      "ratio": 5.89,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.secondary auf neutral.tint",
+      "pair": "content.secondary / neutral.tint",
+      "ratio": 5.79,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.secondary auf accent.tint",
+      "pair": "content.secondary / accent.tint",
+      "ratio": 5.76,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.secondary auf feedback.info.surface",
+      "pair": "content.secondary / feedback.info.surface",
+      "ratio": 6.06,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.secondary auf feedback.positive.surface",
+      "pair": "content.secondary / feedback.positive.surface",
+      "ratio": 6.05,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.secondary auf feedback.warning.surface",
+      "pair": "content.secondary / feedback.warning.surface",
+      "ratio": 6.05,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.secondary auf feedback.negative.surface",
+      "pair": "content.secondary / feedback.negative.surface",
+      "ratio": 5.93,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.secondary auf status.neutral.surface.subtle",
+      "pair": "content.secondary / status.neutral.surface.subtle",
+      "ratio": 5.89,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.secondary auf status.info.surface.subtle",
+      "pair": "content.secondary / status.info.surface.subtle",
+      "ratio": 5.84,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.secondary auf status.positive.surface.subtle",
+      "pair": "content.secondary / status.positive.surface.subtle",
+      "ratio": 5.9,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.secondary auf status.warning.surface.subtle",
+      "pair": "content.secondary / status.warning.surface.subtle",
+      "ratio": 5.88,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.secondary auf status.negative.surface.subtle",
+      "pair": "content.secondary / status.negative.surface.subtle",
+      "ratio": 5.75,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "line.strong auf pole.paper (1.4.11)",
+      "pair": "neutral.line-strong / pole.paper",
+      "ratio": 3.84,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "line.strong auf pole.overlay (1.4.11)",
+      "pair": "neutral.line-strong / pole.overlay",
+      "ratio": 3.84,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "line.strong auf pole.sunken (1.4.11)",
+      "pair": "neutral.line-strong / pole.sunken",
+      "ratio": 3.28,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring auf pole.canvas",
+      "pair": "focus.ring / pole.canvas",
+      "ratio": 19.76,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring auf pole.paper",
+      "pair": "focus.ring / pole.paper",
+      "ratio": 21,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring auf surface.overlay",
+      "pair": "focus.ring / surface.overlay",
+      "ratio": 21,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring auf surface.sunken",
+      "pair": "focus.ring / surface.sunken",
+      "ratio": 17.94,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring auf neutral.subtle",
+      "pair": "focus.ring / neutral.subtle",
+      "ratio": 17.94,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring auf neutral.tint",
+      "pair": "focus.ring / neutral.tint",
+      "ratio": 16.83,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring auf accent.tint",
+      "pair": "focus.ring / accent.tint",
+      "ratio": 16.7,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring auf feedback.info.surface",
+      "pair": "focus.ring / feedback.info.surface",
+      "ratio": 19.37,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring auf feedback.positive.surface",
+      "pair": "focus.ring / feedback.positive.surface",
+      "ratio": 19.73,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring auf feedback.warning.surface",
+      "pair": "focus.ring / feedback.warning.surface",
+      "ratio": 19.41,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring auf feedback.negative.surface",
+      "pair": "focus.ring / feedback.negative.surface",
+      "ratio": 18.67,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring auf status.neutral.surface.subtle",
+      "pair": "focus.ring / status.neutral.surface.subtle",
+      "ratio": 17.94,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring auf status.info.surface.subtle",
+      "pair": "focus.ring / status.info.surface.subtle",
+      "ratio": 17.74,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring auf status.positive.surface.subtle",
+      "pair": "focus.ring / status.positive.surface.subtle",
+      "ratio": 18.28,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring auf status.warning.surface.subtle",
+      "pair": "focus.ring / status.warning.surface.subtle",
+      "ratio": 17.96,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring auf status.negative.surface.subtle",
+      "pair": "focus.ring / status.negative.surface.subtle",
+      "ratio": 17.07,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring innen auf Zeile state-hover über pole.paper",
+      "pair": "focus.ring / neutral.state-hover über pole.paper",
+      "ratio": 18.43,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring innen auf Zeile state-selected über pole.paper",
+      "pair": "focus.ring / neutral.state-selected über pole.paper",
+      "ratio": 17.62,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring innen auf Zeile state-hover über pole.overlay",
+      "pair": "focus.ring / neutral.state-hover über pole.overlay",
+      "ratio": 18.43,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring innen auf Zeile state-selected über pole.overlay",
+      "pair": "focus.ring / neutral.state-selected über pole.overlay",
+      "ratio": 17.62,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Label auf Seite",
+      "pair": "pole.ink / pole.canvas",
+      "ratio": 14.85,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Text auf Suchtreffer (mark.value)",
+      "pair": "pole.ink / mark.value über pole.canvas",
+      "ratio": 7.57,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Text auf Suchtreffer (mark.current-value)",
+      "pair": "pole.ink / mark.current-value über pole.canvas",
+      "ratio": 5.91,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Text auf Suchtreffer (mark.value)",
+      "pair": "pole.ink / mark.value über pole.paper",
+      "ratio": 6.58,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Text auf Suchtreffer (mark.current-value)",
+      "pair": "pole.ink / mark.current-value über pole.paper",
+      "ratio": 5.26,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Text auf Suchtreffer (mark.value)",
+      "pair": "pole.ink / mark.value über pole.overlay",
+      "ratio": 5.73,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Text auf Suchtreffer (mark.current-value)",
+      "pair": "pole.ink / mark.current-value über pole.overlay",
+      "ratio": 4.72,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Text auf Suchtreffer (mark.value)",
+      "pair": "pole.ink / mark.value über pole.sunken",
+      "ratio": 8.18,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Text auf Suchtreffer (mark.current-value)",
+      "pair": "pole.ink / mark.current-value über pole.sunken",
+      "ratio": 6.31,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Hilfetext auf Seite",
+      "pair": "neutral.ink-subtle / pole.canvas",
+      "ratio": 9.98,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Rand unausgewählt neutral (1.4.11)",
+      "pair": "neutral.line-strong / pole.canvas",
+      "ratio": 7.24,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Füllung brand (1.4.11)",
+      "pair": "brand.fill / pole.canvas",
+      "ratio": 7.7,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Haken/Ziffer auf Füllung brand",
+      "pair": "brand.on-fill / brand.fill",
+      "ratio": 9.39,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Rand unausgewählt brand (1.4.11)",
+      "pair": "brand.line-strong / pole.canvas",
+      "ratio": 6.74,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Titel/Ziffer brand auf Seite",
+      "pair": "brand.ink / pole.canvas",
+      "ratio": 14.41,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Füllung accent (1.4.11)",
+      "pair": "accent.fill / pole.canvas",
+      "ratio": 8.24,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Haken/Ziffer auf Füllung accent",
+      "pair": "accent.on-fill / accent.fill",
+      "ratio": 10.04,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Rand unausgewählt accent (1.4.11)",
+      "pair": "accent.line-strong / pole.canvas",
+      "ratio": 7.3,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Titel/Ziffer accent auf Seite",
+      "pair": "accent.ink / pole.canvas",
+      "ratio": 14.69,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Füllung negative (1.4.11)",
+      "pair": "negative.fill / pole.canvas",
+      "ratio": 7.25,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Haken/Ziffer auf Füllung negative",
+      "pair": "negative.on-fill / negative.fill",
+      "ratio": 8.84,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Rand unausgewählt negative (1.4.11)",
+      "pair": "negative.line-strong / pole.canvas",
+      "ratio": 6.34,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Titel/Ziffer negative auf Seite",
+      "pair": "negative.ink / pole.canvas",
+      "ratio": 14,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Füllung warning (1.4.11)",
+      "pair": "warning.fill / pole.canvas",
+      "ratio": 8.08,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Haken/Ziffer auf Füllung warning",
+      "pair": "warning.on-fill / warning.fill",
+      "ratio": 9.85,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Rand unausgewählt warning (1.4.11)",
+      "pair": "warning.line-strong / pole.canvas",
+      "ratio": 7.15,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Titel/Ziffer warning auf Seite",
+      "pair": "warning.ink / pole.canvas",
+      "ratio": 14.73,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Füllung positive (1.4.11)",
+      "pair": "positive.fill / pole.canvas",
+      "ratio": 8.69,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Haken/Ziffer auf Füllung positive",
+      "pair": "positive.on-fill / positive.fill",
+      "ratio": 10.59,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Rand unausgewählt positive (1.4.11)",
+      "pair": "positive.line-strong / pole.canvas",
+      "ratio": 7.69,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Titel/Ziffer positive auf Seite",
+      "pair": "positive.ink / pole.canvas",
+      "ratio": 15,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Meldungstext negative",
+      "pair": "negative.ink-subtle / pole.canvas",
+      "ratio": 9.12,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Meldungstext warning",
+      "pair": "warning.ink-subtle / pole.canvas",
+      "ratio": 9.93,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Meldungstext positive",
+      "pair": "positive.ink-subtle / pole.canvas",
+      "ratio": 10.51,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Readonly-Haken auf Tönung (1.4.11)",
+      "pair": "accent.ink / accent.tint",
+      "ratio": 8.68,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Feldrand auf Weiß (1.4.11)",
+      "pair": "neutral.line-strong / pole.paper",
+      "ratio": 6.2,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Platzhalter im Feld",
+      "pair": "neutral.ink-subtle / pole.paper",
+      "ratio": 8.54,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Readonly-Feld Text",
+      "pair": "pole.ink / neutral.subtle",
+      "ratio": 10.73,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Readonly-Feld Platzhalter",
+      "pair": "neutral.ink-subtle / neutral.subtle",
+      "ratio": 7.21,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Haken gewählte Zeile (1.4.11)",
+      "pair": "accent.ink / pole.paper",
+      "ratio": 12.58,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Rand gewählte Karte (1.4.11)",
+      "pair": "accent.fill / pole.paper",
+      "ratio": 7.05,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Destructive-subtle Rand (1.4.11)",
+      "pair": "negative.line-strong / pole.paper",
+      "ratio": 5.43,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Destructive-subtle Text",
+      "pair": "negative.ink-subtle / pole.paper",
+      "ratio": 7.81,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Destructive-subtle Text hover",
+      "pair": "negative.ink / negative.canvas",
+      "ratio": 14.3,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Auswahl-Indikator auf Karte (1.4.11)",
+      "pair": "accent.fill / pole.paper",
+      "ratio": 7.05,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Inaktiver Tab auf Karte",
+      "pair": "neutral.ink-subtle / pole.paper",
+      "ratio": 8.54,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Button-Text readonly auf Tönung",
+      "pair": "accent.ink / accent.tint",
+      "ratio": 8.68,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Haken erledigt auf tint accent (1.4.11)",
+      "pair": "accent.ink / accent.tint",
+      "ratio": 8.68,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Haken erledigt auf tint-hover accent (1.4.11)",
+      "pair": "accent.ink / accent.tint-hover",
+      "ratio": 7.37,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Haken erledigt auf tint-pressed accent (1.4.11)",
+      "pair": "accent.ink / accent.tint-pressed",
+      "ratio": 6.33,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Haken erledigt auf tint negative (1.4.11)",
+      "pair": "negative.ink / negative.tint",
+      "ratio": 8.75,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Haken erledigt auf tint-hover negative (1.4.11)",
+      "pair": "negative.ink / negative.tint-hover",
+      "ratio": 7.58,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Haken erledigt auf tint-pressed negative (1.4.11)",
+      "pair": "negative.ink / negative.tint-pressed",
+      "ratio": 6.48,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Haken erledigt auf tint warning (1.4.11)",
+      "pair": "warning.ink / warning.tint",
+      "ratio": 8.75,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Haken erledigt auf tint-hover warning (1.4.11)",
+      "pair": "warning.ink / warning.tint-hover",
+      "ratio": 7.54,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Haken erledigt auf tint-pressed warning (1.4.11)",
+      "pair": "warning.ink / warning.tint-pressed",
+      "ratio": 6.47,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Text auf brand-Fläche über on-fill-hover",
+      "pair": "brand.on-fill / brand.on-fill-hover über brand.fill",
+      "ratio": 10.49,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Text auf brand-Fläche über on-fill-pressed",
+      "pair": "brand.on-fill / brand.on-fill-pressed über brand.fill",
+      "ratio": 11.72,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Text auf brand-Fläche über on-fill-selected",
+      "pair": "brand.on-fill / brand.on-fill-selected über brand.fill",
+      "ratio": 10.49,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring auf brand-Fläche",
+      "pair": "brand.on-fill / brand.fill",
+      "ratio": 9.39,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Text auf inverted-Fläche über on-fill-hover",
+      "pair": "inverted.on-fill / inverted.on-fill-hover über inverted.fill",
+      "ratio": 13.75,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Text auf inverted-Fläche über on-fill-pressed",
+      "pair": "inverted.on-fill / inverted.on-fill-pressed über inverted.fill",
+      "ratio": 11.3,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Text auf inverted-Fläche über on-fill-selected",
+      "pair": "inverted.on-fill / inverted.on-fill-selected über inverted.fill",
+      "ratio": 12.55,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring auf inverted-Fläche",
+      "pair": "inverted.on-fill / inverted.fill",
+      "ratio": 18.1,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Status neutral subtle: Text auf Fläche",
+      "pair": "neutral.ink-subtle / neutral.subtle",
+      "ratio": 7.21,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Status neutral strong: Text auf Füllung",
+      "pair": "neutral.on-fill / neutral.fill",
+      "ratio": 9.9,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Status info subtle: Text auf Fläche",
+      "pair": "info.ink-subtle / info.subtle",
+      "ratio": 7.1,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Status info strong: Text auf Füllung",
+      "pair": "info.on-fill / info.fill",
+      "ratio": 9.84,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Status positive subtle: Text auf Fläche",
+      "pair": "positive.ink-subtle / positive.subtle",
+      "ratio": 7.36,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Status positive strong: Text auf Füllung",
+      "pair": "positive.on-fill / positive.fill",
+      "ratio": 10.59,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Status warning subtle: Text auf Fläche",
+      "pair": "warning.ink-subtle / warning.subtle",
+      "ratio": 7.19,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Status warning strong: Text auf Füllung",
+      "pair": "warning.on-fill / warning.fill",
+      "ratio": 9.85,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Status negative subtle: Text auf Fläche",
+      "pair": "negative.ink-subtle / negative.subtle",
+      "ratio": 6.86,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Status negative strong: Text auf Füllung",
+      "pair": "negative.on-fill / negative.fill",
+      "ratio": 8.84,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Feedback info: Text auf Fläche",
+      "pair": "info.ink-subtle / info.canvas",
+      "ratio": 9.89,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Feedback info: Icon auf Fläche (1.4.11)",
+      "pair": "info.fill / info.canvas",
+      "ratio": 8.12,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Feedback positive: Text auf Fläche",
+      "pair": "positive.ink-subtle / positive.canvas",
+      "ratio": 10.42,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Feedback positive: Icon auf Fläche (1.4.11)",
+      "pair": "positive.fill / positive.canvas",
+      "ratio": 8.61,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Feedback warning: Text auf Fläche",
+      "pair": "warning.ink-subtle / warning.canvas",
+      "ratio": 9.99,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Feedback warning: Icon auf Fläche (1.4.11)",
+      "pair": "warning.fill / warning.canvas",
+      "ratio": 8.13,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Feedback negative: Text auf Fläche",
+      "pair": "negative.ink-subtle / negative.canvas",
+      "ratio": 9.32,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Feedback negative: Icon auf Fläche (1.4.11)",
+      "pair": "negative.fill / negative.canvas",
+      "ratio": 7.41,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.primary auf pole.canvas",
+      "pair": "content.primary / pole.canvas",
+      "ratio": 14.85,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.primary auf pole.paper",
+      "pair": "content.primary / pole.paper",
+      "ratio": 12.71,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.primary auf surface.overlay",
+      "pair": "content.primary / surface.overlay",
+      "ratio": 10.73,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.primary auf surface.sunken",
+      "pair": "content.primary / surface.sunken",
+      "ratio": 15.88,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.primary auf neutral.subtle",
+      "pair": "content.primary / neutral.subtle",
+      "ratio": 10.73,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.primary auf neutral.tint",
+      "pair": "content.primary / neutral.tint",
+      "ratio": 8.8,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.primary auf accent.tint",
+      "pair": "content.primary / accent.tint",
+      "ratio": 8.77,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.primary auf feedback.info.surface",
+      "pair": "content.primary / feedback.info.surface",
+      "ratio": 14.94,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.primary auf feedback.positive.surface",
+      "pair": "content.primary / feedback.positive.surface",
+      "ratio": 14.72,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.primary auf feedback.warning.surface",
+      "pair": "content.primary / feedback.warning.surface",
+      "ratio": 14.94,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.primary auf feedback.negative.surface",
+      "pair": "content.primary / feedback.negative.surface",
+      "ratio": 15.17,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.primary auf status.neutral.surface.subtle",
+      "pair": "content.primary / status.neutral.surface.subtle",
+      "ratio": 10.73,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.primary auf status.info.surface.subtle",
+      "pair": "content.primary / status.info.surface.subtle",
+      "ratio": 10.73,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.primary auf status.positive.surface.subtle",
+      "pair": "content.primary / status.positive.surface.subtle",
+      "ratio": 10.39,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.primary auf status.warning.surface.subtle",
+      "pair": "content.primary / status.warning.surface.subtle",
+      "ratio": 10.76,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.primary auf status.negative.surface.subtle",
+      "pair": "content.primary / status.negative.surface.subtle",
+      "ratio": 11.17,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.secondary auf pole.canvas",
+      "pair": "content.secondary / pole.canvas",
+      "ratio": 8.21,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.secondary auf pole.paper",
+      "pair": "content.secondary / pole.paper",
+      "ratio": 7.35,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.secondary auf surface.overlay",
+      "pair": "content.secondary / surface.overlay",
+      "ratio": 6.41,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.secondary auf surface.sunken",
+      "pair": "content.secondary / surface.sunken",
+      "ratio": 8.59,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.secondary auf neutral.subtle",
+      "pair": "content.secondary / neutral.subtle",
+      "ratio": 6.41,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.secondary auf neutral.tint",
+      "pair": "content.secondary / neutral.tint",
+      "ratio": 5.49,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.secondary auf accent.tint",
+      "pair": "content.secondary / accent.tint",
+      "ratio": 5.45,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.secondary auf feedback.info.surface",
+      "pair": "content.secondary / feedback.info.surface",
+      "ratio": 8.22,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.secondary auf feedback.positive.surface",
+      "pair": "content.secondary / feedback.positive.surface",
+      "ratio": 8.14,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.secondary auf feedback.warning.surface",
+      "pair": "content.secondary / feedback.warning.surface",
+      "ratio": 8.27,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.secondary auf feedback.negative.surface",
+      "pair": "content.secondary / feedback.negative.surface",
+      "ratio": 8.25,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.secondary auf status.neutral.surface.subtle",
+      "pair": "content.secondary / status.neutral.surface.subtle",
+      "ratio": 6.41,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.secondary auf status.info.surface.subtle",
+      "pair": "content.secondary / status.info.surface.subtle",
+      "ratio": 6.38,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.secondary auf status.positive.surface.subtle",
+      "pair": "content.secondary / status.positive.surface.subtle",
+      "ratio": 6.22,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.secondary auf status.warning.surface.subtle",
+      "pair": "content.secondary / status.warning.surface.subtle",
+      "ratio": 6.44,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.secondary auf status.negative.surface.subtle",
+      "pair": "content.secondary / status.negative.surface.subtle",
+      "ratio": 6.55,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "line.strong auf pole.paper (1.4.11)",
+      "pair": "neutral.line-strong / pole.paper",
+      "ratio": 6.2,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "line.strong auf pole.overlay (1.4.11)",
+      "pair": "neutral.line-strong / pole.overlay",
+      "ratio": 5.24,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "line.strong auf pole.sunken (1.4.11)",
+      "pair": "neutral.line-strong / pole.sunken",
+      "ratio": 7.75,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring auf pole.canvas",
+      "pair": "focus.ring / pole.canvas",
+      "ratio": 14.85,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring auf pole.paper",
+      "pair": "focus.ring / pole.paper",
+      "ratio": 12.71,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring auf surface.overlay",
+      "pair": "focus.ring / surface.overlay",
+      "ratio": 10.73,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring auf surface.sunken",
+      "pair": "focus.ring / surface.sunken",
+      "ratio": 15.88,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring auf neutral.subtle",
+      "pair": "focus.ring / neutral.subtle",
+      "ratio": 10.73,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring auf neutral.tint",
+      "pair": "focus.ring / neutral.tint",
+      "ratio": 8.8,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring auf accent.tint",
+      "pair": "focus.ring / accent.tint",
+      "ratio": 8.77,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring auf feedback.info.surface",
+      "pair": "focus.ring / feedback.info.surface",
+      "ratio": 14.94,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring auf feedback.positive.surface",
+      "pair": "focus.ring / feedback.positive.surface",
+      "ratio": 14.72,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring auf feedback.warning.surface",
+      "pair": "focus.ring / feedback.warning.surface",
+      "ratio": 14.94,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring auf feedback.negative.surface",
+      "pair": "focus.ring / feedback.negative.surface",
+      "ratio": 15.17,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring auf status.neutral.surface.subtle",
+      "pair": "focus.ring / status.neutral.surface.subtle",
+      "ratio": 10.73,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring auf status.info.surface.subtle",
+      "pair": "focus.ring / status.info.surface.subtle",
+      "ratio": 10.73,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring auf status.positive.surface.subtle",
+      "pair": "focus.ring / status.positive.surface.subtle",
+      "ratio": 10.39,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring auf status.warning.surface.subtle",
+      "pair": "focus.ring / status.warning.surface.subtle",
+      "ratio": 10.76,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring auf status.negative.surface.subtle",
+      "pair": "focus.ring / status.negative.surface.subtle",
+      "ratio": 11.17,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring innen auf Zeile state-hover über pole.paper",
+      "pair": "focus.ring / neutral.state-hover über pole.paper",
+      "ratio": 10.73,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring innen auf Zeile state-selected über pole.paper",
+      "pair": "focus.ring / neutral.state-selected über pole.paper",
+      "ratio": 10.11,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring innen auf Zeile state-hover über pole.overlay",
+      "pair": "focus.ring / neutral.state-hover über pole.overlay",
+      "ratio": 9.08,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Fokus-Ring innen auf Zeile state-selected über pole.overlay",
+      "pair": "focus.ring / neutral.state-selected über pole.overlay",
+      "ratio": 8.53,
+      "min": 3,
+      "ok": true
+    }
+  ],
+  "cells": {
+    "checked": 9600,
+    "pairs": 818,
+    "fails": [],
+    "glyphOnly": 36
+  },
+  "apca": {
+    "targets": {
+      "text": 75,
+      "nonText": 45
+    },
+    "pairs": 1064,
+    "below": [
+      {
+        "mode": "light",
+        "where": "Status negative subtle: Text auf Fläche",
+        "pair": "negative.ink-subtle / negative.subtle",
+        "lc": 74.8,
+        "target": 75
+      },
+      {
+        "mode": "light",
+        "where": "content.secondary auf surface.sunken",
+        "pair": "content.secondary / surface.sunken",
+        "lc": 73.2,
+        "target": 75
+      },
+      {
+        "mode": "light",
+        "where": "content.secondary auf neutral.subtle",
+        "pair": "content.secondary / neutral.subtle",
+        "lc": 73.2,
+        "target": 75
+      },
+      {
+        "mode": "light",
+        "where": "content.secondary auf neutral.tint",
+        "pair": "content.secondary / neutral.tint",
+        "lc": 70.4,
+        "target": 75
+      },
+      {
+        "mode": "light",
+        "where": "content.secondary auf accent.tint",
+        "pair": "content.secondary / accent.tint",
+        "lc": 69.9,
+        "target": 75
+      },
+      {
+        "mode": "light",
+        "where": "content.secondary auf feedback.negative.surface",
+        "pair": "content.secondary / feedback.negative.surface",
+        "lc": 74.9,
+        "target": 75
+      },
+      {
+        "mode": "light",
+        "where": "content.secondary auf status.neutral.surface.subtle",
+        "pair": "content.secondary / status.neutral.surface.subtle",
+        "lc": 73.2,
+        "target": 75
+      },
+      {
+        "mode": "light",
+        "where": "content.secondary auf status.info.surface.subtle",
+        "pair": "content.secondary / status.info.surface.subtle",
+        "lc": 72.6,
+        "target": 75
+      },
+      {
+        "mode": "light",
+        "where": "content.secondary auf status.positive.surface.subtle",
+        "pair": "content.secondary / status.positive.surface.subtle",
+        "lc": 74,
+        "target": 75
+      },
+      {
+        "mode": "light",
+        "where": "content.secondary auf status.warning.surface.subtle",
+        "pair": "content.secondary / status.warning.surface.subtle",
+        "lc": 73.2,
+        "target": 75
+      },
+      {
+        "mode": "light",
+        "where": "content.secondary auf status.negative.surface.subtle",
+        "pair": "content.secondary / status.negative.surface.subtle",
+        "lc": 70.7,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Text auf Suchtreffer (mark.current-value)",
+        "pair": "pole.ink / mark.current-value über pole.paper",
+        "lc": 74.5,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Text auf Suchtreffer (mark.current-value)",
+        "pair": "pole.ink / mark.current-value über pole.overlay",
+        "lc": 71.5,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Hilfetext auf Seite",
+        "pair": "neutral.ink-subtle / pole.canvas",
+        "lc": 70.1,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Haken/Ziffer auf Füllung brand",
+        "pair": "brand.on-fill / brand.fill",
+        "lc": 60,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Haken/Ziffer auf Füllung accent",
+        "pair": "accent.on-fill / accent.fill",
+        "lc": 63.2,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Haken/Ziffer auf Füllung negative",
+        "pair": "negative.on-fill / negative.fill",
+        "lc": 57.6,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Haken/Ziffer auf Füllung warning",
+        "pair": "warning.on-fill / warning.fill",
+        "lc": 62.3,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Haken/Ziffer auf Füllung positive",
+        "pair": "positive.on-fill / positive.fill",
+        "lc": 66,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Meldungstext negative",
+        "pair": "negative.ink-subtle / pole.canvas",
+        "lc": 65.4,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Meldungstext warning",
+        "pair": "warning.ink-subtle / pole.canvas",
+        "lc": 69.9,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Meldungstext positive",
+        "pair": "positive.ink-subtle / pole.canvas",
+        "lc": 73.3,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Platzhalter im Feld",
+        "pair": "neutral.ink-subtle / pole.paper",
+        "lc": 68.1,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Readonly-Feld Platzhalter",
+        "pair": "neutral.ink-subtle / neutral.subtle",
+        "lc": 65.4,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Destructive-subtle Text",
+        "pair": "negative.ink-subtle / pole.paper",
+        "lc": 63.4,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Text auf brand-Fläche über on-fill-hover",
+        "pair": "brand.on-fill / brand.on-fill-hover über brand.fill",
+        "lc": 65.2,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Text auf brand-Fläche über on-fill-pressed",
+        "pair": "brand.on-fill / brand.on-fill-pressed über brand.fill",
+        "lc": 70.7,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Text auf brand-Fläche über on-fill-selected",
+        "pair": "brand.on-fill / brand.on-fill-selected über brand.fill",
+        "lc": 65.2,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Text auf inverted-Fläche über on-fill-pressed",
+        "pair": "inverted.on-fill / inverted.on-fill-pressed über inverted.fill",
+        "lc": 68.8,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Text auf inverted-Fläche über on-fill-selected",
+        "pair": "inverted.on-fill / inverted.on-fill-selected über inverted.fill",
+        "lc": 74.3,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Status neutral strong: Text auf Füllung",
+        "pair": "neutral.on-fill / neutral.fill",
+        "lc": 62.4,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Status info subtle: Text auf Fläche",
+        "pair": "info.ink-subtle / info.subtle",
+        "lc": 64.6,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Status info strong: Text auf Füllung",
+        "pair": "info.on-fill / info.fill",
+        "lc": 62.2,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Status positive subtle: Text auf Fläche",
+        "pair": "positive.ink-subtle / positive.subtle",
+        "lc": 67.8,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Status warning subtle: Text auf Fläche",
+        "pair": "warning.ink-subtle / warning.subtle",
+        "lc": 65.2,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Status negative subtle: Text auf Fläche",
+        "pair": "negative.ink-subtle / negative.subtle",
+        "lc": 61,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Feedback info: Text auf Fläche",
+        "pair": "info.ink-subtle / info.canvas",
+        "lc": 69.3,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Feedback positive: Text auf Fläche",
+        "pair": "positive.ink-subtle / positive.canvas",
+        "lc": 73,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Feedback warning: Text auf Fläche",
+        "pair": "warning.ink-subtle / warning.canvas",
+        "lc": 69.9,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "Feedback negative: Text auf Fläche",
+        "pair": "negative.ink-subtle / negative.canvas",
+        "lc": 65.3,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "content.secondary auf pole.canvas",
+        "pair": "content.secondary / pole.canvas",
+        "lc": 59.8,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "content.secondary auf pole.paper",
+        "pair": "content.secondary / pole.paper",
+        "lc": 60,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "content.secondary auf surface.overlay",
+        "pair": "content.secondary / surface.overlay",
+        "lc": 59,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "content.secondary auf surface.sunken",
+        "pair": "content.secondary / surface.sunken",
+        "lc": 59.4,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "content.secondary auf neutral.subtle",
+        "pair": "content.secondary / neutral.subtle",
+        "lc": 59,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "content.secondary auf neutral.tint",
+        "pair": "content.secondary / neutral.tint",
+        "lc": 57.4,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "content.secondary auf accent.tint",
+        "pair": "content.secondary / accent.tint",
+        "lc": 56.9,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "content.secondary auf feedback.info.surface",
+        "pair": "content.secondary / feedback.info.surface",
+        "lc": 59.5,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "content.secondary auf feedback.positive.surface",
+        "pair": "content.secondary / feedback.positive.surface",
+        "lc": 59.5,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "content.secondary auf feedback.warning.surface",
+        "pair": "content.secondary / feedback.warning.surface",
+        "lc": 59.8,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "content.secondary auf feedback.negative.surface",
+        "pair": "content.secondary / feedback.negative.surface",
+        "lc": 58.8,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "content.secondary auf status.neutral.surface.subtle",
+        "pair": "content.secondary / status.neutral.surface.subtle",
+        "lc": 59,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "content.secondary auf status.info.surface.subtle",
+        "pair": "content.secondary / status.info.surface.subtle",
+        "lc": 58.7,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "content.secondary auf status.positive.surface.subtle",
+        "pair": "content.secondary / status.positive.surface.subtle",
+        "lc": 58.3,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "content.secondary auf status.warning.surface.subtle",
+        "pair": "content.secondary / status.warning.surface.subtle",
+        "lc": 59.1,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "content.secondary auf status.negative.surface.subtle",
+        "pair": "content.secondary / status.negative.surface.subtle",
+        "lc": 58.3,
+        "target": 75
+      },
+      {
+        "mode": "light",
+        "where": "brand inactive-hover text-subtle",
+        "pair": "neutral.ink-subtle / neutral.state-hover über pole.canvas",
+        "lc": 74.9,
+        "target": 75
+      },
+      {
+        "mode": "light",
+        "where": "brand inactive-hover text-subtle",
+        "pair": "neutral.ink-subtle / neutral.state-hover über pole.sunken",
+        "lc": 69.2,
+        "target": 75
+      },
+      {
+        "mode": "light",
+        "where": "brand inactive-pressed text-subtle",
+        "pair": "neutral.ink-subtle / neutral.state-pressed über pole.canvas",
+        "lc": 69.1,
+        "target": 75
+      },
+      {
+        "mode": "light",
+        "where": "brand inactive-pressed text-subtle",
+        "pair": "neutral.ink-subtle / neutral.state-pressed über pole.paper",
+        "lc": 72.6,
+        "target": 75
+      },
+      {
+        "mode": "light",
+        "where": "brand inactive-pressed text-subtle",
+        "pair": "neutral.ink-subtle / neutral.state-pressed über pole.overlay",
+        "lc": 72.6,
+        "target": 75
+      },
+      {
+        "mode": "light",
+        "where": "brand inactive-pressed text-subtle",
+        "pair": "neutral.ink-subtle / neutral.state-pressed über pole.sunken",
+        "lc": 63.5,
+        "target": 75
+      },
+      {
+        "mode": "light",
+        "where": "secondary selected-idle text-subtle",
+        "pair": "neutral.ink-subtle / neutral.state-selected über pole.canvas",
+        "lc": 72.6,
+        "target": 75
+      },
+      {
+        "mode": "light",
+        "where": "secondary selected-idle text-subtle",
+        "pair": "neutral.ink-subtle / neutral.state-selected über pole.sunken",
+        "lc": 66.3,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand idle text",
+        "pair": "brand.on-fill / brand.fill über pole.canvas",
+        "lc": 60,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand idle text",
+        "pair": "brand.on-fill / brand.fill über pole.paper",
+        "lc": 60,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand idle text",
+        "pair": "brand.on-fill / brand.fill über pole.overlay",
+        "lc": 60,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand idle text",
+        "pair": "brand.on-fill / brand.fill über pole.sunken",
+        "lc": 60,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand hover text",
+        "pair": "brand.on-fill / brand.fill-hover über pole.canvas",
+        "lc": 65.2,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand hover text",
+        "pair": "brand.on-fill / brand.fill-hover über pole.paper",
+        "lc": 65.2,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand hover text",
+        "pair": "brand.on-fill / brand.fill-hover über pole.overlay",
+        "lc": 65.2,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand hover text",
+        "pair": "brand.on-fill / brand.fill-hover über pole.sunken",
+        "lc": 65.2,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand pressed text",
+        "pair": "brand.on-fill / brand.ink-subtle über pole.canvas",
+        "lc": 70.7,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand pressed text",
+        "pair": "brand.on-fill / brand.ink-subtle über pole.paper",
+        "lc": 70.7,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand pressed text",
+        "pair": "brand.on-fill / brand.ink-subtle über pole.overlay",
+        "lc": 70.7,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand pressed text",
+        "pair": "brand.on-fill / brand.ink-subtle über pole.sunken",
+        "lc": 70.7,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand negative-idle text",
+        "pair": "negative.on-fill / negative.fill über pole.canvas",
+        "lc": 57.6,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand negative-idle text",
+        "pair": "negative.on-fill / negative.fill über pole.paper",
+        "lc": 57.6,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand negative-idle text",
+        "pair": "negative.on-fill / negative.fill über pole.overlay",
+        "lc": 57.6,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand negative-idle text",
+        "pair": "negative.on-fill / negative.fill über pole.sunken",
+        "lc": 57.6,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand negative-hover text",
+        "pair": "negative.on-fill / negative.fill-hover über pole.canvas",
+        "lc": 62.5,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand negative-hover text",
+        "pair": "negative.on-fill / negative.fill-hover über pole.paper",
+        "lc": 62.5,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand negative-hover text",
+        "pair": "negative.on-fill / negative.fill-hover über pole.overlay",
+        "lc": 62.5,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand negative-hover text",
+        "pair": "negative.on-fill / negative.fill-hover über pole.sunken",
+        "lc": 62.5,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand negative-pressed text",
+        "pair": "negative.on-fill / negative.ink-subtle über pole.canvas",
+        "lc": 68.2,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand negative-pressed text",
+        "pair": "negative.on-fill / negative.ink-subtle über pole.paper",
+        "lc": 68.2,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand negative-pressed text",
+        "pair": "negative.on-fill / negative.ink-subtle über pole.overlay",
+        "lc": 68.2,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand negative-pressed text",
+        "pair": "negative.on-fill / negative.ink-subtle über pole.sunken",
+        "lc": 68.2,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand warning-idle text",
+        "pair": "warning.on-fill / warning.fill über pole.canvas",
+        "lc": 62.3,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand warning-idle text",
+        "pair": "warning.on-fill / warning.fill über pole.paper",
+        "lc": 62.3,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand warning-idle text",
+        "pair": "warning.on-fill / warning.fill über pole.overlay",
+        "lc": 62.3,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand warning-idle text",
+        "pair": "warning.on-fill / warning.fill über pole.sunken",
+        "lc": 62.3,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand warning-hover text",
+        "pair": "warning.on-fill / warning.fill-hover über pole.canvas",
+        "lc": 67,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand warning-hover text",
+        "pair": "warning.on-fill / warning.fill-hover über pole.paper",
+        "lc": 67,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand warning-hover text",
+        "pair": "warning.on-fill / warning.fill-hover über pole.overlay",
+        "lc": 67,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand warning-hover text",
+        "pair": "warning.on-fill / warning.fill-hover über pole.sunken",
+        "lc": 67,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand warning-pressed text",
+        "pair": "warning.on-fill / warning.ink-subtle über pole.canvas",
+        "lc": 72.4,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand warning-pressed text",
+        "pair": "warning.on-fill / warning.ink-subtle über pole.paper",
+        "lc": 72.4,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand warning-pressed text",
+        "pair": "warning.on-fill / warning.ink-subtle über pole.overlay",
+        "lc": 72.4,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand warning-pressed text",
+        "pair": "warning.on-fill / warning.ink-subtle über pole.sunken",
+        "lc": 72.4,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand positive-idle text",
+        "pair": "positive.on-fill / positive.fill über pole.canvas",
+        "lc": 66,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand positive-idle text",
+        "pair": "positive.on-fill / positive.fill über pole.paper",
+        "lc": 66,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand positive-idle text",
+        "pair": "positive.on-fill / positive.fill über pole.overlay",
+        "lc": 66,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand positive-idle text",
+        "pair": "positive.on-fill / positive.fill über pole.sunken",
+        "lc": 66,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand positive-hover text",
+        "pair": "positive.on-fill / positive.fill-hover über pole.canvas",
+        "lc": 70.8,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand positive-hover text",
+        "pair": "positive.on-fill / positive.fill-hover über pole.paper",
+        "lc": 70.8,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand positive-hover text",
+        "pair": "positive.on-fill / positive.fill-hover über pole.overlay",
+        "lc": 70.8,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand positive-hover text",
+        "pair": "positive.on-fill / positive.fill-hover über pole.sunken",
+        "lc": 70.8,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand inactive-idle text-subtle",
+        "pair": "neutral.ink-subtle / transparent über pole.canvas",
+        "lc": 70.1,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand inactive-idle text-subtle",
+        "pair": "neutral.ink-subtle / transparent über pole.paper",
+        "lc": 68.1,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand inactive-idle text-subtle",
+        "pair": "neutral.ink-subtle / transparent über pole.overlay",
+        "lc": 65.4,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand inactive-idle text-subtle",
+        "pair": "neutral.ink-subtle / transparent über pole.sunken",
+        "lc": 70.8,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand inactive-hover text-subtle",
+        "pair": "neutral.ink-subtle / neutral.state-hover über pole.canvas",
+        "lc": 68.3,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand inactive-hover text-subtle",
+        "pair": "neutral.ink-subtle / neutral.state-hover über pole.paper",
+        "lc": 65.4,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand inactive-hover text-subtle",
+        "pair": "neutral.ink-subtle / neutral.state-hover über pole.overlay",
+        "lc": 62.1,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand inactive-hover text-subtle",
+        "pair": "neutral.ink-subtle / neutral.state-hover über pole.sunken",
+        "lc": 69.3,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand inactive-pressed text-subtle",
+        "pair": "neutral.ink-subtle / neutral.state-pressed über pole.canvas",
+        "lc": 66.2,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand inactive-pressed text-subtle",
+        "pair": "neutral.ink-subtle / neutral.state-pressed über pole.paper",
+        "lc": 63,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand inactive-pressed text-subtle",
+        "pair": "neutral.ink-subtle / neutral.state-pressed über pole.overlay",
+        "lc": 59.4,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand inactive-pressed text-subtle",
+        "pair": "neutral.ink-subtle / neutral.state-pressed über pole.sunken",
+        "lc": 67.7,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand selected-idle text-subtle",
+        "pair": "neutral.ink-subtle / pole.overlay",
+        "lc": 65.4,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "brand selected-idle text-subtle",
+        "pair": "neutral.ink-subtle / pole.sunken",
+        "lc": 70.8,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "primary idle text",
+        "pair": "accent.on-fill / accent.fill über pole.canvas",
+        "lc": 63.2,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "primary idle text",
+        "pair": "accent.on-fill / accent.fill über pole.paper",
+        "lc": 63.2,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "primary idle text",
+        "pair": "accent.on-fill / accent.fill über pole.overlay",
+        "lc": 63.2,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "primary idle text",
+        "pair": "accent.on-fill / accent.fill über pole.sunken",
+        "lc": 63.2,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "primary hover text",
+        "pair": "accent.on-fill / accent.fill-hover über pole.canvas",
+        "lc": 67.6,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "primary hover text",
+        "pair": "accent.on-fill / accent.fill-hover über pole.paper",
+        "lc": 67.6,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "primary hover text",
+        "pair": "accent.on-fill / accent.fill-hover über pole.overlay",
+        "lc": 67.6,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "primary hover text",
+        "pair": "accent.on-fill / accent.fill-hover über pole.sunken",
+        "lc": 67.6,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "primary pressed text",
+        "pair": "accent.on-fill / accent.ink-subtle über pole.canvas",
+        "lc": 72.9,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "primary pressed text",
+        "pair": "accent.on-fill / accent.ink-subtle über pole.paper",
+        "lc": 72.9,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "primary pressed text",
+        "pair": "accent.on-fill / accent.ink-subtle über pole.overlay",
+        "lc": 72.9,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "primary pressed text",
+        "pair": "accent.on-fill / accent.ink-subtle über pole.sunken",
+        "lc": 72.9,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "secondary idle text-subtle",
+        "pair": "neutral.ink-subtle / pole.paper über pole.canvas",
+        "lc": 68.1,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "secondary idle text-subtle",
+        "pair": "neutral.ink-subtle / pole.paper über pole.paper",
+        "lc": 68.1,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "secondary idle text-subtle",
+        "pair": "neutral.ink-subtle / pole.paper über pole.overlay",
+        "lc": 68.1,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "secondary idle text-subtle",
+        "pair": "neutral.ink-subtle / pole.paper über pole.sunken",
+        "lc": 68.1,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "secondary selected-idle text-subtle",
+        "pair": "neutral.ink-subtle / neutral.state-selected über pole.canvas",
+        "lc": 67.3,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "secondary selected-idle text-subtle",
+        "pair": "neutral.ink-subtle / neutral.state-selected über pole.paper",
+        "lc": 64.2,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "secondary selected-idle text-subtle",
+        "pair": "neutral.ink-subtle / neutral.state-selected über pole.overlay",
+        "lc": 60.8,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "secondary selected-idle text-subtle",
+        "pair": "neutral.ink-subtle / neutral.state-selected über pole.sunken",
+        "lc": 68.6,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "destructive-subtle idle text",
+        "pair": "negative.ink-subtle / pole.paper über pole.canvas",
+        "lc": 63.4,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "destructive-subtle idle text",
+        "pair": "negative.ink-subtle / pole.paper über pole.paper",
+        "lc": 63.4,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "destructive-subtle idle text",
+        "pair": "negative.ink-subtle / pole.paper über pole.overlay",
+        "lc": 63.4,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "destructive-subtle idle text",
+        "pair": "negative.ink-subtle / pole.paper über pole.sunken",
+        "lc": 63.4,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "on-inverted negative-hover text",
+        "pair": "negative.on-fill / negative.on-fill-hover über inverted.fill",
+        "lc": 62.5,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "on-inverted negative-pressed text",
+        "pair": "negative.on-fill / negative.on-fill-pressed über inverted.fill",
+        "lc": 68.2,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "on-inverted warning-hover text",
+        "pair": "warning.on-fill / warning.on-fill-hover über inverted.fill",
+        "lc": 67,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "on-inverted warning-pressed text",
+        "pair": "warning.on-fill / warning.on-fill-pressed über inverted.fill",
+        "lc": 72.4,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "on-inverted positive-hover text",
+        "pair": "positive.on-fill / positive.on-fill-hover über inverted.fill",
+        "lc": 70.8,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "on-inverted selected-negative-idle text",
+        "pair": "negative.on-fill / negative.on-fill-selected über inverted.fill",
+        "lc": 62.5,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "on-inverted selected-warning-idle text",
+        "pair": "warning.on-fill / warning.on-fill-selected über inverted.fill",
+        "lc": 67,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "on-inverted selected-positive-idle text",
+        "pair": "positive.on-fill / positive.on-fill-selected über inverted.fill",
+        "lc": 70.8,
+        "target": 75
+      }
+    ],
+    "roles": [
+      {
+        "name": "display.1",
+        "role": "display",
+        "size": 52,
+        "weight": 700,
+        "target": 45
+      },
+      {
+        "name": "display.2",
+        "role": "display",
+        "size": 40,
+        "weight": 700,
+        "target": 45
+      },
+      {
+        "name": "display.3",
+        "role": "display",
+        "size": 32,
+        "weight": 700,
+        "target": 45
+      },
+      {
+        "name": "heading.1",
+        "role": "heading",
+        "size": 28,
+        "weight": 700,
+        "target": 45
+      },
+      {
+        "name": "heading.1-subtle",
+        "role": "heading",
+        "size": 28,
+        "weight": 400,
+        "target": 60
+      },
+      {
+        "name": "heading.2",
+        "role": "heading",
+        "size": 20,
+        "weight": 700,
+        "target": 60
+      },
+      {
+        "name": "heading.2-subtle",
+        "role": "heading",
+        "size": 20,
+        "weight": 400,
+        "target": 75
+      },
+      {
+        "name": "heading.3",
+        "role": "heading",
+        "size": 20,
+        "weight": 700,
+        "target": 60
+      },
+      {
+        "name": "heading.3-subtle",
+        "role": "heading",
+        "size": 20,
+        "weight": 400,
+        "target": 75
+      },
+      {
+        "name": "heading.4",
+        "role": "heading",
+        "size": 16,
+        "weight": 700,
+        "target": 60
+      },
+      {
+        "name": "heading.4-subtle",
+        "role": "heading",
+        "size": 16,
+        "weight": 400,
+        "target": 90
+      },
+      {
+        "name": "title.sm",
+        "role": "title",
+        "size": 14,
+        "weight": 600,
+        "target": 90
+      },
+      {
+        "name": "title.sm-subtle",
+        "role": "title",
+        "size": 14,
+        "weight": 400,
+        "target": 90
+      },
+      {
+        "name": "title.md",
+        "role": "title",
+        "size": 16,
+        "weight": 600,
+        "target": 75
+      },
+      {
+        "name": "title.md-subtle",
+        "role": "title",
+        "size": 16,
+        "weight": 400,
+        "target": 90
+      },
+      {
+        "name": "title.lg",
+        "role": "title",
+        "size": 18,
+        "weight": 600,
+        "target": 60
+      },
+      {
+        "name": "title.lg-subtle",
+        "role": "title",
+        "size": 18,
+        "weight": 400,
+        "target": 75
+      },
+      {
+        "name": "eyebrow.sm",
+        "role": "eyebrow",
+        "size": 12,
+        "weight": 600,
+        "target": null
+      },
+      {
+        "name": "eyebrow.md",
+        "role": "eyebrow",
+        "size": 14,
+        "weight": 600,
+        "target": 90
+      },
+      {
+        "name": "lead.md",
+        "role": "lead",
+        "size": 18,
+        "weight": 400,
+        "target": 75
+      },
+      {
+        "name": "lead.md-strong",
+        "role": "lead",
+        "size": 18,
+        "weight": 600,
+        "target": 75
+      },
+      {
+        "name": "lead.lg",
+        "role": "lead",
+        "size": 20,
+        "weight": 400,
+        "target": 75
+      },
+      {
+        "name": "lead.lg-strong",
+        "role": "lead",
+        "size": 20,
+        "weight": 600,
+        "target": 75
+      },
+      {
+        "name": "body.sm",
+        "role": "body",
+        "size": 14,
+        "weight": 400,
+        "target": 90
+      },
+      {
+        "name": "body.sm-strong",
+        "role": "body",
+        "size": 14,
+        "weight": 600,
+        "target": 90
+      },
+      {
+        "name": "body.md",
+        "role": "body",
+        "size": 16,
+        "weight": 400,
+        "target": 90
+      },
+      {
+        "name": "body.md-strong",
+        "role": "body",
+        "size": 16,
+        "weight": 600,
+        "target": 75
+      },
+      {
+        "name": "body.lg",
+        "role": "body",
+        "size": 18,
+        "weight": 400,
+        "target": 75
+      },
+      {
+        "name": "body.lg-strong",
+        "role": "body",
+        "size": 18,
+        "weight": 600,
+        "target": 75
+      },
+      {
+        "name": "quote.md",
+        "role": "quote",
+        "size": 18,
+        "weight": 400,
+        "target": 75
+      },
+      {
+        "name": "quote.md-strong",
+        "role": "quote",
+        "size": 18,
+        "weight": 600,
+        "target": 75
+      },
+      {
+        "name": "quote.lg",
+        "role": "quote",
+        "size": 20,
+        "weight": 400,
+        "target": 75
+      },
+      {
+        "name": "quote.lg-strong",
+        "role": "quote",
+        "size": 20,
+        "weight": 600,
+        "target": 75
+      },
+      {
+        "name": "code.sm",
+        "role": "code",
+        "size": 12,
+        "weight": 400,
+        "target": null
+      },
+      {
+        "name": "code.md",
+        "role": "code",
+        "size": 14,
+        "weight": 400,
+        "target": 90
+      },
+      {
+        "name": "label.sm",
+        "role": "label",
+        "size": 12,
+        "weight": 600,
+        "target": null
+      },
+      {
+        "name": "label.sm-subtle",
+        "role": "label",
+        "size": 12,
+        "weight": 400,
+        "target": null
+      },
+      {
+        "name": "label.md",
+        "role": "label",
+        "size": 14,
+        "weight": 600,
+        "target": 90
+      },
+      {
+        "name": "label.md-subtle",
+        "role": "label",
+        "size": 14,
+        "weight": 400,
+        "target": 90
+      },
+      {
+        "name": "label.lg",
+        "role": "label",
+        "size": 16,
+        "weight": 600,
+        "target": 75
+      },
+      {
+        "name": "label.lg-subtle",
+        "role": "label",
+        "size": 16,
+        "weight": 400,
+        "target": 90
+      },
+      {
+        "name": "label.xl",
+        "role": "label",
+        "size": 18,
+        "weight": 600,
+        "target": 60
+      },
+      {
+        "name": "label.xl-subtle",
+        "role": "label",
+        "size": 18,
+        "weight": 400,
+        "target": 75
+      },
+      {
+        "name": "value.sm",
+        "role": "value",
+        "size": 14,
+        "weight": 400,
+        "target": 90
+      },
+      {
+        "name": "value.sm-strong",
+        "role": "value",
+        "size": 14,
+        "weight": 600,
+        "target": 90
+      },
+      {
+        "name": "value.md",
+        "role": "value",
+        "size": 16,
+        "weight": 400,
+        "target": 90
+      },
+      {
+        "name": "value.md-strong",
+        "role": "value",
+        "size": 16,
+        "weight": 600,
+        "target": 75
+      },
+      {
+        "name": "value.lg",
+        "role": "value",
+        "size": 18,
+        "weight": 400,
+        "target": 75
+      },
+      {
+        "name": "value.lg-strong",
+        "role": "value",
+        "size": 18,
+        "weight": 600,
+        "target": 60
+      },
+      {
+        "name": "option.sm",
+        "role": "option",
+        "size": 14,
+        "weight": 400,
+        "target": 90
+      },
+      {
+        "name": "option.sm-strong",
+        "role": "option",
+        "size": 14,
+        "weight": 600,
+        "target": 90
+      },
+      {
+        "name": "option.md",
+        "role": "option",
+        "size": 16,
+        "weight": 400,
+        "target": 90
+      },
+      {
+        "name": "option.md-strong",
+        "role": "option",
+        "size": 16,
+        "weight": 600,
+        "target": 75
+      },
+      {
+        "name": "option.lg",
+        "role": "option",
+        "size": 18,
+        "weight": 400,
+        "target": 75
+      },
+      {
+        "name": "option.lg-strong",
+        "role": "option",
+        "size": 18,
+        "weight": 600,
+        "target": 60
+      },
+      {
+        "name": "supporting.sm",
+        "role": "supporting",
+        "size": 14,
+        "weight": 400,
+        "target": 90
+      },
+      {
+        "name": "supporting.sm-strong",
+        "role": "supporting",
+        "size": 14,
+        "weight": 600,
+        "target": 90
+      },
+      {
+        "name": "supporting.md",
+        "role": "supporting",
+        "size": 16,
+        "weight": 400,
+        "target": 90
+      },
+      {
+        "name": "supporting.md-strong",
+        "role": "supporting",
+        "size": 16,
+        "weight": 600,
+        "target": 75
+      },
+      {
+        "name": "caption.sm",
+        "role": "caption",
+        "size": 12,
+        "weight": 500,
+        "target": null
+      },
+      {
+        "name": "caption.sm-subtle",
+        "role": "caption",
+        "size": 12,
+        "weight": 400,
+        "target": null
+      },
+      {
+        "name": "caption.md",
+        "role": "caption",
+        "size": 14,
+        "weight": 500,
+        "target": 90
+      },
+      {
+        "name": "caption.md-subtle",
+        "role": "caption",
+        "size": 14,
+        "weight": 400,
+        "target": 90
+      },
+      {
+        "name": "fine.sm",
+        "role": "fine",
+        "size": 12,
+        "weight": 400,
+        "target": null
+      },
+      {
+        "name": "fine.sm-strong",
+        "role": "fine",
+        "size": 12,
+        "weight": 600,
+        "target": null
+      },
+      {
+        "name": "fine.md",
+        "role": "fine",
+        "size": 14,
+        "weight": 400,
+        "target": 90
+      },
+      {
+        "name": "fine.md-strong",
+        "role": "fine",
+        "size": 14,
+        "weight": 600,
+        "target": 90
+      },
+      {
+        "name": "metric.sm",
+        "role": "metric",
+        "size": 20,
+        "weight": 700,
+        "target": 60
+      },
+      {
+        "name": "metric.md",
+        "role": "metric",
+        "size": 28,
+        "weight": 700,
+        "target": 45
+      },
+      {
+        "name": "metric.lg",
+        "role": "metric",
+        "size": 36,
+        "weight": 700,
+        "target": 45
+      },
+      {
+        "name": "table.header.sm",
+        "role": "table.header",
+        "size": 12,
+        "weight": 600,
+        "target": null
+      },
+      {
+        "name": "table.header.md",
+        "role": "table.header",
+        "size": 14,
+        "weight": 600,
+        "target": 90
+      },
+      {
+        "name": "table.header.lg",
+        "role": "table.header",
+        "size": 16,
+        "weight": 600,
+        "target": 75
+      },
+      {
+        "name": "table.cell.sm",
+        "role": "table.cell",
+        "size": 12,
+        "weight": 400,
+        "target": null
+      },
+      {
+        "name": "table.cell.sm-strong",
+        "role": "table.cell",
+        "size": 12,
+        "weight": 600,
+        "target": null
+      },
+      {
+        "name": "table.cell.md",
+        "role": "table.cell",
+        "size": 14,
+        "weight": 400,
+        "target": 90
+      },
+      {
+        "name": "table.cell.md-strong",
+        "role": "table.cell",
+        "size": 14,
+        "weight": 600,
+        "target": 90
+      },
+      {
+        "name": "table.cell.lg",
+        "role": "table.cell",
+        "size": 16,
+        "weight": 400,
+        "target": 90
+      },
+      {
+        "name": "table.cell.lg-strong",
+        "role": "table.cell",
+        "size": 16,
+        "weight": 600,
+        "target": 75
+      }
+    ],
+    "carriers": [
+      {
+        "mode": "light",
+        "colour": "content.secondary",
+        "lc": 73.2,
+        "weakestOn": "pole.sunken",
+        "carries": [],
+        "cannot": [
+          {
+            "name": "supporting.sm",
+            "target": 90
+          },
+          {
+            "name": "supporting.sm-strong",
+            "target": 90
+          },
+          {
+            "name": "supporting.md",
+            "target": 90
+          },
+          {
+            "name": "supporting.md-strong",
+            "target": 75
+          },
+          {
+            "name": "caption.md",
+            "target": 90
+          },
+          {
+            "name": "caption.md-subtle",
+            "target": 90
+          }
+        ]
+      },
+      {
+        "mode": "light",
+        "colour": "neutral.ink-subtle",
+        "lc": 77.3,
+        "weakestOn": "pole.sunken",
+        "carries": [
+          "label.lg",
+          "label.xl",
+          "label.xl-subtle",
+          "supporting.md-strong"
+        ],
+        "cannot": [
+          {
+            "name": "label.md",
+            "target": 90
+          },
+          {
+            "name": "label.md-subtle",
+            "target": 90
+          },
+          {
+            "name": "label.lg-subtle",
+            "target": 90
+          },
+          {
+            "name": "supporting.sm",
+            "target": 90
+          },
+          {
+            "name": "supporting.sm-strong",
+            "target": 90
+          },
+          {
+            "name": "supporting.md",
+            "target": 90
+          }
+        ]
+      },
+      {
+        "mode": "light",
+        "colour": "on-fill",
+        "lc": 77.7,
+        "weakestOn": "positive.fill",
+        "carries": [
+          "label.lg",
+          "label.xl",
+          "label.xl-subtle"
+        ],
+        "cannot": [
+          {
+            "name": "label.md",
+            "target": 90
+          },
+          {
+            "name": "label.md-subtle",
+            "target": 90
+          },
+          {
+            "name": "label.lg-subtle",
+            "target": 90
+          }
+        ]
+      },
+      {
+        "mode": "dark",
+        "colour": "content.secondary",
+        "lc": 59,
+        "weakestOn": "pole.overlay",
+        "carries": [],
+        "cannot": [
+          {
+            "name": "supporting.sm",
+            "target": 90
+          },
+          {
+            "name": "supporting.sm-strong",
+            "target": 90
+          },
+          {
+            "name": "supporting.md",
+            "target": 90
+          },
+          {
+            "name": "supporting.md-strong",
+            "target": 75
+          },
+          {
+            "name": "caption.md",
+            "target": 90
+          },
+          {
+            "name": "caption.md-subtle",
+            "target": 90
+          }
+        ]
+      },
+      {
+        "mode": "dark",
+        "colour": "neutral.ink-subtle",
+        "lc": 65.4,
+        "weakestOn": "pole.overlay",
+        "carries": [
+          "label.xl"
+        ],
+        "cannot": [
+          {
+            "name": "label.md",
+            "target": 90
+          },
+          {
+            "name": "label.md-subtle",
+            "target": 90
+          },
+          {
+            "name": "label.lg",
+            "target": 75
+          },
+          {
+            "name": "label.lg-subtle",
+            "target": 90
+          },
+          {
+            "name": "label.xl-subtle",
+            "target": 75
+          },
+          {
+            "name": "supporting.sm",
+            "target": 90
+          },
+          {
+            "name": "supporting.sm-strong",
+            "target": 90
+          },
+          {
+            "name": "supporting.md",
+            "target": 90
+          },
+          {
+            "name": "supporting.md-strong",
+            "target": 75
+          }
+        ]
+      },
+      {
+        "mode": "dark",
+        "colour": "on-fill",
+        "lc": 57.6,
+        "weakestOn": "negative.fill",
+        "carries": [],
+        "cannot": [
+          {
+            "name": "label.md",
+            "target": 90
+          },
+          {
+            "name": "label.md-subtle",
+            "target": 90
+          },
+          {
+            "name": "label.lg",
+            "target": 75
+          },
+          {
+            "name": "label.lg-subtle",
+            "target": 90
+          },
+          {
+            "name": "label.xl",
+            "target": 60
+          },
+          {
+            "name": "label.xl-subtle",
+            "target": 75
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,1225 @@
+{
+  "styles": {
+    "display/1/default": {
+      "family": "heading",
+      "weight": 700,
+      "mobile": {
+        "size": 52,
+        "lineHeight": 60,
+        "tracking": -0.02
+      },
+      "desktop": {
+        "size": 60,
+        "lineHeight": 68,
+        "tracking": -0.02
+      },
+      "paragraphSpacing": 0
+    },
+    "display/2/default": {
+      "family": "heading",
+      "weight": 700,
+      "mobile": {
+        "size": 40,
+        "lineHeight": 46,
+        "tracking": -0.017
+      },
+      "desktop": {
+        "size": 48,
+        "lineHeight": 56,
+        "tracking": -0.02
+      },
+      "paragraphSpacing": 0
+    },
+    "display/3/default": {
+      "family": "heading",
+      "weight": 700,
+      "mobile": {
+        "size": 32,
+        "lineHeight": 36,
+        "tracking": -0.013
+      },
+      "desktop": {
+        "size": 40,
+        "lineHeight": 46,
+        "tracking": -0.017
+      },
+      "paragraphSpacing": 0
+    },
+    "heading/1/default": {
+      "family": "heading",
+      "weight": 700,
+      "mobile": {
+        "size": 28,
+        "lineHeight": 32,
+        "tracking": -0.012
+      },
+      "desktop": {
+        "size": 32,
+        "lineHeight": 36,
+        "tracking": -0.013
+      },
+      "paragraphSpacing": 0
+    },
+    "heading/1/subtle": {
+      "family": "heading",
+      "weight": 400,
+      "mobile": {
+        "size": 28,
+        "lineHeight": 32,
+        "tracking": -0.012
+      },
+      "desktop": {
+        "size": 32,
+        "lineHeight": 36,
+        "tracking": -0.013
+      },
+      "paragraphSpacing": 0
+    },
+    "heading/2/default": {
+      "family": "heading",
+      "weight": 700,
+      "mobile": {
+        "size": 20,
+        "lineHeight": 24,
+        "tracking": -0.005
+      },
+      "desktop": {
+        "size": 24,
+        "lineHeight": 28,
+        "tracking": -0.01
+      },
+      "paragraphSpacing": 0
+    },
+    "heading/2/subtle": {
+      "family": "heading",
+      "weight": 400,
+      "mobile": {
+        "size": 20,
+        "lineHeight": 24,
+        "tracking": -0.005
+      },
+      "desktop": {
+        "size": 24,
+        "lineHeight": 28,
+        "tracking": -0.01
+      },
+      "paragraphSpacing": 0
+    },
+    "heading/3/default": {
+      "family": "heading",
+      "weight": 700,
+      "mobile": {
+        "size": 20,
+        "lineHeight": 24,
+        "tracking": -0.005
+      },
+      "desktop": {
+        "size": 20,
+        "lineHeight": 24,
+        "tracking": -0.005
+      },
+      "paragraphSpacing": 0
+    },
+    "heading/3/subtle": {
+      "family": "heading",
+      "weight": 400,
+      "mobile": {
+        "size": 20,
+        "lineHeight": 24,
+        "tracking": -0.005
+      },
+      "desktop": {
+        "size": 20,
+        "lineHeight": 24,
+        "tracking": -0.005
+      },
+      "paragraphSpacing": 0
+    },
+    "heading/4/default": {
+      "family": "heading",
+      "weight": 700,
+      "mobile": {
+        "size": 16,
+        "lineHeight": 18,
+        "tracking": 0
+      },
+      "desktop": {
+        "size": 18,
+        "lineHeight": 20,
+        "tracking": -0.002
+      },
+      "paragraphSpacing": 0
+    },
+    "heading/4/subtle": {
+      "family": "heading",
+      "weight": 400,
+      "mobile": {
+        "size": 16,
+        "lineHeight": 18,
+        "tracking": 0
+      },
+      "desktop": {
+        "size": 18,
+        "lineHeight": 20,
+        "tracking": -0.002
+      },
+      "paragraphSpacing": 0
+    },
+    "title/sm/default": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.01
+      },
+      "desktop": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.01
+      },
+      "paragraphSpacing": 0
+    },
+    "title/sm/subtle": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.005
+      },
+      "desktop": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.005
+      },
+      "paragraphSpacing": 0
+    },
+    "title/md/default": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "desktop": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "paragraphSpacing": 0
+    },
+    "title/md/subtle": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "desktop": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "paragraphSpacing": 0
+    },
+    "title/lg/default": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 18,
+        "lineHeight": 26,
+        "tracking": -0.002
+      },
+      "desktop": {
+        "size": 18,
+        "lineHeight": 26,
+        "tracking": -0.002
+      },
+      "paragraphSpacing": 0
+    },
+    "title/lg/subtle": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 18,
+        "lineHeight": 26,
+        "tracking": -0.002
+      },
+      "desktop": {
+        "size": 18,
+        "lineHeight": 26,
+        "tracking": -0.002
+      },
+      "paragraphSpacing": 0
+    },
+    "eyebrow/sm/default": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 12,
+        "lineHeight": 14,
+        "tracking": 0.06
+      },
+      "desktop": {
+        "size": 12,
+        "lineHeight": 14,
+        "tracking": 0.06
+      },
+      "case": "uppercase",
+      "paragraphSpacing": 0
+    },
+    "eyebrow/md/default": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 14,
+        "lineHeight": 16,
+        "tracking": 0.05
+      },
+      "desktop": {
+        "size": 14,
+        "lineHeight": 16,
+        "tracking": 0.05
+      },
+      "case": "uppercase",
+      "paragraphSpacing": 0
+    },
+    "lead/md/default": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 18,
+        "lineHeight": 28,
+        "tracking": -0.002
+      },
+      "desktop": {
+        "size": 18,
+        "lineHeight": 28,
+        "tracking": -0.002
+      },
+      "paragraphSpacing": 18
+    },
+    "lead/md/strong": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 18,
+        "lineHeight": 28,
+        "tracking": -0.002
+      },
+      "desktop": {
+        "size": 18,
+        "lineHeight": 28,
+        "tracking": -0.002
+      },
+      "paragraphSpacing": 18
+    },
+    "lead/lg/default": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 20,
+        "lineHeight": 30,
+        "tracking": -0.005
+      },
+      "desktop": {
+        "size": 20,
+        "lineHeight": 30,
+        "tracking": -0.005
+      },
+      "paragraphSpacing": 20
+    },
+    "lead/lg/strong": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 20,
+        "lineHeight": 30,
+        "tracking": -0.005
+      },
+      "desktop": {
+        "size": 20,
+        "lineHeight": 30,
+        "tracking": -0.005
+      },
+      "paragraphSpacing": 20
+    },
+    "body/sm/default": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.005
+      },
+      "desktop": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.005
+      },
+      "paragraphSpacing": 14
+    },
+    "body/sm/strong": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.01
+      },
+      "desktop": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.01
+      },
+      "paragraphSpacing": 14
+    },
+    "body/md/default": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 16,
+        "lineHeight": 24,
+        "tracking": 0
+      },
+      "desktop": {
+        "size": 16,
+        "lineHeight": 24,
+        "tracking": 0
+      },
+      "paragraphSpacing": 16
+    },
+    "body/md/strong": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 16,
+        "lineHeight": 24,
+        "tracking": 0
+      },
+      "desktop": {
+        "size": 16,
+        "lineHeight": 24,
+        "tracking": 0
+      },
+      "paragraphSpacing": 16
+    },
+    "body/lg/default": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 18,
+        "lineHeight": 28,
+        "tracking": -0.002
+      },
+      "desktop": {
+        "size": 18,
+        "lineHeight": 28,
+        "tracking": -0.002
+      },
+      "paragraphSpacing": 18
+    },
+    "body/lg/strong": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 18,
+        "lineHeight": 28,
+        "tracking": -0.002
+      },
+      "desktop": {
+        "size": 18,
+        "lineHeight": 28,
+        "tracking": -0.002
+      },
+      "paragraphSpacing": 18
+    },
+    "quote/md/default": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 18,
+        "lineHeight": 28,
+        "tracking": -0.002
+      },
+      "desktop": {
+        "size": 18,
+        "lineHeight": 28,
+        "tracking": -0.002
+      },
+      "paragraphSpacing": 18
+    },
+    "quote/md/strong": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 18,
+        "lineHeight": 28,
+        "tracking": -0.002
+      },
+      "desktop": {
+        "size": 18,
+        "lineHeight": 28,
+        "tracking": -0.002
+      },
+      "paragraphSpacing": 18
+    },
+    "quote/lg/default": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 20,
+        "lineHeight": 24,
+        "tracking": -0.005
+      },
+      "desktop": {
+        "size": 24,
+        "lineHeight": 28,
+        "tracking": -0.01
+      },
+      "paragraphSpacing": 20
+    },
+    "quote/lg/strong": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 20,
+        "lineHeight": 24,
+        "tracking": -0.005
+      },
+      "desktop": {
+        "size": 24,
+        "lineHeight": 28,
+        "tracking": -0.01
+      },
+      "paragraphSpacing": 20
+    },
+    "code/sm/default": {
+      "family": "code",
+      "weight": 400,
+      "mobile": {
+        "size": 12,
+        "lineHeight": 16,
+        "tracking": 0.01
+      },
+      "desktop": {
+        "size": 12,
+        "lineHeight": 16,
+        "tracking": 0.01
+      },
+      "paragraphSpacing": 0
+    },
+    "code/md/default": {
+      "family": "code",
+      "weight": 400,
+      "mobile": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.005
+      },
+      "desktop": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.005
+      },
+      "paragraphSpacing": 0
+    },
+    "label/sm/default": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 12,
+        "lineHeight": 16,
+        "tracking": 0.02
+      },
+      "desktop": {
+        "size": 12,
+        "lineHeight": 16,
+        "tracking": 0.02
+      },
+      "paragraphSpacing": 0
+    },
+    "label/sm/subtle": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 12,
+        "lineHeight": 16,
+        "tracking": 0.01
+      },
+      "desktop": {
+        "size": 12,
+        "lineHeight": 16,
+        "tracking": 0.01
+      },
+      "paragraphSpacing": 0
+    },
+    "label/md/default": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.01
+      },
+      "desktop": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.01
+      },
+      "paragraphSpacing": 0
+    },
+    "label/md/subtle": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.005
+      },
+      "desktop": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.005
+      },
+      "paragraphSpacing": 0
+    },
+    "label/lg/default": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "desktop": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "paragraphSpacing": 0
+    },
+    "label/lg/subtle": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "desktop": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "paragraphSpacing": 0
+    },
+    "label/xl/default": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 18,
+        "lineHeight": 26,
+        "tracking": -0.002
+      },
+      "desktop": {
+        "size": 18,
+        "lineHeight": 26,
+        "tracking": -0.002
+      },
+      "paragraphSpacing": 0
+    },
+    "label/xl/subtle": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 18,
+        "lineHeight": 26,
+        "tracking": -0.002
+      },
+      "desktop": {
+        "size": 18,
+        "lineHeight": 26,
+        "tracking": -0.002
+      },
+      "paragraphSpacing": 0
+    },
+    "value/sm/default": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.005
+      },
+      "desktop": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.005
+      },
+      "paragraphSpacing": 0
+    },
+    "value/sm/strong": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.01
+      },
+      "desktop": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.01
+      },
+      "paragraphSpacing": 0
+    },
+    "value/md/default": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "desktop": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "paragraphSpacing": 0
+    },
+    "value/md/strong": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "desktop": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "paragraphSpacing": 0
+    },
+    "value/lg/default": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 18,
+        "lineHeight": 26,
+        "tracking": -0.002
+      },
+      "desktop": {
+        "size": 18,
+        "lineHeight": 26,
+        "tracking": -0.002
+      },
+      "paragraphSpacing": 0
+    },
+    "value/lg/strong": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 18,
+        "lineHeight": 26,
+        "tracking": -0.002
+      },
+      "desktop": {
+        "size": 18,
+        "lineHeight": 26,
+        "tracking": -0.002
+      },
+      "paragraphSpacing": 0
+    },
+    "option/sm/default": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.005
+      },
+      "desktop": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.005
+      },
+      "paragraphSpacing": 0
+    },
+    "option/sm/strong": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.01
+      },
+      "desktop": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.01
+      },
+      "paragraphSpacing": 0
+    },
+    "option/md/default": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "desktop": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "paragraphSpacing": 0
+    },
+    "option/md/strong": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "desktop": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "paragraphSpacing": 0
+    },
+    "option/lg/default": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 18,
+        "lineHeight": 26,
+        "tracking": -0.002
+      },
+      "desktop": {
+        "size": 18,
+        "lineHeight": 26,
+        "tracking": -0.002
+      },
+      "paragraphSpacing": 0
+    },
+    "option/lg/strong": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 18,
+        "lineHeight": 26,
+        "tracking": -0.002
+      },
+      "desktop": {
+        "size": 18,
+        "lineHeight": 26,
+        "tracking": -0.002
+      },
+      "paragraphSpacing": 0
+    },
+    "supporting/sm/default": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.005
+      },
+      "desktop": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.005
+      },
+      "paragraphSpacing": 0
+    },
+    "supporting/sm/strong": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.01
+      },
+      "desktop": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.01
+      },
+      "paragraphSpacing": 0
+    },
+    "supporting/md/default": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "desktop": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "paragraphSpacing": 0
+    },
+    "supporting/md/strong": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "desktop": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "paragraphSpacing": 0
+    },
+    "caption/sm/default": {
+      "family": "text",
+      "weight": 500,
+      "mobile": {
+        "size": 12,
+        "lineHeight": 14,
+        "tracking": 0.01
+      },
+      "desktop": {
+        "size": 12,
+        "lineHeight": 14,
+        "tracking": 0.01
+      },
+      "paragraphSpacing": 0
+    },
+    "caption/sm/subtle": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 12,
+        "lineHeight": 14,
+        "tracking": 0.01
+      },
+      "desktop": {
+        "size": 12,
+        "lineHeight": 14,
+        "tracking": 0.01
+      },
+      "paragraphSpacing": 0
+    },
+    "caption/md/default": {
+      "family": "text",
+      "weight": 500,
+      "mobile": {
+        "size": 14,
+        "lineHeight": 16,
+        "tracking": 0.005
+      },
+      "desktop": {
+        "size": 14,
+        "lineHeight": 16,
+        "tracking": 0.005
+      },
+      "paragraphSpacing": 0
+    },
+    "caption/md/subtle": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 14,
+        "lineHeight": 16,
+        "tracking": 0.005
+      },
+      "desktop": {
+        "size": 14,
+        "lineHeight": 16,
+        "tracking": 0.005
+      },
+      "paragraphSpacing": 0
+    },
+    "fine/sm/default": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 12,
+        "lineHeight": 16,
+        "tracking": 0.01
+      },
+      "desktop": {
+        "size": 12,
+        "lineHeight": 16,
+        "tracking": 0.01
+      },
+      "paragraphSpacing": 0
+    },
+    "fine/sm/strong": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 12,
+        "lineHeight": 16,
+        "tracking": 0.02
+      },
+      "desktop": {
+        "size": 12,
+        "lineHeight": 16,
+        "tracking": 0.02
+      },
+      "paragraphSpacing": 0
+    },
+    "fine/md/default": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.005
+      },
+      "desktop": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.005
+      },
+      "paragraphSpacing": 0
+    },
+    "fine/md/strong": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.01
+      },
+      "desktop": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.01
+      },
+      "paragraphSpacing": 0
+    },
+    "metric/sm/default": {
+      "family": "heading",
+      "weight": 700,
+      "mobile": {
+        "size": 20,
+        "lineHeight": 24,
+        "tracking": -0.005
+      },
+      "desktop": {
+        "size": 20,
+        "lineHeight": 24,
+        "tracking": -0.005
+      },
+      "paragraphSpacing": 0
+    },
+    "metric/md/default": {
+      "family": "heading",
+      "weight": 700,
+      "mobile": {
+        "size": 28,
+        "lineHeight": 32,
+        "tracking": -0.012
+      },
+      "desktop": {
+        "size": 28,
+        "lineHeight": 32,
+        "tracking": -0.012
+      },
+      "paragraphSpacing": 0
+    },
+    "metric/lg/default": {
+      "family": "heading",
+      "weight": 700,
+      "mobile": {
+        "size": 36,
+        "lineHeight": 42,
+        "tracking": -0.015
+      },
+      "desktop": {
+        "size": 40,
+        "lineHeight": 46,
+        "tracking": -0.017
+      },
+      "paragraphSpacing": 0
+    },
+    "table.header/sm/default": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 12,
+        "lineHeight": 14,
+        "tracking": 0.02
+      },
+      "desktop": {
+        "size": 12,
+        "lineHeight": 14,
+        "tracking": 0.02
+      },
+      "paragraphSpacing": 0
+    },
+    "table.header/md/default": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 14,
+        "lineHeight": 16,
+        "tracking": 0.01
+      },
+      "desktop": {
+        "size": 14,
+        "lineHeight": 16,
+        "tracking": 0.01
+      },
+      "paragraphSpacing": 0
+    },
+    "table.header/lg/default": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 16,
+        "lineHeight": 18,
+        "tracking": 0
+      },
+      "desktop": {
+        "size": 16,
+        "lineHeight": 18,
+        "tracking": 0
+      },
+      "paragraphSpacing": 0
+    },
+    "table.cell/sm/default": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 12,
+        "lineHeight": 16,
+        "tracking": 0.01
+      },
+      "desktop": {
+        "size": 12,
+        "lineHeight": 16,
+        "tracking": 0.01
+      },
+      "paragraphSpacing": 0
+    },
+    "table.cell/sm/strong": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 12,
+        "lineHeight": 16,
+        "tracking": 0.02
+      },
+      "desktop": {
+        "size": 12,
+        "lineHeight": 16,
+        "tracking": 0.02
+      },
+      "paragraphSpacing": 0
+    },
+    "table.cell/md/default": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.005
+      },
+      "desktop": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.005
+      },
+      "paragraphSpacing": 0
+    },
+    "table.cell/md/strong": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.01
+      },
+      "desktop": {
+        "size": 14,
+        "lineHeight": 20,
+        "tracking": 0.01
+      },
+      "paragraphSpacing": 0
+    },
+    "table.cell/lg/default": {
+      "family": "text",
+      "weight": 400,
+      "mobile": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "desktop": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "paragraphSpacing": 0
+    },
+    "table.cell/lg/strong": {
+      "family": "text",
+      "weight": 600,
+      "mobile": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "desktop": {
+        "size": 16,
+        "lineHeight": 22,
+        "tracking": 0
+      },
+      "paragraphSpacing": 0
+    }
+  },
+  "spacing": {
+    "prose/before/heading-1": {
+      "mobile": 56,
+      "desktop": 64
+    },
+    "prose/after/heading-1": {
+      "mobile": 14,
+      "desktop": 16
+    },
+    "prose/before/heading-2": {
+      "mobile": 40,
+      "desktop": 48
+    },
+    "prose/after/heading-2": {
+      "mobile": 10,
+      "desktop": 12
+    },
+    "prose/before/heading-3": {
+      "mobile": 40,
+      "desktop": 40
+    },
+    "prose/after/heading-3": {
+      "mobile": 10,
+      "desktop": 10
+    },
+    "prose/before/heading-4": {
+      "mobile": 32,
+      "desktop": 36
+    },
+    "prose/after/heading-4": {
+      "mobile": 8,
+      "desktop": 10
+    }
+  }
+}

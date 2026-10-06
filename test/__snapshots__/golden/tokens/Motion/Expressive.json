@@ -1,0 +1,315 @@
+{
+  "easing": {
+    "standard": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.4,
+        0.14,
+        0.3,
+        1
+      ]
+    },
+    "enter": {
+      "$type": "cubicBezier",
+      "$value": [
+        0,
+        0,
+        0.3,
+        1
+      ]
+    },
+    "exit": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.4,
+        0.14,
+        1,
+        1
+      ]
+    },
+    "linear": {
+      "$type": "other",
+      "$value": "linear"
+    },
+    "spring": {
+      "$type": "other",
+      "$value": "linear(0, 0.0241, 0.0863, 0.173, 0.2736, 0.3795, 0.4845, 0.5839, 0.6748, 0.7554, 0.8248, 0.883, 0.9304, 0.9678, 0.9964, 1.0171, 1.0314, 1.0402, 1.0448, 1.046, 1.0448, 1.0418, 1.0378, 1.0332, 1.0283, 1.0235, 1.0189, 1.0148, 1.0111, 1.0079, 1.0053, 1.0031, 1.0014, 1.0001, 0.9992, 0.9985, 0.9981, 0.9979, 0.9979, 0.9979, 1)"
+    }
+  },
+  "motion": {
+    "state-in": {
+      "duration": {
+        "$type": "duration",
+        "$value": "{duration.instant}"
+      },
+      "easing": {
+        "$type": "other",
+        "$value": "{easing.linear}"
+      }
+    },
+    "state-out": {
+      "duration": {
+        "$type": "duration",
+        "$value": "{duration.200}"
+      },
+      "easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.standard}"
+      }
+    },
+    "toggle": {
+      "duration": {
+        "$type": "duration",
+        "$value": "{duration.250}"
+      },
+      "easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.standard}"
+      },
+      "move-duration": {
+        "$type": "duration",
+        "$value": "{motion.toggle.duration}"
+      },
+      "move-easing": {
+        "$type": "other",
+        "$value": "{easing.spring}"
+      }
+    },
+    "enter-sm": {
+      "duration": {
+        "$type": "duration",
+        "$value": "{duration.200}"
+      },
+      "easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.enter}"
+      },
+      "move-duration": {
+        "$type": "duration",
+        "$value": "{motion.enter-sm.duration}"
+      },
+      "move-easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.enter}"
+      },
+      "distance": {
+        "$type": "dimension",
+        "$value": "{size.8}"
+      },
+      "scale": {
+        "$type": "number",
+        "$value": 1
+      }
+    },
+    "exit-sm": {
+      "duration": {
+        "$type": "duration",
+        "$value": "{duration.150}"
+      },
+      "easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.exit}"
+      },
+      "move-duration": {
+        "$type": "duration",
+        "$value": "{motion.exit-sm.duration}"
+      },
+      "move-easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.exit}"
+      },
+      "distance": {
+        "$type": "dimension",
+        "$value": "{size.8}"
+      },
+      "scale": {
+        "$type": "number",
+        "$value": 1
+      }
+    },
+    "enter-md": {
+      "duration": {
+        "$type": "duration",
+        "$value": "{duration.300}"
+      },
+      "easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.enter}"
+      },
+      "move-duration": {
+        "$type": "duration",
+        "$value": "{motion.enter-md.duration}"
+      },
+      "move-easing": {
+        "$type": "other",
+        "$value": "{easing.spring}"
+      },
+      "distance": {
+        "$type": "dimension",
+        "$value": "{size.16}"
+      },
+      "scale": {
+        "$type": "number",
+        "$value": 1
+      }
+    },
+    "exit-md": {
+      "duration": {
+        "$type": "duration",
+        "$value": "{duration.200}"
+      },
+      "easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.exit}"
+      },
+      "move-duration": {
+        "$type": "duration",
+        "$value": "{motion.exit-md.duration}"
+      },
+      "move-easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.exit}"
+      },
+      "distance": {
+        "$type": "dimension",
+        "$value": "{size.16}"
+      },
+      "scale": {
+        "$type": "number",
+        "$value": 1
+      }
+    },
+    "enter-lg": {
+      "duration": {
+        "$type": "duration",
+        "$value": "{duration.400}"
+      },
+      "easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.enter}"
+      },
+      "move-duration": {
+        "$type": "duration",
+        "$value": "{motion.enter-lg.duration}"
+      },
+      "move-easing": {
+        "$type": "other",
+        "$value": "{easing.spring}"
+      },
+      "distance": {
+        "$type": "dimension",
+        "$value": "{size.24}"
+      },
+      "scale": {
+        "$type": "number",
+        "$value": 0.95
+      }
+    },
+    "exit-lg": {
+      "duration": {
+        "$type": "duration",
+        "$value": "{duration.250}"
+      },
+      "easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.exit}"
+      },
+      "move-duration": {
+        "$type": "duration",
+        "$value": "{motion.exit-lg.duration}"
+      },
+      "move-easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.exit}"
+      },
+      "distance": {
+        "$type": "dimension",
+        "$value": "{size.24}"
+      },
+      "scale": {
+        "$type": "number",
+        "$value": 0.95
+      }
+    },
+    "expand": {
+      "duration": {
+        "$type": "duration",
+        "$value": "{duration.300}"
+      },
+      "easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.standard}"
+      },
+      "move-duration": {
+        "$type": "duration",
+        "$value": "{motion.expand.duration}"
+      },
+      "move-easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.standard}"
+      }
+    },
+    "move": {
+      "duration": {
+        "$type": "duration",
+        "$value": "{duration.400}"
+      },
+      "easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.standard}"
+      },
+      "move-duration": {
+        "$type": "duration",
+        "$value": "{motion.move.duration}"
+      },
+      "move-easing": {
+        "$type": "other",
+        "$value": "{easing.spring}"
+      }
+    },
+    "loop": {
+      "duration": {
+        "$type": "duration",
+        "$value": "{duration.1000}"
+      },
+      "easing": {
+        "$type": "other",
+        "$value": "{easing.linear}"
+      }
+    },
+    "scroll": {
+      "duration": {
+        "$type": "duration",
+        "$value": "{duration.200}"
+      },
+      "easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.standard}"
+      }
+    },
+    "attention": {
+      "duration": {
+        "$type": "duration",
+        "$value": "{duration.400}"
+      },
+      "easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.standard}"
+      },
+      "move-duration": {
+        "$type": "duration",
+        "$value": "{motion.attention.duration}"
+      },
+      "move-easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.standard}"
+      }
+    },
+    "delay-hint": {
+      "duration": {
+        "$type": "duration",
+        "$value": "{duration.500}"
+      }
+    }
+  }
+}

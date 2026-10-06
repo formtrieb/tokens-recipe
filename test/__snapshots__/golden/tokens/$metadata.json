@@ -1,0 +1,15 @@
+{
+  "tokenSetOrder": [
+    "Mode/Light",
+    "Mode/Dark",
+    "Model/Base",
+    "Direction/Rtl",
+    "Pointer/Coarse",
+    "Contrast/Forced",
+    "Motion/Expressive",
+    "Motion/Productive-Reduced",
+    "Motion/Expressive-Reduced",
+    "Shape/Square",
+    "Shape/Round"
+  ]
+}

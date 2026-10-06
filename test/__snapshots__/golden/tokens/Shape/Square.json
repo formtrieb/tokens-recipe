@@ -1,0 +1,178 @@
+{
+  "radius": {
+    "action": {
+      "$type": "dimension",
+      "$value": "{size.8}"
+    },
+    "field": {
+      "$type": "dimension",
+      "$value": "{size.8}"
+    },
+    "field-multiline": {
+      "$type": "dimension",
+      "$value": "{size.8}"
+    },
+    "item": {
+      "$type": "dimension",
+      "$value": "{size.4}"
+    },
+    "tag": {
+      "$type": "dimension",
+      "$value": "{size.4}"
+    },
+    "badge": {
+      "$type": "dimension",
+      "$value": "9999px"
+    },
+    "container": {
+      "$type": "dimension",
+      "$value": "{size.8}"
+    },
+    "container-large": {
+      "$type": "dimension",
+      "$value": "{size.20}"
+    }
+  },
+  "control": {
+    "action": {
+      "pill": {
+        "$type": "dimension",
+        "$value": "0px"
+      }
+    },
+    "tag": {
+      "pill": {
+        "$type": "dimension",
+        "$value": "0px"
+      }
+    },
+    "field": {
+      "pill": {
+        "$type": "dimension",
+        "$value": "0px"
+      }
+    },
+    "row": {
+      "pill": {
+        "$type": "dimension",
+        "$value": "0px"
+      }
+    },
+    "xs": {
+      "action": {
+        "radius": {
+          "$type": "dimension",
+          "$value": "{size.4}"
+        }
+      },
+      "tag": {
+        "radius": {
+          "$type": "dimension",
+          "$value": "{size.4}"
+        }
+      },
+      "field": {
+        "radius": {
+          "$type": "dimension",
+          "$value": "{size.4}"
+        }
+      },
+      "row": {
+        "radius": {
+          "$type": "dimension",
+          "$value": "{size.4}"
+        }
+      }
+    },
+    "sm": {
+      "action": {
+        "radius": {
+          "$type": "dimension",
+          "$value": "{size.6}"
+        }
+      },
+      "tag": {
+        "radius": {
+          "$type": "dimension",
+          "$value": "{size.4}"
+        }
+      },
+      "field": {
+        "radius": {
+          "$type": "dimension",
+          "$value": "{size.6}"
+        },
+        "tag-radius": {
+          "$type": "dimension",
+          "$value": "{size.2}"
+        }
+      },
+      "row": {
+        "radius": {
+          "$type": "dimension",
+          "$value": "{size.4}"
+        }
+      }
+    },
+    "md": {
+      "action": {
+        "radius": {
+          "$type": "dimension",
+          "$value": "{size.8}"
+        }
+      },
+      "tag": {
+        "radius": {
+          "$type": "dimension",
+          "$value": "{size.4}"
+        }
+      },
+      "field": {
+        "radius": {
+          "$type": "dimension",
+          "$value": "{size.8}"
+        },
+        "tag-radius": {
+          "$type": "dimension",
+          "$value": "{size.4}"
+        }
+      },
+      "row": {
+        "radius": {
+          "$type": "dimension",
+          "$value": "{size.4}"
+        }
+      }
+    },
+    "lg": {
+      "action": {
+        "radius": {
+          "$type": "dimension",
+          "$value": "{size.8}"
+        }
+      },
+      "tag": {
+        "radius": {
+          "$type": "dimension",
+          "$value": "{size.4}"
+        }
+      },
+      "field": {
+        "radius": {
+          "$type": "dimension",
+          "$value": "{size.8}"
+        },
+        "tag-radius": {
+          "$type": "dimension",
+          "$value": "{size.4}"
+        }
+      },
+      "row": {
+        "radius": {
+          "$type": "dimension",
+          "$value": "{size.4}"
+        }
+      }
+    }
+  }
+}

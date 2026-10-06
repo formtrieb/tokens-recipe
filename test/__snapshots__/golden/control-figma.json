@@ -1,0 +1,302 @@
+{
+  "sizes": {
+    "xs": {
+      "fine": {
+        "height": 24,
+        "rowHeight": 24,
+        "icon": 16,
+        "iconAlone": 16,
+        "gap": 4,
+        "gapPlain": 2,
+        "families": {
+          "action": {
+            "text": "label/sm",
+            "inline": 12,
+            "inlineIcon": 8,
+            "block": 4,
+            "radius": "round"
+          },
+          "tag": {
+            "text": "label/sm",
+            "inline": 8,
+            "inlineIcon": 4,
+            "block": 4,
+            "radius": 4
+          },
+          "field": {
+            "text": "value/sm",
+            "inline": 8,
+            "inlineIcon": 4,
+            "block": 2,
+            "radius": 4
+          },
+          "row": {
+            "text": "option/sm",
+            "inline": 8,
+            "inlineIcon": 4,
+            "block": 2,
+            "radius": 4
+          }
+        }
+      },
+      "coarse": {
+        "sameAs": "sm"
+      }
+    },
+    "sm": {
+      "fine": {
+        "height": 32,
+        "rowHeight": 32,
+        "icon": 16,
+        "iconAlone": 20,
+        "gap": 4,
+        "gapPlain": 2,
+        "fieldTagRadius": 2,
+        "families": {
+          "action": {
+            "text": "label/md",
+            "inline": 16,
+            "inlineIcon": 12,
+            "block": 6,
+            "radius": "round"
+          },
+          "tag": {
+            "text": "label/md",
+            "inline": 12,
+            "inlineIcon": 8,
+            "block": 6,
+            "radius": 4
+          },
+          "field": {
+            "text": "value/sm",
+            "inline": 12,
+            "inlineIcon": 8,
+            "block": 6,
+            "radius": 6
+          },
+          "row": {
+            "text": "option/sm",
+            "inline": 12,
+            "inlineIcon": 8,
+            "block": 6,
+            "radius": 4
+          }
+        }
+      },
+      "coarse": {
+        "height": 40,
+        "rowHeight": 44,
+        "icon": 16,
+        "iconAlone": 20,
+        "gap": 4,
+        "gapPlain": 2,
+        "fieldTagRadius": 2,
+        "families": {
+          "action": {
+            "text": "label/md",
+            "inline": 16,
+            "inlineIcon": 12,
+            "block": 10,
+            "radius": "round"
+          },
+          "tag": {
+            "text": "label/md",
+            "inline": 12,
+            "inlineIcon": 8,
+            "block": 10,
+            "radius": 4
+          },
+          "field": {
+            "text": "value/sm",
+            "inline": 12,
+            "inlineIcon": 8,
+            "block": 10,
+            "radius": 6
+          },
+          "row": {
+            "text": "option/sm",
+            "inline": 12,
+            "inlineIcon": 8,
+            "block": 12,
+            "radius": 4
+          }
+        }
+      }
+    },
+    "md": {
+      "fine": {
+        "height": 40,
+        "rowHeight": 40,
+        "icon": 20,
+        "iconAlone": 24,
+        "gap": 6,
+        "gapPlain": 4,
+        "fieldTagRadius": 4,
+        "families": {
+          "action": {
+            "text": "label/lg",
+            "inline": 20,
+            "inlineIcon": 16,
+            "block": 9,
+            "radius": "round"
+          },
+          "tag": {
+            "text": "label/lg",
+            "inline": 16,
+            "inlineIcon": 12,
+            "block": 9,
+            "radius": 4
+          },
+          "field": {
+            "text": "value/md",
+            "inline": 12,
+            "inlineIcon": 8,
+            "block": 9,
+            "radius": 8
+          },
+          "row": {
+            "text": "option/md",
+            "inline": 12,
+            "inlineIcon": 8,
+            "block": 9,
+            "radius": 4
+          }
+        }
+      },
+      "coarse": {
+        "height": 48,
+        "rowHeight": 48,
+        "icon": 20,
+        "iconAlone": 24,
+        "gap": 6,
+        "gapPlain": 4,
+        "fieldTagRadius": 4,
+        "families": {
+          "action": {
+            "text": "label/lg",
+            "inline": 20,
+            "inlineIcon": 16,
+            "block": 13,
+            "radius": "round"
+          },
+          "tag": {
+            "text": "label/lg",
+            "inline": 16,
+            "inlineIcon": 12,
+            "block": 13,
+            "radius": 4
+          },
+          "field": {
+            "text": "value/md",
+            "inline": 12,
+            "inlineIcon": 8,
+            "block": 13,
+            "radius": 8
+          },
+          "row": {
+            "text": "option/md",
+            "inline": 12,
+            "inlineIcon": 8,
+            "block": 13,
+            "radius": 4
+          }
+        }
+      }
+    },
+    "lg": {
+      "fine": {
+        "height": 48,
+        "rowHeight": 48,
+        "icon": 24,
+        "iconAlone": 28,
+        "gap": 8,
+        "gapPlain": 6,
+        "fieldTagRadius": 4,
+        "families": {
+          "action": {
+            "text": "label/xl",
+            "inline": 24,
+            "inlineIcon": 20,
+            "block": 11,
+            "radius": "round"
+          },
+          "tag": {
+            "text": "label/xl",
+            "inline": 20,
+            "inlineIcon": 16,
+            "block": 11,
+            "radius": 4
+          },
+          "field": {
+            "text": "value/lg",
+            "inline": 16,
+            "inlineIcon": 12,
+            "block": 11,
+            "radius": 8
+          },
+          "row": {
+            "text": "option/lg",
+            "inline": 16,
+            "inlineIcon": 12,
+            "block": 11,
+            "radius": 4
+          }
+        }
+      },
+      "coarse": {
+        "height": 56,
+        "rowHeight": 56,
+        "icon": 24,
+        "iconAlone": 28,
+        "gap": 8,
+        "gapPlain": 6,
+        "fieldTagRadius": 4,
+        "families": {
+          "action": {
+            "text": "label/xl",
+            "inline": 24,
+            "inlineIcon": 20,
+            "block": 15,
+            "radius": "round"
+          },
+          "tag": {
+            "text": "label/xl",
+            "inline": 20,
+            "inlineIcon": 16,
+            "block": 15,
+            "radius": 4
+          },
+          "field": {
+            "text": "value/lg",
+            "inline": 16,
+            "inlineIcon": 12,
+            "block": 15,
+            "radius": 8
+          },
+          "row": {
+            "text": "option/lg",
+            "inline": 16,
+            "inlineIcon": 12,
+            "block": 15,
+            "radius": 4
+          }
+        }
+      }
+    }
+  },
+  "target": {
+    "fine": 24,
+    "coarse": 44
+  },
+  "shape": "mixed",
+  "pill": {
+    "amount": 4,
+    "families": {
+      "action": 4,
+      "tag": 0,
+      "field": 0,
+      "row": 0
+    }
+  },
+  "note": "inline/inlineIcon from the OUTER edge; Figma strokes sit inside without layout space, so no border subtraction there"
+}

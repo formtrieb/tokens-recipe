@@ -1,0 +1,254 @@
+{
+  "character": "productive",
+  "characters": {
+    "productive": {
+      "curves": {
+        "standard": [
+          0.2,
+          0,
+          0.38,
+          0.9
+        ],
+        "enter": [
+          0,
+          0,
+          0.38,
+          0.9
+        ],
+        "exit": [
+          0.2,
+          0,
+          1,
+          0.9
+        ]
+      },
+      "roles": {
+        "state-in": {
+          "duration": 0,
+          "easing": "linear",
+          "reduced": "keep"
+        },
+        "state-out": {
+          "duration": 150,
+          "easing": "standard",
+          "reduced": "keep"
+        },
+        "toggle": {
+          "duration": 150,
+          "easing": "standard",
+          "moveEasing": "standard",
+          "reduced": "still"
+        },
+        "enter-sm": {
+          "duration": 150,
+          "easing": "enter",
+          "moveEasing": "enter",
+          "distance": 4,
+          "scale": 1,
+          "reduced": "fade"
+        },
+        "exit-sm": {
+          "duration": 100,
+          "easing": "exit",
+          "moveEasing": "exit",
+          "distance": 4,
+          "scale": 1,
+          "reduced": "fade"
+        },
+        "enter-md": {
+          "duration": 200,
+          "easing": "enter",
+          "moveEasing": "enter",
+          "distance": 8,
+          "scale": 1,
+          "reduced": "fade"
+        },
+        "exit-md": {
+          "duration": 150,
+          "easing": "exit",
+          "moveEasing": "exit",
+          "distance": 8,
+          "scale": 1,
+          "reduced": "fade"
+        },
+        "enter-lg": {
+          "duration": 250,
+          "easing": "enter",
+          "moveEasing": "enter",
+          "distance": 16,
+          "scale": 0.98,
+          "reduced": "fade"
+        },
+        "exit-lg": {
+          "duration": 200,
+          "easing": "exit",
+          "moveEasing": "exit",
+          "distance": 16,
+          "scale": 0.98,
+          "reduced": "fade"
+        },
+        "expand": {
+          "duration": 200,
+          "easing": "standard",
+          "moveEasing": "standard",
+          "reduced": "off"
+        },
+        "move": {
+          "duration": 250,
+          "easing": "standard",
+          "moveEasing": "standard",
+          "reduced": "off"
+        },
+        "loop": {
+          "duration": 800,
+          "easing": "linear",
+          "reduced": "slow"
+        },
+        "scroll": {
+          "duration": 150,
+          "easing": "standard",
+          "reduced": "keep"
+        },
+        "attention": {
+          "duration": 300,
+          "easing": "standard",
+          "moveEasing": "standard",
+          "reduced": "off"
+        },
+        "delay-hint": {
+          "duration": 400,
+          "reduced": "keep"
+        }
+      }
+    },
+    "expressive": {
+      "curves": {
+        "standard": [
+          0.4,
+          0.14,
+          0.3,
+          1
+        ],
+        "enter": [
+          0,
+          0,
+          0.3,
+          1
+        ],
+        "exit": [
+          0.4,
+          0.14,
+          1,
+          1
+        ]
+      },
+      "spring": {
+        "damping": 0.7,
+        "settle": 6.5,
+        "points": 41
+      },
+      "roles": {
+        "state-in": {
+          "duration": 0,
+          "easing": "linear",
+          "reduced": "keep"
+        },
+        "state-out": {
+          "duration": 200,
+          "easing": "standard",
+          "reduced": "keep"
+        },
+        "toggle": {
+          "duration": 250,
+          "easing": "standard",
+          "moveEasing": "spring",
+          "reduced": "still"
+        },
+        "enter-sm": {
+          "duration": 200,
+          "easing": "enter",
+          "moveEasing": "enter",
+          "distance": 8,
+          "scale": 1,
+          "reduced": "fade"
+        },
+        "exit-sm": {
+          "duration": 150,
+          "easing": "exit",
+          "moveEasing": "exit",
+          "distance": 8,
+          "scale": 1,
+          "reduced": "fade"
+        },
+        "enter-md": {
+          "duration": 300,
+          "easing": "enter",
+          "moveEasing": "spring",
+          "distance": 16,
+          "scale": 1,
+          "reduced": "fade"
+        },
+        "exit-md": {
+          "duration": 200,
+          "easing": "exit",
+          "moveEasing": "exit",
+          "distance": 16,
+          "scale": 1,
+          "reduced": "fade"
+        },
+        "enter-lg": {
+          "duration": 400,
+          "easing": "enter",
+          "moveEasing": "spring",
+          "distance": 24,
+          "scale": 0.95,
+          "reduced": "fade"
+        },
+        "exit-lg": {
+          "duration": 250,
+          "easing": "exit",
+          "moveEasing": "exit",
+          "distance": 24,
+          "scale": 0.95,
+          "reduced": "fade"
+        },
+        "expand": {
+          "duration": 300,
+          "easing": "standard",
+          "moveEasing": "standard",
+          "reduced": "off"
+        },
+        "move": {
+          "duration": 400,
+          "easing": "standard",
+          "moveEasing": "spring",
+          "reduced": "off"
+        },
+        "loop": {
+          "duration": 1000,
+          "easing": "linear",
+          "reduced": "slow"
+        },
+        "scroll": {
+          "duration": 200,
+          "easing": "standard",
+          "reduced": "keep"
+        },
+        "attention": {
+          "duration": 400,
+          "easing": "standard",
+          "moveEasing": "standard",
+          "reduced": "off"
+        },
+        "delay-hint": {
+          "duration": 500,
+          "reduced": "keep"
+        }
+      }
+    }
+  },
+  "layer": {
+    "sticky": 10,
+    "chrome": 20
+  }
+}

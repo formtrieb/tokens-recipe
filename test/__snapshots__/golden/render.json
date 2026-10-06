@@ -1,0 +1,89 @@
+{
+  "options": {
+    "prefix": "x-"
+  },
+  "rules": [
+    {
+      "theme": "Mode/Light",
+      "selector": "[data-mode-x=\"Light\"]",
+      "references": true,
+      "file": "model.css"
+    },
+    {
+      "theme": "Mode/Dark",
+      "selector": "[data-mode-x=\"Dark\"]",
+      "references": true,
+      "file": "model.css"
+    },
+    {
+      "theme": "Model/Base",
+      "selector": "[data-mode-x]",
+      "references": true,
+      "file": "model.css"
+    },
+    {
+      "theme": "Direction/Rtl",
+      "selector": "[dir=\"rtl\"] [data-mode-x], [data-mode-x][dir=\"rtl\"]",
+      "references": true,
+      "file": "model.css"
+    },
+    {
+      "theme": "Motion/Expressive",
+      "selector": "[data-motion-x=\"expressive\"]",
+      "references": true,
+      "file": "model.css"
+    },
+    {
+      "theme": "Motion/Productive-Reduced",
+      "selector": "[data-mode-x]",
+      "media": "(prefers-reduced-motion: reduce)",
+      "references": true,
+      "file": "model.css"
+    },
+    {
+      "theme": "Motion/Expressive-Reduced",
+      "selector": "[data-motion-x=\"expressive\"]",
+      "media": "(prefers-reduced-motion: reduce)",
+      "references": true,
+      "file": "model.css"
+    },
+    {
+      "theme": "Motion/Productive-Reduced",
+      "selector": "[data-mode-x][data-reduced-motion-x]",
+      "references": true,
+      "file": "model.css"
+    },
+    {
+      "theme": "Motion/Expressive-Reduced",
+      "selector": "[data-motion-x=\"expressive\"][data-reduced-motion-x]",
+      "references": true,
+      "file": "model.css"
+    },
+    {
+      "theme": "Contrast/Forced",
+      "selector": "[data-mode-x]",
+      "media": "(forced-colors: active)",
+      "references": true,
+      "file": "model.css"
+    },
+    {
+      "theme": "Pointer/Coarse",
+      "selector": "[data-mode-x]",
+      "media": "(pointer: coarse)",
+      "references": true,
+      "file": "model.css"
+    },
+    {
+      "theme": "Shape/Square",
+      "selector": "[data-shape-x=\"square\"]",
+      "references": true,
+      "file": "model.css"
+    },
+    {
+      "theme": "Shape/Round",
+      "selector": "[data-shape-x=\"round\"]",
+      "references": true,
+      "file": "model.css"
+    }
+  ]
+}

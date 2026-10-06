@@ -1,0 +1,153 @@
+[
+  {
+    "id": "mode-light",
+    "name": "Light",
+    "group": "Mode",
+    "selectedTokenSets": {
+      "Mode/Light": "enabled"
+    }
+  },
+  {
+    "id": "mode-dark",
+    "name": "Dark",
+    "group": "Mode",
+    "selectedTokenSets": {
+      "Mode/Dark": "enabled"
+    }
+  },
+  {
+    "id": "model-base",
+    "name": "Base",
+    "group": "Model",
+    "selectedTokenSets": {
+      "Mode/Light": "source",
+      "Model/Base": "enabled"
+    }
+  },
+  {
+    "id": "shape-mixed",
+    "name": "Mixed",
+    "group": "Shape",
+    "selectedTokenSets": {
+      "Mode/Light": "source",
+      "Model/Base": "source"
+    }
+  },
+  {
+    "id": "shape-square",
+    "name": "Square",
+    "group": "Shape",
+    "selectedTokenSets": {
+      "Mode/Light": "source",
+      "Model/Base": "source",
+      "Shape/Square": "enabled"
+    }
+  },
+  {
+    "id": "shape-round",
+    "name": "Round",
+    "group": "Shape",
+    "selectedTokenSets": {
+      "Mode/Light": "source",
+      "Model/Base": "source",
+      "Shape/Round": "enabled"
+    }
+  },
+  {
+    "id": "motion-productive",
+    "name": "Productive",
+    "group": "Motion",
+    "selectedTokenSets": {
+      "Mode/Light": "source",
+      "Model/Base": "source"
+    }
+  },
+  {
+    "id": "motion-expressive",
+    "name": "Expressive",
+    "group": "Motion",
+    "selectedTokenSets": {
+      "Mode/Light": "source",
+      "Model/Base": "source",
+      "Motion/Expressive": "enabled"
+    }
+  },
+  {
+    "id": "motion-productive-reduced",
+    "name": "Productive-Reduced",
+    "group": "Motion",
+    "selectedTokenSets": {
+      "Mode/Light": "source",
+      "Model/Base": "source",
+      "Motion/Productive-Reduced": "enabled"
+    }
+  },
+  {
+    "id": "motion-expressive-reduced",
+    "name": "Expressive-Reduced",
+    "group": "Motion",
+    "selectedTokenSets": {
+      "Mode/Light": "source",
+      "Model/Base": "source",
+      "Motion/Expressive": "source",
+      "Motion/Expressive-Reduced": "enabled"
+    }
+  },
+  {
+    "id": "pointer-fine",
+    "name": "Fine",
+    "group": "Pointer",
+    "selectedTokenSets": {
+      "Mode/Light": "source",
+      "Model/Base": "source"
+    }
+  },
+  {
+    "id": "pointer-coarse",
+    "name": "Coarse",
+    "group": "Pointer",
+    "selectedTokenSets": {
+      "Mode/Light": "source",
+      "Model/Base": "source",
+      "Pointer/Coarse": "enabled"
+    }
+  },
+  {
+    "id": "contrast-normal",
+    "name": "Normal",
+    "group": "Contrast",
+    "selectedTokenSets": {
+      "Mode/Light": "source",
+      "Model/Base": "source"
+    }
+  },
+  {
+    "id": "contrast-forced",
+    "name": "Forced",
+    "group": "Contrast",
+    "selectedTokenSets": {
+      "Mode/Light": "source",
+      "Model/Base": "source",
+      "Contrast/Forced": "enabled"
+    }
+  },
+  {
+    "id": "direction-ltr",
+    "name": "Ltr",
+    "group": "Direction",
+    "selectedTokenSets": {
+      "Mode/Light": "source",
+      "Model/Base": "source"
+    }
+  },
+  {
+    "id": "direction-rtl",
+    "name": "Rtl",
+    "group": "Direction",
+    "selectedTokenSets": {
+      "Mode/Light": "source",
+      "Model/Base": "source",
+      "Direction/Rtl": "enabled"
+    }
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "elevation": {
+    "sticky-start": {
+      "$type": "boxShadow",
+      "$value": "{elevation.sticky-end-value}"
+    },
+    "sticky-end": {
+      "$type": "boxShadow",
+      "$value": "{elevation.sticky-start-value}"
+    }
+  }
+}

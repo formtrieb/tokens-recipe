@@ -1,0 +1,3780 @@
+{
+  "focus": {
+    "ring": {
+      "$type": "color",
+      "$value": "Highlight"
+    },
+    "ring-on-inverted": {
+      "$type": "color",
+      "$value": "Highlight"
+    }
+  },
+  "line": {
+    "edge": {
+      "$type": "color",
+      "$value": "CanvasText"
+    }
+  },
+  "content": {
+    "disabled": {
+      "$type": "color",
+      "$value": "GrayText"
+    }
+  },
+  "mark": {
+    "surface": {
+      "$type": "color",
+      "$value": "Mark"
+    },
+    "current": {
+      "$type": "color",
+      "$value": "Highlight"
+    }
+  },
+  "status": {
+    "neutral": {
+      "indicator": {
+        "strong": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "subtle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        }
+      }
+    },
+    "info": {
+      "indicator": {
+        "strong": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "subtle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        }
+      }
+    },
+    "positive": {
+      "indicator": {
+        "strong": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "subtle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        }
+      }
+    },
+    "warning": {
+      "indicator": {
+        "strong": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "subtle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        }
+      }
+    },
+    "negative": {
+      "indicator": {
+        "strong": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "subtle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        }
+      }
+    }
+  },
+  "ctl": {
+    "brand": {
+      "background": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        }
+      },
+      "stroke": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "icon": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "text": {
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "text-subtle": {
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "track": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        }
+      }
+    },
+    "primary": {
+      "background": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        }
+      },
+      "stroke": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "icon": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "text": {
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "text-subtle": {
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "track": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        }
+      }
+    },
+    "secondary": {
+      "background": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        }
+      },
+      "stroke": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "icon": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "text": {
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "text-subtle": {
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "track": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        }
+      }
+    },
+    "tertiary": {
+      "background": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        }
+      },
+      "stroke": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "icon": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "text": {
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "text-subtle": {
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "track": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        }
+      }
+    },
+    "destructive": {
+      "background": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        }
+      },
+      "stroke": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "icon": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "text": {
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "text-subtle": {
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "track": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        }
+      }
+    },
+    "destructive-subtle": {
+      "background": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        }
+      },
+      "stroke": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "icon": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "text": {
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "text-subtle": {
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "track": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        }
+      }
+    },
+    "on-inverted": {
+      "background": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        }
+      },
+      "stroke": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "icon": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "text": {
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "text-subtle": {
+        "disabled-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-selected-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-negative-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-warning-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        },
+        "disabled-done-positive-idle": {
+          "$type": "color",
+          "$value": "GrayText"
+        }
+      },
+      "track": {
+        "selected-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-negative-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-warning-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-idle": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-hover": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-pressed": {
+          "$type": "color",
+          "$value": "Highlight"
+        },
+        "selected-positive-focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        }
+      }
+    }
+  }
+}

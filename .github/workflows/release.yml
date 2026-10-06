@@ -1,0 +1,61 @@
+name: Release
+
+# A tag v<version> publishes @formtrieb/tokens-recipe; it must equal the
+# package.json version.
+#
+# Publishes via npm Trusted Publishing (OIDC) — no NPM_TOKEN. On npmjs.com the
+# package's trusted publisher points at this repository, this workflow file
+# (release.yml) and the environment `npm`.
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: npm
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          registry-url: "https://registry.npmjs.org"
+
+      # Trusted Publishing needs npm >= 11.5.1.
+      - name: Update npm
+        run: npm install -g npm@latest
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check tag against package.json
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          actual=$(node -p "require('./package.json').version")
+          if [ "$actual" != "$version" ]; then
+            echo "Tag says $version, package.json says $actual"; exit 1
+          fi
+
+      - name: Test
+        run: pnpm test
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Build
+        run: pnpm build
+
+      - name: Pack
+        run: pnpm pack --pack-destination "$RUNNER_TEMP/pack"
+
+      - name: Publish to npm with provenance
+        run: npm publish "$RUNNER_TEMP"/pack/*.tgz --provenance --access public

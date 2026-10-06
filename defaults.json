@@ -1,0 +1,41 @@
+{
+  "alphaSteps": {
+    "state-hover": 1,
+    "state-selected": 2,
+    "state-pressed": 3,
+    "edge": 1,
+    "on-fill-hover": 4,
+    "on-fill-selected": 5,
+    "on-fill-pressed": 6,
+    "on-fill-disabled": 7,
+    "content-disabled": 7,
+    "content-secondary": 8
+  },
+  "status": {
+    "strong": {
+      "surface": "fill",
+      "content": "on-fill",
+      "indicator": "on-fill"
+    },
+    "subtle": {
+      "surface": "subtle",
+      "content": "ink-subtle",
+      "indicator": "fill"
+    }
+  },
+  "feedback": {
+    "surface": "canvas",
+    "line": "line-subtle",
+    "content": "ink-subtle",
+    "icon": "fill"
+  },
+  "contract": {
+    "typeMinPx": 12,
+    "readingCh": [45, 75],
+    "motionMaxMs": 500,
+    "identityMinDeltaE": 10,
+    "legendMinDeltaE": 12,
+    "apcaTextLc": 75,
+    "apcaNonTextLc": 45
+  }
+}

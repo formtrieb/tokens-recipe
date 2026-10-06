@@ -1,0 +1,176 @@
+{
+  "target": {
+    "min": {
+      "$type": "dimension",
+      "$value": "{size.44}"
+    }
+  },
+  "control": {
+    "xs": {
+      "height": {
+        "$type": "dimension",
+        "$value": "{control.sm.height}"
+      },
+      "icon": {
+        "$type": "dimension",
+        "$value": "{control.sm.icon}"
+      },
+      "icon-alone": {
+        "$type": "dimension",
+        "$value": "{control.sm.icon-alone}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{control.sm.gap}"
+      },
+      "gap-plain": {
+        "$type": "dimension",
+        "$value": "{control.sm.gap-plain}"
+      },
+      "row": {
+        "height": {
+          "$type": "dimension",
+          "$value": "{control.sm.row.height}"
+        },
+        "text": {
+          "$type": "typography",
+          "$value": "{control.sm.row.text}"
+        },
+        "tracking": {
+          "$type": "letterSpacing",
+          "$value": "{control.sm.row.tracking}"
+        },
+        "inline": {
+          "$type": "dimension",
+          "$value": "{control.sm.row.inline}"
+        },
+        "inline-icon": {
+          "$type": "dimension",
+          "$value": "{control.sm.row.inline-icon}"
+        },
+        "block": {
+          "$type": "dimension",
+          "$value": "{control.sm.row.block}"
+        },
+        "radius": {
+          "$type": "dimension",
+          "$value": "{control.sm.row.radius}"
+        }
+      },
+      "action": {
+        "text": {
+          "$type": "typography",
+          "$value": "{control.sm.action.text}"
+        },
+        "tracking": {
+          "$type": "letterSpacing",
+          "$value": "{control.sm.action.tracking}"
+        },
+        "inline": {
+          "$type": "dimension",
+          "$value": "{control.sm.action.inline}"
+        },
+        "inline-icon": {
+          "$type": "dimension",
+          "$value": "{control.sm.action.inline-icon}"
+        },
+        "block": {
+          "$type": "dimension",
+          "$value": "{control.sm.action.block}"
+        },
+        "radius": {
+          "$type": "dimension",
+          "$value": "{control.sm.action.radius}"
+        }
+      },
+      "tag": {
+        "text": {
+          "$type": "typography",
+          "$value": "{control.sm.tag.text}"
+        },
+        "tracking": {
+          "$type": "letterSpacing",
+          "$value": "{control.sm.tag.tracking}"
+        },
+        "inline": {
+          "$type": "dimension",
+          "$value": "{control.sm.tag.inline}"
+        },
+        "inline-icon": {
+          "$type": "dimension",
+          "$value": "{control.sm.tag.inline-icon}"
+        },
+        "block": {
+          "$type": "dimension",
+          "$value": "{control.sm.tag.block}"
+        },
+        "radius": {
+          "$type": "dimension",
+          "$value": "{control.sm.tag.radius}"
+        }
+      },
+      "field": {
+        "text": {
+          "$type": "typography",
+          "$value": "{control.sm.field.text}"
+        },
+        "tracking": {
+          "$type": "letterSpacing",
+          "$value": "{control.sm.field.tracking}"
+        },
+        "inline": {
+          "$type": "dimension",
+          "$value": "{control.sm.field.inline}"
+        },
+        "inline-icon": {
+          "$type": "dimension",
+          "$value": "{control.sm.field.inline-icon}"
+        },
+        "block": {
+          "$type": "dimension",
+          "$value": "{control.sm.field.block}"
+        },
+        "radius": {
+          "$type": "dimension",
+          "$value": "{control.sm.field.radius}"
+        }
+      }
+    },
+    "sm": {
+      "height": {
+        "$type": "dimension",
+        "$value": "{size.40}"
+      },
+      "row": {
+        "height": {
+          "$type": "dimension",
+          "$value": "{size.44}"
+        }
+      }
+    },
+    "md": {
+      "height": {
+        "$type": "dimension",
+        "$value": "{size.48}"
+      },
+      "row": {
+        "height": {
+          "$type": "dimension",
+          "$value": "{size.48}"
+        }
+      }
+    },
+    "lg": {
+      "height": {
+        "$type": "dimension",
+        "$value": "{size.56}"
+      },
+      "row": {
+        "height": {
+          "$type": "dimension",
+          "$value": "{size.56}"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.DS_Store
+*.log
+
+# local tooling state, never part of the repo
+.claude/
+.remember/
+.superpowers/
+.mcp.json
+
