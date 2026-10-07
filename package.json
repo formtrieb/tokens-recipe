@@ -54,8 +54,8 @@
     "app:build": "vite build --config app/vite.config.ts"
   },
   "dependencies": {
-    "@formtrieb/tokens-core": "^1.7.0",
-    "@formtrieb/tokens-render": "^0.4.0",
+    "@formtrieb/tokens-core": "^2.0.0",
+    "@formtrieb/tokens-render": "^1.0.0",
     "zod": "^4.0.0"
   },
   "devDependencies": {

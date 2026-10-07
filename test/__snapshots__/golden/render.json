@@ -1,7 +1,9 @@
 {
   "options": {
     "prefix": "x-",
-    "dialect": "canonical"
+    "units": "source",
+    "color": "source",
+    "typographyCompanions": false
   },
   "rules": [
     {

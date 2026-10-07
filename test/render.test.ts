@@ -27,14 +27,14 @@ describe('model.css from @formtrieb/tokens-render', () => {
     expect(out.files['model.css']).toContain('--x-pole-ink:');
   });
 
-  it('writes no typography companions (canonical dialect)', () => {
+  it('writes no typography companions', () => {
     expect(out.files['model.css']).not.toMatch(
       /-(letter-spacing|text-transform|text-decoration|fvn): /,
     );
   });
 
-  it('writes the canonical dialect into render.json', () => {
-    expect(table.options).toEqual({ prefix: 'x-', dialect: 'canonical' });
+  it('writes its output policy into render.json: units and colours as written, no companions', () => {
+    expect(table.options).toEqual({ prefix: 'x-', units: 'source', color: 'source', typographyCompanions: false });
   });
 
   it('renders the same model.css from render.json alone', () => {
