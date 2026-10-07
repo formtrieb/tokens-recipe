@@ -5,6 +5,19 @@ All notable changes to `@formtrieb/tokens-recipe` are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- Requires `@formtrieb/tokens-core` ^2.0.0 and `@formtrieb/tokens-render`
+  ^1.0.0.
+- `render.json` carries the output policy instead of a dialect:
+  `"options": { "prefix", "units": "source", "color": "source",
+  "typographyCompanions": false }`. The CSS of a recipe tree is then the
+  same whoever renders it (`@formtrieb/tokens-render` or the CLI
+  `@formtrieb/tokens-cli`), whatever their defaults. `model.css` is
+  unchanged byte for byte.
+
 ## [0.3.0] — 2026-10-06
 
 ### Added

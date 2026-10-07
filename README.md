@@ -59,7 +59,7 @@ recipe the model was generated from, defaults applied — with these files:
 | File | What |
 |---|---|
 | `tokens/$metadata.json`, `tokens/$themes.json`, `tokens/<Set>.json` | the Tokens-Studio tree; Tokens Studio imports it, [`@formtrieb/tokens-mcp`](https://github.com/formtrieb/tokens/tree/main/packages/mcp) reads it |
-| `render.json` | the render table (which theme lands under which selector or media query) and the render options (`prefix`, `dialect: "canonical"`), in the render-file format of `@formtrieb/tokens-render`; the resolver CLI renders the tree as `model.css` does |
+| `render.json` | the render table (which theme lands under which selector or media query) and the render options (`prefix`, `units: "source"`, `color: "source"`, `typographyCompanions: false`), in the render-file format of `@formtrieb/tokens-render`; the CLI (`@formtrieb/tokens-cli`) renders the tree as `model.css` does |
 | `model.css` | rendered from tree and table by `@formtrieb/tokens-render` |
 | `token-map.json` | Figma path → CSS variable |
 | `breakpoints.json`, `_breakpoints.scss`, `containers.json`, `_containers.scss` | for media and container queries, which cannot read variables |
@@ -133,9 +133,10 @@ step has them as tokens of its own:
 .metric { font-variant-numeric: var(--x-type-metric-sm-numeric); } /* numeric roles */
 ```
 
-`model.css` is rendered in the `canonical` dialect of `@formtrieb/tokens-render`:
-values as the recipe wrote them, and no derived companion variables next to
-these tokens.
+`model.css` is rendered by `@formtrieb/tokens-render` with the options the
+recipe writes into `render.json`: values as the recipe wrote them
+(`units: "source"`, `color: "source"`), and no derived companion variables
+next to these tokens (`typographyCompanions: false`).
 
 ## Editor
 

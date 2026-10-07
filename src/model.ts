@@ -56,7 +56,7 @@
  * from @formtrieb/tokens-render, fed with the DTCG tree and the render table.
  */
 import {
-  composite,
+  over,
   contrastWcag,
   deltaE2000,
   hexToOklch,
@@ -334,8 +334,7 @@ export function generateModel(
     for (const k of ['surface', 'current'] as const) {
       const [step, a] = recipe.mark![mode][k];
       const c = v[`${recipe.mark!.hue}.${step}`];
-      v[k === 'surface' ? 'mark.value' : 'mark.current-value'] =
-        a === 1 ? withAlpha(c, 1).slice(0, 7) : withAlpha(c, a);
+      v[k === 'surface' ? 'mark.value' : 'mark.current-value'] = withAlpha(c, a);
     }
     // translucent ink edge: crisp on any surface and mode, never a frame
     v['neutral.edge'] = withAlpha(p.ink, alpha(ALPHA_STEP.edge));
@@ -2568,7 +2567,7 @@ export function generateModel(
           `Text auf Suchtreffer (${k})`,
           `pole.ink / ${k} über ${surf}`,
           v['pole.ink'],
-          composite(v[k], v[surf]),
+          over(v[k], v[surf]),
           C.textMin,
         );
     }
@@ -2738,7 +2737,7 @@ export function generateModel(
           `Text auf ${hue}-Fläche über ${layer}`,
           `${hue}.on-fill / ${hue}.${layer} über ${hue}.fill`,
           on,
-          composite(v[`${hue}.${layer}`], fill),
+          over(v[`${hue}.${layer}`], fill),
           C.textMin,
         );
       add(
@@ -2805,7 +2804,7 @@ export function generateModel(
         add(
           `content.${lvl} auf ${name}`,
           `content.${lvl} / ${name}`,
-          composite(v[`content.${lvl}`], bg),
+          over(v[`content.${lvl}`], bg),
           bg,
           C.textMin,
         );
@@ -2834,7 +2833,7 @@ export function generateModel(
           `Fokus-Ring innen auf Zeile ${st} über ${surf}`,
           `focus.ring / neutral.${st} über ${surf}`,
           v[FOCUS_RING],
-          composite(v[`neutral.${st}`], v[surf]),
+          over(v[`neutral.${st}`], v[surf]),
           C.strokeMin,
         );
   }
@@ -2888,7 +2887,7 @@ export function generateModel(
         ? v[surf]
         : opaque(v[ref])
           ? v[ref].slice(0, 7)
-          : composite(v[ref], v[surf]);
+          : over(v[ref], v[surf]);
     const pageColour = (ref: string) => /^(pole|neutral|content)\./.test(ref);
     for (const [h, def] of Object.entries(HIERARCHIES)) {
       const refOf = (part: Part, c: Cell) => {
@@ -3014,7 +3013,7 @@ export function generateModel(
           : CELL_SURFACES.map((surf) => {
               const fg = opaqueHex(v[colour])
                 ? v[colour].slice(0, 7)
-                : composite(v[colour], v[surf]);
+                : over(v[colour], v[surf]);
               return [surf, apcaLc(fg, v[surf])];
             });
       const [weakestOn, lc] = places.reduce((a, b) => (b[1] < a[1] ? b : a));
@@ -3044,7 +3043,7 @@ export function generateModel(
     // reads by hue (ΔE 12.5 at 1.18:1 is fine), Dark needs lightness (ΔE 16.6 at
     // 1.01:1 is not visible on a popover)
     for (const surf of ['pole.canvas', 'pole.paper', 'pole.overlay']) {
-      const hit = composite(v['mark.value'], v[surf]);
+      const hit = over(v['mark.value'], v[surf]);
       const de = deltaE2000(hit, v[surf]);
       const lr = contrastWcag(hit, v[surf]);
       if (de < 10 || lr < 1.1)
@@ -3435,11 +3434,11 @@ export function tokenSystem(files: Record<string, string>): TokenSystem {
 
 /**
  * The model's render options, written to render.json and used for model.css:
- * the canonical dialect writes lengths and colours as the recipe wrote them
- * (px, em, ch; hex, system colours) and no typography companions — the model
- * carries tracking, case and numerals as tokens of its own (`-tracking`,
- * `-case`, `-numeric`).
+ * lengths and colours as the recipe wrote them (px, em, ch; hex, system
+ * colours) and no typography companions — the model carries tracking, case
+ * and numerals as tokens of its own (`-tracking`, `-case`, `-numeric`). The
+ * policy is written out, so the CSS does not depend on who renders the tree.
  */
 export function renderOptions(prefix: string): RenderFileOptions & { prefix: string } {
-  return { prefix, dialect: 'canonical' };
+  return { prefix, units: 'source', color: 'source', typographyCompanions: false };
 }

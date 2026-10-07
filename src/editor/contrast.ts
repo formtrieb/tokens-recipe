@@ -3,7 +3,7 @@
  * `opacity` between it and its backdrop, composited onto that backdrop. The
  * colour maths is core's; this module only reads the computed styles.
  */
-import { alphaOf, composite, contrastWcag, withAlpha } from '@formtrieb/tokens-core';
+import { alphaOf, contrastWcag, over, withAlpha } from '@formtrieb/tokens-core';
 
 /** every step unrounded: a chain of 8-bit steps drifts from what is painted */
 const EXACT = { format: 'srgb' } as const;
@@ -37,9 +37,9 @@ export function seen(el: Element): { fg: string; bg: string } | undefined {
       }
       fade *= Number(style.opacity || 1);
     }
-    const bg = layers.reduceRight((below, c) => composite(c, below, EXACT), '#ffffff');
+    const bg = layers.reduceRight((below, c) => over(c, below, EXACT), '#ffffff');
     const fg = getComputedStyle(el).color;
-    return { fg: composite(withAlpha(fg, alphaOf(fg) * fade, EXACT), bg, EXACT), bg };
+    return { fg: over(withAlpha(fg, alphaOf(fg) * fade, EXACT), bg, EXACT), bg };
   } catch {
     return undefined;
   }

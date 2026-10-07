@@ -7,7 +7,7 @@
  *     DTCG in the Tokens-Studio flavour: $type/$value, {dot.path} references,
  *     typography and boxShadow composites
  *   token-map.json
- *     figma path → CSS name, the shape @formtrieb/token-resolver writes
+ *     figma path → CSS name, the shape @formtrieb/tokens-cli writes
  * The tokens MCP reads the tree directly (tokens_path), Tokens Studio can
  * import it, and @formtrieb/tokens-render writes model.css from it.
  *

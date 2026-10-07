@@ -169,7 +169,7 @@ describe('DTCG tree', () => {
     );
     expect(map.count).toBe(Object.keys(map.figmaToCSS).length);
     // every CSS variable of model.css is a token with a figma path, and the
-    // other way round (the canonical dialect derives no companions)
+    // other way round (the recipe's render options derive no companions)
     const declared = new Set(
       [...files['model.css'].matchAll(/^ {2}(--x-[a-z0-9-]+):/gm)].map(
         (m) => m[1],
