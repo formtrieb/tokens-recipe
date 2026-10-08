@@ -598,6 +598,28 @@ export const RecipeSchema = z
       .describe(
         'Avatare: Spot-Größen ohne Text und ohne Coarse-Sprung. Ein Avatar als Button nimmt die Control-Höhe.',
       ),
+    link: z
+      .object({
+        underline: z
+          .object({
+            offset: z
+              .number()
+              .min(0)
+              .describe('Abstand der Linie zur Schrift in em'),
+            thickness: z
+              .enum(['default', 'strong'])
+              .describe('Stärke in Ruhe: eine Rahmenbreite (border.width)'),
+            thicknessHover: z
+              .enum(['default', 'strong'])
+              .describe(
+                'Stärke bei Hover und Pressed: eine Rahmenbreite (border.width)',
+              ),
+          })
+          .describe('Unterstrich: Abstand und Stärke; die Farbe erbt er vom Text'),
+      })
+      .describe(
+        'Link im Text: Typografie des Inline-Texts, keine Kontroll-Fläche. Die Stärken folgen den Rahmenbreiten.',
+      ),
     identity: z
       .object({
         hues: z.array(name).describe('Ramps in Hash-Reihenfolge'),

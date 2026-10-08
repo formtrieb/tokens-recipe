@@ -5731,6 +5731,9 @@
   --x-prose-list: round(nearest, 0.5em, 2px);
   --x-prose-heading-before: round(nearest, 2em, 2px);
   --x-prose-heading-after: round(nearest, 0.5em, 2px);
+  --x-link-underline-offset: 0.2em;
+  --x-link-underline-thickness: var(--x-border-width-default);
+  --x-link-underline-thickness-hover: var(--x-border-width-strong);
   --x-target-min: var(--x-size-24);
   --x-control-action-pill: var(--x-size-4);
   --x-control-tag-pill: 0px;

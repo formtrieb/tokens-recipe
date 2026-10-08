@@ -48,5 +48,12 @@
       "sm": 32,
       "md": 40
     }
+  },
+  "link": {
+    "underline": {
+      "offset": 0.2,
+      "thickness": "default",
+      "thicknessHover": "strong"
+    }
   }
 }

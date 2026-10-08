@@ -33,4 +33,4 @@ Hochkontrast: 912 Umlegungen auf Systemfarben, Vertrag ok
 Kennfarben: 6 + neutral, strong/subtle, Vertrag ok
   · light: leise Flächen untereinander ΔE ≥ 2.3 — Unterscheidung über Text und Punkt
   · dark: leise Flächen untereinander ΔE ≥ 5.7 — Unterscheidung über Text und Punkt
-DTCG: 7083 Einträge, 5726 Pfade, 11 Sets, 16 Themes auf 7 Achsen; token-map 5726
+DTCG: 7086 Einträge, 5729 Pfade, 11 Sets, 16 Themes auf 7 Achsen; token-map 5729

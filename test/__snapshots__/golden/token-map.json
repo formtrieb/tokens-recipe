@@ -1,6 +1,6 @@
 {
   "prefix": "--x-",
-  "count": 5726,
+  "count": 5729,
   "transform": "Each Figma path becomes a CSS variable: join the segments with '-' and prepend '--x-'.",
   "categories": {
     "ctl/brand/background/idle": 1,
@@ -4741,6 +4741,7 @@
     "type/table": 51,
     "type/inline": 2,
     "prose": 4,
+    "link": 3,
     "target": 1,
     "control/action": 1,
     "control/tag": 1,
@@ -10036,6 +10037,9 @@
     "prose/heading-after": "--x-prose-heading-after",
     "type/inline/code-size": "--x-type-inline-code-size",
     "type/inline/sup-size": "--x-type-inline-sup-size",
+    "link/underline/offset": "--x-link-underline-offset",
+    "link/underline/thickness": "--x-link-underline-thickness",
+    "link/underline/thickness-hover": "--x-link-underline-thickness-hover",
     "target/min": "--x-target-min",
     "focus/offset-inset": "--x-focus-offset-inset",
     "control/action/pill": "--x-control-action-pill",

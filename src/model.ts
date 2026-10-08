@@ -14,6 +14,7 @@
  *   Radius     --x-radius-{round|action|field|field-multiline|item|tag|badge|container|container-large}
  *   Type       --x-type-{role}-{step}[-subtle|-strong] (font shorthand) + -size · -line-height · -weight · -family · -tracking
  *              --x-prose-* (em) · --x-type-inline-{code|sup}-size (em) · type-figma.json (px per mode)
+ *              --x-link-underline-{offset (em)|thickness|thickness-hover} (→ border-width-*)
  *   Breakpoints breakpoints.json + _breakpoints.scss (media queries can't read vars)
  *   Foundation --x-alpha-{1…8}   alpha ladder per mode (recipe `alpha`); the
  *              Auswahl values above are precomputed from it
@@ -1240,6 +1241,21 @@ export function generateModel(
     ),
     ...Object.entries(type.inline).map(([k, v]) =>
       decl(`type.inline.${k}-size`, `${v}em`),
+    ),
+  );
+  // link underline: typography of the inline text, colour from the text.
+  // The thicknesses read the stroke roles, so the line follows the DS's
+  // border widths; the hover thickness also serves pressed.
+  const underline = recipe.link!.underline;
+  typeTokens.push(
+    decl('link.underline.offset', `${underline.offset}em`),
+    decl(
+      'link.underline.thickness',
+      `var(--${P}border-width-${underline.thickness})`,
+    ),
+    decl(
+      'link.underline.thickness-hover',
+      `var(--${P}border-width-${underline.thicknessHover})`,
     ),
   );
   // strategy `steps`: the large values switch on at the `to` breakpoint

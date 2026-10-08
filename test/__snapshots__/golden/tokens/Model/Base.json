@@ -21776,6 +21776,22 @@
       "$value": "round(nearest, 0.5em, 2px)"
     }
   },
+  "link": {
+    "underline": {
+      "offset": {
+        "$type": "dimension",
+        "$value": "0.2em"
+      },
+      "thickness": {
+        "$type": "dimension",
+        "$value": "{border.width.default}"
+      },
+      "thickness-hover": {
+        "$type": "dimension",
+        "$value": "{border.width.strong}"
+      }
+    }
+  },
   "target": {
     "min": {
       "$type": "dimension",

@@ -304,6 +304,20 @@ export interface Recipe {
    */
   avatar?: { sizes: Record<string, number> };
   /**
+   * The link underline: typography of the inline text, so it sits next to
+   * `type.inline`. `offset` in em of the text; the thicknesses name a
+   * `border.width` key, so the underline follows the DS's strokes.
+   * `thicknessHover` serves hover and pressed (a link has no pressed
+   * surface of its own). The colour comes from the text.
+   */
+  link?: {
+    underline: {
+      offset: number;
+      thickness: 'default' | 'strong';
+      thicknessHover: 'default' | 'strong';
+    };
+  };
+  /**
    * Identity colours: mark someone or something
    * without meaning — avatars without a photo, user labels. Fixed list of
    * ramp hues (order = hash order), steps like the status chip: `strong` =
