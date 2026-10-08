@@ -1,6 +1,6 @@
 {
   "name": "@formtrieb/tokens-recipe",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Generates a complete design-token model from a recipe — OKLCH ramps, roles, controls, type, motion — as a Tokens-Studio tree with checked contracts. Pure functions; CSS via @formtrieb/tokens-render.",
   "license": "Apache-2.0",
   "type": "module",
