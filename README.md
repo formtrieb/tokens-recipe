@@ -40,7 +40,7 @@ and values replace the default as a whole.
 |---|---|---|
 | Foundation | `hues`, `modes`, `alpha`, `space`, `motion.scale` | ramps per mode, alpha ladder, `size-*`, `duration-*` |
 | Selection | `semanticHues`, `poles`, `onFill`, `mark` | per mode: `{hue}-{step}`, `pole-*`, state layers, `content-*` |
-| Roles | `hierarchies`, `status`, `feedback`, `spaceRoles`, `width`, `radius`, `type`, `control`, `motion`, `dataviz`, `identity`, `icon`, `avatar`, … | `ctl-*`, `status-*`, `feedback-*`, `surface-*`, `space-*`, `type-*`, `control-*`, `motion-*`, `icon-spot-*`, `avatar-*`, … |
+| Roles | `hierarchies`, `status`, `feedback`, `spaceRoles`, `width`, `radius`, `type`, `control`, `motion`, `dataviz`, `identity`, `icon`, `avatar`, `link`, … | `ctl-*`, `status-*`, `feedback-*`, `surface-*`, `space-*`, `type-*`, `control-*`, `motion-*`, `icon-spot-*`, `avatar-*`, `link-underline-*`, … |
 | Overlays | `radius.shapes`, `motion.characters`, `control.coarse` | sets switched by selector or media query: dark mode, RTL, reduced motion, forced colours, coarse pointer, shapes |
 
 Components read roles only. The Foundation is there for the roles to point
@@ -50,6 +50,22 @@ Spot sizes stand without text: `icon-spot-*` for icons, `avatar-*` for
 avatars (default `xs` 24, `sm` 32, `md` 40). Both point at `size-*` and must
 lie on the size scale; neither steps up under a coarse pointer — an avatar is
 no hit target, and an avatar that is a button takes the control height.
+
+The link underline is typography of the inline text, next to `prose-*` and
+`type-inline-*`: `link-underline-offset` in em (default `0.2`),
+`link-underline-thickness` and `link-underline-thickness-hover` as references
+to a stroke role (`link.underline.thickness` / `thicknessHover` name a
+`border.width` key, default `default` and `strong`). The hover thickness also
+serves pressed; the colour comes from the text.
+
+```css
+a {
+  text-decoration-line: underline;
+  text-underline-offset: var(--x-link-underline-offset);
+  text-decoration-thickness: var(--x-link-underline-thickness);
+}
+a:hover, a:active { text-decoration-thickness: var(--x-link-underline-thickness-hover); }
+```
 
 ## Output
 

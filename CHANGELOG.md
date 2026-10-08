@@ -5,6 +5,18 @@ All notable changes to `@formtrieb/tokens-recipe` are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- Link underline: `link.underline` in the recipe (default `offset` 0.2,
+  `thickness` `default`, `thicknessHover` `strong`) becomes
+  `--{prefix}link-underline-offset` (em),
+  `--{prefix}link-underline-thickness` and
+  `--{prefix}link-underline-thickness-hover`, the last two as references to
+  `border-width-*`. The hover thickness also serves pressed. Existing
+  recipes stay valid through the defaults.
+
 ## [0.4.0] — 2026-10-07
 
 ### Changed
