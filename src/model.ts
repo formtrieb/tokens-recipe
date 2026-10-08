@@ -20,6 +20,7 @@
  *              Auswahl values above are precomputed from it
  *   Focus      --x-focus-ring · --x-focus-offset-inset (ring inside, dense arrangements)
  *   Control    --x-control-{xs|sm|md|lg}-{height|icon|icon-alone|gap|gap-plain|row-height}
+ *              --x-control-{size}-switch-{height|width|thumb|mark} (track, thumb, check in the thumb)
  *              --x-control-{size}-{action|tag|field|row}-{text|tracking|inline|inline-icon|block|radius}
  *              --x-control-{sm|md|lg}-field-tag-radius (tag inside that field, concentric)
  *              --x-control-{family}-pill (per shape) · --x-target-min · --x-badge-{sm|md}-*
@@ -1442,7 +1443,8 @@ export function generateModel(
    * shape), so the shape and the coarse pointer never fight over a value.
    * Not tokens (component work): glyph-flush alignment of embedded icon
    * buttons, which sizes a component offers, part sizes (checkbox box = icon,
-   * avatar = height).
+   * avatar = height) — except the switch, whose track, thumb and mark are
+   * roles (`switch-*`), derived from icon-alone, icon and the border width.
    */
   const control = recipe.control!;
   const SIZES = Object.keys(control.sizes);
@@ -1481,6 +1483,21 @@ export function generateModel(
     const z = control.sizes[s];
     const next = control.icons.find((i) => i > z.icon) ?? z.icon;
     return Math.max(z.icon, Math.min(next, z.height - 2 * CR.aloneRand));
+  };
+  /**
+   * switch parts, derived like icon-alone: the track is as high as an icon
+   * alone and two icons wide; the thumb sits 1 px inside the track's border,
+   * the mark (check in the thumb) 2 px inside the thumb
+   */
+  const switchParts = (s: string) => {
+    const height = iconAlone(s);
+    const thumb = height - 2 * (recipe.border!.width['default'] + 1);
+    return {
+      height,
+      width: 2 * control.sizes[s].icon,
+      thumb,
+      mark: thumb - 4,
+    };
   };
   /** coarse pointer: `stepUp` sizes higher; past the top the last step repeats */
   const coarseHeight = (s: string) => {
@@ -1550,6 +1567,30 @@ export function generateModel(
       decl(ctlPath(s, 'field-tag-radius'), radiusPx(tagInField(shape, s)), set),
     ),
   ];
+  /** a part size on the size scale reads it; off the scale it is calc over the roles */
+  const onScale = (n: number, otherwise: string) =>
+    space.scale.includes(n) ? sz(n) : otherwise;
+  const switchDecls = (s: string) => {
+    const sw = switchParts(s);
+    return [
+      decl(ctlPath(s, 'switch-height'), sz(sw.height)),
+      decl(
+        ctlPath(s, 'switch-width'),
+        onScale(sw.width, `calc(2 * var(${ctlName(s, 'icon')}))`),
+      ),
+      decl(
+        ctlPath(s, 'switch-thumb'),
+        onScale(
+          sw.thumb,
+          `calc(var(${ctlName(s, 'switch-height')}) - 2 * (var(--${P}border-width-default) + 1px))`,
+        ),
+      ),
+      decl(
+        ctlPath(s, 'switch-mark'),
+        onScale(sw.mark, `calc(var(${ctlName(s, 'switch-thumb')}) - 4px)`),
+      ),
+    ];
+  };
   const controlTokens: string[] = [
     decl('target.min', sz(control.target.fine)),
     decl('focus.offset-inset', `calc(-1 * var(--${P}focus-width))`),
@@ -1562,6 +1603,7 @@ export function generateModel(
       decl(ctlPath(s, 'height'), sz(z.height)),
       decl(ctlPath(s, 'icon'), sz(z.icon)),
       decl(ctlPath(s, 'icon-alone'), sz(iconAlone(s))),
+      ...switchDecls(s),
       decl(ctlPath(s, 'gap'), sz(z.gap)),
       // controls without a surface (tertiary, link): icon and text one step closer
       decl(ctlPath(s, 'gap-plain'), sz(z.gap - CR.plainGap)),
@@ -1624,6 +1666,10 @@ export function generateModel(
         'height',
         'icon',
         'icon-alone',
+        'switch-height',
+        'switch-width',
+        'switch-thumb',
+        'switch-mark',
         'gap',
         'gap-plain',
         'row-height',
@@ -1679,6 +1725,8 @@ export function generateModel(
         );
       if (z.gap - CR.plainGap <= 0)
         controlFails.push(`${s}: Lücke ohne Fläche ≤ 0`);
+      if (switchParts(s).mark <= 0)
+        controlFails.push(`${s}: Switch-Haken ≤ 0`);
       for (const [f, def] of Object.entries(FAMILIES)) {
         const step = z[def.step];
         const lh = lhOf(def.role, step);

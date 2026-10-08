@@ -5767,6 +5767,10 @@
   --x-control-xs-height: var(--x-size-24);
   --x-control-xs-icon: var(--x-size-16);
   --x-control-xs-icon-alone: var(--x-size-16);
+  --x-control-xs-switch-height: var(--x-size-16);
+  --x-control-xs-switch-width: var(--x-size-32);
+  --x-control-xs-switch-thumb: var(--x-size-12);
+  --x-control-xs-switch-mark: var(--x-size-8);
   --x-control-xs-gap: var(--x-size-4);
   --x-control-xs-gap-plain: var(--x-size-2);
   --x-control-sm-action-radius: 9999px;
@@ -5798,6 +5802,10 @@
   --x-control-sm-height: var(--x-size-32);
   --x-control-sm-icon: var(--x-size-16);
   --x-control-sm-icon-alone: var(--x-size-20);
+  --x-control-sm-switch-height: var(--x-size-20);
+  --x-control-sm-switch-width: var(--x-size-32);
+  --x-control-sm-switch-thumb: var(--x-size-16);
+  --x-control-sm-switch-mark: var(--x-size-12);
   --x-control-sm-gap: var(--x-size-4);
   --x-control-sm-gap-plain: var(--x-size-2);
   --x-control-md-action-radius: 9999px;
@@ -5829,6 +5837,10 @@
   --x-control-md-height: var(--x-size-40);
   --x-control-md-icon: var(--x-size-20);
   --x-control-md-icon-alone: var(--x-size-24);
+  --x-control-md-switch-height: var(--x-size-24);
+  --x-control-md-switch-width: var(--x-size-40);
+  --x-control-md-switch-thumb: var(--x-size-20);
+  --x-control-md-switch-mark: var(--x-size-16);
   --x-control-md-gap: var(--x-size-6);
   --x-control-md-gap-plain: var(--x-size-4);
   --x-control-lg-action-radius: 9999px;
@@ -5860,6 +5872,10 @@
   --x-control-lg-height: var(--x-size-48);
   --x-control-lg-icon: var(--x-size-24);
   --x-control-lg-icon-alone: var(--x-size-28);
+  --x-control-lg-switch-height: var(--x-size-28);
+  --x-control-lg-switch-width: var(--x-size-48);
+  --x-control-lg-switch-thumb: var(--x-size-24);
+  --x-control-lg-switch-mark: var(--x-size-20);
   --x-control-lg-gap: var(--x-size-8);
   --x-control-lg-gap-plain: var(--x-size-6);
   --x-badge-sm-height: var(--x-size-20);
@@ -7100,6 +7116,10 @@
   --x-control-xs-height: var(--x-control-sm-height);
   --x-control-xs-icon: var(--x-control-sm-icon);
   --x-control-xs-icon-alone: var(--x-control-sm-icon-alone);
+  --x-control-xs-switch-height: var(--x-control-sm-switch-height);
+  --x-control-xs-switch-width: var(--x-control-sm-switch-width);
+  --x-control-xs-switch-thumb: var(--x-control-sm-switch-thumb);
+  --x-control-xs-switch-mark: var(--x-control-sm-switch-mark);
   --x-control-xs-gap: var(--x-control-sm-gap);
   --x-control-xs-gap-plain: var(--x-control-sm-gap-plain);
   --x-control-sm-row-height: var(--x-size-44);

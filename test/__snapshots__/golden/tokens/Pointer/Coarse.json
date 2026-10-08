@@ -19,6 +19,22 @@
         "$type": "dimension",
         "$value": "{control.sm.icon-alone}"
       },
+      "switch-height": {
+        "$type": "dimension",
+        "$value": "{control.sm.switch-height}"
+      },
+      "switch-width": {
+        "$type": "dimension",
+        "$value": "{control.sm.switch-width}"
+      },
+      "switch-thumb": {
+        "$type": "dimension",
+        "$value": "{control.sm.switch-thumb}"
+      },
+      "switch-mark": {
+        "$type": "dimension",
+        "$value": "{control.sm.switch-mark}"
+      },
       "gap": {
         "$type": "dimension",
         "$value": "{control.sm.gap}"
