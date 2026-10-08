@@ -5,6 +5,17 @@ All notable changes to `@formtrieb/tokens-recipe` are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- Switch part sizes per control size: `--{prefix}control-{size}-switch-height`
+  (= `icon-alone`), `-switch-width` (= 2 × `icon`), `-switch-thumb` (= track
+  height − 2 × (`border.width.default` + 1px)) and `-switch-mark` (= thumb −
+  4px). No new recipe fields. Values on the size scale read `size-*`, others
+  are `calc()` over the roles; a size replaced under a coarse pointer takes
+  the replacement's switch too.
+
 ## [0.5.0] — 2026-10-08
 
 ### Added

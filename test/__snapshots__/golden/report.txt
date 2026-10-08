@@ -16,7 +16,7 @@ Raster: 18 Stufen, 13 Abstands-Rollen, Vertrag ok
 Breiten: Leiter 240 · 320 · 480, Grenzen aside-fold 744 · side-fold 824 · field-pair 496, Vertrag ok
 Typo: 17 Rollen, 46 Stufen, Skalierung fluid, Vertrag ok
 Radius: 9 Rollen, Formen square · mixed · round, Vertrag ok
-Controls: 4 Größen × 4 Familien, 142 Tokens + 37 grob, 2 Badge-Größen, Vertrag ok
+Controls: 4 Größen × 4 Familien, 158 Tokens + 41 grob, 2 Badge-Größen, Vertrag ok
 Flächen-Vertrag: ok
 Ebenen: layer.sticky 10 · chrome 20, elevation.sticky × 4 Kanten, Vertrag ok
 Bewegung: 15 Rollen × 2 Charaktere (Standard productive), Skala 10 Dauern, Vertrag ok
@@ -33,4 +33,4 @@ Hochkontrast: 912 Umlegungen auf Systemfarben, Vertrag ok
 Kennfarben: 6 + neutral, strong/subtle, Vertrag ok
   · light: leise Flächen untereinander ΔE ≥ 2.3 — Unterscheidung über Text und Punkt
   · dark: leise Flächen untereinander ΔE ≥ 5.7 — Unterscheidung über Text und Punkt
-DTCG: 7086 Einträge, 5729 Pfade, 11 Sets, 16 Themes auf 7 Achsen; token-map 5729
+DTCG: 7106 Einträge, 5745 Pfade, 11 Sets, 16 Themes auf 7 Achsen; token-map 5745

@@ -21944,6 +21944,22 @@
         "$type": "dimension",
         "$value": "{size.16}"
       },
+      "switch-height": {
+        "$type": "dimension",
+        "$value": "{size.16}"
+      },
+      "switch-width": {
+        "$type": "dimension",
+        "$value": "{size.32}"
+      },
+      "switch-thumb": {
+        "$type": "dimension",
+        "$value": "{size.12}"
+      },
+      "switch-mark": {
+        "$type": "dimension",
+        "$value": "{size.8}"
+      },
       "gap": {
         "$type": "dimension",
         "$value": "{size.4}"
@@ -22077,6 +22093,22 @@
       "icon-alone": {
         "$type": "dimension",
         "$value": "{size.20}"
+      },
+      "switch-height": {
+        "$type": "dimension",
+        "$value": "{size.20}"
+      },
+      "switch-width": {
+        "$type": "dimension",
+        "$value": "{size.32}"
+      },
+      "switch-thumb": {
+        "$type": "dimension",
+        "$value": "{size.16}"
+      },
+      "switch-mark": {
+        "$type": "dimension",
+        "$value": "{size.12}"
       },
       "gap": {
         "$type": "dimension",
@@ -22212,6 +22244,22 @@
         "$type": "dimension",
         "$value": "{size.24}"
       },
+      "switch-height": {
+        "$type": "dimension",
+        "$value": "{size.24}"
+      },
+      "switch-width": {
+        "$type": "dimension",
+        "$value": "{size.40}"
+      },
+      "switch-thumb": {
+        "$type": "dimension",
+        "$value": "{size.20}"
+      },
+      "switch-mark": {
+        "$type": "dimension",
+        "$value": "{size.16}"
+      },
       "gap": {
         "$type": "dimension",
         "$value": "{size.6}"
@@ -22345,6 +22393,22 @@
       "icon-alone": {
         "$type": "dimension",
         "$value": "{size.28}"
+      },
+      "switch-height": {
+        "$type": "dimension",
+        "$value": "{size.28}"
+      },
+      "switch-width": {
+        "$type": "dimension",
+        "$value": "{size.48}"
+      },
+      "switch-thumb": {
+        "$type": "dimension",
+        "$value": "{size.24}"
+      },
+      "switch-mark": {
+        "$type": "dimension",
+        "$value": "{size.20}"
       },
       "gap": {
         "$type": "dimension",

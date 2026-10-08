@@ -40,7 +40,7 @@ and values replace the default as a whole.
 |---|---|---|
 | Foundation | `hues`, `modes`, `alpha`, `space`, `motion.scale` | ramps per mode, alpha ladder, `size-*`, `duration-*` |
 | Selection | `semanticHues`, `poles`, `onFill`, `mark` | per mode: `{hue}-{step}`, `pole-*`, state layers, `content-*` |
-| Roles | `hierarchies`, `status`, `feedback`, `spaceRoles`, `width`, `radius`, `type`, `control`, `motion`, `dataviz`, `identity`, `icon`, `avatar`, `link`, … | `ctl-*`, `status-*`, `feedback-*`, `surface-*`, `space-*`, `type-*`, `control-*`, `motion-*`, `icon-spot-*`, `avatar-*`, `link-underline-*`, … |
+| Roles | `hierarchies`, `status`, `feedback`, `spaceRoles`, `width`, `radius`, `type`, `control`, `motion`, `dataviz`, `identity`, `icon`, `avatar`, `link`, … | `ctl-*`, `status-*`, `feedback-*`, `surface-*`, `space-*`, `type-*`, `control-*`, `control-{size}-switch-*`, `motion-*`, `icon-spot-*`, `avatar-*`, `link-underline-*`, … |
 | Overlays | `radius.shapes`, `motion.characters`, `control.coarse` | sets switched by selector or media query: dark mode, RTL, reduced motion, forced colours, coarse pointer, shapes |
 
 Components read roles only. The Foundation is there for the roles to point
@@ -66,6 +66,14 @@ a {
 }
 a:hover, a:active { text-decoration-thickness: var(--x-link-underline-thickness-hover); }
 ```
+
+Part sizes of the switch are roles in the control bundle, derived without
+recipe fields of their own: `control-{size}-switch-height` = `icon-alone`,
+`-switch-width` = 2 × `icon`, `-switch-thumb` = track height − 2 ×
+(`border.width.default` + 1px), `-switch-mark` (the check in the thumb) =
+thumb − 4px. A value on the size scale reads `size-*`; off the scale it is a
+`calc()` over the roles. A size the coarse pointer replaces takes the
+replacement's switch as well.
 
 ## Output
 
