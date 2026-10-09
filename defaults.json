@@ -49,6 +49,9 @@
       "md": 40
     }
   },
+  "layer": {
+    "panel": 15
+  },
   "link": {
     "underline": {
       "offset": 0.2,

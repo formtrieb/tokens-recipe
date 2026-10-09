@@ -13642,131 +13642,131 @@
         },
         "selected-idle": {
           "$type": "color",
-          "$value": "{neutral.state-selected}"
+          "$value": "{negative.tint}"
         },
         "selected-hover": {
           "$type": "color",
-          "$value": "{neutral.state-pressed}"
+          "$value": "{negative.tint-hover}"
         },
         "selected-pressed": {
           "$type": "color",
-          "$value": "{neutral.state-pressed}"
+          "$value": "{negative.tint-pressed}"
         },
         "selected-focus": {
           "$type": "color",
-          "$value": "{neutral.state-selected}"
+          "$value": "{negative.tint}"
         },
         "selected-negative-idle": {
           "$type": "color",
-          "$value": "{neutral.state-selected}"
+          "$value": "{negative.tint}"
         },
         "selected-negative-hover": {
           "$type": "color",
-          "$value": "{neutral.state-pressed}"
+          "$value": "{negative.tint-hover}"
         },
         "selected-negative-pressed": {
           "$type": "color",
-          "$value": "{neutral.state-pressed}"
+          "$value": "{negative.tint-pressed}"
         },
         "selected-negative-focus": {
           "$type": "color",
-          "$value": "{neutral.state-selected}"
+          "$value": "{negative.tint}"
         },
         "selected-warning-idle": {
           "$type": "color",
-          "$value": "{neutral.state-selected}"
+          "$value": "{warning.tint}"
         },
         "selected-warning-hover": {
           "$type": "color",
-          "$value": "{neutral.state-pressed}"
+          "$value": "{warning.tint-hover}"
         },
         "selected-warning-pressed": {
           "$type": "color",
-          "$value": "{neutral.state-pressed}"
+          "$value": "{warning.tint-pressed}"
         },
         "selected-warning-focus": {
           "$type": "color",
-          "$value": "{neutral.state-selected}"
+          "$value": "{warning.tint}"
         },
         "selected-positive-idle": {
           "$type": "color",
-          "$value": "{neutral.state-selected}"
+          "$value": "{positive.tint}"
         },
         "selected-positive-hover": {
           "$type": "color",
-          "$value": "{neutral.state-pressed}"
+          "$value": "{positive.tint-hover}"
         },
         "selected-positive-pressed": {
           "$type": "color",
-          "$value": "{neutral.state-pressed}"
+          "$value": "{positive.tint-pressed}"
         },
         "selected-positive-focus": {
           "$type": "color",
-          "$value": "{neutral.state-selected}"
+          "$value": "{positive.tint}"
         },
         "done-idle": {
           "$type": "color",
-          "$value": "{neutral.state-selected}"
+          "$value": "{negative.tint}"
         },
         "done-hover": {
           "$type": "color",
-          "$value": "{neutral.state-pressed}"
+          "$value": "{negative.tint-hover}"
         },
         "done-pressed": {
           "$type": "color",
-          "$value": "{neutral.state-pressed}"
+          "$value": "{negative.tint-pressed}"
         },
         "done-focus": {
           "$type": "color",
-          "$value": "{neutral.state-selected}"
+          "$value": "{negative.tint}"
         },
         "done-negative-idle": {
           "$type": "color",
-          "$value": "{neutral.state-selected}"
+          "$value": "{negative.tint}"
         },
         "done-negative-hover": {
           "$type": "color",
-          "$value": "{neutral.state-pressed}"
+          "$value": "{negative.tint-hover}"
         },
         "done-negative-pressed": {
           "$type": "color",
-          "$value": "{neutral.state-pressed}"
+          "$value": "{negative.tint-pressed}"
         },
         "done-negative-focus": {
           "$type": "color",
-          "$value": "{neutral.state-selected}"
+          "$value": "{negative.tint}"
         },
         "done-warning-idle": {
           "$type": "color",
-          "$value": "{neutral.state-selected}"
+          "$value": "{warning.tint}"
         },
         "done-warning-hover": {
           "$type": "color",
-          "$value": "{neutral.state-pressed}"
+          "$value": "{warning.tint-hover}"
         },
         "done-warning-pressed": {
           "$type": "color",
-          "$value": "{neutral.state-pressed}"
+          "$value": "{warning.tint-pressed}"
         },
         "done-warning-focus": {
           "$type": "color",
-          "$value": "{neutral.state-selected}"
+          "$value": "{warning.tint}"
         },
         "done-positive-idle": {
           "$type": "color",
-          "$value": "{neutral.state-selected}"
+          "$value": "{positive.tint}"
         },
         "done-positive-hover": {
           "$type": "color",
-          "$value": "{neutral.state-pressed}"
+          "$value": "{positive.tint-hover}"
         },
         "done-positive-pressed": {
           "$type": "color",
-          "$value": "{neutral.state-pressed}"
+          "$value": "{positive.tint-pressed}"
         },
         "done-positive-focus": {
           "$type": "color",
-          "$value": "{neutral.state-selected}"
+          "$value": "{positive.tint}"
         },
         "readonly-idle": {
           "$type": "color",
@@ -22482,6 +22482,10 @@
     "sticky": {
       "$type": "number",
       "$value": 10
+    },
+    "panel": {
+      "$type": "number",
+      "$value": 15
     },
     "chrome": {
       "$type": "number",

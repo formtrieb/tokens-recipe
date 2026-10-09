@@ -249,6 +249,7 @@
   },
   "layer": {
     "sticky": 10,
+    "panel": 15,
     "chrome": 20
   }
 }

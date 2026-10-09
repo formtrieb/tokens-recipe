@@ -326,6 +326,12 @@ export const RecipeSchema = z
     layer: z
       .object({
         sticky: z.number().int().describe('Tabellenkopf, Speicherleiste'),
+        panel: z
+          .number()
+          .int()
+          .describe(
+            'nicht-modale Fläche über dem Inhalt, unter dem Rahmen: Seitenpanel, Inspektor',
+          ),
         chrome: z
           .number()
           .int()

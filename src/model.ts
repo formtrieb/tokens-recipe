@@ -25,7 +25,7 @@
  *              --x-control-{sm|md|lg}-field-tag-radius (tag inside that field, concentric)
  *              --x-control-{family}-pill (per shape) · --x-target-min · --x-badge-{sm|md}-*
  *              @media (pointer: coarse) overrides · control-figma.json (px, fine/coarse)
- *   Layers     --x-layer-{sticky|chrome} (document only; floating = top layer)
+ *   Layers     --x-layer-{sticky|panel|chrome} (document only; floating = top layer)
  *              --x-elevation-sticky-{top|bottom|start|end} (per mode; RTL swaps start/end)
  *   Dataviz    --x-dataviz-category-{1…6|other} · -sequential-{1…6} · -diverging-{neutral|rated}-{low|high}-{1…3}|-mid
  *              --x-dataviz-{surface|grid|baseline|label|value|line|gap|marker|radius}
@@ -635,9 +635,21 @@ export function generateModel(
   /**
    * style `outline-hue` — an outline that carries its hue at rest: hue stroke
    * and hue text on paper (everyday destructive actions: „Löschen" in a row,
-   * „Kündigen" as bulk action). Selection values behave like `outline`.
+   * „Kündigen" as bulk action). Selected (and done) keeps the hue too: the
+   * surface moves onto the hue's tint ladder, which is built for ink on it;
+   * stroke, icon and text as in `outline`. Inactive, readonly and disabled
+   * behave like `outline`.
    */
   const outlineHue: Style = (part, c) => {
+    if (c.avail === 'enabled' && (c.sel === 'selected' || c.sel === 'done')) {
+      if (part !== 'background') return outline(part, c);
+      return {
+        idle: 'hue.tint',
+        hover: 'hue.tint-hover',
+        pressed: 'hue.tint-pressed',
+        focus: 'hue.tint',
+      }[c.inter];
+    }
     if (c.sel !== 'none' || c.avail !== 'enabled') return outline(part, c);
     const i = c.inter === 'focus' ? 'idle' : c.inter;
     return {
@@ -1822,14 +1834,18 @@ export function generateModel(
   const layer = recipe.layer!;
   const layerTokens = [
     decl('layer.sticky', layer.sticky), // sticky in content: table head, save bar
+    // non-modal surface over the content, under the frame: side panel, inspector
+    decl('layer.panel', layer.panel),
     decl('layer.chrome', layer.chrome), // app frame when the document scrolls
   ];
   const layerFails: string[] = [];
-  if (!(Number.isInteger(layer.sticky) && Number.isInteger(layer.chrome)))
+  if (![layer.sticky, layer.panel, layer.chrome].every(Number.isInteger))
     layerFails.push('Ebenen keine ganzen Zahlen');
-  if (!(layer.sticky > 0 && layer.sticky < layer.chrome))
+  if (
+    !(layer.sticky > 0 && layer.sticky < layer.panel && layer.panel < layer.chrome)
+  )
     layerFails.push(
-      `layer.sticky ${layer.sticky} nicht zwischen 0 und chrome ${layer.chrome}`,
+      `Ebenen nicht 0 < sticky ${layer.sticky} < panel ${layer.panel} < chrome ${layer.chrome}`,
     );
   // sticky shadows cast away from their edge (main shadow = the last of the list)
   for (const mode of MODES)
@@ -3390,7 +3406,7 @@ export function generateModel(
   log.push(`Flächen-Vertrag: ${surfaceFails.length ? 'verletzt' : 'ok'}`);
   for (const f of surfaceFails) log.push(`  ✗ ${f}`);
   log.push(
-    `Ebenen: layer.sticky ${layer.sticky} · chrome ${layer.chrome}, elevation.sticky × ${STICKY_EDGES.length} Kanten, Vertrag ${layerFails.length ? 'verletzt' : 'ok'}`,
+    `Ebenen: layer.sticky ${layer.sticky} · panel ${layer.panel} · chrome ${layer.chrome}, elevation.sticky × ${STICKY_EDGES.length} Kanten, Vertrag ${layerFails.length ? 'verletzt' : 'ok'}`,
   );
   for (const f of layerFails) log.push(`  ✗ ${f}`);
   log.push(
