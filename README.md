@@ -40,7 +40,7 @@ and values replace the default as a whole.
 |---|---|---|
 | Foundation | `hues`, `modes`, `alpha`, `space`, `motion.scale` | ramps per mode, alpha ladder, `size-*`, `duration-*` |
 | Selection | `semanticHues`, `poles`, `onFill`, `mark` | per mode: `{hue}-{step}`, `pole-*`, state layers, `content-*` |
-| Roles | `hierarchies`, `status`, `feedback`, `spaceRoles`, `width`, `radius`, `type`, `control`, `motion`, `dataviz`, `identity`, `icon`, `avatar`, `link`, … | `ctl-*`, `status-*`, `feedback-*`, `surface-*`, `space-*`, `type-*`, `control-*`, `control-{size}-switch-*`, `motion-*`, `icon-spot-*`, `avatar-*`, `link-underline-*`, … |
+| Roles | `hierarchies`, `status`, `feedback`, `spaceRoles`, `width`, `radius`, `type`, `control`, `motion`, `dataviz`, `identity`, `icon`, `avatar`, `link`, `layer`, … | `ctl-*`, `status-*`, `feedback-*`, `surface-*`, `space-*`, `type-*`, `control-*`, `control-{size}-switch-*`, `motion-*`, `icon-spot-*`, `avatar-*`, `link-underline-*`, `layer-*`, … |
 | Overlays | `radius.shapes`, `motion.characters`, `control.coarse` | sets switched by selector or media query: dark mode, RTL, reduced motion, forced colours, coarse pointer, shapes |
 
 Components read roles only. The Foundation is there for the roles to point
@@ -74,6 +74,18 @@ recipe fields of their own: `control-{size}-switch-height` = `icon-alone`,
 thumb − 4px. A value on the size scale reads `size-*`; off the scale it is a
 `calc()` over the roles. A size the coarse pointer replaces takes the
 replacement's switch as well.
+
+A hierarchy picks a style for its controls. `outline-hue` is an outline
+that carries its hue at rest (hue stroke and text on paper, for everyday
+destructive actions); selected and done move its surface onto the hue's tint
+ladder (`tint`, `tint-hover`, `tint-pressed`), with stroke, icon and text as
+in a selected `outline`. Inactive, readonly and disabled behave like `outline`.
+
+`layer-*` are z-index values for the document only, in this order:
+`sticky` (table head, save bar) < `panel` (a non-modal surface over the
+content and under the frame: side panel, inspector; default 15) < `chrome`
+(the app frame when the document scrolls). Popover, dialog, toast and tooltip
+live in the browser's top layer and need none.
 
 ## Output
 

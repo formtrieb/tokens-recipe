@@ -1,6 +1,6 @@
 {
   "prefix": "--x-",
-  "count": 5745,
+  "count": 5746,
   "transform": "Each Figma path becomes a CSS variable: join the segments with '-' and prepend '--x-'.",
   "categories": {
     "ctl/brand/background/idle": 1,
@@ -4752,7 +4752,7 @@
     "control/md": 35,
     "control/lg": 35,
     "badge": 13,
-    "layer": 2,
+    "layer": 3,
     "duration": 11,
     "motion": 62,
     "icon": 3,
@@ -10199,6 +10199,7 @@
     "badge/md/inline-counter": "--x-badge-md-inline-counter",
     "badge/dot": "--x-badge-dot",
     "layer/sticky": "--x-layer-sticky",
+    "layer/panel": "--x-layer-panel",
     "layer/chrome": "--x-layer-chrome",
     "duration/instant": "--x-duration-instant",
     "motion/travel": "--x-motion-travel",

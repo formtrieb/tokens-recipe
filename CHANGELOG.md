@@ -5,6 +5,24 @@ All notable changes to `@formtrieb/tokens-recipe` are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- Layer `layer.panel` between `sticky` and `chrome` (default 15) becomes
+  `--{prefix}layer-panel`: a non-modal surface over the content, under the
+  frame (side panel, inspector). The contract is now
+  `0 < sticky < panel < chrome`.
+
+### Changed
+
+- Style `outline-hue`: selected and done no longer borrow the neutral
+  selection of `outline`. The surface moves onto the hue's tint ladder
+  (`background-selected-idle`/`-focus` → `{hue}-tint`, `-hover` →
+  `{hue}-tint-hover`, `-pressed` → `{hue}-tint-pressed`, tones swap the hue);
+  stroke, icon and text stay as before. Forced colours still select in
+  `Highlight`.
+
 ## [0.6.0] — 2026-10-08
 
 ### Added

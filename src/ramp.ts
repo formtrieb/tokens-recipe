@@ -140,8 +140,10 @@ export interface Recipe {
   /**
    * z-index for the document only: everything floating
    * lives in the browser's top layer, components isolate their internals.
+   * `sticky` table head, save bar · `panel` non-modal surface over the
+   * content, under the frame (side panel, inspector) · `chrome` app frame.
    */
-  layer?: { sticky: number; chrome: number };
+  layer?: { sticky: number; panel: number; chrome: number };
   /**
    * Motion. `character` picks the set emitted on
    * `[data-mode]`; the others go under `[data-motion="…"]` — only to check
