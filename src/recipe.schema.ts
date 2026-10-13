@@ -242,6 +242,28 @@ export const RecipeSchema = z
       .describe(
         'Inhalt auf einer Füllung je Mode: feste Farbe oder auto (Weiß oder Schwarz, je nach Kontrast).',
       ),
+    fillStates: z
+      .object({
+        light: z
+          .object({
+            hover: z
+              .enum(['ladder', 'away-from-text'])
+              .optional()
+              .describe(
+                'ladder = wie die Leiter (Light dunkler, Dark heller) · away-from-text = weg vom Inhalt (schwarze Schrift → heller)',
+              ),
+          })
+          .optional(),
+        dark: z
+          .object({
+            hover: z.enum(['ladder', 'away-from-text']).optional(),
+          })
+          .optional(),
+      })
+      .optional()
+      .describe(
+        'Zustände einer Füllung je Mode als Abstand zur Füllung (Stufe 9, auch geankert): Hover um den Leiterabstand 9→10, Pressed weiter mit der Leiter (9→11) oder, wenn Hover gegen die Leiter geht, gleich weit zur anderen Seite.',
+      ),
     alpha: mode(z.array(unit).min(1)).describe(
       'Alpha-Leiter je Mode (Foundation). Die Auswahl nennt nur die Stufennummer, siehe alphaSteps.',
     ),

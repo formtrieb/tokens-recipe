@@ -261,6 +261,10 @@
       "$type": "color",
       "$value": "#ededed"
     },
+    "fill-pressed": {
+      "$type": "color",
+      "$value": "#c5c5c5"
+    },
     "on-fill": {
       "$type": "color",
       "$value": "#000000"
@@ -347,6 +351,10 @@
       "$type": "color",
       "$value": "#e9e9ff"
     },
+    "fill-pressed": {
+      "$type": "color",
+      "$value": "#bdbbff"
+    },
     "on-fill": {
       "$type": "color",
       "$value": "#000000"
@@ -416,6 +424,10 @@
     "ink": {
       "$type": "color",
       "$value": "#d7f1ff"
+    },
+    "fill-pressed": {
+      "$type": "color",
+      "$value": "#8dccff"
     },
     "on-fill": {
       "$type": "color",
@@ -487,6 +499,10 @@
       "$type": "color",
       "$value": "#d2f9d8"
     },
+    "fill-pressed": {
+      "$type": "color",
+      "$value": "#7bdf93"
+    },
     "on-fill": {
       "$type": "color",
       "$value": "#000000"
@@ -556,6 +572,10 @@
     "ink": {
       "$type": "color",
       "$value": "#ffe1dd"
+    },
+    "fill-pressed": {
+      "$type": "color",
+      "$value": "#ffa59d"
     },
     "on-fill": {
       "$type": "color",
@@ -627,6 +647,10 @@
       "$type": "color",
       "$value": "#fbeccb"
     },
+    "fill-pressed": {
+      "$type": "color",
+      "$value": "#e5c06f"
+    },
     "on-fill": {
       "$type": "color",
       "$value": "#000000"
@@ -696,6 +720,10 @@
     "ink": {
       "$type": "color",
       "$value": "#d9efff"
+    },
+    "fill-pressed": {
+      "$type": "color",
+      "$value": "#95c8ff"
     },
     "on-fill": {
       "$type": "color",

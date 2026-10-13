@@ -452,7 +452,7 @@
       "mode": "light",
       "rule": "Text auf brand-Fläche über on-fill-hover",
       "pair": "brand.on-fill / brand.on-fill-hover über brand.fill",
-      "ratio": 6.78,
+      "ratio": 8.06,
       "min": 4.5,
       "ok": true
     },
@@ -460,7 +460,7 @@
       "mode": "light",
       "rule": "Text auf brand-Fläche über on-fill-pressed",
       "pair": "brand.on-fill / brand.on-fill-pressed über brand.fill",
-      "ratio": 8.48,
+      "ratio": 10.09,
       "min": 4.5,
       "ok": true
     },
@@ -468,7 +468,7 @@
       "mode": "light",
       "rule": "Text auf brand-Fläche über on-fill-selected",
       "pair": "brand.on-fill / brand.on-fill-selected über brand.fill",
-      "ratio": 6.78,
+      "ratio": 8.06,
       "min": 4.5,
       "ok": true
     },
@@ -2713,28 +2713,28 @@
       {
         "mode": "dark",
         "where": "brand pressed text",
-        "pair": "brand.on-fill / brand.ink-subtle über pole.canvas",
+        "pair": "brand.on-fill / brand.fill-pressed über pole.canvas",
         "lc": 70.7,
         "target": 75
       },
       {
         "mode": "dark",
         "where": "brand pressed text",
-        "pair": "brand.on-fill / brand.ink-subtle über pole.paper",
+        "pair": "brand.on-fill / brand.fill-pressed über pole.paper",
         "lc": 70.7,
         "target": 75
       },
       {
         "mode": "dark",
         "where": "brand pressed text",
-        "pair": "brand.on-fill / brand.ink-subtle über pole.overlay",
+        "pair": "brand.on-fill / brand.fill-pressed über pole.overlay",
         "lc": 70.7,
         "target": 75
       },
       {
         "mode": "dark",
         "where": "brand pressed text",
-        "pair": "brand.on-fill / brand.ink-subtle über pole.sunken",
+        "pair": "brand.on-fill / brand.fill-pressed über pole.sunken",
         "lc": 70.7,
         "target": 75
       },
@@ -2797,28 +2797,28 @@
       {
         "mode": "dark",
         "where": "brand negative-pressed text",
-        "pair": "negative.on-fill / negative.ink-subtle über pole.canvas",
+        "pair": "negative.on-fill / negative.fill-pressed über pole.canvas",
         "lc": 68.2,
         "target": 75
       },
       {
         "mode": "dark",
         "where": "brand negative-pressed text",
-        "pair": "negative.on-fill / negative.ink-subtle über pole.paper",
+        "pair": "negative.on-fill / negative.fill-pressed über pole.paper",
         "lc": 68.2,
         "target": 75
       },
       {
         "mode": "dark",
         "where": "brand negative-pressed text",
-        "pair": "negative.on-fill / negative.ink-subtle über pole.overlay",
+        "pair": "negative.on-fill / negative.fill-pressed über pole.overlay",
         "lc": 68.2,
         "target": 75
       },
       {
         "mode": "dark",
         "where": "brand negative-pressed text",
-        "pair": "negative.on-fill / negative.ink-subtle über pole.sunken",
+        "pair": "negative.on-fill / negative.fill-pressed über pole.sunken",
         "lc": 68.2,
         "target": 75
       },
@@ -2881,28 +2881,28 @@
       {
         "mode": "dark",
         "where": "brand warning-pressed text",
-        "pair": "warning.on-fill / warning.ink-subtle über pole.canvas",
+        "pair": "warning.on-fill / warning.fill-pressed über pole.canvas",
         "lc": 72.4,
         "target": 75
       },
       {
         "mode": "dark",
         "where": "brand warning-pressed text",
-        "pair": "warning.on-fill / warning.ink-subtle über pole.paper",
+        "pair": "warning.on-fill / warning.fill-pressed über pole.paper",
         "lc": 72.4,
         "target": 75
       },
       {
         "mode": "dark",
         "where": "brand warning-pressed text",
-        "pair": "warning.on-fill / warning.ink-subtle über pole.overlay",
+        "pair": "warning.on-fill / warning.fill-pressed über pole.overlay",
         "lc": 72.4,
         "target": 75
       },
       {
         "mode": "dark",
         "where": "brand warning-pressed text",
-        "pair": "warning.on-fill / warning.ink-subtle über pole.sunken",
+        "pair": "warning.on-fill / warning.fill-pressed über pole.sunken",
         "lc": 72.4,
         "target": 75
       },
@@ -3119,28 +3119,28 @@
       {
         "mode": "dark",
         "where": "primary pressed text",
-        "pair": "accent.on-fill / accent.ink-subtle über pole.canvas",
+        "pair": "accent.on-fill / accent.fill-pressed über pole.canvas",
         "lc": 72.9,
         "target": 75
       },
       {
         "mode": "dark",
         "where": "primary pressed text",
-        "pair": "accent.on-fill / accent.ink-subtle über pole.paper",
+        "pair": "accent.on-fill / accent.fill-pressed über pole.paper",
         "lc": 72.9,
         "target": 75
       },
       {
         "mode": "dark",
         "where": "primary pressed text",
-        "pair": "accent.on-fill / accent.ink-subtle über pole.overlay",
+        "pair": "accent.on-fill / accent.fill-pressed über pole.overlay",
         "lc": 72.9,
         "target": 75
       },
       {
         "mode": "dark",
         "where": "primary pressed text",
-        "pair": "accent.on-fill / accent.ink-subtle über pole.sunken",
+        "pair": "accent.on-fill / accent.fill-pressed über pole.sunken",
         "lc": 72.9,
         "target": 75
       },

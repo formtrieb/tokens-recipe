@@ -261,6 +261,10 @@
       "$type": "color",
       "$value": "#353535"
     },
+    "fill-pressed": {
+      "$type": "color",
+      "$value": "#505050"
+    },
     "on-fill": {
       "$type": "color",
       "$value": "#ffffff"
@@ -337,7 +341,7 @@
     },
     "fill-hover": {
       "$type": "color",
-      "$value": "#574cb4"
+      "$value": "#4d40a7"
     },
     "ink-subtle": {
       "$type": "color",
@@ -347,21 +351,25 @@
       "$type": "color",
       "$value": "#30286b"
     },
+    "fill-pressed": {
+      "$type": "color",
+      "$value": "#3f348c"
+    },
     "on-fill": {
       "$type": "color",
       "$value": "#ffffff"
     },
     "on-fill-hover": {
       "$type": "color",
-      "$value": "#574cb4"
+      "$value": "#4d40a7"
     },
     "on-fill-pressed": {
       "$type": "color",
-      "$value": "#494099"
+      "$value": "#3f348c"
     },
     "on-fill-selected": {
       "$type": "color",
-      "$value": "#574cb4"
+      "$value": "#4d40a7"
     },
     "on-fill-disabled": {
       "$type": "color",
@@ -416,6 +424,10 @@
     "ink": {
       "$type": "color",
       "$value": "#143854"
+    },
+    "fill-pressed": {
+      "$type": "color",
+      "$value": "#255479"
     },
     "on-fill": {
       "$type": "color",
@@ -487,6 +499,10 @@
       "$type": "color",
       "$value": "#00411a"
     },
+    "fill-pressed": {
+      "$type": "color",
+      "$value": "#0b612c"
+    },
     "on-fill": {
       "$type": "color",
       "$value": "#ffffff"
@@ -556,6 +572,10 @@
     "ink": {
       "$type": "color",
       "$value": "#601617"
+    },
+    "fill-pressed": {
+      "$type": "color",
+      "$value": "#8b2828"
     },
     "on-fill": {
       "$type": "color",
@@ -627,6 +647,10 @@
       "$type": "color",
       "$value": "#453200"
     },
+    "fill-pressed": {
+      "$type": "color",
+      "$value": "#664b03"
+    },
     "on-fill": {
       "$type": "color",
       "$value": "#ffffff"
@@ -696,6 +720,10 @@
     "ink": {
       "$type": "color",
       "$value": "#1b3658"
+    },
+    "fill-pressed": {
+      "$type": "color",
+      "$value": "#2d517f"
     },
     "on-fill": {
       "$type": "color",

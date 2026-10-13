@@ -105,6 +105,17 @@ export interface Recipe {
   /** content on `fill` per mode: a fixed colour, or 'auto' = higher contrast of white/black */
   onFill?: Record<Mode, string>;
   /**
+   * States of a fill per mode, as a distance to the fill (step 9), not a fixed
+   * place on the ladder. `hover`: `ladder` (default) moves step 10 the way the
+   * ladder goes (Light darker, Dark lighter); `away-from-text` moves it away
+   * from `on-fill`, so the content's contrast always grows (black text → the
+   * hover gets lighter). Pressed (`fill-pressed`) goes on with the ladder when
+   * hover does, otherwise the same distance to the other side.
+   */
+  fillStates?: Partial<
+    Record<Mode, { hover?: 'ladder' | 'away-from-text' }>
+  >;
+  /**
    * Foundation alpha ladder per mode (same length in every mode). The
    * mode-free Auswahl picks a step number; the value may differ per mode
    * (content.secondary is stronger in Dark).
@@ -445,10 +456,45 @@ export const STEP_NAMES = [
   'ink',
 ] as const;
 
+/** content on a fill: the recipe's colour, or 'auto' = white or black, whichever contrasts more */
+export function onFillOf(r: Recipe, mode: Mode, fill: string): string {
+  const pref = r.onFill?.[mode] ?? 'auto';
+  if (pref !== 'auto') return pref;
+  return contrastWcag('#ffffff', fill) >= contrastWcag('#000000', fill)
+    ? '#ffffff'
+    : '#000000';
+}
+
+export interface FillStates {
+  ramps: Ramps;
+  /** `fill-pressed` per mode and ramp: derived from step 9, no ladder step */
+  pressed: Record<Mode, Record<string, Swatch>>;
+}
+
 export function buildRamps(r: Recipe): Ramps {
-  const out: Ramps = { light: {}, dark: {} };
+  return buildFillStates(r).ramps;
+}
+
+/**
+ * The ramps plus the pressed fill. The states of a fill are a distance to the
+ * fill, so they follow an anchor on step 9: step 10 (`fill-hover`) sits Δh =
+ * |L₁₀ − L₉| of the ladder away from it, `fill-pressed` Δp = |L₁₁ − L₉| further
+ * on with the ladder — or, when hover goes against the ladder
+ * (`away-from-text`), Δh to the other side. Without an anchor on 9 the base is
+ * the ladder's own L₉, so step 10 and `fill-pressed` (= `ink-subtle`) come out
+ * as before. An anchor on 10 keeps step 10 pinned; `fill-pressed` follows the
+ * same rule from L₉.
+ */
+export function buildFillStates(r: Recipe): FillStates {
+  const ramps: Ramps = { light: {}, dark: {} };
+  const pressed: FillStates['pressed'] = { light: {}, dark: {} };
   for (const mode of MODES) {
     const m = r.modes[mode];
+    const L = m.lightness;
+    /** ladder direction 9 → 10 (Light −1, Dark +1) and the two distances */
+    const d = Math.sign(L[9] - L[8]);
+    const dh = Math.abs(L[9] - L[8]);
+    const dp = Math.abs(L[10] - L[8]);
     for (const hue of r.hues) {
       const anchor = hue.anchor?.[mode];
       const anchorOk = anchor ? hexToOklch(anchor.hex) : undefined;
@@ -458,26 +504,16 @@ export function buildRamps(r: Recipe): Ramps {
           ? (anchorOk.c ?? 0) /
             (r.chromaMax * (m.chromaCurve[anchor.step - 1] || 1))
           : hue.chromaScale;
-      out[mode][hue.name] = Array.from({ length: r.steps }, (_, i) => {
-        const pinned = !!anchor && anchorOk && i === anchor.step - 1;
-        const requestedC = pinned
-          ? (anchorOk.c ?? 0)
-          : r.chromaMax * (m.chromaCurve[i] ?? 0) * scale;
-        const want = {
-          l: pinned ? anchorOk.l : m.lightness[i],
-          c: requestedC,
-          h,
-        };
-        // Gamut mapping as CSS Color 4 §13 specifies it, from core, so one
-        // OKLCH value gives one colour across the tools: reduce OKLCH chroma
-        // until the clipped colour is within a just-noticeable difference
-        // (ΔEOK 0.02), then clip. It keeps more chroma than a pure chroma
-        // clamp and lets lightness and hue move a little; the step contract
-        // checks the result.
-        const hex = pinned
-          ? anchor.hex.toLowerCase()
-          : oklchToHex(want.l, want.c, want.h);
-        const got = pinned ? want : hexToOklch(hex);
+      const chroma = (i: number) => r.chromaMax * (m.chromaCurve[i] ?? 0) * scale;
+      // Gamut mapping as CSS Color 4 §13 specifies it, from core, so one
+      // OKLCH value gives one colour across the tools: reduce OKLCH chroma
+      // until the clipped colour is within a just-noticeable difference
+      // (ΔEOK 0.02), then clip. It keeps more chroma than a pure chroma
+      // clamp and lets lightness and hue move a little; the step contract
+      // checks the result.
+      const swatch = (i: number, l: number, requestedC: number): Swatch => {
+        const hex = oklchToHex(l, requestedC, h);
+        const got = hexToOklch(hex);
         return {
           step: i + 1,
           l: got.l,
@@ -485,14 +521,40 @@ export function buildRamps(r: Recipe): Ramps {
           h: got.h ?? h,
           requestedC,
           hex,
-          clamped:
-            !pinned && !isInSrgbGamut(`oklch(${want.l} ${want.c} ${want.h})`),
-          anchored: !!pinned,
+          clamped: !isInSrgbGamut(`oklch(${l} ${requestedC} ${h})`),
+          anchored: false,
         };
-      });
+      };
+      const pinnedAt = anchor && anchorOk ? anchor.step - 1 : -1;
+      const ramp = Array.from({ length: r.steps }, (_, i): Swatch =>
+        i === pinnedAt
+          ? {
+              step: i + 1,
+              l: anchorOk!.l,
+              c: anchorOk!.c ?? 0,
+              h,
+              requestedC: anchorOk!.c ?? 0,
+              hex: anchor!.hex.toLowerCase(),
+              clamped: false,
+              anchored: true,
+            }
+          : swatch(i, L[i], chroma(i)),
+      );
+      // the fill states, from step 9 (the anchor's L when it pins 9)
+      const l9 = pinnedAt === 8 ? anchorOk!.l : L[8];
+      const policy = r.fillStates?.[mode]?.hover ?? 'ladder';
+      const away =
+        hexToOklch(onFillOf(r, mode, ramp[8].hex)).l > l9 ? -1 : 1;
+      const along = policy === 'ladder' || away === d;
+      if (pinnedAt !== 9)
+        ramp[9] = swatch(9, l9 + (along ? d : -d) * dh, chroma(9));
+      pressed[mode][hue.name] = along
+        ? swatch(10, l9 + d * dp, chroma(10))
+        : swatch(10, l9 + d * dh, chroma(9));
+      ramps[mode][hue.name] = ramp;
     }
   }
-  return out;
+  return { ramps, pressed };
 }
 
 export interface Finding {
