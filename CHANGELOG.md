@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `radius.waive`: nested corners a design system breaks on purpose (square
+  tiles holding rounded checkboxes) are named by their pair
+  (`{ "nesting": "container/item", "reason": "…" }`). The report shows the
+  affected lines as `· … — ausgesetzt: <reason>` instead of `✗`. `reason` is
+  required, and an unknown pair stops with a `RecipeError`.
+
+### Changed
+
+- `Füllung {hue} (1.4.11)`: a fill below 3:1 against the page is a note, not
+  a failure, when its `on-fill` reaches 3:1 against the page (the label or
+  check carries the edge). The report prints it as a `·` line, and
+  `model-report.json` keeps the check with `ok: true` and an `advisory`
+  reason. Without that content contrast it stays a failure.
+
 ### Fixed
 
 - Control sizes the recipe derives no longer have to lie on `space.scale`.
@@ -15,8 +31,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   the top size read the size scale when they land on it and are `calc()` over
   the size-scale value they come from otherwise (for example
   `calc(var(--x-size-52) / 2 - 4px + var(--x-control-action-pill))`). Before,
-  a height such as 52 crashed the DTCG export with a reference to a size
-  token that does not exist.
+  a derived size off the scale (the inline padding 22 of a 52 px button)
+  crashed the DTCG export with a reference to a size token that does not
+  exist.
 - Sizes the recipe names directly (`control.sizes.*.height`/`icon`/`gap`/
   `content`, `control.icons`, `control.rules.pill`, `control.target.*`,
   `control.badge.*.height`, `control.badgeDot`,

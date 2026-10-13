@@ -183,6 +183,12 @@ export interface Recipe {
     default: string;
     shapes: Record<string, Record<string, number | 'round'>>;
     sizeRatio?: number;
+    /**
+     * nested corners (`outer/inner`, a pair of the generator's nesting
+     * scenarios) that are deliberately not concentric — the report shows them
+     * as waived with the reason instead of a failure
+     */
+    waive?: { nesting: string; reason: string }[];
   };
   /**
    * Typography: font stacks, one size scale, five line-height classes and

@@ -1411,6 +1411,19 @@ export function generateModel(
       'Checkbox in Karte',
     ],
   ];
+  // a nesting the recipe waives on purpose (square tiles holding 4 px
+  // checkboxes) shows as waived with its reason, neither ✗ nor ✓
+  const waived = new Map<string, string>();
+  const pairs = new Set(NESTING.map(([o, i]) => `${o}/${i}`));
+  (radius.waive ?? []).forEach((w, n) => {
+    if (!pairs.has(w.nesting))
+      recipeErrors.push(
+        `radius.waive.${n}.nesting: ${w.nesting} ist kein Verschachtelungspaar (${[...pairs].join(' · ')})`,
+      );
+    waived.set(w.nesting, w.reason);
+  });
+  assertRecipe();
+  const radiusWaived: string[] = [];
   const px = (v: number | 'round') => (v === 'round' ? Infinity : v);
   for (const [name, shape] of Object.entries(radius.shapes)) {
     for (const role of ROLES)
@@ -1423,18 +1436,19 @@ export function generateModel(
     for (const [outer, inner, pad, where] of NESTING) {
       const o = px(shape[outer]),
         i = px(shape[inner]);
+      const reason = waived.get(`${outer}/${inner}`);
+      const fail = (msg: string) =>
+        reason === undefined
+          ? radiusFails.push(`${name}: ${where} — ${msg}`)
+          : radiusWaived.push(`${name}: ${where} — ${msg} — ausgesetzt: ${reason}`);
       // a round outer needs a round inner (concentric); otherwise subtract the padding
       if (o === Infinity && i !== Infinity) {
-        radiusFails.push(
-          `${name}: ${where} — ${inner} ${i} in rundem ${outer} (nicht konzentrisch)`,
-        );
+        fail(`${inner} ${i} in rundem ${outer} (nicht konzentrisch)`);
         continue;
       }
       const max = pad < o ? o - pad : o;
       if (i > max)
-        radiusFails.push(
-          `${name}: ${where} — ${inner} ${i} > ${max} (${outer} ${o} − Abstand ${pad})`,
-        );
+        fail(`${inner} ${i} > ${max} (${outer} ${o} − Abstand ${pad})`);
     }
   }
 
@@ -2591,6 +2605,8 @@ export function generateModel(
     ratio: number;
     min: number;
     ok: boolean;
+    /** below `min` but not a failure: why (advisory, never fails) */
+    advisory?: string;
   }
   const checks: Check[] = [];
   // every hue a control shows: the hierarchies' hues (not the inverted surface)
@@ -2716,6 +2732,17 @@ export function generateModel(
         canvas,
         C.strokeMin,
       );
+      // the fill serves buttons (label) and checkbox/radio/switch (check, dot,
+      // thumb): where the fill does not carry the edge to its surroundings, the
+      // content must — then 1.4.11 does not ask for the surface boundary
+      {
+        const last = checks[checks.length - 1];
+        const carry = contrastWcag(v[`${hue}.on-fill`], canvas);
+        if (!last.ok && carry >= C.strokeMin) {
+          last.ok = true;
+          last.advisory = `${hue}.on-fill / pole.canvas ${carry.toFixed(2)} ≥ ${C.strokeMin}: der Inhalt trägt die Kante`;
+        }
+      }
       add(
         `Haken/Ziffer auf Füllung ${hue}`,
         `${hue}.on-fill / ${hue}.fill`,
@@ -3390,6 +3417,10 @@ export function generateModel(
   );
   for (const f of fails)
     log.push(`  ✗ ${f.mode} ${f.rule}: ${f.ratio} < ${f.min} (${f.pair})`);
+  for (const f of checks.filter((c) => c.advisory))
+    log.push(
+      `  · ${f.mode} ${f.rule}: ${f.ratio} < ${f.min} (${f.pair}) — Hinweis, ${f.advisory}`,
+    );
   log.push(
     `Zell-Vertrag: ${cellPairs.size} Farbpaare aus ${cellCount} Zell-Prüfungen, Auswahl in ${selectCount} Zellen, Vertrag ${cellFails.length ? 'verletzt' : 'ok'}`,
   );
@@ -3442,6 +3473,7 @@ export function generateModel(
     `Radius: ${ROLES.length + 1} Rollen, Formen ${Object.keys(radius.shapes).join(' · ')}, Vertrag ${radiusFails.length ? 'verletzt' : 'ok'}`,
   );
   for (const f of radiusFails) log.push(`  ✗ ${f}`);
+  for (const f of radiusWaived) log.push(`  · ${f}`);
   log.push(
     `Controls: ${SIZES.length} Größen × ${Object.keys(FAMILIES).length} Familien, ${controlTokens.length} Tokens + ${coarseTokens.length} grob, ${Object.keys(control.badge).length} Badge-Größen, Vertrag ${controlFails.length ? 'verletzt' : 'ok'}`,
   );
