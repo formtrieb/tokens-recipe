@@ -3776,5 +3776,79 @@
         }
       }
     }
+  },
+  "field": {
+    "stroke": {
+      "disabled-idle": {
+        "$type": "color",
+        "$value": "GrayText"
+      },
+      "disabled-negative-idle": {
+        "$type": "color",
+        "$value": "GrayText"
+      },
+      "disabled-warning-idle": {
+        "$type": "color",
+        "$value": "GrayText"
+      },
+      "disabled-positive-idle": {
+        "$type": "color",
+        "$value": "GrayText"
+      }
+    },
+    "text": {
+      "disabled-idle": {
+        "$type": "color",
+        "$value": "GrayText"
+      },
+      "disabled-negative-idle": {
+        "$type": "color",
+        "$value": "GrayText"
+      },
+      "disabled-warning-idle": {
+        "$type": "color",
+        "$value": "GrayText"
+      },
+      "disabled-positive-idle": {
+        "$type": "color",
+        "$value": "GrayText"
+      }
+    },
+    "text-subtle": {
+      "disabled-idle": {
+        "$type": "color",
+        "$value": "GrayText"
+      },
+      "disabled-negative-idle": {
+        "$type": "color",
+        "$value": "GrayText"
+      },
+      "disabled-warning-idle": {
+        "$type": "color",
+        "$value": "GrayText"
+      },
+      "disabled-positive-idle": {
+        "$type": "color",
+        "$value": "GrayText"
+      }
+    },
+    "icon": {
+      "disabled-idle": {
+        "$type": "color",
+        "$value": "GrayText"
+      },
+      "disabled-negative-idle": {
+        "$type": "color",
+        "$value": "GrayText"
+      },
+      "disabled-warning-idle": {
+        "$type": "color",
+        "$value": "GrayText"
+      },
+      "disabled-positive-idle": {
+        "$type": "color",
+        "$value": "GrayText"
+      }
+    }
   }
 }
