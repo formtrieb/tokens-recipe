@@ -5,6 +5,28 @@ All notable changes to `@formtrieb/tokens-recipe` are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+
+- Control sizes the recipe derives no longer have to lie on `space.scale`.
+  Inline padding on the action ladder (`height / 2 − actionInset`), its icon
+  side, `gap-plain`, `icon-alone`, `switch-height` and the coarse height past
+  the top size read the size scale when they land on it and are `calc()` over
+  the size-scale value they come from otherwise (for example
+  `calc(var(--x-size-52) / 2 - 4px + var(--x-control-action-pill))`). Before,
+  a height such as 52 crashed the DTCG export with a reference to a size
+  token that does not exist.
+- Sizes the recipe names directly (`control.sizes.*.height`/`icon`/`gap`/
+  `content`, `control.icons`, `control.rules.pill`, `control.target.*`,
+  `control.badge.*.height`, `control.badgeDot`,
+  `motion.characters.*.distance.*`) are checked against `space.scale` before
+  anything is written and stop with a `RecipeError` naming the path. They
+  used to be contract lines (`… fehlt in der Foundation-Skala`) followed by
+  the same crash.
+- The DTCG export reports a reference to an unknown token as a `RecipeError`
+  naming the token it came from, instead of a plain `Error`.
+
 ## [0.7.0] — 2026-10-09
 
 ### Added

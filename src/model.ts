@@ -1461,6 +1461,25 @@ export function generateModel(
   const control = recipe.control!;
   const SIZES = Object.keys(control.sizes);
   const CR = control.rules;
+  // what the recipe names directly reads the size scale; derived sizes do not
+  // have to lie on it (they fall back to calc, see onScale)
+  {
+    const offScale = (path: string, n: number) => {
+      if (!space.scale.includes(n))
+        recipeErrors.push(`${path}: ${n} liegt nicht auf space.scale`);
+    };
+    for (const [s, z] of Object.entries(control.sizes))
+      for (const k of ['height', 'icon', 'gap', 'content'] as const)
+        offScale(`control.sizes.${s}.${k}`, z[k]);
+    control.icons.forEach((n, i) => offScale(`control.icons.${i}`, n));
+    offScale('control.rules.pill', CR.pill);
+    offScale('control.target.fine', control.target.fine);
+    offScale('control.target.coarse', control.target.coarse);
+    for (const [b, def] of Object.entries(control.badge))
+      offScale(`control.badge.${b}.height`, def.height);
+    if (control.badgeDot) offScale('control.badgeDot', control.badgeDot);
+    assertRecipe();
+  }
   const typeStepOf = (role: string, step: string) =>
     typeSteps.find((t) => t.role === role && t.step === step);
   const lhOf = (role: string, step: string) => {
@@ -1520,6 +1539,31 @@ export function generateModel(
     return last + (last - prev) * (i - SIZES.length + 1);
   };
   const sz = (n: number) => `var(--${P}size-${n})`;
+  /** a derived size on the size scale reads it; off the scale it is calc over what it comes from */
+  const onScale = (n: number, otherwise: string) =>
+    space.scale.includes(n) ? sz(n) : otherwise;
+  /**
+   * inline padding of a family, less `minus` px, as a term inside calc: the
+   * action ladder derives it from the height, the content ladder names it. Off
+   * the scale it is the arithmetic over the size-scale value of the height (not
+   * the height role, which the coarse pointer overrides while the padding stays).
+   */
+  const padTerm = (s: string, ladder: 'action' | 'content', minus = 0) => {
+    const n = inlinePad(s, ladder) - minus;
+    const z = control.sizes[s];
+    return onScale(
+      n,
+      ladder === 'action'
+        ? `${sz(z.height)} / 2 - ${CR.actionInset + minus}px`
+        : `${sz(z.content)} - ${minus}px`,
+    );
+  };
+  /** coarse height: another size's height, or past the top a calc over the last two */
+  const coarseHeightValue = (s: string) => {
+    const n = coarseHeight(s);
+    const last = control.sizes[SIZES[SIZES.length - 1]].height;
+    return onScale(n, `calc(${sz(last)} + ${n - last}px)`);
+  };
   const ctlName = (s: string, k: string) => `--${P}control-${s}-${k}`;
   /** dot-path of a control-size token: family keys nest (`action-text` → action.text) */
   const ctlPath = (s: string, k: string) => {
@@ -1579,13 +1623,13 @@ export function generateModel(
       decl(ctlPath(s, 'field-tag-radius'), radiusPx(tagInField(shape, s)), set),
     ),
   ];
-  /** a part size on the size scale reads it; off the scale it is calc over the roles */
-  const onScale = (n: number, otherwise: string) =>
-    space.scale.includes(n) ? sz(n) : otherwise;
   const switchDecls = (s: string) => {
     const sw = switchParts(s);
     return [
-      decl(ctlPath(s, 'switch-height'), sz(sw.height)),
+      decl(
+        ctlPath(s, 'switch-height'),
+        onScale(sw.height, `var(${ctlName(s, 'icon-alone')})`),
+      ),
       decl(
         ctlPath(s, 'switch-width'),
         onScale(sw.width, `calc(2 * var(${ctlName(s, 'icon')}))`),
@@ -1614,28 +1658,33 @@ export function generateModel(
     controlTokens.push(
       decl(ctlPath(s, 'height'), sz(z.height)),
       decl(ctlPath(s, 'icon'), sz(z.icon)),
-      decl(ctlPath(s, 'icon-alone'), sz(iconAlone(s))),
+      decl(
+        ctlPath(s, 'icon-alone'),
+        onScale(iconAlone(s), `calc(${sz(z.height)} - ${2 * CR.aloneRand}px)`),
+      ),
       ...switchDecls(s),
       decl(ctlPath(s, 'gap'), sz(z.gap)),
       // controls without a surface (tertiary, link): icon and text one step closer
-      decl(ctlPath(s, 'gap-plain'), sz(z.gap - CR.plainGap)),
+      decl(
+        ctlPath(s, 'gap-plain'),
+        onScale(z.gap - CR.plainGap, `calc(${sz(z.gap)} - ${CR.plainGap}px)`),
+      ),
       decl(ctlPath(s, 'row-height'), `var(${ctlName(s, 'height')})`),
     );
     for (const [f, def] of Object.entries(FAMILIES)) {
       const step = z[def.step];
       const t = `--${P}type-${def.role}-${step}`;
-      const pad = inlinePad(s, def.ladder);
       const h = f === 'row' ? ctlName(s, 'row-height') : ctlName(s, 'height');
       controlTokens.push(
         decl(ctlPath(s, `${f}-text`), `var(${t})`),
         decl(ctlPath(s, `${f}-tracking`), `var(${t}-tracking)`),
         decl(
           ctlPath(s, `${f}-inline`),
-          `calc(${sz(pad)} + var(--${P}control-${f}-pill))`,
+          `calc(${padTerm(s, def.ladder)} + var(--${P}control-${f}-pill))`,
         ),
         decl(
           ctlPath(s, `${f}-inline-icon`),
-          `calc(${sz(pad - CR.iconSide)} + var(--${P}control-${f}-pill))`,
+          `calc(${padTerm(s, def.ladder, CR.iconSide)} + var(--${P}control-${f}-pill))`,
         ),
         decl(
           ctlPath(s, `${f}-block`),
@@ -1698,8 +1747,14 @@ export function generateModel(
       );
     } else
       coarseTokens.push(
-        decl(ctlPath(s, 'height'), sz(coarseHeight(s)), SET.coarse),
-        decl(ctlPath(s, 'row-height'), sz(coarseRowHeight(s)), SET.coarse),
+        decl(ctlPath(s, 'height'), coarseHeightValue(s), SET.coarse),
+        decl(
+          ctlPath(s, 'row-height'),
+          coarseHeight(s) >= control.target.coarse
+            ? coarseHeightValue(s)
+            : sz(control.target.coarse),
+          SET.coarse,
+        ),
       );
   }
 
@@ -1712,17 +1767,9 @@ export function generateModel(
     const ic = control.icons;
     if (ic.some((v, i) => i > 0 && v <= ic[i - 1]))
       controlFails.push(`Icon-Stufen nicht streng steigend: ${ic.join(' · ')}`);
-    const used = new Set<number>([control.target.fine, control.target.coarse]);
     for (const s of SIZES) {
       const z = control.sizes[s];
       const al = iconAlone(s);
-      used
-        .add(z.height)
-        .add(coarseHeight(s))
-        .add(coarseRowHeight(s))
-        .add(z.icon)
-        .add(al);
-      used.add(z.gap).add(z.gap - CR.plainGap);
       if (z.height < control.target.fine)
         controlFails.push(
           `${s}: Höhe ${z.height} < target.fine ${control.target.fine} (WCAG 2.5.8)`,
@@ -1749,7 +1796,6 @@ export function generateModel(
         if (z.height < lh)
           controlFails.push(`${s}.${f}: Höhe ${z.height} < Zeilenhöhe ${lh}`);
         const pad = inlinePad(s, def.ladder);
-        used.add(pad).add(pad - CR.iconSide);
         if (pad - CR.iconSide < 0)
           controlFails.push(`${s}.${f}: Icon-Seite < 0`);
       }
@@ -1805,7 +1851,6 @@ export function generateModel(
       }
     }
     for (const [b, def] of Object.entries(control.badge)) {
-      used.add(def.height);
       const lh = lhOf('caption', def.text);
       if (Number.isNaN(lh))
         controlFails.push(`badge.${b}: type.caption.${def.text} fehlt`);
@@ -1819,9 +1864,6 @@ export function generateModel(
           `badge.dot ${control.badgeDot} nicht kleiner als badge.${b}`,
         );
     }
-    for (const n of used)
-      if (!space.scale.includes(n))
-        controlFails.push(`${n} px fehlt in der Foundation-Skala`);
   }
 
   // ---------- Layers ----------
@@ -2107,10 +2149,11 @@ export function generateModel(
         motionFails.push(
           `${name}: Weg wächst nicht mit der Größe (${dist.join(' · ')})`,
         );
-      for (const v of dist)
-        if (!space.scale.includes(v))
-          motionFails.push(
-            `${name}: Weg ${v} px fehlt in der Foundation-Skala`,
+      // the distance is a recipe value read from the size scale: a stop, not a contract line
+      for (const s of sizes)
+        if (!space.scale.includes(ch.distance[s]))
+          recipeErrors.push(
+            `motion.characters.${name}.distance.${s}: ${ch.distance[s]} liegt nicht auf space.scale`,
           );
       for (const [s, v] of Object.entries(ch.scale))
         if (!(v! > 0.9 && v! <= 1))
