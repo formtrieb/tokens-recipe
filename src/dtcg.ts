@@ -20,6 +20,8 @@
  * on (which one, the render table in model.ts says).
  */
 
+import { RecipeError } from './recipe.js';
+
 export interface TokenEntry {
   set: string;
   path: string;
@@ -122,10 +124,19 @@ export function emitDtcg(
     if (e.set === SET.base || !firstValue.has(e.path))
       firstValue.set(e.path, e.value);
   }
+  /** the token being emitted, so an unknown reference names where it came from */
+  let from = '';
   const pathOf = (name: string) => {
     const p = byName.get(name);
-    if (!p) throw new Error(`DTCG: ${name} ist kein Token des Modells`);
-    return p;
+    if (p) return p;
+    // the generator checks recipe values against the scale first; this is the
+    // net below it, a recipe error instead of a crash
+    const size = `--${prefix}size-`;
+    const px = name.startsWith(size) ? name.slice(size.length) : undefined;
+    const line = `DTCG: ${name} ist kein Token des Modells (aus ${from}${
+      px ? `; ${px} px liegt nicht auf space.scale` : ''
+    })`;
+    throw new RecipeError([line], [{ path: [], message: line }]);
   };
   const refs = (v: string) => v.replace(VAR, (_, n) => `{${pathOf(n)}}`);
 
@@ -226,6 +237,7 @@ export function emitDtcg(
       node = next as Group;
     }
     const last = segs[segs.length - 1];
+    from = e.path;
     if (last in node)
       throw new Error(
         '$value' in node[last]

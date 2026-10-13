@@ -75,6 +75,16 @@ thumb − 4px. A value on the size scale reads `size-*`; off the scale it is a
 `calc()` over the roles. A size the coarse pointer replaces takes the
 replacement's switch as well.
 
+The same holds for every size the control bundle derives: inline padding
+(`height / 2 − actionInset` on the action ladder) and its icon side,
+`gap-plain`, `icon-alone`, the coarse height past the top size. On the size
+scale they read `size-*`; off it they are `calc()` over the size they come
+from (`calc(var(--x-size-52) / 2 - 4px + var(--x-control-action-pill))`), so a
+52 px button does not force 22 into the scale. Sizes the recipe names —
+heights, icons, gaps, `content`, `rules.pill`, targets, badges, motion
+distances — must lie on the scale; the generator stops with the recipe path
+otherwise.
+
 A hierarchy picks a style for its controls. `outline-hue` is an outline
 that carries its hue at rest (hue stroke and text on paper, for everyday
 destructive actions); selected and done move its surface onto the hue's tint
