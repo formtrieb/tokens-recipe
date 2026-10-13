@@ -298,6 +298,22 @@
     },
     {
       "mode": "light",
+      "rule": "Feldtext",
+      "pair": "pole.ink / pole.paper",
+      "ratio": 21,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Feld-Fokusrand (1.4.11)",
+      "pair": "accent.fill / pole.paper",
+      "ratio": 5.01,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
       "rule": "Readonly-Feld Text",
       "pair": "pole.ink / neutral.subtle",
       "ratio": 17.94,
@@ -1394,6 +1410,22 @@
     },
     {
       "mode": "dark",
+      "rule": "Feldtext",
+      "pair": "pole.ink / pole.paper",
+      "ratio": 12.71,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "Feld-Fokusrand (1.4.11)",
+      "pair": "accent.fill / pole.paper",
+      "ratio": 7.05,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
       "rule": "Readonly-Feld Text",
       "pair": "pole.ink / neutral.subtle",
       "ratio": 10.73,
@@ -2194,7 +2226,7 @@
     }
   ],
   "cells": {
-    "checked": 9600,
+    "checked": 9888,
     "pairs": 818,
     "fails": [],
     "glyphOnly": 36

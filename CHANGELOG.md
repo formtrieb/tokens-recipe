@@ -5,6 +5,26 @@ All notable changes to `@formtrieb/tokens-recipe` are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- Role set `--{prefix}field-*` for fields (text field, text area, select
+  trigger), decoupled from the hierarchy `secondary`: style fixed to
+  `outline`, cells `{background|stroke|text|text-subtle|icon}` ×
+  enabled (`idle`, `hover`, `focus`), `readonly` (`idle`, `focus`),
+  `disabled` (`idle`) × tone — 120 tokens, keys as in `ctl`. Recipe
+  `field: { hue, strokeWidth?, strokeWidthEmphasis? }` (default
+  `{ "hue": "accent" }`): the hue of focus, and two stroke roles emitted as
+  `--{prefix}field-stroke-width` and `--{prefix}field-stroke-width-emphasis`
+  (focus and tones). An unknown hue or role stops with a `RecipeError` at
+  its path. `ctl-secondary-*` is unchanged; with the same hue and `secondary`
+  on `outline` every field cell equals it. The field contract lines read the
+  field cells, plus `Feldtext` and `Feld-Fokusrand (1.4.11)`, and the cell
+  contract checks the field cells. Forced colours remap the field like a
+  hierarchy (disabled stroke, text and icon → `GrayText`). The editor gallery
+  draws its field from `field-*`.
+
 ## [0.8.0] — 2026-10-13
 
 ### Added

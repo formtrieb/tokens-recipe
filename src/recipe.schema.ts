@@ -156,6 +156,20 @@ export const RecipeSchema = z
       .describe(
         'Betonungsstufen aller Controls: brand, primary, secondary, tertiary, destructive, destructive-subtle, on-inverted — je ein Farbton und ein Stil.',
       ),
+    field: z
+      .object({
+        hue: name.describe('Farbton aus semanticHues für Fokus (Standard accent)'),
+        strokeWidth: name
+          .optional()
+          .describe('Rahmenstärke in Ruhe und Hover: Rolle aus border.width (Standard default)'),
+        strokeWidthEmphasis: name
+          .optional()
+          .describe('Rahmenstärke bei Fokus und Ton: Rolle aus border.width (Standard = strokeWidth)'),
+      })
+      .optional()
+      .describe(
+        'Felder (Textfeld, Textbereich, Select-Auslöser): eigener Rollensatz field-*, Stil fest outline, unabhängig von den Hierarchien.',
+      ),
     modes: mode(
       z.object({
         lightness: z

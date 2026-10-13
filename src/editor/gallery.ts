@@ -388,7 +388,7 @@ hr.subtle { inline-size: 100%; border: 0; border-block-start: var(--x-border-wid
 .type-line > span:last-child { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .sizes { align-items: flex-end; }
 .size { display: inline-flex; gap: var(--x-space-gap-tight); align-items: center; }
-.field { display: inline-flex; align-items: center; border: var(--x-border-width-default) solid var(--x-ctl-secondary-stroke-idle); background: var(--x-ctl-secondary-background-idle); color: var(--x-ctl-secondary-text-subtle-idle); white-space: nowrap; }
+.field { display: inline-flex; align-items: center; border: var(--x-field-stroke-width) solid var(--x-field-stroke-idle); background: var(--x-field-background-idle); color: var(--x-field-text-subtle-idle); white-space: nowrap; }
 .bar { display: inline-grid; gap: 2px; }
 .bar .fill { block-size: 8px; background: var(--x-accent-fill); border-radius: var(--x-radius-item); }
 .radius { inline-size: 72px; block-size: 48px; display: inline-flex; align-items: center; justify-content: center; border: var(--x-border-width-strong) solid var(--x-line-strong); font: var(--x-type-caption-sm); }

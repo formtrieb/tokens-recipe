@@ -6,6 +6,8 @@
  *              --x-pole-{ink|ink-inverted|paper|canvas}      (per mode)
  *   Controls   --x-ctl-{hierarchy}-{part}[-readonly|-disabled][-inactive|-selected|-done][-negative|-warning|-positive]-{interaction}
  *              --x-ctl-{hierarchy}-stroke-width                (→ border-width-*)
+ *   Field      --x-field-{part}[-readonly|-disabled][-negative|-warning|-positive]-{idle|hover|focus}
+ *              --x-field-stroke-width[-emphasis]               (→ border-width-*)
  *   Status     --x-status-{intent}-{surface|content|indicator}-{strong|subtle}
  *   Feedback   --x-feedback-{intent}-{surface|line|content|icon}
  *   Content    --x-content-{primary|secondary|disabled}   (pole ink + alpha, per mode)
@@ -47,8 +49,10 @@
  * style keeps neutral stays neutral; disabled suppresses the tone.
  *
  * Hierarchies are emphasis levels for ALL controls (primary: button, checkbox,
- * radio, progress steps; secondary: text field, text area, outline button,
- * list rows; tertiary: tertiary/link/icon button, tabs). All three on accent,
+ * radio, progress steps; secondary: outline button, list rows; tertiary:
+ * tertiary/link/icon button, tabs). A field (text field, text area, the
+ * trigger of a select) is no action: it has its own role set `field`, see
+ * below. All three on accent,
  * styles `solid`, `outline`, `ghost`. `brand` = (brand, solid): the
  * committing action at the end of a flow (create, buy). Destructive actions: `destructive`
  * (negative, solid — only in the confirmation) and `destructive-subtle`
@@ -837,6 +841,49 @@ export function generateModel(
       `ctl.${h}.stroke-width`,
       `var(--${P}border-width-${recipe.hierarchies![h].strokeWidth ?? 'default'})`,
     );
+
+  // ---------- Fields ----------
+  /**
+   * A field (text field, text area, the trigger of a select) is a container
+   * for an input with a fixed course — neutral at rest, the hue on focus, the
+   * tone on a problem — not an emphasis level of an action. Its own role set,
+   * style fixed to `outline` (the cells come from that style and `applyTone`,
+   * no second colour logic), with only the axes a field has: no selection, no
+   * pressed, no track. Keys as in `ctl`, so with the same hue and `secondary`
+   * on `outline` every field cell equals the `ctl-secondary` cell.
+   * Strokes: `strokeWidth` at rest and hover, `strokeWidthEmphasis` on focus
+   * and with a tone (default = strokeWidth); the component makes up the
+   * difference so the field does not jump.
+   * Values: recipe `field` (hue, strokeWidth?, strokeWidthEmphasis?).
+   */
+  const field = recipe.field ?? { hue: 'accent' };
+  {
+    const strokes = Object.keys(recipe.border?.width ?? {});
+    if (!(field.hue in HUES))
+      recipeErrors.push(`field.hue: Farbton ${field.hue} fehlt in semanticHues`);
+    for (const k of ['strokeWidth', 'strokeWidthEmphasis'] as const)
+      if (field[k] !== undefined && !strokes.includes(field[k]!))
+        recipeErrors.push(
+          `field.${k}: ${field[k]} ist keine Rolle aus border.width (${strokes.join(' · ')})`,
+        );
+    assertRecipe();
+  }
+  const FIELD_PARTS = ['background', 'stroke', 'text', 'text-subtle', 'icon'] as const;
+  const fieldCells = cells.filter((c) => c.sel === 'none' && c.inter !== 'pressed');
+  /** a field cell's Auswahl ref, the hue resolved */
+  const fieldRef = (part: Part, c: Cell) => {
+    const r = applyTone(part, outline(part, c), c, outline('background', c));
+    return r.startsWith('hue.') ? `${field.hue}.${r.slice(4)}` : r;
+  };
+  for (const part of FIELD_PARTS)
+    for (const c of fieldCells)
+      decl(`field.${part}.${key(c)}`, cssRef(fieldRef(part, c), field.hue));
+  const fieldStroke = field.strokeWidth ?? 'default';
+  decl('field.stroke-width', `var(--${P}border-width-${fieldStroke})`);
+  decl(
+    'field.stroke-width-emphasis',
+    `var(--${P}border-width-${field.strokeWidthEmphasis ?? fieldStroke})`,
+  );
 
   // ---------- Status + feedback + focus ----------
   /**
@@ -2361,6 +2408,12 @@ export function generateModel(
         if (v)
           forcedTokens.push(decl(`ctl.${h}.${part}.${key(c)}`, v, SET.forced));
       }
+  // fields the same way (no selection, so only disabled is remapped)
+  for (const part of FIELD_PARTS)
+    for (const c of fieldCells) {
+      const v = forcedOf(part, c);
+      if (v) forcedTokens.push(decl(`field.${part}.${key(c)}`, v, SET.forced));
+    }
   // contract: a filled hierarchy keeps a border, or its shape disappears with
   // the fill; every enabled selected cell is remapped
   const forcedFails: string[] = [];
@@ -2833,20 +2886,19 @@ export function generateModel(
       v[`${PRIMARY}.tint`],
       C.strokeMin,
     );
-    add(
-      'Feldrand auf Weiß (1.4.11)',
-      'neutral.line-strong / pole.paper',
-      v['neutral.line-strong'],
-      v['pole.paper'],
-      C.strokeMin,
-    );
-    add(
-      'Platzhalter im Feld',
-      'neutral.ink-subtle / pole.paper',
-      v['neutral.ink-subtle'],
-      v['pole.paper'],
-      C.textMin,
-    );
+    {
+      // the field lines read the field cells (`field-*`), at rest on paper
+      const rest: Cell = { avail: 'enabled', sel: 'none', tone: 'none', inter: 'idle' };
+      const bg = fieldRef('background', rest);
+      const line = (rule: string, part: Part, c: Cell, min: number) => {
+        const fg = fieldRef(part, c);
+        add(rule, `${fg} / ${bg}`, v[fg], v[bg], min);
+      };
+      line('Feldrand auf Weiß (1.4.11)', 'stroke', rest, C.strokeMin);
+      line('Platzhalter im Feld', 'text-subtle', rest, C.textMin);
+      line('Feldtext', 'text', rest, C.textMin);
+      line('Feld-Fokusrand (1.4.11)', 'stroke', { ...rest, inter: 'focus' }, C.strokeMin);
+    }
     add(
       'Readonly-Feld Text',
       'pole.ink / neutral.subtle',
@@ -3102,7 +3154,19 @@ export function generateModel(
           ? v[ref].slice(0, 7)
           : over(v[ref], v[surf]);
     const pageColour = (ref: string) => /^(pole|neutral|content)\./.test(ref);
-    for (const [h, def] of Object.entries(HIERARCHIES)) {
+    // every hierarchy with all cells, and the field role set with its own
+    // (no selection, so rule 2 does not apply to it)
+    const cellSets = [
+      ...Object.entries(HIERARCHIES).map(([h, d]) => ({
+        h,
+        hue: d.hue,
+        style: d.style,
+        cells,
+        select: true,
+      })),
+      { h: 'field', hue: field.hue, style: outline, cells: fieldCells, select: false },
+    ];
+    for (const { h, ...def } of cellSets) {
       const refOf = (part: Part, c: Cell) => {
         const r = applyTone(
           part,
@@ -3116,7 +3180,7 @@ export function generateModel(
         def.hue === 'inverted' ? ['inverted.fill'] : CELL_SURFACES;
       const fail = (f: Omit<CellFail, 'mode' | 'hierarchy'>) =>
         cellFails.push({ mode, hierarchy: h, ...f });
-      for (const c of cells) {
+      for (const c of def.cells) {
         if (c.avail === 'disabled' || c.inter === 'focus') continue;
         const bg = refOf('background', c);
         for (const part of ['text', 'text-subtle', 'icon'] as Part[]) {
@@ -3157,6 +3221,7 @@ export function generateModel(
         }
       }
       // rule 2: selected next to inactive (idle, per availability and tone)
+      if (def.select)
       for (const avail of ['enabled', 'readonly'] as Avail[])
         for (const sel of ['selected', 'done'] as Sel[])
           for (const tone of TONES) {

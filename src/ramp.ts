@@ -369,6 +369,13 @@ export interface Recipe {
     }
   >;
   /**
+   * Fields (text field, text area, select trigger): their own role set, style
+   * fixed to `outline`. `hue` is the semantic hue of focus; `strokeWidth` the
+   * `border.width` role at rest and hover (default `default`),
+   * `strokeWidthEmphasis` on focus and with a tone (default = strokeWidth).
+   */
+  field?: { hue: string; strokeWidth?: string; strokeWidthEmphasis?: string };
+  /**
    * Space roles in px, each on the `space.scale`.
    *   gap.tight    label ↔ field, title ↔ description
    *   gap.related  button row, radios, data rows

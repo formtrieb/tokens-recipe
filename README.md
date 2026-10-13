@@ -166,6 +166,40 @@ then checks `fill` on paper at 4.5:1); `outline-fill` `hue` (default: rests
 like `outline-hue`) or `neutral` (rests like `outline`). A `rest` the style
 does not have stops the run.
 
+Fields (text field, text area, the trigger of a select) are no emphasis
+level of an action, so they do not hang on a hierarchy: they have their own
+role set `field-*`, style fixed to `outline`, with only the axes a field has —
+`idle`, `hover`, `focus`; enabled, `readonly`, `disabled`; the tones
+`negative`, `warning`, `positive`; parts `background`, `stroke`, `text`,
+`text-subtle` (placeholder), `icon`:
+
+```
+--x-field-{part}[-readonly|-disabled][-negative|-warning|-positive]-{idle|hover|focus}
+```
+
+Readonly has no hover (it offers no interaction), disabled only `idle`.
+`field.hue` is the semantic hue of focus (default `accent`). A button style
+on `secondary` does not reach the forms; while `secondary` is an `outline` on
+the same hue, every `field-*` cell equals its `ctl-secondary-*` cell.
+
+The stroke has two widths: `field-stroke-width` at rest and hover
+(`field.strokeWidth`, a `border.width` role, default `default`) and
+`field-stroke-width-emphasis` on focus and with a tone
+(`field.strokeWidthEmphasis`, default the same). When they differ, the
+component keeps the field from jumping — subtract the stroke from the padding
+per state, or draw the difference inside:
+
+```css
+.field {
+  border: var(--x-field-stroke-width) solid var(--x-field-stroke-idle);
+  padding-inline: calc(var(--x-control-md-field-inline) - var(--x-field-stroke-width));
+}
+.field:focus-within {
+  border-color: var(--x-field-stroke-focus);
+  box-shadow: inset 0 0 0 calc(var(--x-field-stroke-width-emphasis) - var(--x-field-stroke-width)) var(--x-field-stroke-focus);
+}
+```
+
 `layer-*` are z-index values for the document only, in this order:
 `sticky` (table head, save bar) < `panel` (a non-modal surface over the
 content and under the frame: side panel, inspector; default 15) < `chrome`

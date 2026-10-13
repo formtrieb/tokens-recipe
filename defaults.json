@@ -1,5 +1,8 @@
 {
   "steps": 12,
+  "field": {
+    "hue": "accent"
+  },
   "fillStates": {
     "light": {
       "hover": "ladder"
