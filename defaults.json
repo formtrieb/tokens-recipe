@@ -1,5 +1,13 @@
 {
   "steps": 12,
+  "fillStates": {
+    "light": {
+      "hover": "ladder"
+    },
+    "dark": {
+      "hover": "ladder"
+    }
+  },
   "alphaSteps": {
     "state-hover": 1,
     "state-selected": 2,

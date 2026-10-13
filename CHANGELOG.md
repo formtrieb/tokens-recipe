@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `--{prefix}{hue}-fill-pressed` per mode, a derived token (not a ramp step):
+  the pressed state of a fill. `fillStates.{mode}.hover` (`ladder` default,
+  or `away-from-text`) sets which way a fill's hover moves. With
+  `away-from-text` a fill with dark content gets a lighter hover and a pressed
+  state the same distance to the darker side, and a fill with light content
+  keeps the ladder's direction. `buildFillStates` and `onFillOf` are
+  exported.
+
 - `radius.waive`: nested corners a design system breaks on purpose (square
   tiles holding rounded checkboxes) are named by their pair
   (`{ "nesting": "container/item", "reason": "…" }`). The report shows the
@@ -17,6 +25,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Step 10 (`fill-hover`) and `fill-pressed` now follow an anchor on step 9:
+  hover sits the ladder's distance 9→10 from the anchor, pressed 9→11.
+  Before, step 10 kept the ladder's global lightness, so a light anchor got a
+  dark hover (black text on it failed) and a dark one barely moved. **Recipes
+  with an anchor on step 9 change** in `fill-hover`, `fill-pressed`, and in
+  `on-fill-hover`/`-selected`/`-pressed`, which follow them. Hues without an
+  anchor on 9 stay byte-identical.
+- Style `solid` reads `fill-pressed` for pressed (background and stroke)
+  instead of `ink-subtle`, and `{hue}-on-fill-pressed` follows it. Values
+  are unchanged wherever no anchor sits on step 9.
 - `Füllung {hue} (1.4.11)`: a fill below 3:1 against the page is a note, not
   a failure, when its `on-fill` reaches 3:1 against the page (the label or
   check carries the edge). The report prints it as a `·` line, and

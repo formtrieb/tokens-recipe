@@ -2,7 +2,7 @@
  * The token model, built forwards from the recipe. Names below with the
  * default prefix `x-` and attribute suffix `-x` (both GenerateOptions).
  *
- *   Auswahl    --x-{hue}-{canvas|subtle|tint|…|fill|fill-hover|ink-subtle|ink|on-fill|state-*}
+ *   Auswahl    --x-{hue}-{canvas|subtle|tint|…|fill|fill-hover|ink-subtle|ink|fill-pressed|on-fill|state-*}
  *              --x-pole-{ink|ink-inverted|paper|canvas}      (per mode)
  *   Controls   --x-ctl-{hierarchy}-{part}[-readonly|-disabled][-inactive|-selected|-done][-negative|-warning|-positive]-{interaction}
  *   Status     --x-status-{intent}-{surface|content|indicator}-{strong|subtle}
@@ -78,8 +78,9 @@ import { SET, THEME, emitDtcg, type TokenEntry } from './dtcg.js';
 import {
   MODES,
   STEP_NAMES,
-  buildRamps,
+  buildFillStates,
   checkContract,
+  onFillOf,
   type Recipe,
   type VizSlot,
 } from './ramp.js';
@@ -147,7 +148,7 @@ export function generateModel(
     });
     return path;
   };
-  const ramps = buildRamps(recipe);
+  const { ramps, pressed: fillPressed } = buildFillStates(recipe);
 
   /**
    * Names are universal, the recipe assigns them. A
@@ -323,14 +324,9 @@ export function generateModel(
     recipe.alpha[mode].forEach((a, i) => (v[`alpha.${i + 1}`] = String(a)));
     for (const [hue, ramp] of Object.entries(HUES)) {
       ramps[mode][ramp].forEach((s, i) => (v[`${hue}.${NAMES[i]}`] = s.hex));
-      const fill = v[`${hue}.fill`];
-      const pref = recipe.onFill?.[mode] ?? 'auto';
-      v[`${hue}.on-fill`] =
-        pref !== 'auto'
-          ? pref
-          : contrastWcag('#ffffff', fill) >= contrastWcag('#000000', fill)
-            ? '#ffffff'
-            : '#000000';
+      // pressed fill: derived from the fill like step 10, not a ladder step
+      v[`${hue}.fill-pressed`] = fillPressed[mode][ramp].hex;
+      v[`${hue}.on-fill`] = onFillOf(recipe, mode, v[`${hue}.fill`]);
     }
     // search hit: per mode a ramp step of the mark hue + alpha (recipe `mark`)
     for (const k of ['surface', 'current'] as const) {
@@ -366,7 +362,7 @@ export function generateModel(
         ? v[`${hue}.fill-hover`]
         : a('on-fill-hover');
       v[`${hue}.on-fill-pressed`] = ramp
-        ? v[`${hue}.ink-subtle`]
+        ? v[`${hue}.fill-pressed`]
         : a('on-fill-pressed');
       v[`${hue}.on-fill-selected`] = ramp
         ? v[`${hue}.fill-hover`]
@@ -457,7 +453,7 @@ export function generateModel(
     const fill = {
       idle: 'hue.fill',
       hover: 'hue.fill-hover',
-      pressed: 'hue.ink-subtle',
+      pressed: 'hue.fill-pressed',
     }[i];
     const bg = {
       none: fill,
@@ -2343,21 +2339,14 @@ export function generateModel(
   const identNames = [...ident.hues.map((_, i) => String(i + 1)), 'neutral'];
   const identHue = (n: string) =>
     n === 'neutral' ? 'neutral' : ident.hues[Number(n) - 1];
-  const onFillOf = (mode: (typeof MODES)[number], fill: string) => {
-    const pref = recipe.onFill?.[mode] ?? 'auto';
-    if (pref !== 'auto') return pref;
-    return contrastWcag('#ffffff', fill) >= contrastWcag('#000000', fill)
-      ? '#ffffff'
-      : '#000000';
-  };
   for (const mode of MODES)
     for (const n of identNames) {
       const ramp = ramps[mode][identHue(n)];
       const fill = ramp[ident.strong.surface - 1].hex;
       const v = values[mode];
       v[`identity.${n}-surface-strong`] = fill;
-      v[`identity.${n}-content-strong`] = onFillOf(mode, fill);
-      v[`identity.${n}-indicator-strong`] = onFillOf(mode, fill);
+      v[`identity.${n}-content-strong`] = onFillOf(recipe, mode, fill);
+      v[`identity.${n}-indicator-strong`] = onFillOf(recipe, mode, fill);
       v[`identity.${n}-surface-subtle`] = ramp[ident.subtle.surface - 1].hex;
       v[`identity.${n}-content-subtle`] = ramp[ident.subtle.content - 1].hex;
       v[`identity.${n}-indicator-subtle`] =

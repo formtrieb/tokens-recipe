@@ -34,10 +34,35 @@ from: alpha steps, status and feedback mapping, and the contract thresholds.
 A design system's recipe goes on top. Objects merge key by key, and arrays
 and values replace the default as a whole.
 
-### Anchoring status colours on step 8
+### Anchors and fill states
 
 An anchor pins one step of a ramp to a brand colour (`anchor.light =
-{ step, hex }`). Step 9 (`fill`) is the usual place. Status colours that the
+{ step, hex }`); the ladder still shapes the other steps. The states of a
+fill are a distance to the fill, not a fixed place on the ladder, so they
+follow an anchor on step 9: `fill-hover` (step 10) sits one ladder distance
+9→10 away from it, and `fill-pressed` (a derived token like `on-fill`, not a
+thirteenth step) one distance 9→11. Solid controls read `fill`,
+`fill-hover` and `fill-pressed`; without an anchor on 9 both come out as the
+ladder has them (`fill-pressed` = `ink-subtle`).
+
+`fillStates.{mode}.hover` sets the direction:
+
+- `ladder` (default): the way the ladder goes, darker in Light and lighter
+  in Dark.
+- `away-from-text`: away from `on-fill`, so the content's contrast always
+  grows. A light fill with black text gets a lighter hover, and pressed goes
+  the same distance to the darker side. A fill with white text goes with the
+  ladder as before. A brand whose own hover lightens a fill under white text
+  does not get that hover from the recipe: the contrast would drop below
+  AA.
+
+An anchor on another step leaves 9 to the ladder, so nothing becomes
+relative. An anchor on 10 keeps step 10 pinned; `fill-pressed` follows the
+rule from the ladder's step 9.
+
+### Anchoring status colours on step 8
+
+Step 9 (`fill`) is the usual place for an anchor. Status colours that the
 brand uses mainly as a border or indicator fit better on step 8
 (`line-strong`): the anchor becomes the stroke it is used as, `fill` moves
 one step darker, and `on-fill` tips to white. A mid green `#2e9a5c` (synthetic)

@@ -12,7 +12,7 @@
         },
         "pressed": {
           "$type": "color",
-          "$value": "{brand.ink-subtle}"
+          "$value": "{brand.fill-pressed}"
         },
         "focus": {
           "$type": "color",
@@ -28,7 +28,7 @@
         },
         "negative-pressed": {
           "$type": "color",
-          "$value": "{negative.ink-subtle}"
+          "$value": "{negative.fill-pressed}"
         },
         "negative-focus": {
           "$type": "color",
@@ -44,7 +44,7 @@
         },
         "warning-pressed": {
           "$type": "color",
-          "$value": "{warning.ink-subtle}"
+          "$value": "{warning.fill-pressed}"
         },
         "warning-focus": {
           "$type": "color",
@@ -60,7 +60,7 @@
         },
         "positive-pressed": {
           "$type": "color",
-          "$value": "{positive.ink-subtle}"
+          "$value": "{positive.fill-pressed}"
         },
         "positive-focus": {
           "$type": "color",
@@ -140,7 +140,7 @@
         },
         "selected-pressed": {
           "$type": "color",
-          "$value": "{brand.ink-subtle}"
+          "$value": "{brand.fill-pressed}"
         },
         "selected-focus": {
           "$type": "color",
@@ -156,7 +156,7 @@
         },
         "selected-negative-pressed": {
           "$type": "color",
-          "$value": "{negative.ink-subtle}"
+          "$value": "{negative.fill-pressed}"
         },
         "selected-negative-focus": {
           "$type": "color",
@@ -172,7 +172,7 @@
         },
         "selected-warning-pressed": {
           "$type": "color",
-          "$value": "{warning.ink-subtle}"
+          "$value": "{warning.fill-pressed}"
         },
         "selected-warning-focus": {
           "$type": "color",
@@ -188,7 +188,7 @@
         },
         "selected-positive-pressed": {
           "$type": "color",
-          "$value": "{positive.ink-subtle}"
+          "$value": "{positive.fill-pressed}"
         },
         "selected-positive-focus": {
           "$type": "color",
@@ -462,7 +462,7 @@
         },
         "pressed": {
           "$type": "color",
-          "$value": "{brand.ink-subtle}"
+          "$value": "{brand.fill-pressed}"
         },
         "focus": {
           "$type": "color",
@@ -478,7 +478,7 @@
         },
         "negative-pressed": {
           "$type": "color",
-          "$value": "{negative.ink-subtle}"
+          "$value": "{negative.fill-pressed}"
         },
         "negative-focus": {
           "$type": "color",
@@ -494,7 +494,7 @@
         },
         "warning-pressed": {
           "$type": "color",
-          "$value": "{warning.ink-subtle}"
+          "$value": "{warning.fill-pressed}"
         },
         "warning-focus": {
           "$type": "color",
@@ -510,7 +510,7 @@
         },
         "positive-pressed": {
           "$type": "color",
-          "$value": "{positive.ink-subtle}"
+          "$value": "{positive.fill-pressed}"
         },
         "positive-focus": {
           "$type": "color",
@@ -590,7 +590,7 @@
         },
         "selected-pressed": {
           "$type": "color",
-          "$value": "{brand.ink-subtle}"
+          "$value": "{brand.fill-pressed}"
         },
         "selected-focus": {
           "$type": "color",
@@ -606,7 +606,7 @@
         },
         "selected-negative-pressed": {
           "$type": "color",
-          "$value": "{negative.ink-subtle}"
+          "$value": "{negative.fill-pressed}"
         },
         "selected-negative-focus": {
           "$type": "color",
@@ -622,7 +622,7 @@
         },
         "selected-warning-pressed": {
           "$type": "color",
-          "$value": "{warning.ink-subtle}"
+          "$value": "{warning.fill-pressed}"
         },
         "selected-warning-focus": {
           "$type": "color",
@@ -638,7 +638,7 @@
         },
         "selected-positive-pressed": {
           "$type": "color",
-          "$value": "{positive.ink-subtle}"
+          "$value": "{positive.fill-pressed}"
         },
         "selected-positive-focus": {
           "$type": "color",
@@ -2714,7 +2714,7 @@
         },
         "pressed": {
           "$type": "color",
-          "$value": "{accent.ink-subtle}"
+          "$value": "{accent.fill-pressed}"
         },
         "focus": {
           "$type": "color",
@@ -2730,7 +2730,7 @@
         },
         "negative-pressed": {
           "$type": "color",
-          "$value": "{negative.ink-subtle}"
+          "$value": "{negative.fill-pressed}"
         },
         "negative-focus": {
           "$type": "color",
@@ -2746,7 +2746,7 @@
         },
         "warning-pressed": {
           "$type": "color",
-          "$value": "{warning.ink-subtle}"
+          "$value": "{warning.fill-pressed}"
         },
         "warning-focus": {
           "$type": "color",
@@ -2762,7 +2762,7 @@
         },
         "positive-pressed": {
           "$type": "color",
-          "$value": "{positive.ink-subtle}"
+          "$value": "{positive.fill-pressed}"
         },
         "positive-focus": {
           "$type": "color",
@@ -2842,7 +2842,7 @@
         },
         "selected-pressed": {
           "$type": "color",
-          "$value": "{accent.ink-subtle}"
+          "$value": "{accent.fill-pressed}"
         },
         "selected-focus": {
           "$type": "color",
@@ -2858,7 +2858,7 @@
         },
         "selected-negative-pressed": {
           "$type": "color",
-          "$value": "{negative.ink-subtle}"
+          "$value": "{negative.fill-pressed}"
         },
         "selected-negative-focus": {
           "$type": "color",
@@ -2874,7 +2874,7 @@
         },
         "selected-warning-pressed": {
           "$type": "color",
-          "$value": "{warning.ink-subtle}"
+          "$value": "{warning.fill-pressed}"
         },
         "selected-warning-focus": {
           "$type": "color",
@@ -2890,7 +2890,7 @@
         },
         "selected-positive-pressed": {
           "$type": "color",
-          "$value": "{positive.ink-subtle}"
+          "$value": "{positive.fill-pressed}"
         },
         "selected-positive-focus": {
           "$type": "color",
@@ -3164,7 +3164,7 @@
         },
         "pressed": {
           "$type": "color",
-          "$value": "{accent.ink-subtle}"
+          "$value": "{accent.fill-pressed}"
         },
         "focus": {
           "$type": "color",
@@ -3180,7 +3180,7 @@
         },
         "negative-pressed": {
           "$type": "color",
-          "$value": "{negative.ink-subtle}"
+          "$value": "{negative.fill-pressed}"
         },
         "negative-focus": {
           "$type": "color",
@@ -3196,7 +3196,7 @@
         },
         "warning-pressed": {
           "$type": "color",
-          "$value": "{warning.ink-subtle}"
+          "$value": "{warning.fill-pressed}"
         },
         "warning-focus": {
           "$type": "color",
@@ -3212,7 +3212,7 @@
         },
         "positive-pressed": {
           "$type": "color",
-          "$value": "{positive.ink-subtle}"
+          "$value": "{positive.fill-pressed}"
         },
         "positive-focus": {
           "$type": "color",
@@ -3292,7 +3292,7 @@
         },
         "selected-pressed": {
           "$type": "color",
-          "$value": "{accent.ink-subtle}"
+          "$value": "{accent.fill-pressed}"
         },
         "selected-focus": {
           "$type": "color",
@@ -3308,7 +3308,7 @@
         },
         "selected-negative-pressed": {
           "$type": "color",
-          "$value": "{negative.ink-subtle}"
+          "$value": "{negative.fill-pressed}"
         },
         "selected-negative-focus": {
           "$type": "color",
@@ -3324,7 +3324,7 @@
         },
         "selected-warning-pressed": {
           "$type": "color",
-          "$value": "{warning.ink-subtle}"
+          "$value": "{warning.fill-pressed}"
         },
         "selected-warning-focus": {
           "$type": "color",
@@ -3340,7 +3340,7 @@
         },
         "selected-positive-pressed": {
           "$type": "color",
-          "$value": "{positive.ink-subtle}"
+          "$value": "{positive.fill-pressed}"
         },
         "selected-positive-focus": {
           "$type": "color",
@@ -10820,7 +10820,7 @@
         },
         "pressed": {
           "$type": "color",
-          "$value": "{negative.ink-subtle}"
+          "$value": "{negative.fill-pressed}"
         },
         "focus": {
           "$type": "color",
@@ -10836,7 +10836,7 @@
         },
         "negative-pressed": {
           "$type": "color",
-          "$value": "{negative.ink-subtle}"
+          "$value": "{negative.fill-pressed}"
         },
         "negative-focus": {
           "$type": "color",
@@ -10852,7 +10852,7 @@
         },
         "warning-pressed": {
           "$type": "color",
-          "$value": "{warning.ink-subtle}"
+          "$value": "{warning.fill-pressed}"
         },
         "warning-focus": {
           "$type": "color",
@@ -10868,7 +10868,7 @@
         },
         "positive-pressed": {
           "$type": "color",
-          "$value": "{positive.ink-subtle}"
+          "$value": "{positive.fill-pressed}"
         },
         "positive-focus": {
           "$type": "color",
@@ -10948,7 +10948,7 @@
         },
         "selected-pressed": {
           "$type": "color",
-          "$value": "{negative.ink-subtle}"
+          "$value": "{negative.fill-pressed}"
         },
         "selected-focus": {
           "$type": "color",
@@ -10964,7 +10964,7 @@
         },
         "selected-negative-pressed": {
           "$type": "color",
-          "$value": "{negative.ink-subtle}"
+          "$value": "{negative.fill-pressed}"
         },
         "selected-negative-focus": {
           "$type": "color",
@@ -10980,7 +10980,7 @@
         },
         "selected-warning-pressed": {
           "$type": "color",
-          "$value": "{warning.ink-subtle}"
+          "$value": "{warning.fill-pressed}"
         },
         "selected-warning-focus": {
           "$type": "color",
@@ -10996,7 +10996,7 @@
         },
         "selected-positive-pressed": {
           "$type": "color",
-          "$value": "{positive.ink-subtle}"
+          "$value": "{positive.fill-pressed}"
         },
         "selected-positive-focus": {
           "$type": "color",
@@ -11270,7 +11270,7 @@
         },
         "pressed": {
           "$type": "color",
-          "$value": "{negative.ink-subtle}"
+          "$value": "{negative.fill-pressed}"
         },
         "focus": {
           "$type": "color",
@@ -11286,7 +11286,7 @@
         },
         "negative-pressed": {
           "$type": "color",
-          "$value": "{negative.ink-subtle}"
+          "$value": "{negative.fill-pressed}"
         },
         "negative-focus": {
           "$type": "color",
@@ -11302,7 +11302,7 @@
         },
         "warning-pressed": {
           "$type": "color",
-          "$value": "{warning.ink-subtle}"
+          "$value": "{warning.fill-pressed}"
         },
         "warning-focus": {
           "$type": "color",
@@ -11318,7 +11318,7 @@
         },
         "positive-pressed": {
           "$type": "color",
-          "$value": "{positive.ink-subtle}"
+          "$value": "{positive.fill-pressed}"
         },
         "positive-focus": {
           "$type": "color",
@@ -11398,7 +11398,7 @@
         },
         "selected-pressed": {
           "$type": "color",
-          "$value": "{negative.ink-subtle}"
+          "$value": "{negative.fill-pressed}"
         },
         "selected-focus": {
           "$type": "color",
@@ -11414,7 +11414,7 @@
         },
         "selected-negative-pressed": {
           "$type": "color",
-          "$value": "{negative.ink-subtle}"
+          "$value": "{negative.fill-pressed}"
         },
         "selected-negative-focus": {
           "$type": "color",
@@ -11430,7 +11430,7 @@
         },
         "selected-warning-pressed": {
           "$type": "color",
-          "$value": "{warning.ink-subtle}"
+          "$value": "{warning.fill-pressed}"
         },
         "selected-warning-focus": {
           "$type": "color",
@@ -11446,7 +11446,7 @@
         },
         "selected-positive-pressed": {
           "$type": "color",
-          "$value": "{positive.ink-subtle}"
+          "$value": "{positive.fill-pressed}"
         },
         "selected-positive-focus": {
           "$type": "color",
