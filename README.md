@@ -140,11 +140,31 @@ measured from the outer edge, so a bordered control subtracts its stroke:
 A heavier stroke then does not grow the control. Stroke width by tone (an
 error field at 2px) is not a hierarchy's choice; focus has `focus.width`.
 
-A hierarchy picks a style for its controls. `outline-hue` is an outline
-that carries its hue at rest (hue stroke and text on paper, for everyday
-destructive actions); selected and done move its surface onto the hue's tint
-ladder (`tint`, `tint-hover`, `tint-pressed`), with stroke, icon and text as
-in a selected `outline`. Inactive, readonly and disabled behave like `outline`.
+A hierarchy picks a style for its controls:
+
+| Style | At rest | Hover / pressed |
+|---|---|---|
+| `solid` | `fill`, content `on-fill` | `fill-hover` / `fill-pressed` |
+| `outline` | neutral stroke, ink text on paper | stroke turns to ink |
+| `ghost` | no surface | state layer |
+| `outline-hue` | hue stroke and text on paper | hue tint, `ink` text |
+| `outline-fill` | an outline (see `rest`) | as `solid`: the fill, stroke = fill, `on-fill` |
+| `ghost-on-fill` | on a fill, content `on-fill` | `on-fill` layers |
+
+`outline-hue` carries its hue at rest (everyday destructive actions);
+selected and done move its surface onto the hue's tint ladder (`tint`,
+`tint-hover`, `tint-pressed`), with stroke, icon and text as in a selected
+`outline`. Inactive, readonly and disabled behave like `outline`.
+`outline-fill` rests as an outline and takes the solid fill from hover on (a
+tertiary button that fills, an icon button). Selected, done, inactive,
+readonly and disabled behave like `outline-hue`.
+
+`hierarchies.{h}.rest` picks the rest look where the style offers one:
+`outline-hue` `ladder` (default: stroke `line-strong`, text `ink-subtle`) or
+`anchor` (stroke, text and icon in `fill`, the brand colour; the contract
+then checks `fill` on paper at 4.5:1); `outline-fill` `hue` (default: rests
+like `outline-hue`) or `neutral` (rests like `outline`). A `rest` the style
+does not have stops the run.
 
 `layer-*` are z-index values for the document only, in this order:
 `sticky` (table head, save bar) < `panel` (a non-modal surface over the

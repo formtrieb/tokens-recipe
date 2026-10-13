@@ -16,6 +16,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   keeps `default` and `strong` required and may carry further roles
   (`heavy`), all emitted as `--{prefix}border-width-*`. An unknown role
   stops with a `RecipeError` at `hierarchies.{h}.strokeWidth`.
+- Style `outline-fill`: an outline at rest that takes the `solid` fill from
+  hover on (stroke = fill, content `on-fill`, pressed `fill-pressed`).
+  Selected, done, inactive, readonly and disabled behave like `outline-hue`.
+- `hierarchies.{h}.rest`, the rest look a style offers: `outline-fill`
+  `hue` (default, rests like `outline-hue`) or `neutral` (rests like
+  `outline`); `outline-hue` `ladder` (default, as before) or `anchor` (stroke,
+  text and icon at rest in `fill`). With `anchor` the contract adds
+  `Text in Ankerfarbe auf Papier ({h})`, `fill` on paper at `textMin`. A
+  `rest` the style does not have is a `RecipeError` at
+  `hierarchies.{h}.rest`.
 - `--{prefix}{hue}-fill-pressed` per mode, a derived token (not a ramp step):
   the pressed state of a fill. `fillStates.{mode}.hover` (`ladder` default,
   or `away-from-text`) sets which way a fill's hover moves. With
@@ -23,7 +33,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   state the same distance to the darker side, and a fill with light content
   keeps the ladder's direction. `buildFillStates` and `onFillOf` are
   exported.
-
 - `radius.waive`: nested corners a design system breaks on purpose (square
   tiles holding rounded checkboxes) are named by their pair
   (`{ "nesting": "container/item", "reason": "…" }`). The report shows the

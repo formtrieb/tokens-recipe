@@ -364,6 +364,8 @@ export interface Recipe {
       style: string;
       /** stroke role of the hierarchy's controls: a `border.width` key (default `default`) */
       strokeWidth?: string;
+      /** the rest look, values given by the style (`outline-hue`: ladder · anchor, `outline-fill`: hue · neutral) */
+      rest?: string;
     }
   >;
   /**
