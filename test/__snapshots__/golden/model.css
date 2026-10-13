@@ -1161,6 +1161,7 @@
   --x-ctl-brand-track-disabled-done-negative-idle: var(--x-neutral-line-subtle);
   --x-ctl-brand-track-disabled-done-warning-idle: var(--x-neutral-line-subtle);
   --x-ctl-brand-track-disabled-done-positive-idle: var(--x-neutral-line-subtle);
+  --x-ctl-brand-stroke-width: var(--x-border-width-default);
   --x-ctl-primary-background-idle: var(--x-accent-fill);
   --x-ctl-primary-background-hover: var(--x-accent-fill-hover);
   --x-ctl-primary-background-pressed: var(--x-accent-fill-pressed);
@@ -1833,6 +1834,7 @@
   --x-ctl-primary-track-disabled-done-negative-idle: var(--x-neutral-line-subtle);
   --x-ctl-primary-track-disabled-done-warning-idle: var(--x-neutral-line-subtle);
   --x-ctl-primary-track-disabled-done-positive-idle: var(--x-neutral-line-subtle);
+  --x-ctl-primary-stroke-width: var(--x-border-width-default);
   --x-ctl-secondary-background-idle: var(--x-pole-paper);
   --x-ctl-secondary-background-hover: var(--x-pole-paper);
   --x-ctl-secondary-background-pressed: var(--x-neutral-state-hover);
@@ -2505,6 +2507,7 @@
   --x-ctl-secondary-track-disabled-done-negative-idle: var(--x-neutral-line-subtle);
   --x-ctl-secondary-track-disabled-done-warning-idle: var(--x-neutral-line-subtle);
   --x-ctl-secondary-track-disabled-done-positive-idle: var(--x-neutral-line-subtle);
+  --x-ctl-secondary-stroke-width: var(--x-border-width-default);
   --x-ctl-tertiary-background-idle: transparent;
   --x-ctl-tertiary-background-hover: var(--x-neutral-state-hover);
   --x-ctl-tertiary-background-pressed: var(--x-neutral-state-pressed);
@@ -3177,6 +3180,7 @@
   --x-ctl-tertiary-track-disabled-done-negative-idle: var(--x-neutral-line-subtle);
   --x-ctl-tertiary-track-disabled-done-warning-idle: var(--x-neutral-line-subtle);
   --x-ctl-tertiary-track-disabled-done-positive-idle: var(--x-neutral-line-subtle);
+  --x-ctl-tertiary-stroke-width: var(--x-border-width-default);
   --x-ctl-destructive-background-idle: var(--x-negative-fill);
   --x-ctl-destructive-background-hover: var(--x-negative-fill-hover);
   --x-ctl-destructive-background-pressed: var(--x-negative-fill-pressed);
@@ -3849,6 +3853,7 @@
   --x-ctl-destructive-track-disabled-done-negative-idle: var(--x-neutral-line-subtle);
   --x-ctl-destructive-track-disabled-done-warning-idle: var(--x-neutral-line-subtle);
   --x-ctl-destructive-track-disabled-done-positive-idle: var(--x-neutral-line-subtle);
+  --x-ctl-destructive-stroke-width: var(--x-border-width-default);
   --x-ctl-destructive-subtle-background-idle: var(--x-pole-paper);
   --x-ctl-destructive-subtle-background-hover: var(--x-negative-canvas);
   --x-ctl-destructive-subtle-background-pressed: var(--x-negative-subtle);
@@ -4521,6 +4526,7 @@
   --x-ctl-destructive-subtle-track-disabled-done-negative-idle: var(--x-neutral-line-subtle);
   --x-ctl-destructive-subtle-track-disabled-done-warning-idle: var(--x-neutral-line-subtle);
   --x-ctl-destructive-subtle-track-disabled-done-positive-idle: var(--x-neutral-line-subtle);
+  --x-ctl-destructive-subtle-stroke-width: var(--x-border-width-default);
   --x-ctl-on-inverted-background-idle: transparent;
   --x-ctl-on-inverted-background-hover: var(--x-inverted-on-fill-hover);
   --x-ctl-on-inverted-background-pressed: var(--x-inverted-on-fill-pressed);
@@ -5193,6 +5199,7 @@
   --x-ctl-on-inverted-track-disabled-done-negative-idle: transparent;
   --x-ctl-on-inverted-track-disabled-done-warning-idle: transparent;
   --x-ctl-on-inverted-track-disabled-done-positive-idle: transparent;
+  --x-ctl-on-inverted-stroke-width: var(--x-border-width-default);
   --x-status-neutral-surface-strong: var(--x-neutral-fill);
   --x-status-neutral-surface-subtle: var(--x-neutral-subtle);
   --x-status-neutral-content-strong: var(--x-neutral-on-fill);

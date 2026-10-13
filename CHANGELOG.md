@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `hierarchies.{h}.strokeWidth` picks a stroke role (a `border.width` key,
+  default `default`) for a hierarchy's controls. Every hierarchy gets
+  `--{prefix}ctl-{h}-stroke-width` → `var(--{prefix}border-width-{role})`; a
+  bordered control subtracts it from its inline padding. `border.width`
+  keeps `default` and `strong` required and may carry further roles
+  (`heavy`), all emitted as `--{prefix}border-width-*`. An unknown role
+  stops with a `RecipeError` at `hierarchies.{h}.strokeWidth`.
 - `--{prefix}{hue}-fill-pressed` per mode, a derived token (not a ramp step):
   the pressed state of a fill. `fillStates.{mode}.hover` (`ladder` default,
   or `away-from-text`) sets which way a fill's hover moves. With

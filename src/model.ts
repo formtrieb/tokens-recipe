@@ -5,6 +5,7 @@
  *   Auswahl    --x-{hue}-{canvas|subtle|tint|…|fill|fill-hover|ink-subtle|ink|fill-pressed|on-fill|state-*}
  *              --x-pole-{ink|ink-inverted|paper|canvas}      (per mode)
  *   Controls   --x-ctl-{hierarchy}-{part}[-readonly|-disabled][-inactive|-selected|-done][-negative|-warning|-positive]-{interaction}
+ *              --x-ctl-{hierarchy}-stroke-width                (→ border-width-*)
  *   Status     --x-status-{intent}-{surface|content|indicator}-{strong|subtle}
  *   Feedback   --x-feedback-{intent}-{surface|line|content|icon}
  *   Content    --x-content-{primary|secondary|disabled}   (pole ink + alpha, per mode)
@@ -732,6 +733,11 @@ export function generateModel(
       recipeErrors.push(
         `hierarchies.${h}: Farbton ${d.hue} fehlt in semanticHues`,
       );
+    const strokes = Object.keys(recipe.border?.width ?? {});
+    if (d.strokeWidth !== undefined && !strokes.includes(d.strokeWidth))
+      recipeErrors.push(
+        `hierarchies.${h}.strokeWidth: ${d.strokeWidth} ist keine Rolle aus border.width (${strokes.join(' · ')})`,
+      );
   }
   assertRecipe();
   const HIERARCHIES: Record<string, { hue: string; style: Style }> =
@@ -780,6 +786,14 @@ export function generateModel(
             ),
           ),
         );
+  // stroke width per hierarchy: a reference to a stroke role, never px. A
+  // bordered control subtracts this from its inline padding, so a heavier
+  // stroke does not grow the control.
+  for (const h of HIERARCHY_NAMES)
+    decl(
+      `ctl.${h}.stroke-width`,
+      `var(--${P}border-width-${recipe.hierarchies![h].strokeWidth ?? 'default'})`,
+    );
 
   // ---------- Status + feedback + focus ----------
   /**
@@ -909,8 +923,9 @@ export function generateModel(
    * page separates its parts with `region`.
    * Everything INSIDE a control (padding, icon gap, part sizes) belongs to the
    * control sizes, not here.
-   * Strokes: every border reads a role, so `calc(padding - border.width.default)`
-   * stays right when a DS chooses 2px borders. Optical nudges (icons) are not
+   * Strokes: every border reads a role, so `calc(padding - stroke width)`
+   * stays right when a DS chooses 2px borders. `default` and `strong` are
+   * required; further roles (heavy) are for hierarchies to pick. Optical nudges (icons) are not
    * tokens — they live inside the icon component.
    * Values: recipe `spaceRoles`, `border`, `focus` (meanings in ramp.ts).
    */
@@ -918,8 +933,13 @@ export function generateModel(
   const INSET_ROLES = ['container', 'container-compact', 'list', 'page'];
   requireKeys('spaceRoles.gap', recipe.spaceRoles?.gap, GAP_ROLES);
   requireKeys('spaceRoles.inset', recipe.spaceRoles?.inset, INSET_ROLES);
-  requireKeys('border.width', recipe.border?.width, ['default', 'strong']);
+  // default and strong are required; further stroke roles (heavy) are the
+  // recipe's, for hierarchies to pick (`hierarchies.*.strokeWidth`)
+  for (const n of ['default', 'strong'])
+    if (recipe.border?.width?.[n] === undefined)
+      recipeErrors.push(`border.width: ${n} fehlt`);
   assertRecipe();
+  const BORDER_ROLES = Object.keys(recipe.border!.width);
   const SPACE_ROLES: Record<string, number> = {
     ...Object.fromEntries(
       GAP_ROLES.map((r) => [`gap.${r}`, recipe.spaceRoles!.gap[r]]),
@@ -927,8 +947,9 @@ export function generateModel(
     ...Object.fromEntries(
       INSET_ROLES.map((r) => [`inset.${r}`, recipe.spaceRoles!.inset[r]]),
     ),
-    'border.width.default': recipe.border!.width['default'],
-    'border.width.strong': recipe.border!.width['strong'],
+    ...Object.fromEntries(
+      BORDER_ROLES.map((r) => [`border.width.${r}`, recipe.border!.width[r]]),
+    ),
     'focus.width': recipe.focus!.width,
     'focus.offset': recipe.focus!.offset,
   };
@@ -1459,8 +1480,8 @@ export function generateModel(
    * Every height is a MIN height (WCAG 1.4.4 / 1.4.12): block padding =
    * (height − line height) / 2 as calc, so it follows the coarse height and
    * single-line controls keep their exact height. Inline padding is measured
-   * from the OUTER edge — a bordered control subtracts its border
-   * (`calc(… − var(--x-border-width-default))`), a rule, not a token. A round
+   * from the OUTER edge — a bordered control subtracts its hierarchy's stroke
+   * (`calc(… − var(--x-ctl-{hierarchy}-stroke-width))`), a rule, not a token. A round
    * radius adds the pill surcharge via `--x-control-{family}-pill` (set per
    * shape), so the shape and the coarse pointer never fight over a value.
    * Not tokens (component work): glyph-flush alignment of embedded icon
