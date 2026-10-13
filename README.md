@@ -34,6 +34,19 @@ from: alpha steps, status and feedback mapping, and the contract thresholds.
 A design system's recipe goes on top. Objects merge key by key, and arrays
 and values replace the default as a whole.
 
+### Anchoring status colours on step 8
+
+An anchor pins one step of a ramp to a brand colour (`anchor.light =
+{ step, hex }`). Step 9 (`fill`) is the usual place. Status colours that the
+brand uses mainly as a border or indicator fit better on step 8
+(`line-strong`): the anchor becomes the stroke it is used as, `fill` moves
+one step darker, and `on-fill` tips to white. A mid green `#2e9a5c` (synthetic)
+on step 9 keeps black text on the fill, and the darker hover and pressed
+states break it (104 violations in the test recipe). On step 8 the fill is
+`#20834c` with white text, and the text, fill and stroke contracts of the hue
+all pass. The anchor itself must then hold 3:1 against the page, because it
+is the stroke of an unselected control.
+
 ## Layers
 
 | Layer | From the recipe | Becomes |
@@ -113,7 +126,35 @@ recipe the model was generated from, defaults applied — with these files:
 | `model-report.json` | every contrast check, the cell contract, APCA notes |
 
 `log` is the report as lines: one line per contract, and every violation
-marked `✗`.
+marked `✗`. Lines marked `·` are notes. They never fail a build and are not
+counted as violations:
+
+- **A fill whose content carries the edge.** `Füllung {hue} (1.4.11)` asks
+  for 3:1 between a hue's `fill` and the page. The fill serves buttons
+  (label) and checkbox, radio and switch (check, dot, thumb). When the fill
+  stays below 3:1 but its `on-fill` reaches 3:1 against the page, the content
+  shows where the control is, and WCAG 1.4.11 does not ask for the surface
+  boundary. The line becomes a note, and `model-report.json` keeps the check
+  with `ok: true` and an `advisory` reason. A light yellow button with black
+  text is a note. A mid blue with white text on a white page stays a
+  failure.
+- **Nested corners waived on purpose.** The radius contract checks that
+  nested corners are concentric (a menu row in a popover, a checkbox in a
+  card, a card in a dialog, a tag in a field). Square tiles holding rounded
+  checkboxes break that by design. `radius.waive` names the nesting pair and
+  why:
+
+  ```json
+  "radius": {
+    "waive": [{ "nesting": "container/item", "reason": "square tiles, rounded checks" }]
+  }
+  ```
+
+  The pair is `outer/inner` from the contract's scenarios (`container/item`,
+  `field/tag`, `container-large/container`). One pair covers every scenario
+  with those roles. The report lists each affected line as
+  `· … — ausgesetzt: <reason>`. `reason` is required, and a pair that is no
+  nesting stops the run with the recipe path.
 
 ## Use
 

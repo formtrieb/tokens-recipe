@@ -403,6 +403,22 @@ export const RecipeSchema = z
           .describe(
             'die Ecke wächst mit der Control-Höhe, höchstens dieser Anteil',
           ),
+        waive: z
+          .array(
+            z.object({
+              nesting: z
+                .string()
+                .describe('Paar außen/innen der Verschachtelung (container/item)'),
+              reason: z
+                .string()
+                .min(1)
+                .describe('warum die Ecken bewusst nicht konzentrisch sind'),
+            }),
+          )
+          .optional()
+          .describe(
+            'Verschachtelungen, deren Prüfung bewusst ausgesetzt ist; der Report zeigt sie als ausgesetzt',
+          ),
       })
       .describe(
         'Eckenradius je Rolle. Andere Formen als default werden nur mitgeprüft.',
