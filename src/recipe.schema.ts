@@ -141,6 +141,11 @@ export const RecipeSchema = z
           style: name.describe(
             'Stil aus der Bibliothek: solid, outline, ghost, outline-hue, ghost-on-fill',
           ),
+          strokeWidth: name
+            .optional()
+            .describe(
+              'Rahmenstärke der Controls: eine Rolle aus border.width (Standard default)',
+            ),
         }),
       )
       .describe(
@@ -298,7 +303,7 @@ export const RecipeSchema = z
         width: z
           .record(name, px)
           .describe(
-            'default (Feld, Karte, Trenner) · strong (Auswahl, aktiver Tab)',
+            'default (Feld, Karte, Trenner) · strong (Auswahl, aktiver Tab), Pflicht; weitere Rollen (heavy) wählt eine Hierarchie über strokeWidth',
           ),
       })
       .describe('Rahmenstärken in px.'),

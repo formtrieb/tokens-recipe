@@ -2700,6 +2700,10 @@
           "$type": "color",
           "$value": "{neutral.line-subtle}"
         }
+      },
+      "stroke-width": {
+        "$type": "dimension",
+        "$value": "{border.width.default}"
       }
     },
     "primary": {
@@ -5402,6 +5406,10 @@
           "$type": "color",
           "$value": "{neutral.line-subtle}"
         }
+      },
+      "stroke-width": {
+        "$type": "dimension",
+        "$value": "{border.width.default}"
       }
     },
     "secondary": {
@@ -8104,6 +8112,10 @@
           "$type": "color",
           "$value": "{neutral.line-subtle}"
         }
+      },
+      "stroke-width": {
+        "$type": "dimension",
+        "$value": "{border.width.default}"
       }
     },
     "tertiary": {
@@ -10806,6 +10818,10 @@
           "$type": "color",
           "$value": "{neutral.line-subtle}"
         }
+      },
+      "stroke-width": {
+        "$type": "dimension",
+        "$value": "{border.width.default}"
       }
     },
     "destructive": {
@@ -13508,6 +13524,10 @@
           "$type": "color",
           "$value": "{neutral.line-subtle}"
         }
+      },
+      "stroke-width": {
+        "$type": "dimension",
+        "$value": "{border.width.default}"
       }
     },
     "destructive-subtle": {
@@ -16210,6 +16230,10 @@
           "$type": "color",
           "$value": "{neutral.line-subtle}"
         }
+      },
+      "stroke-width": {
+        "$type": "dimension",
+        "$value": "{border.width.default}"
       }
     },
     "on-inverted": {
@@ -18912,6 +18936,10 @@
           "$type": "color",
           "$value": "transparent"
         }
+      },
+      "stroke-width": {
+        "$type": "dimension",
+        "$value": "{border.width.default}"
       }
     }
   },

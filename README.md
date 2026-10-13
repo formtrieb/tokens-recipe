@@ -123,6 +123,23 @@ heights, icons, gaps, `content`, `rules.pill`, targets, badges, motion
 distances — must lie on the scale; the generator stops with the recipe path
 otherwise.
 
+Each hierarchy picks a stroke role for its controls: `hierarchies.{h}.strokeWidth`
+names a `border.width` key (default `default`), never pixels. `border.width`
+requires `default` and `strong` and may carry more roles (`heavy: 3`, which
+then must lie on the size scale like every stroke). Every hierarchy gets
+`ctl-{h}-stroke-width` → `var(--x-border-width-{role})`. Inline padding is
+measured from the outer edge, so a bordered control subtracts its stroke:
+
+```css
+.button--secondary {
+  border: var(--x-ctl-secondary-stroke-width) solid var(--x-ctl-secondary-stroke-idle);
+  padding-inline: calc(var(--x-control-md-action-inline) - var(--x-ctl-secondary-stroke-width));
+}
+```
+
+A heavier stroke then does not grow the control. Stroke width by tone (an
+error field at 2px) is not a hierarchy's choice; focus has `focus.width`.
+
 A hierarchy picks a style for its controls. `outline-hue` is an outline
 that carries its hue at rest (hue stroke and text on paper, for everyday
 destructive actions); selected and done move its surface onto the hue's tint

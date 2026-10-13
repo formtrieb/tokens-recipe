@@ -357,7 +357,15 @@ export interface Recipe {
    * style from the generator's library (`solid`, `outline`, `ghost`,
    * `outline-hue`, `ghost-on-fill`). Names are universal, every one is set.
    */
-  hierarchies?: Record<string, { hue: string; style: string }>;
+  hierarchies?: Record<
+    string,
+    {
+      hue: string;
+      style: string;
+      /** stroke role of the hierarchy's controls: a `border.width` key (default `default`) */
+      strokeWidth?: string;
+    }
+  >;
   /**
    * Space roles in px, each on the `space.scale`.
    *   gap.tight    label ↔ field, title ↔ description
@@ -377,7 +385,8 @@ export interface Recipe {
   };
   /**
    * Stroke widths in px: `default` field, card, divider, hairline · `strong`
-   * selected card, active tab indicator, emphasis.
+   * selected card, active tab indicator, emphasis. Further roles (`heavy`)
+   * are allowed; a hierarchy picks one for its controls (`strokeWidth`).
    */
   border?: { width: Record<string, number> };
   /**
