@@ -635,9 +635,12 @@ export function generateModel(
    * „Kündigen" as bulk action). Selected (and done) keeps the hue too: the
    * surface moves onto the hue's tint ladder, which is built for ink on it;
    * stroke, icon and text as in `outline`. Inactive, readonly and disabled
-   * behave like `outline`.
+   * behave like `outline`. Option `rest` (hierarchy): `ladder` (default) shows
+   * the rest in the ladder's stroke and text steps (`line-strong`,
+   * `ink-subtle`); `anchor` shows it in the fill itself (the brand colour) —
+   * the contract then checks that colour as text on paper.
    */
-  const outlineHue: Style = (part, c) => {
+  const outlineHueWith = (rest: string): Style => (part, c) => {
     if (c.avail === 'enabled' && (c.sel === 'selected' || c.sel === 'done')) {
       if (part !== 'background') return outline(part, c);
       return {
@@ -656,15 +659,33 @@ export function generateModel(
         pressed: 'hue.subtle',
       }[i],
       stroke: {
-        idle: 'hue.line-strong',
+        idle: rest === 'anchor' ? 'hue.fill' : 'hue.line-strong',
         hover: 'hue.fill',
         pressed: 'hue.fill-hover',
       }[i],
-      icon: i === 'idle' ? 'hue.ink-subtle' : 'hue.ink',
-      text: i === 'idle' ? 'hue.ink-subtle' : 'hue.ink',
+      icon:
+        i !== 'idle' ? 'hue.ink' : rest === 'anchor' ? 'hue.fill' : 'hue.ink-subtle',
+      text:
+        i !== 'idle' ? 'hue.ink' : rest === 'anchor' ? 'hue.fill' : 'hue.ink-subtle',
       'text-subtle': 'neutral.ink-subtle',
       track: 'neutral.line-subtle',
     }[part];
+  };
+  const outlineHue = outlineHueWith('ladder');
+
+  /**
+   * style `outline-fill` — an outline at rest that fills on hover: from hover
+   * on it is `solid` (fill, stroke = fill, content `on-fill`; pressed reads
+   * `fill-pressed`). Option `rest` (hierarchy): `hue` (default) rests like
+   * `outline-hue` (hue stroke and text on paper), `neutral` like `outline`
+   * (neutral stroke, ink text). Focus keeps the rest. Selected, done,
+   * inactive, readonly and disabled behave like `outline-hue`.
+   */
+  const outlineFillWith = (rest: string): Style => (part, c) => {
+    if (c.sel !== 'none' || c.avail !== 'enabled') return outlineHue(part, c);
+    if (c.inter === 'hover' || c.inter === 'pressed') return solid(part, c);
+    const atRest: Cell = { ...c, inter: 'idle' };
+    return rest === 'neutral' ? outline(part, atRest) : outlineHue(part, atRest);
   };
 
   /**
@@ -705,13 +726,20 @@ export function generateModel(
     }[part];
   };
 
-  /** the style library; the recipe picks one per hierarchy by name */
-  const STYLES: Record<string, Style> = {
-    solid,
-    outline,
-    ghost,
-    'outline-hue': outlineHue,
-    'ghost-on-fill': ghostOnFill,
+  /**
+   * the style library; the recipe picks one per hierarchy by name. A style
+   * with options names the values of `rest` (first = default).
+   */
+  const STYLES: Record<
+    string,
+    { rest?: readonly string[]; make: (rest: string) => Style }
+  > = {
+    solid: { make: () => solid },
+    outline: { make: () => outline },
+    ghost: { make: () => ghost },
+    'outline-hue': { rest: ['ladder', 'anchor'], make: outlineHueWith },
+    'outline-fill': { rest: ['hue', 'neutral'], make: outlineFillWith },
+    'ghost-on-fill': { make: () => ghostOnFill },
   };
   /** recipe `hierarchies`: (semantic hue or `inverted`, style name) per level */
   const HIERARCHY_NAMES = [
@@ -738,15 +766,30 @@ export function generateModel(
       recipeErrors.push(
         `hierarchies.${h}.strokeWidth: ${d.strokeWidth} ist keine Rolle aus border.width (${strokes.join(' · ')})`,
       );
+    const rests = STYLES[d.style]?.rest;
+    if (d.rest !== undefined && d.style in STYLES)
+      if (!rests)
+        recipeErrors.push(`hierarchies.${h}.rest: Stil ${d.style} hat kein rest`);
+      else if (!rests.includes(d.rest))
+        recipeErrors.push(
+          `hierarchies.${h}.rest: ${d.rest} gibt es für ${d.style} nicht (${rests.join(' · ')})`,
+        );
   }
   assertRecipe();
-  const HIERARCHIES: Record<string, { hue: string; style: Style }> =
-    Object.fromEntries(
-      HIERARCHY_NAMES.map((h) => {
-        const d = recipe.hierarchies![h];
-        return [h, { hue: d.hue, style: STYLES[d.style] }];
-      }),
-    );
+  const HIERARCHIES: Record<
+    string,
+    { hue: string; style: Style; styleName: string; rest?: string }
+  > = Object.fromEntries(
+    HIERARCHY_NAMES.map((h) => {
+      const d = recipe.hierarchies![h];
+      const def = STYLES[d.style];
+      const rest = def.rest ? (d.rest ?? def.rest[0]) : undefined;
+      return [
+        h,
+        { hue: d.hue, style: def.make(rest ?? ''), styleName: d.style, rest },
+      ];
+    }),
+  );
   const key = (c: Cell) =>
     [
       c.avail !== 'enabled' ? c.avail : '',
@@ -2846,6 +2889,16 @@ export function generateModel(
       v['pole.paper'],
       C.textMin,
     );
+    // outline-hue resting in the anchor colour: the fill is text on paper
+    for (const [h, d] of Object.entries(HIERARCHIES))
+      if (d.styleName === 'outline-hue' && d.rest === 'anchor' && d.hue !== 'inverted')
+        add(
+          `Text in Ankerfarbe auf Papier (${h})`,
+          `${d.hue}.fill / pole.paper`,
+          v[`${d.hue}.fill`],
+          v['pole.paper'],
+          C.textMin,
+        );
     add(
       'Destructive-subtle Text hover',
       `${DESTRUCTIVE_SUBTLE}.ink / ${DESTRUCTIVE_SUBTLE}.canvas`,

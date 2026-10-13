@@ -139,12 +139,17 @@ export const RecipeSchema = z
         z.object({
           hue: name.describe('Farbton aus semanticHues, oder inverted'),
           style: name.describe(
-            'Stil aus der Bibliothek: solid, outline, ghost, outline-hue, ghost-on-fill',
+            'Stil aus der Bibliothek: solid, outline, ghost, outline-hue, outline-fill, ghost-on-fill',
           ),
           strokeWidth: name
             .optional()
             .describe(
               'Rahmenstärke der Controls: eine Rolle aus border.width (Standard default)',
+            ),
+          rest: name
+            .optional()
+            .describe(
+              'Ruhe-Look, Werte gibt der Stil vor: outline-hue ladder · anchor (Ankerfarbe), outline-fill hue · neutral',
             ),
         }),
       )
