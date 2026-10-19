@@ -13,6 +13,10 @@
     "edge": {
       "$type": "color",
       "$value": "CanvasText"
+    },
+    "current": {
+      "$type": "color",
+      "$value": "Highlight"
     }
   },
   "content": {

@@ -1,10 +1,10 @@
 Leiter-Vertrag: 194/194 ok (12 Ramps × 2 Modes)
 model.css: 4704 Control-Tokens (7 Hierarchien × 112 Zellen × 6 Parts), Auswahl je Mode 232
-Kontrast-Checks: 280/280 ok
+Kontrast-Checks: 286/286 ok
 Zell-Vertrag: 818 Farbpaare aus 9888 Zell-Prüfungen, Auswahl in 56 Zellen, Vertrag ok
   · 36 Zellen (readonly selected, done) nur über ein Zeichen unterscheidbar — Komponente zeigt Haken oder Punkt
-APCA (Hinweis, kein Gate): 154/1066 Paare unter Lc-Ziel (Text 75 · Nicht-Text 45) — light 19 · dark 135
-  · schwächstes: dark content.secondary / accent.tint Lc 56.9 < 75 (content.secondary auf accent.tint)
+APCA (Hinweis, kein Gate): 156/1072 Paare unter Lc-Ziel (Text 75 · Nicht-Text 45) — light 20 · dark 136
+  · schwächstes: dark content.secondary / surface.current Lc 55.7 < 75 (content.secondary auf surface.current)
 APCA je Typo-Rolle (Hinweis): 79 Stufen mit Betonung, Ziele Lc 45–90; 11 unter APCA-Mindestgröße (12 px)
   · light content.secondary Lc 73.2 (pole.sunken): trägt 0/6 — nicht: supporting.sm (90), supporting.sm-strong (90), supporting.md (90), supporting.md-strong (75), caption.md (90), caption.md-subtle (90)
   · light neutral.ink-subtle Lc 77.3 (pole.sunken): trägt 4/10 — nicht: label.md (90), label.md-subtle (90), label.lg-subtle (90), supporting.sm (90), supporting.sm-strong (90), supporting.md (90)
@@ -30,8 +30,8 @@ Datenvisualisierung: 6 Kategorien + other, 6 sequenziell, divergierend 2 × 7, 2
 Icons: 8 Text-Paare, Spot 32 · 48 · 64, Vertrag ok
 Avatare: xs 24 · sm 32 · md 40 (ohne Coarse-Sprung)
 Medien: md 64 (ohne Coarse-Sprung)
-Hochkontrast: 928 Umlegungen auf Systemfarben, Vertrag ok
+Hochkontrast: 929 Umlegungen auf Systemfarben, 19 auf gewählter Fläche ([data-on-selected-x]), Vertrag ok
 Kennfarben: 6 + neutral, strong/subtle, Vertrag ok
   · light: leise Flächen untereinander ΔE ≥ 2.3 — Unterscheidung über Text und Punkt
   · dark: leise Flächen untereinander ΔE ≥ 5.7 — Unterscheidung über Text und Punkt
-DTCG: 7288 Einträge, 5894 Pfade, 11 Sets, 16 Themes auf 7 Achsen; token-map 5894
+DTCG: 7310 Einträge, 5896 Pfade, 12 Sets, 17 Themes auf 7 Achsen; token-map 5896

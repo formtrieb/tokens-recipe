@@ -132,6 +132,17 @@
     }
   },
   {
+    "id": "contrast-forced-onselected",
+    "name": "Forced-OnSelected",
+    "group": "Contrast",
+    "selectedTokenSets": {
+      "Mode/Light": "source",
+      "Model/Base": "source",
+      "Contrast/Forced": "source",
+      "Contrast/Forced-OnSelected": "enabled"
+    }
+  },
+  {
     "id": "direction-ltr",
     "name": "Ltr",
     "group": "Direction",

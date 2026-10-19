@@ -5380,11 +5380,13 @@
   --x-surface-sunken: var(--x-pole-sunken);
   --x-surface-inverted: var(--x-inverted-fill);
   --x-surface-placeholder: var(--x-neutral-tint);
+  --x-surface-current: var(--x-neutral-tint-hover);
   --x-scrim: var(--x-pole-scrim);
   --x-line-edge: var(--x-neutral-edge);
   --x-line-subtle: var(--x-neutral-line-subtle);
   --x-line-base: var(--x-neutral-line);
   --x-line-strong: var(--x-neutral-line-strong);
+  --x-line-current: transparent;
   --x-size-0: 0px;
   --x-size-1: 1px;
   --x-size-2: 2px;
@@ -7268,6 +7270,30 @@
   --x-focus-ring: Highlight;
   --x-focus-ring-on-inverted: Highlight;
   --x-line-edge: CanvasText;
+  --x-line-current: Highlight;
+}
+}
+@media (forced-colors: active) {
+[data-on-selected-x] {
+  --x-ctl-tertiary-background-focus: HighlightText;
+  --x-ctl-tertiary-stroke-idle: HighlightText;
+  --x-ctl-tertiary-stroke-hover: HighlightText;
+  --x-ctl-tertiary-stroke-pressed: HighlightText;
+  --x-ctl-tertiary-stroke-focus: HighlightText;
+  --x-ctl-tertiary-icon-idle: HighlightText;
+  --x-ctl-tertiary-icon-hover: HighlightText;
+  --x-ctl-tertiary-icon-pressed: HighlightText;
+  --x-ctl-tertiary-icon-focus: Highlight;
+  --x-ctl-tertiary-text-idle: HighlightText;
+  --x-ctl-tertiary-text-hover: HighlightText;
+  --x-ctl-tertiary-text-pressed: HighlightText;
+  --x-ctl-tertiary-text-focus: Highlight;
+  --x-ctl-tertiary-text-subtle-idle: HighlightText;
+  --x-ctl-tertiary-text-subtle-hover: HighlightText;
+  --x-ctl-tertiary-text-subtle-pressed: HighlightText;
+  --x-ctl-tertiary-text-subtle-focus: Highlight;
+  --x-focus-ring: HighlightText;
+  --x-line-current: HighlightText;
 }
 }
 @media (pointer: coarse) {

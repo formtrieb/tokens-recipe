@@ -38,6 +38,8 @@
  *   Avatars    --x-avatar-{xs|sm|md} (spot sizes, no coarse step)
  *   Media      --x-media-{name} (a fixed box for a picture or file icon; size scale, no coarse step)
  *   Forced     @media (forced-colors: active): selection/disabled/focus/edge/status dot/mark → system colours
+ *              [data-on-selected-x] (context on a selected surface): ghost ink, focus ring, line.current → HighlightText
+ *   Current    --x-surface-current · --x-line-current (the current row, a step above selected)
  *   Motion     --x-duration-{instant|ms} · --x-easing-{standard|enter|exit|linear|spring}
  *              --x-motion-{role}-{duration|easing|move-duration|move-easing|distance|scale}
  *              waiting: delay-skeleton · pulse · progress (optional, else delay-hint / loop)
@@ -982,6 +984,9 @@ export function generateModel(
     'surface.inverted': 'inverted.fill', // toast, tooltip
     // skeleton, empty picture box: decoration, visible on the surfaces it sits on
     'surface.placeholder': 'neutral.tint',
+    // the current row (aria-current, the one open in the detail view): a step
+    // above selected — tint-hover is the first step that stands apart from it
+    'surface.current': 'neutral.tint-hover',
     // text on surface.inverted (toast, a pill on the inverted surface)
     'content.on-inverted': 'inverted.on-fill',
     scrim: 'pole.scrim',
@@ -1009,6 +1014,9 @@ export function generateModel(
     ...Object.entries(SURFACE_ROLES).map(([role, ref]) =>
       decl(role, `var(--${P}${ref.replace('.', '-')})`),
     ),
+    // the current row's outline: none on screen (the surface carries it),
+    // Highlight in forced colours, where fills are gone
+    decl('line.current', 'transparent'),
     ...[
       'raised',
       'overlay',
@@ -2475,6 +2483,7 @@ export function generateModel(
     decl('content.disabled', 'GrayText', SET.forced),
     decl('mark.surface', 'Mark', SET.forced),
     decl('mark.current', 'Highlight', SET.forced),
+    decl('line.current', 'Highlight', SET.forced),
     ...STATUS_INTENTS.flatMap((i) =>
       ['strong', 'subtle'].map((e) =>
         decl(`status.${i}.indicator.${e}`, 'CanvasText', SET.forced),
@@ -2494,6 +2503,36 @@ export function generateModel(
       const v = forcedOf(part, c);
       if (v) forcedTokens.push(decl(`field.${part}.${key(c)}`, v, SET.forced));
     }
+  /**
+   * Forced colours on a selected surface (a selected row is Highlight): what
+   * sits on it turns HighlightText — the controls without a surface of their
+   * own (hierarchies in style `ghost`), the focus ring, the current-row line.
+   * A context, switched on by `[data-on-selected-x]` on the selected element;
+   * focus inverts (HighlightText chip, Highlight ink). The component keeps
+   * `forced-color-adjust: none` and `color: HighlightText` itself.
+   */
+  const onSelectedTokens: string[] = [
+    decl('focus.ring', 'HighlightText', SET.forcedOnSelected),
+    decl('line.current', 'HighlightText', SET.forcedOnSelected),
+  ];
+  for (const [h, d] of Object.entries(HIERARCHIES)) {
+    if (d.styleName !== 'ghost') continue;
+    for (const inter of AVAIL.enabled) {
+      const c: Cell = { avail: 'enabled', sel: 'none', tone: 'none', inter };
+      const focus = inter === 'focus';
+      for (const part of ['icon', 'text', 'text-subtle'] as Part[])
+        onSelectedTokens.push(
+          decl(`ctl.${h}.${part}.${key(c)}`, focus ? 'Highlight' : 'HighlightText', SET.forcedOnSelected),
+        );
+      onSelectedTokens.push(
+        decl(`ctl.${h}.stroke.${key(c)}`, 'HighlightText', SET.forcedOnSelected),
+      );
+      if (focus)
+        onSelectedTokens.push(
+          decl(`ctl.${h}.background.${key(c)}`, 'HighlightText', SET.forcedOnSelected),
+        );
+    }
+  }
   // contract: a filled hierarchy keeps a border, or its shape disappears with
   // the fill; every enabled selected cell is remapped
   const forcedFails: string[] = [];
@@ -3138,6 +3177,8 @@ export function generateModel(
       'surface.sunken': v['pole.sunken'],
       'neutral.subtle': v['neutral.subtle'],
       'neutral.tint': v['neutral.tint'],
+      // the current row carries text and the focus ring like any surface
+      'surface.current': v[SURFACE_ROLES['surface.current']],
       [`${PRIMARY}.tint`]: v[`${PRIMARY}.tint`], // readonly / done control
     };
     for (const i of FEEDBACK_INTENTS)
@@ -3420,6 +3461,32 @@ export function generateModel(
         surfaceFails.push(
           `${mode}: surface.placeholder auf ${name} kaum sichtbar (${lr.toFixed(2)}:1; Regel ≥ 1,1:1)`,
         );
+    }
+    // the current row: a step above selected (the selected row of a list,
+    // outline's selected surface), on the surfaces a list sits on
+    {
+      const cur = v[SURFACE_ROLES['surface.current']];
+      const selRef = outline('background', {
+        avail: 'enabled',
+        sel: 'selected',
+        tone: 'none',
+        inter: 'idle',
+      });
+      for (const [name, surf] of [
+        ['surface.raised', 'pole.paper'],
+        ['surface.overlay', 'pole.overlay'],
+      ]) {
+        const onPaper = contrastWcag(cur, v[surf]);
+        const vsSel = contrastWcag(cur, over(v[selRef], v[surf]));
+        if (onPaper < 1.1)
+          surfaceFails.push(
+            `${mode}: surface.current auf ${name} kaum sichtbar (${onPaper.toFixed(2)}:1; Regel ≥ 1,1:1)`,
+          );
+        if (vsSel < 1.1)
+          surfaceFails.push(
+            `${mode}: surface.current neben ${selRef} auf ${name} kaum unterscheidbar (${vsSel.toFixed(2)}:1; Regel ≥ 1,1:1)`,
+          );
+      }
     }
     for (const surf of ['pole.canvas', 'pole.paper', 'pole.overlay']) {
       const hit = over(v['mark.value'], v[surf]);
@@ -3738,7 +3805,7 @@ export function generateModel(
         .join(' · ')} (ohne Coarse-Sprung)`,
     );
   log.push(
-    `Hochkontrast: ${forcedTokens.length} Umlegungen auf Systemfarben, Vertrag ${forcedFails.length ? 'verletzt' : 'ok'}`,
+    `Hochkontrast: ${forcedTokens.length} Umlegungen auf Systemfarben, ${onSelectedTokens.length} auf gewählter Fläche ([${attr('on-selected')}]), Vertrag ${forcedFails.length ? 'verletzt' : 'ok'}`,
   );
   for (const f of forcedFails) log.push(`  ✗ ${f}`);
   log.push(
@@ -3805,6 +3872,12 @@ export function generateModel(
         rule(THEME.reduced(c), `${motionSel(c)}${reducedHook}`),
       ),
       rule(THEME.forced, ROOT, '(forced-colors: active)'),
+      // a context, set on the selected element — an attribute in both scopes
+      rule(
+        THEME.forcedOnSelected,
+        `[${attr('on-selected')}]`,
+        '(forced-colors: active)',
+      ),
       rule(THEME.coarse, ROOT, '(pointer: coarse)'),
       ...(typeStepOverrides.length
         ? [rule(THEME.xl, ROOT, `(min-width: ${bpTo}px)`)]

@@ -150,7 +150,14 @@ describe('DTCG tree', () => {
       'Motion/Expressive-Reduced': 'enabled',
     });
     expect(groups.Pointer?.map((t) => t.name)).toEqual(['Fine', 'Coarse']);
-    expect(groups.Contrast?.map((t) => t.name)).toEqual(['Normal', 'Forced']);
+    // forced colours, and inside it the context of a selected surface
+    expect(groups.Contrast?.map((t) => t.name)).toEqual(['Normal', 'Forced', 'Forced-OnSelected']);
+    expect(groups.Contrast?.[2].selectedTokenSets).toEqual({
+      'Mode/Light': 'source',
+      'Model/Base': 'source',
+      'Contrast/Forced': 'source',
+      'Contrast/Forced-OnSelected': 'enabled',
+    });
     expect(groups.Direction?.map((t) => t.name)).toEqual(['Ltr', 'Rtl']);
     // the default of an axis has no set of its own
     expect(Object.values(groups.Shape![0].selectedTokenSets)).not.toContain(

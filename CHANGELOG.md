@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- The current row: `--{prefix}surface-current` (→ `neutral.tint-hover`, a
+  step above a selected row) and `--{prefix}line-current` (`transparent`,
+  `Highlight` in forced colours). The surface contract checks it at 1.1:1
+  against the selected surface and the surface it sits on; text and the
+  focus ring on it are checked like on any text surface.
+- Forced colours on a selected surface: the set `Contrast/Forced-OnSelected`,
+  rendered under `[data-on-selected-x]` inside `(forced-colors: active)`,
+  turns the ink of hierarchies in style `ghost`, `focus-ring` and
+  `line-current` to `HighlightText` (focus inverts to `Highlight` on a
+  `HighlightText` surface).
+
 - Motion roles for waiting: `delay-skeleton` (delay before a placeholder
   appears, kept under reduced motion), `pulse` (a placeholder breathes,
   standard curve, off under reduced motion) and `progress` (indeterminate
