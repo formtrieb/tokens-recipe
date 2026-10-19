@@ -84,6 +84,14 @@ is the stroke of an unselected control.
 Components read roles only. The Foundation is there for the roles to point
 at.
 
+Status roles (`status-{intent}-{surface|content|indicator}-{strong|subtle}`,
+chip, badge, status tile) come for five intents on their namesake hues:
+`neutral`, `info`, `positive`, `warning`, `negative`. `status.intents` adds
+further intents on a semantic hue — `{ "new": "brand" }` gives
+`status-new-*` on the brand steps, for "something new" next to the other
+states. An added intent gets the same contracts as the base five; it may not
+reuse a base name.
+
 Spot sizes stand without text: `icon-spot-*` for icons, `avatar-*` for
 avatars (default `xs` 24, `sm` 32, `md` 40). Both point at `size-*` and must
 lie on the size scale; neither steps up under a coarse pointer — an avatar is
@@ -301,7 +309,10 @@ The model's CSS hangs on data attributes (default suffix `-x`):
 ```
 
 Reduced motion, forced colours, coarse pointers and RTL switch by media query
-or `dir`. Nothing else is needed.
+or `dir`. Nothing else is needed. Put `data-shape-x` and `data-motion-x` on the
+element that carries `data-mode-x`, or below it: every mode element declares
+the default shape and motion again, so a mode element nested under a shape
+attribute falls back to the default.
 
 ### One build for everything
 

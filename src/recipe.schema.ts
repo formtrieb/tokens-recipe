@@ -718,6 +718,12 @@ export const RecipeSchema = z
         subtle: z
           .record(name, name)
           .describe('surface · content · indicator → Stufenname'),
+        intents: z
+          .record(name, name)
+          .optional()
+          .describe(
+            'weitere Intents auf einem Farbton aus semanticHues (new → brand); die fünf Basis-Intents liegen fest auf ihrem gleichnamigen Farbton',
+          ),
       })
       .describe(
         'Status-Rolle (Chip, Badge, Kennzahl): Stufenname je Part und Betonung (Standard).',
