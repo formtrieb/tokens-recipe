@@ -130,6 +130,13 @@ thumb − 4px. A value on the size scale reads `size-*`; off the scale it is a
 replacement's switch as well. `control-{size}-checkbox-mark` is the check in a
 checkbox box (box = `icon`, mark = icon − 4px), the same way.
 
+The thumb has no colour part of its own: it is the indicator of the cell, as
+style `solid` draws it — off reads `stroke` (`ctl-{h}-stroke-inactive-*`, the
+ring of an empty checkbox), on reads `icon` (`ctl-{h}-icon-selected-*`, the
+check on the fill). That holds in forced colours too: solid's unselected
+stroke is `CanvasText` there, so a thumb painted as a surface does not
+vanish into the forced `Canvas` (borders are `CanvasText` anyway).
+
 Content *on* a fill — the check in a box, a digit on a step, the day number
 in a selected calendar cell — reads the part `icon` of the cell; text *next
 to* the fill (the checkbox label) reads `text`. There is no part of its own

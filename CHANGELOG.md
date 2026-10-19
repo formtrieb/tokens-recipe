@@ -58,6 +58,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   renders the tree with that `render.json` to the same CSS. The default
   `attribute` is unchanged.
 
+### Changed
+
+- Forced colours: in style `solid` the stroke of unselected cells (enabled
+  and readonly) is `CanvasText`. A switch thumb reads that stroke when off
+  and is a surface, which the browser would turn into `Canvas`; borders were
+  `CanvasText` anyway, so checkbox and radio rings look as before. Light and
+  Dark are unchanged.
+
 ## [0.9.0] — 2026-10-13
 
 ### Added
