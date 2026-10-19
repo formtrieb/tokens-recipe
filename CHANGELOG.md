@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Motion roles for waiting: `delay-skeleton` (delay before a placeholder
+  appears, kept under reduced motion), `pulse` (a placeholder breathes,
+  standard curve, off under reduced motion) and `progress` (indeterminate
+  progress, linear, slowed under reduced motion). Optional per character:
+  without a duration of its own a role reads its partner's as a reference
+  (`delay-skeleton` → `delay-hint`, `pulse` and `progress` → `loop`), so
+  existing recipes keep working. The exception from `contract.motionMaxMs`
+  is a property of the role (loops and delays), no longer a list of names.
+
 - `--{prefix}media-{name}`: a fixed box for a picture or a file-type icon,
   recipe `media.sizes` on the size scale (default `md` 64), no coarse step;
   off the scale stops with a `RecipeError` at `media.sizes.{name}`.

@@ -23370,6 +23370,32 @@
         "$type": "duration",
         "$value": "{duration.400}"
       }
+    },
+    "delay-skeleton": {
+      "duration": {
+        "$type": "duration",
+        "$value": "{duration.300}"
+      }
+    },
+    "pulse": {
+      "duration": {
+        "$type": "duration",
+        "$value": "{duration.1000}"
+      },
+      "easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.standard}"
+      }
+    },
+    "progress": {
+      "duration": {
+        "$type": "duration",
+        "$value": "{duration.1000}"
+      },
+      "easing": {
+        "$type": "other",
+        "$value": "{easing.linear}"
+      }
     }
   },
   "icon": {

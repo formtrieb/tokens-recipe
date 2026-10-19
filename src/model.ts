@@ -40,6 +40,7 @@
  *   Forced     @media (forced-colors: active): selection/disabled/focus/edge/status dot/mark → system colours
  *   Motion     --x-duration-{instant|ms} · --x-easing-{standard|enter|exit|linear|spring}
  *              --x-motion-{role}-{duration|easing|move-duration|move-easing|distance|scale}
+ *              waiting: delay-skeleton · pulse · progress (optional, else delay-hint / loop)
  *              --x-motion-travel · [data-motion-x] (other characters, check only)
  *              @media (prefers-reduced-motion) + [data-reduced-motion-x] (test hook)
  *              motion-figma.json
@@ -2090,6 +2091,10 @@ export function generateModel(
     springy?: boolean;
     size?: 'sm' | 'md' | 'lg';
     reduced: Reduced;
+    /** a loop or a delay may run longer than `motionMaxMs`; a transition may not */
+    kind?: 'loop' | 'delay';
+    /** optional per character: without its own duration the role reads this one's */
+    fallback?: string;
   }
   const MOTION_ROLES: Record<string, MotionRole> = {
     'state-in': { curve: 'linear', reduced: 'keep' }, //    hover/pressed in: instant
@@ -2120,10 +2125,29 @@ export function generateModel(
     'exit-lg': { curve: 'exit', spatial: true, size: 'lg', reduced: 'fade' },
     expand: { curve: 'standard', spatial: true, reduced: 'off' }, //  accordion, sidebar, message at a field
     move: { curve: 'standard', spatial: true, springy: true, reduced: 'off' }, // reorder, remove (view transitions)
-    loop: { curve: 'linear', reduced: 'slow' }, //  spinner: one turn
+    loop: { curve: 'linear', reduced: 'slow', kind: 'loop' }, //  spinner: one turn
     scroll: { curve: 'standard', reduced: 'keep' }, // shadow when sticking
     attention: { curve: 'standard', spatial: true, reduced: 'off' }, // offer: shake, pulse — once, never alone
-    'delay-hint': { curve: null, reduced: 'keep' }, // tooltip appears after dwelling
+    'delay-hint': { curve: null, reduced: 'keep', kind: 'delay' }, // tooltip appears after dwelling
+    // waiting: optional per character, else the partner's duration (a reference)
+    'delay-skeleton': {
+      curve: null,
+      reduced: 'keep', // waiting is no movement
+      kind: 'delay',
+      fallback: 'delay-hint',
+    }, // placeholder appears only after this, so fast loads never flash it
+    pulse: {
+      curve: 'standard',
+      reduced: 'off', // movement without information
+      kind: 'loop',
+      fallback: 'loop',
+    }, // placeholder breathes
+    progress: {
+      curve: 'linear',
+      reduced: 'slow', // information: it is running
+      kind: 'loop',
+      fallback: 'loop',
+    }, // indeterminate progress (loading line): one run
   };
   const motion = recipe.motion!;
   const CHARACTERS = Object.keys(motion.characters);
@@ -2178,7 +2202,16 @@ export function generateModel(
     for (const [role, def] of Object.entries(MOTION_ROLES)) {
       const n = `--${P}motion-${role}`;
       const p = `motion.${role}`;
-      out.push(decl(`${p}.duration`, durRef(ch.durations[role]), set));
+      const own = ch.durations[role];
+      out.push(
+        decl(
+          `${p}.duration`,
+          own === undefined && def.fallback
+            ? `var(--${P}motion-${def.fallback}-duration)`
+            : durRef(own),
+          set,
+        ),
+      );
       if (!def.curve) continue;
       out.push(decl(`${p}.easing`, `var(--${P}easing-${def.curve})`, set));
       if (def.spatial)
@@ -2220,11 +2253,13 @@ export function generateModel(
             decl(`${p}.move-duration`, `var(--${P}duration-instant)`, set),
           );
       }
+      // slowed from the scale value, never from the partner's token: that is
+      // slowed in the same set already
       if (def.reduced === 'slow')
         out.push(
           decl(
             `${p}.duration`,
-            `calc(${durRef(ch.durations[role])} * ${motion.reduced.loopFactor})`,
+            `calc(${durRef(ch.durations[role] ?? ch.durations[def.fallback ?? role])} * ${motion.reduced.loopFactor})`,
             set,
           ),
         );
@@ -2265,8 +2300,8 @@ export function generateModel(
     for (const name of CHARACTERS) {
       const ch = motion.characters[name];
       const d = ch.durations;
-      for (const role of Object.keys(MOTION_ROLES))
-        if (d[role] === undefined)
+      for (const [role, def] of Object.entries(MOTION_ROLES))
+        if (d[role] === undefined && !def.fallback)
           motionFails.push(`${name}: Rolle ${role} ohne Dauer`);
       for (const role of Object.keys(d))
         if (!MOTION_ROLES[role])
@@ -2276,7 +2311,8 @@ export function generateModel(
           motionFails.push(
             `${name}.${role}: ${ms} ms fehlt in der Dauer-Skala`,
           );
-        if (!['loop', 'delay-hint'].includes(role) && ms > UI_MAX_MS)
+        // loops and delays may run longer; gesture-bound transitions may not
+        if (!MOTION_ROLES[role]?.kind && ms > UI_MAX_MS)
           motionFails.push(
             `${name}.${role}: ${ms} ms > ${UI_MAX_MS} ms (wirkt träge)`,
           );
@@ -3109,13 +3145,12 @@ export function generateModel(
     for (const i of STATUS_INTENTS)
       textSurfaces[`status.${i}.surface.subtle`] =
         v[`${hueOf(i)}.${STATUS.subtle['surface']}`];
-    add(
-      'content.on-inverted auf surface.inverted',
-      'inverted.on-fill / inverted.fill',
-      v['inverted.on-fill'],
-      v['inverted.fill'],
-      C.textMin,
-    );
+    {
+      // read through the role assignments, so a changed mapping is checked
+      const fg = SURFACE_ROLES['content.on-inverted'];
+      const bg = SURFACE_ROLES['surface.inverted'];
+      add('content.on-inverted auf surface.inverted', `${fg} / ${bg}`, v[fg], v[bg], C.textMin);
+    }
     for (const lvl of ['primary', 'secondary'])
       for (const [name, bg] of Object.entries(textSurfaces))
         add(
@@ -3380,7 +3415,7 @@ export function generateModel(
       ['surface.raised', 'pole.paper'],
       ['surface.overlay', 'pole.overlay'],
     ]) {
-      const lr = contrastWcag(v['neutral.tint'], v[surf]);
+      const lr = contrastWcag(v[SURFACE_ROLES['surface.placeholder']], v[surf]);
       if (lr < 1.1)
         surfaceFails.push(
           `${mode}: surface.placeholder auf ${name} kaum sichtbar (${lr.toFixed(2)}:1; Regel ≥ 1,1:1)`,

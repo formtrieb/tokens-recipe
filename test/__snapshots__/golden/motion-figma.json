@@ -118,6 +118,20 @@
         "delay-hint": {
           "duration": 400,
           "reduced": "keep"
+        },
+        "delay-skeleton": {
+          "duration": 300,
+          "reduced": "keep"
+        },
+        "pulse": {
+          "duration": 1000,
+          "easing": "standard",
+          "reduced": "off"
+        },
+        "progress": {
+          "duration": 1000,
+          "easing": "linear",
+          "reduced": "slow"
         }
       }
     },
@@ -243,6 +257,20 @@
         "delay-hint": {
           "duration": 500,
           "reduced": "keep"
+        },
+        "delay-skeleton": {
+          "duration": 400,
+          "reduced": "keep"
+        },
+        "pulse": {
+          "duration": 1000,
+          "easing": "standard",
+          "reduced": "off"
+        },
+        "progress": {
+          "duration": 1000,
+          "easing": "linear",
+          "reduced": "slow"
         }
       }
     }
