@@ -35,6 +35,10 @@
         "$type": "dimension",
         "$value": "{control.sm.switch-mark}"
       },
+      "checkbox-mark": {
+        "$type": "dimension",
+        "$value": "{control.sm.checkbox-mark}"
+      },
       "gap": {
         "$type": "dimension",
         "$value": "{control.sm.gap}"

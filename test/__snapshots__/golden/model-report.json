@@ -674,6 +674,14 @@
     },
     {
       "mode": "light",
+      "rule": "content.on-inverted auf surface.inverted",
+      "pair": "inverted.on-fill / inverted.fill",
+      "ratio": 21,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
       "rule": "content.primary auf pole.canvas",
       "pair": "content.primary / pole.canvas",
       "ratio": 19.76,
@@ -1786,6 +1794,14 @@
     },
     {
       "mode": "dark",
+      "rule": "content.on-inverted auf surface.inverted",
+      "pair": "inverted.on-fill / inverted.fill",
+      "ratio": 18.1,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
       "rule": "content.primary auf pole.canvas",
       "pair": "content.primary / pole.canvas",
       "ratio": 14.85,
@@ -2236,7 +2252,7 @@
       "text": 75,
       "nonText": 45
     },
-    "pairs": 1064,
+    "pairs": 1066,
     "below": [
       {
         "mode": "light",

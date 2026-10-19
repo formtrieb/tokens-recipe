@@ -24,6 +24,7 @@
  *   Focus      --x-focus-ring · --x-focus-offset-inset (ring inside, dense arrangements)
  *   Control    --x-control-{xs|sm|md|lg}-{height|icon|icon-alone|gap|gap-plain|row-height}
  *              --x-control-{size}-switch-{height|width|thumb|mark} (track, thumb, check in the thumb)
+ *              --x-control-{size}-checkbox-mark (the check in the box: icon − 4)
  *              --x-control-{size}-{action|tag|field|row}-{text|tracking|inline|inline-icon|block|radius}
  *              --x-control-{sm|md|lg}-field-tag-radius (tag inside that field, concentric)
  *              --x-control-{family}-pill (per shape) · --x-target-min · --x-badge-{sm|md}-*
@@ -35,6 +36,7 @@
  *   Identity   --x-identity-{1…6|neutral}-{surface|content|indicator}-{strong|subtle} (avatar, user labels)
  *   Icons      --x-type-{role}-{step}-icon (icon next to that text) · --x-icon-spot-{sm|md|lg}
  *   Avatars    --x-avatar-{xs|sm|md} (spot sizes, no coarse step)
+ *   Media      --x-media-{name} (a fixed box for a picture or file icon; size scale, no coarse step)
  *   Forced     @media (forced-colors: active): selection/disabled/focus/edge/status dot/mark → system colours
  *   Motion     --x-duration-{instant|ms} · --x-easing-{standard|enter|exit|linear|spring}
  *              --x-motion-{role}-{duration|easing|move-duration|move-easing|distance|scale}
@@ -977,6 +979,10 @@ export function generateModel(
     'surface.overlay': 'pole.overlay', // popover, menu, dialog, drawer
     'surface.sunken': 'pole.sunken', //   well: filter bar, code, table header
     'surface.inverted': 'inverted.fill', // toast, tooltip
+    // skeleton, empty picture box: decoration, visible on the surfaces it sits on
+    'surface.placeholder': 'neutral.tint',
+    // text on surface.inverted (toast, a pill on the inverted surface)
+    'content.on-inverted': 'inverted.on-fill',
     scrim: 'pole.scrim',
     // edge = supports a shadow (popover, dialog, card with shadow) — translucent
     // ink, no contrast duty; subtle = divider/decoration; base = visible border
@@ -1598,7 +1604,8 @@ export function generateModel(
    * Not tokens (component work): glyph-flush alignment of embedded icon
    * buttons, which sizes a component offers, part sizes (checkbox box = icon,
    * avatar = height) — except the switch, whose track, thumb and mark are
-   * roles (`switch-*`), derived from icon-alone, icon and the border width.
+   * roles (`switch-*`), derived from icon-alone, icon and the border width,
+   * and the check in a checkbox box (`checkbox-mark` = icon − 4).
    */
   const control = recipe.control!;
   const SIZES = Object.keys(control.sizes);
@@ -1805,6 +1812,11 @@ export function generateModel(
         onScale(iconAlone(s), `calc(${sz(z.height)} - ${2 * CR.aloneRand}px)`),
       ),
       ...switchDecls(s),
+      // the check inside the checkbox box (box = icon), 2 px air each side
+      decl(
+        ctlPath(s, 'checkbox-mark'),
+        onScale(z.icon - 4, `calc(var(${ctlName(s, 'icon')}) - 4px)`),
+      ),
       decl(ctlPath(s, 'gap'), sz(z.gap)),
       // controls without a surface (tertiary, link): icon and text one step closer
       decl(
@@ -1873,6 +1885,7 @@ export function generateModel(
         'switch-width',
         'switch-thumb',
         'switch-mark',
+        'checkbox-mark',
         'gap',
         'gap-plain',
         'row-height',
@@ -1928,6 +1941,7 @@ export function generateModel(
         controlFails.push(`${s}: Lücke ohne Fläche ≤ 0`);
       if (switchParts(s).mark <= 0)
         controlFails.push(`${s}: Switch-Haken ≤ 0`);
+      if (z.icon - 4 <= 0) controlFails.push(`${s}: Checkbox-Haken ≤ 0`);
       for (const [f, def] of Object.entries(FAMILIES)) {
         const step = z[def.step];
         const lh = lhOf(def.role, step);
@@ -2340,6 +2354,15 @@ export function generateModel(
   assertRecipe();
   for (const [k, v] of Object.entries(recipe.avatar!.sizes))
     decl(`avatar.${k}`, `var(--${P}size-${v})`);
+  // ---------- Media ----------
+  // a fixed box for a picture or a file-type icon (record preview): a box, not
+  // an icon — same pattern as avatars, on the size scale, no coarse step
+  for (const [k, v] of Object.entries(recipe.media?.sizes ?? {}))
+    if (!space.scale.includes(v))
+      recipeErrors.push(`media.sizes.${k}: ${v} px fehlt in der Größenskala`);
+  assertRecipe();
+  for (const [k, v] of Object.entries(recipe.media?.sizes ?? {}))
+    decl(`media.${k}`, `var(--${P}size-${v})`);
   const iconFails: string[] = [];
   {
     const pairs = Object.entries(recipe.icon!.text)
@@ -3086,6 +3109,13 @@ export function generateModel(
     for (const i of STATUS_INTENTS)
       textSurfaces[`status.${i}.surface.subtle`] =
         v[`${hueOf(i)}.${STATUS.subtle['surface']}`];
+    add(
+      'content.on-inverted auf surface.inverted',
+      'inverted.on-fill / inverted.fill',
+      v['inverted.on-fill'],
+      v['inverted.fill'],
+      C.textMin,
+    );
     for (const lvl of ['primary', 'secondary'])
       for (const [name, bg] of Object.entries(textSurfaces))
         add(
@@ -3342,6 +3372,20 @@ export function generateModel(
     // search hit visible on the surfaces hits sit on: hue AND lightness — Light
     // reads by hue (ΔE 12.5 at 1.18:1 is fine), Dark needs lightness (ΔE 16.6 at
     // 1.01:1 is not visible on a popover)
+    // placeholder (skeleton, empty picture box): decoration, no 3:1 — but it
+    // must show on page, card and overlay; grey has only lightness to show
+    // with, so the floor is the search hit's lightness floor (≥ 1.1:1)
+    for (const [name, surf] of [
+      ['surface.page', 'pole.canvas'],
+      ['surface.raised', 'pole.paper'],
+      ['surface.overlay', 'pole.overlay'],
+    ]) {
+      const lr = contrastWcag(v['neutral.tint'], v[surf]);
+      if (lr < 1.1)
+        surfaceFails.push(
+          `${mode}: surface.placeholder auf ${name} kaum sichtbar (${lr.toFixed(2)}:1; Regel ≥ 1,1:1)`,
+        );
+    }
     for (const surf of ['pole.canvas', 'pole.paper', 'pole.overlay']) {
       const hit = over(v['mark.value'], v[surf]);
       const de = deltaE2000(hit, v[surf]);
@@ -3652,6 +3696,12 @@ export function generateModel(
       .map(([k, v]) => `${k} ${v}`)
       .join(' · ')} (ohne Coarse-Sprung)`,
   );
+  if (recipe.media?.sizes)
+    log.push(
+      `Medien: ${Object.entries(recipe.media.sizes)
+        .map(([k, v]) => `${k} ${v}`)
+        .join(' · ')} (ohne Coarse-Sprung)`,
+    );
   log.push(
     `Hochkontrast: ${forcedTokens.length} Umlegungen auf Systemfarben, Vertrag ${forcedFails.length ? 'verletzt' : 'ok'}`,
   );

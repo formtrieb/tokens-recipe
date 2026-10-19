@@ -323,6 +323,11 @@ export interface Recipe {
    */
   avatar?: { sizes: Record<string, number> };
   /**
+   * Media boxes: a fixed box for a picture or a file-type icon (px, on the
+   * size scale, no coarse step) — a box, not an icon.
+   */
+  media?: { sizes: Record<string, number> };
+  /**
    * The link underline: typography of the inline text, so it sits next to
    * `type.inline`. `offset` in em of the text; the thicknesses name a
    * `border.width` key, so the underline follows the DS's strokes.
