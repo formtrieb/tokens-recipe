@@ -2490,10 +2490,22 @@ export function generateModel(
       ),
     ),
   ];
-  for (const h of Object.keys(HIERARCHIES))
+  // style solid draws an unselected choice's indicator in its stroke (the
+  // ring of an empty checkbox, the thumb of a switch that is off). The browser
+  // forces borders to CanvasText but not a thumb painted as a surface — so the
+  // model names CanvasText, which survives through var(); on borders nothing
+  // changes
+  const forcedInactive = (styleName: string, part: Part, c: Cell) =>
+    styleName === 'solid' &&
+    part === 'stroke' &&
+    c.sel === 'inactive' &&
+    c.avail !== 'disabled'
+      ? 'CanvasText'
+      : null;
+  for (const [h, d] of Object.entries(HIERARCHIES))
     for (const part of PARTS)
       for (const c of cells) {
-        const v = forcedOf(part, c);
+        const v = forcedOf(part, c) ?? forcedInactive(d.styleName, part, c);
         if (v)
           forcedTokens.push(decl(`ctl.${h}.${part}.${key(c)}`, v, SET.forced));
       }

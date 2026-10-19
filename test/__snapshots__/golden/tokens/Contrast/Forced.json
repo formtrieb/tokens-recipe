@@ -166,6 +166,70 @@
         }
       },
       "stroke": {
+        "inactive-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-hover": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-pressed": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-negative-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-negative-hover": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-negative-pressed": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-negative-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-warning-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-warning-hover": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-warning-pressed": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-warning-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-positive-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-positive-hover": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-positive-pressed": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-positive-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
         "selected-idle": {
           "$type": "color",
           "$value": "Highlight"
@@ -229,6 +293,38 @@
         "selected-positive-focus": {
           "$type": "color",
           "$value": "Highlight"
+        },
+        "readonly-inactive-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "readonly-inactive-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "readonly-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "readonly-inactive-negative-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "readonly-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "readonly-inactive-warning-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "readonly-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "readonly-inactive-positive-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
         },
         "disabled-idle": {
           "$type": "color",
@@ -692,6 +788,70 @@
         }
       },
       "stroke": {
+        "inactive-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-hover": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-pressed": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-negative-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-negative-hover": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-negative-pressed": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-negative-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-warning-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-warning-hover": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-warning-pressed": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-warning-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-positive-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-positive-hover": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-positive-pressed": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-positive-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
         "selected-idle": {
           "$type": "color",
           "$value": "Highlight"
@@ -755,6 +915,38 @@
         "selected-positive-focus": {
           "$type": "color",
           "$value": "Highlight"
+        },
+        "readonly-inactive-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "readonly-inactive-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "readonly-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "readonly-inactive-negative-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "readonly-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "readonly-inactive-warning-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "readonly-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "readonly-inactive-positive-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
         },
         "disabled-idle": {
           "$type": "color",
@@ -2270,6 +2462,70 @@
         }
       },
       "stroke": {
+        "inactive-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-hover": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-pressed": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-negative-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-negative-hover": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-negative-pressed": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-negative-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-warning-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-warning-hover": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-warning-pressed": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-warning-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-positive-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-positive-hover": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-positive-pressed": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "inactive-positive-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
         "selected-idle": {
           "$type": "color",
           "$value": "Highlight"
@@ -2333,6 +2589,38 @@
         "selected-positive-focus": {
           "$type": "color",
           "$value": "Highlight"
+        },
+        "readonly-inactive-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "readonly-inactive-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "readonly-inactive-negative-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "readonly-inactive-negative-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "readonly-inactive-warning-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "readonly-inactive-warning-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "readonly-inactive-positive-idle": {
+          "$type": "color",
+          "$value": "CanvasText"
+        },
+        "readonly-inactive-positive-focus": {
+          "$type": "color",
+          "$value": "CanvasText"
         },
         "disabled-idle": {
           "$type": "color",
