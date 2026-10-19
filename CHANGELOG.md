@@ -5,6 +5,18 @@ All notable changes to `@formtrieb/tokens-recipe` are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- The reset of the selected-surface context: `[data-on-selected-x="off"]`
+  (set `Contrast/Forced-OnSelected-Off`, rendered right after the context
+  inside `(forced-colors: active)`) declares every token of the context with
+  its value outside it — forced colours where they have one, else Base's
+  reference. An overlay inside a selected row (its menu, a popover) sets it,
+  so its focus ring is `Highlight` again instead of `HighlightText` on
+  `Canvas`.
+
 ## [0.10.0] — 2026-10-19
 
 ### Added

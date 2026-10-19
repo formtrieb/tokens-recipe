@@ -77,6 +77,13 @@
       "file": "model.css"
     },
     {
+      "theme": "Contrast/Forced-OnSelected-Off",
+      "selector": "[data-on-selected-x=\"off\"]",
+      "media": "(forced-colors: active)",
+      "references": true,
+      "file": "model.css"
+    },
+    {
       "theme": "Pointer/Coarse",
       "selector": "[data-mode-x]",
       "media": "(pointer: coarse)",

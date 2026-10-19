@@ -7368,6 +7368,29 @@
   --x-line-current: HighlightText;
 }
 }
+@media (forced-colors: active) {
+[data-on-selected-x="off"] {
+  --x-ctl-tertiary-background-focus: transparent;
+  --x-ctl-tertiary-stroke-idle: transparent;
+  --x-ctl-tertiary-stroke-hover: transparent;
+  --x-ctl-tertiary-stroke-pressed: transparent;
+  --x-ctl-tertiary-stroke-focus: transparent;
+  --x-ctl-tertiary-icon-idle: var(--x-pole-ink);
+  --x-ctl-tertiary-icon-hover: var(--x-pole-ink);
+  --x-ctl-tertiary-icon-pressed: var(--x-pole-ink);
+  --x-ctl-tertiary-icon-focus: var(--x-pole-ink);
+  --x-ctl-tertiary-text-idle: var(--x-pole-ink);
+  --x-ctl-tertiary-text-hover: var(--x-pole-ink);
+  --x-ctl-tertiary-text-pressed: var(--x-pole-ink);
+  --x-ctl-tertiary-text-focus: var(--x-pole-ink);
+  --x-ctl-tertiary-text-subtle-idle: var(--x-neutral-ink-subtle);
+  --x-ctl-tertiary-text-subtle-hover: var(--x-neutral-ink-subtle);
+  --x-ctl-tertiary-text-subtle-pressed: var(--x-neutral-ink-subtle);
+  --x-ctl-tertiary-text-subtle-focus: var(--x-neutral-ink-subtle);
+  --x-focus-ring: Highlight;
+  --x-line-current: Highlight;
+}
+}
 @media (pointer: coarse) {
 [data-mode-x] {
   --x-target-min: var(--x-size-44);

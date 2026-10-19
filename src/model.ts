@@ -39,6 +39,7 @@
  *   Media      --x-media-{name} (a fixed box for a picture or file icon; size scale, no coarse step)
  *   Forced     @media (forced-colors: active): selection/disabled/focus/edge/status dot/mark → system colours
  *              [data-on-selected-x] (context on a selected surface): ghost ink, focus ring, line.current → HighlightText
+ *              [data-on-selected-x="off"] (an overlay inside it): the same tokens with their values from outside
  *   Current    --x-surface-current · --x-line-current (the current row, a step above selected)
  *   Motion     --x-duration-{instant|ms} · --x-easing-{standard|enter|exit|linear|spring}
  *              --x-motion-{role}-{duration|easing|move-duration|move-easing|distance|scale}
@@ -2545,6 +2546,22 @@ export function generateModel(
         );
     }
   }
+  /**
+   * The context's reset, for an overlay inside a selected surface (a row menu
+   * stays in the row's DOM and inherits the context, also in the top layer):
+   * `[data-on-selected-x="off"]` declares the same tokens with their value
+   * outside the context — Forced's where it has one, else Base's (a var()
+   * that resolves again on the overlay). Same list as the context, so the two
+   * cannot drift apart.
+   */
+  const outsideValue = (path: string) =>
+    (
+      register.find((e) => e.path === path && e.set === SET.forced) ??
+      register.find((e) => e.path === path && e.set === SET.base)
+    )!.value;
+  const onSelectedOffTokens = onSelectedTokens.map((p) =>
+    decl(p, outsideValue(p), SET.forcedOnSelectedOff),
+  );
   // contract: a filled hierarchy keeps a border, or its shape disappears with
   // the fill; every enabled selected cell is remapped
   const forcedFails: string[] = [];
@@ -3817,7 +3834,7 @@ export function generateModel(
         .join(' · ')} (ohne Coarse-Sprung)`,
     );
   log.push(
-    `Hochkontrast: ${forcedTokens.length} Umlegungen auf Systemfarben, ${onSelectedTokens.length} auf gewählter Fläche ([${attr('on-selected')}]), Vertrag ${forcedFails.length ? 'verletzt' : 'ok'}`,
+    `Hochkontrast: ${forcedTokens.length} Umlegungen auf Systemfarben, ${onSelectedTokens.length} auf gewählter Fläche ([${attr('on-selected')}], Reset ="off" ${onSelectedOffTokens.length}), Vertrag ${forcedFails.length ? 'verletzt' : 'ok'}`,
   );
   for (const f of forcedFails) log.push(`  ✗ ${f}`);
   log.push(
@@ -3888,6 +3905,13 @@ export function generateModel(
       rule(
         THEME.forcedOnSelected,
         `[${attr('on-selected')}]`,
+        '(forced-colors: active)',
+      ),
+      // its reset, after it: the same specificity, so the later block wins on
+      // an element that carries `="off"`
+      rule(
+        THEME.forcedOnSelectedOff,
+        `[${attr('on-selected')}="off"]`,
         '(forced-colors: active)',
       ),
       rule(THEME.coarse, ROOT, '(pointer: coarse)'),
