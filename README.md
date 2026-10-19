@@ -215,6 +215,21 @@ stops the browser's forcing there and sets the text colour:
 }
 ```
 
+The context inherits like any custom property, also into an overlay that
+stays in the row's DOM (a row menu, a popover — the top layer does not
+change inheritance). There the ink would be `HighlightText` on `Canvas`. An
+overlay inside a selected surface sets `data-on-selected-x="off"`: it declares
+the same tokens with their values outside the context (forced colours where
+they have one, else Base's reference, which resolves again on the overlay):
+
+```html
+<tr aria-selected="true" data-on-selected-x>
+  <td>…<button popovertarget="row-menu">⋯</button>
+    <div id="row-menu" popover data-on-selected-x="off">…</div>
+  </td>
+</tr>
+```
+
 Fields (text field, text area, the trigger of a select) are no emphasis
 level of an action, so they do not hang on a hierarchy: they have their own
 role set `field-*`, style fixed to `outline`, with only the axes a field has —
@@ -264,6 +279,17 @@ The three are optional per character: without a duration of its own a role
 reads its partner's (`var(--x-motion-loop-duration)`), so a recipe from
 before keeps working. Reduced motion follows the role, not the partner — a
 `pulse` that reads `loop` is still off.
+
+The duration of a loop role (`loop`, `pulse`, `progress`) is one whole cycle.
+With `animation-direction: alternate` one iteration is only one way, so the
+component halves it:
+
+```css
+.skeleton {
+  animation: breathe calc(var(--x-motion-pulse-duration) / 2)
+    var(--x-motion-pulse-easing) infinite alternate;
+}
+```
 
 `layer-*` are z-index values for the document only, in this order:
 `sticky` (table head, save bar) < `panel` (a non-modal surface over the

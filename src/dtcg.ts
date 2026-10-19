@@ -40,6 +40,8 @@ export const SET = {
   forced: 'Contrast/Forced',
   /** forced colours inside a selected surface (`Highlight`): ink becomes HighlightText */
   forcedOnSelected: 'Contrast/Forced-OnSelected',
+  /** the reset of that context for an overlay inside the surface: the values from outside */
+  forcedOnSelectedOff: 'Contrast/Forced-OnSelected-Off',
   coarse: 'Pointer/Coarse',
   xl: 'Viewport/Xl',
   motion: (character: string) => `Motion/${cap(character)}`,
@@ -57,6 +59,7 @@ export const THEME = {
   rtl: 'Direction/Rtl',
   forced: 'Contrast/Forced',
   forcedOnSelected: 'Contrast/Forced-OnSelected',
+  forcedOnSelectedOff: 'Contrast/Forced-OnSelected-Off',
   coarse: 'Pointer/Coarse',
   xl: 'Viewport/Xl',
   motion: (character: string) => `Motion/${cap(character)}`,
@@ -330,6 +333,12 @@ export function emitDtcg(
       ...src,
       [SET.forced]: 'source',
       [SET.forcedOnSelected]: 'enabled',
+    });
+  if (setOrder.includes(SET.forcedOnSelectedOff))
+    theme('Contrast', 'Forced-OnSelected-Off', {
+      ...src,
+      [SET.forced]: 'source',
+      [SET.forcedOnSelectedOff]: 'enabled',
     });
   overlayAxis('Direction', 'Ltr', [['Rtl', SET.rtl]]);
   overlayAxis('Viewport', 'Base', [['Xl', SET.xl]]);

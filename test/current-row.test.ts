@@ -51,3 +51,39 @@ describe('forced colours on a selected surface', () => {
     expect(Object.keys(set.ctl)).toEqual(['tertiary']);
   });
 });
+
+describe('the reset of the selected-surface context', () => {
+  const ctx = json('tokens/Contrast/Forced-OnSelected.json');
+  const off = json('tokens/Contrast/Forced-OnSelected-Off.json');
+  const forcedSet = json('tokens/Contrast/Forced.json');
+  const base = json('tokens/Model/Base.json');
+  const leaves = (node: Doc, at = ''): [string, string][] =>
+    Object.entries(node).flatMap(([k, v]) =>
+      v && typeof v === 'object' && '$value' in v
+        ? [[`${at}${k}`, (v as Doc).$value as string]]
+        : leaves(v as Doc, `${at}${k}.`),
+    );
+  const at = (tree: Doc, path: string) =>
+    path.split('.').reduce<Doc | undefined>((n, k) => n?.[k], tree)?.$value;
+
+  it('declares every context token exactly once, with its value outside the context', () => {
+    const inCtx = leaves(ctx).map(([p]) => p);
+    const reset = leaves(off);
+    expect(reset.map(([p]) => p).sort()).toEqual([...inCtx].sort());
+    expect(new Set(reset.map(([p]) => p)).size).toBe(reset.length);
+    for (const [p, v] of reset) expect(v).toBe(at(forcedSet, p) ?? at(base, p));
+    // the ring that vanished in a row menu: back on Highlight
+    expect(at(off, 'focus.ring')).toBe('Highlight');
+  });
+
+  it('is rendered after the context, as [data-on-selected-x="off"] inside forced colours', () => {
+    const rules = json('render.json').rules as Doc[];
+    const i = rules.findIndex((r) => r.theme === 'Contrast/Forced-OnSelected');
+    expect(rules[i + 1]).toMatchObject({
+      theme: 'Contrast/Forced-OnSelected-Off',
+      selector: '[data-on-selected-x="off"]',
+      media: '(forced-colors: active)',
+    });
+    expect(css.indexOf('[data-on-selected-x="off"] {')).toBeGreaterThan(css.indexOf('[data-on-selected-x] {'));
+  });
+});

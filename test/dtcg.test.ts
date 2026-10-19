@@ -151,7 +151,12 @@ describe('DTCG tree', () => {
     });
     expect(groups.Pointer?.map((t) => t.name)).toEqual(['Fine', 'Coarse']);
     // forced colours, and inside it the context of a selected surface
-    expect(groups.Contrast?.map((t) => t.name)).toEqual(['Normal', 'Forced', 'Forced-OnSelected']);
+    expect(groups.Contrast?.map((t) => t.name)).toEqual([
+      'Normal',
+      'Forced',
+      'Forced-OnSelected',
+      'Forced-OnSelected-Off',
+    ]);
     expect(groups.Contrast?.[2].selectedTokenSets).toEqual({
       'Mode/Light': 'source',
       'Model/Base': 'source',
