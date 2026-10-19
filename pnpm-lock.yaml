@@ -18,6 +18,9 @@ importers:
         specifier: ^4.0.0
         version: 4.6.5
     devDependencies:
+      '@formtrieb/tokens-cli':
+        specifier: ^1.2.0
+        version: 1.2.0
       '@types/node':
         specifier: ^20.0.0
         version: 20.19.43
@@ -192,11 +195,23 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@formtrieb/tokens-cli@1.2.0':
+    resolution: {integrity: sha512-mPdDcEQfDywNPT2pcabraXzkoc0WFrHdM7gCrW2cOTa3cy9WO/W0NdnA0JGAWCno4XhsktCNXii6rFWCZz1/9Q==}
+    engines: {node: '>=20'}
+    hasBin: true
+
   '@formtrieb/tokens-core@2.0.0':
     resolution: {integrity: sha512-QKuCTOOwi+GSshNl7DKRveCxcymCRbeREgntBwh01RaPgCw/XeL8NzvvvJKgZvsMYKLryWpBrgq7RF6/2UcV9g==}
 
+  '@formtrieb/tokens-core@2.1.0':
+    resolution: {integrity: sha512-2juOPZxM9LOZU3+FAYJ2QhYhqHVmBpjBmh0S/6vKZ8vbrz2/etTWAkKUacxT+4vtuAZs5cwFiBgl5PQt648gdg==}
+
   '@formtrieb/tokens-render@1.0.0':
     resolution: {integrity: sha512-GQtVTj1QFlXUIjUk6pUOKV5iWC/PHuyK9b81qNMiaLDgU0VmjShTxIuXczjWJE/qKUe/A6qpwiukT+sc/H8FrQ==}
+    engines: {node: '>=20'}
+
+  '@formtrieb/tokens-render@1.1.0':
+    resolution: {integrity: sha512-GFZ6dqxqupK3VN1Z5gNm/CpIN2JL9SvqW5tNUVWhTgimlFI58ubo+7w4VMwe6Cav5hHUbfixVBtqFJ1Zxee5WA==}
     engines: {node: '>=20'}
 
   '@jridgewell/sourcemap-codec@1.6.0':
@@ -516,6 +531,10 @@ packages:
     resolution: {integrity: sha512-PAJdDJusoxnwm1VwW07VWwUN1sl7smmC3OKggvndJFadxxDRyFJBX/ggnu/KE4kQAB7a3Dp8f/YXC1FlUprWmA==}
     engines: {node: '>= 16'}
 
+  chokidar@5.0.0:
+    resolution: {integrity: sha512-TQMmc3w+5AxjpL8iIiwebF73dRDF4fBIieAqGn9RGCWaEVwQ6Fb2cGe31Yns0RRIzii5goJ1Y7xbMwo1TxMplw==}
+    engines: {node: '>= 20.19.0'}
+
   culori@4.0.2:
     resolution: {integrity: sha512-1+BhOB8ahCn4O0cep0Sh2l9KCOfOdY+BXJnKMHFFzDEouSr/el18QwXEMRlOj9UY5nCeA8UN3a/82rUWRBeyBw==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
@@ -682,6 +701,10 @@ packages:
   postcss@8.5.29:
     resolution: {integrity: sha512-49cGhUbXj8Qenv0iTMxA1cFBzxXoctpC9Ujd77t1WcbJIr6nF/eI7g/8MgxrYldFRuAXvja7xQRwavoW7kgrxQ==}
     engines: {node: ^10 || ^12 || >=14}
+
+  readdirp@5.1.1:
+    resolution: {integrity: sha512-Kko+Y5XQ6fM+Ce3dq3m9YGxnacYZYl9cA1wZjaF3Vbry2L3i1qVg8+CAgNPsXRArPMUMCaOR7oa9Nqntc43JKA==}
+    engines: {node: '>= 20.19.0'}
 
   rolldown@1.2.12:
     resolution: {integrity: sha512-8wafseiaG80xmXSfqidUNqZcylTlhmPZZt+za2m+js2sFZ8dTNlhIOV2WcbIPx2hgwPBJpEUGFAMZ9bgBBLTSQ==}
@@ -964,13 +987,28 @@ snapshots:
   '@esbuild/win32-x64@0.28.2':
     optional: true
 
+  '@formtrieb/tokens-cli@1.2.0':
+    dependencies:
+      '@formtrieb/tokens-core': 2.1.0
+      '@formtrieb/tokens-render': 1.1.0
+      chokidar: 5.0.0
+      tsx: 4.23.15
+
   '@formtrieb/tokens-core@2.0.0':
+    dependencies:
+      culori: 4.0.2
+
+  '@formtrieb/tokens-core@2.1.0':
     dependencies:
       culori: 4.0.2
 
   '@formtrieb/tokens-render@1.0.0':
     dependencies:
       '@formtrieb/tokens-core': 2.0.0
+
+  '@formtrieb/tokens-render@1.1.0':
+    dependencies:
+      '@formtrieb/tokens-core': 2.1.0
 
   '@jridgewell/sourcemap-codec@1.6.0': {}
 
@@ -1180,6 +1218,10 @@ snapshots:
 
   check-error@2.1.3: {}
 
+  chokidar@5.0.0:
+    dependencies:
+      readdirp: 5.1.1
+
   culori@4.0.2: {}
 
   debug@4.4.3:
@@ -1324,6 +1366,8 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.2
 
+  readdirp@5.1.1: {}
+
   rolldown@1.2.12:
     dependencies:
       '@oxc-project/types': 0.152.0
@@ -1409,7 +1453,6 @@ snapshots:
       esbuild: 0.28.2
     optionalDependencies:
       fsevents: 2.3.3
-    optional: true
 
   typescript@5.9.3: {}
 

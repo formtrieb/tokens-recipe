@@ -59,6 +59,7 @@
     "zod": "^4.0.0"
   },
   "devDependencies": {
+    "@formtrieb/tokens-cli": "^1.2.0",
     "@types/node": "^20.0.0",
     "happy-dom": "^20.14.5",
     "typescript": "^5.0.0",
