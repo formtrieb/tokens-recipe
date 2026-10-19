@@ -425,7 +425,10 @@ export interface Recipe {
    * Status role (chip, badge, status tile) per emphasis and part → step name
    * of the intent's hue. Standard in defaults.json.
    */
-  status?: Record<'strong' | 'subtle', Record<string, string>>;
+  status?: Record<'strong' | 'subtle', Record<string, string>> & {
+    /** further intents on a semantic hue (`{ new: 'brand' }`); the base five stay on their own */
+    intents?: Record<string, string>;
+  };
   /** Feedback role (alert, message at a field) per part → step name. Standard in defaults.json. */
   feedback?: Record<string, string>;
   /** OKLCH chroma ceiling (≈0.0–0.37 in sRGB). */

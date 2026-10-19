@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `status.intents`: further status intents on a semantic hue
+  (`{ "new": "brand" }` → `--{prefix}status-new-{surface|content|indicator}-{strong|subtle}`
+  on the brand steps `status` assigns). They get every status contract (text
+  on surface and fill, text and focus ring on the subtle surface, forced
+  colours). A base intent name or a hue outside `semanticHues` stops with a
+  `RecipeError` at `status.intents.{intent}`.
+
 - `GenerateOptions.scope: 'attribute' | 'root'` (CLI `--scope root`). With
   `root` the render table puts Light and every default set on `:root` as
   well (`:root, [data-mode="Light"]`, Base and the forced-colours,

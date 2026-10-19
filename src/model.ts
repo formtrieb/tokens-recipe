@@ -899,7 +899,22 @@ export function generateModel(
    * A dot-only status is the subtle chip that doesn't read `surface`.
    * `feedback` evaluates or reports (alert, message at a field), no neutral.
    */
-  const STATUS_INTENTS = ['neutral', 'info', 'positive', 'warning', 'negative'];
+  // the base intents sit on their namesake hues; a recipe may add intents on
+  // another semantic hue (`status.intents: { new: 'brand' }`), checked alike
+  const BASE_INTENTS = ['neutral', 'info', 'positive', 'warning', 'negative'];
+  const EXTRA_INTENTS = recipe.status?.intents ?? {};
+  for (const [i, hue] of Object.entries(EXTRA_INTENTS)) {
+    if (BASE_INTENTS.includes(i))
+      recipeErrors.push(
+        `status.intents.${i}: ${i} ist ein Basis-Intent und liegt auf seinem eigenen Farbton`,
+      );
+    else if (!(hue in HUES))
+      recipeErrors.push(`status.intents.${i}: Farbton ${hue} fehlt in semanticHues`);
+  }
+  assertRecipe();
+  const STATUS_INTENTS = [...BASE_INTENTS, ...Object.keys(EXTRA_INTENTS)];
+  /** the semantic hue a status intent reads */
+  const hueOf = (i: string) => EXTRA_INTENTS[i] ?? i;
   const FEEDBACK_INTENTS = ['info', 'positive', 'warning', 'negative'];
   // steps per part: recipe `status` / `feedback` (standard in defaults.json)
   const STATUS_PARTS = ['surface', 'content', 'indicator'];
@@ -909,7 +924,7 @@ export function generateModel(
     requireKeys(`status.${e}`, recipe.status?.[e], STATUS_PARTS);
   requireKeys('feedback', recipe.feedback, FEEDBACK_PARTS);
   const stepExists = (intents: string[], step: string) =>
-    intents.every((i) => `${i}.${step}` in values['light']);
+    intents.every((i) => `${hueOf(i)}.${step}` in values['light']);
   for (const e of EMPHASES)
     for (const [part, step] of Object.entries(recipe.status?.[e] ?? {}))
       if (!stepExists(STATUS_INTENTS, step))
@@ -933,7 +948,7 @@ export function generateModel(
         STATUS_PARTS.map((part) =>
           decl(
             `status.${i}.${part}.${emph}`,
-            `var(--${P}${i}-${STATUS[emph][part]})`,
+            `var(--${P}${hueOf(i)}-${STATUS[emph][part]})`,
           ),
         ),
       ),
@@ -3023,18 +3038,19 @@ export function generateModel(
     for (const i of STATUS_INTENTS) {
       const sub = STATUS.subtle,
         str = STATUS.strong;
+      const h = hueOf(i);
       add(
         `Status ${i} subtle: Text auf Fläche`,
-        `${i}.${sub['content']} / ${i}.${sub['surface']}`,
-        v[`${i}.${sub['content']}`],
-        v[`${i}.${sub['surface']}`],
+        `${h}.${sub['content']} / ${h}.${sub['surface']}`,
+        v[`${h}.${sub['content']}`],
+        v[`${h}.${sub['surface']}`],
         C.textMin,
       );
       add(
         `Status ${i} strong: Text auf Füllung`,
-        `${i}.${str['content']} / ${i}.${str['surface']}`,
-        v[`${i}.${str['content']}`],
-        v[`${i}.${str['surface']}`],
+        `${h}.${str['content']} / ${h}.${str['surface']}`,
+        v[`${h}.${str['content']}`],
+        v[`${h}.${str['surface']}`],
         C.textMin,
       );
     }
@@ -3069,7 +3085,7 @@ export function generateModel(
       textSurfaces[`feedback.${i}.surface`] = v[`${i}.${FEEDBACK['surface']}`];
     for (const i of STATUS_INTENTS)
       textSurfaces[`status.${i}.surface.subtle`] =
-        v[`${i}.${STATUS.subtle['surface']}`];
+        v[`${hueOf(i)}.${STATUS.subtle['surface']}`];
     for (const lvl of ['primary', 'secondary'])
       for (const [name, bg] of Object.entries(textSurfaces))
         add(
