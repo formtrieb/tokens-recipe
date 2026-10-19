@@ -19735,6 +19735,10 @@
     "placeholder": {
       "$type": "color",
       "$value": "{neutral.tint}"
+    },
+    "current": {
+      "$type": "color",
+      "$value": "{neutral.tint-hover}"
     }
   },
   "content": {
@@ -19763,6 +19767,10 @@
     "strong": {
       "$type": "color",
       "$value": "{neutral.line-strong}"
+    },
+    "current": {
+      "$type": "color",
+      "$value": "transparent"
     }
   },
   "elevation": {

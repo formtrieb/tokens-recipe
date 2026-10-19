@@ -730,6 +730,14 @@
     },
     {
       "mode": "light",
+      "rule": "content.primary auf surface.current",
+      "pair": "content.primary / surface.current",
+      "ratio": 15.61,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
       "rule": "content.primary auf accent.tint",
       "pair": "content.primary / accent.tint",
       "ratio": 16.7,
@@ -853,6 +861,14 @@
       "rule": "content.secondary auf neutral.tint",
       "pair": "content.secondary / neutral.tint",
       "ratio": 5.79,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "content.secondary auf surface.current",
+      "pair": "content.secondary / surface.current",
+      "ratio": 5.63,
       "min": 4.5,
       "ok": true
     },
@@ -1005,6 +1021,14 @@
       "rule": "Fokus-Ring auf neutral.tint",
       "pair": "focus.ring / neutral.tint",
       "ratio": 16.83,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "light",
+      "rule": "Fokus-Ring auf surface.current",
+      "pair": "focus.ring / surface.current",
+      "ratio": 15.61,
       "min": 3,
       "ok": true
     },
@@ -1850,6 +1874,14 @@
     },
     {
       "mode": "dark",
+      "rule": "content.primary auf surface.current",
+      "pair": "content.primary / surface.current",
+      "ratio": 7.52,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
       "rule": "content.primary auf accent.tint",
       "pair": "content.primary / accent.tint",
       "ratio": 8.77,
@@ -1973,6 +2005,14 @@
       "rule": "content.secondary auf neutral.tint",
       "pair": "content.secondary / neutral.tint",
       "ratio": 5.49,
+      "min": 4.5,
+      "ok": true
+    },
+    {
+      "mode": "dark",
+      "rule": "content.secondary auf surface.current",
+      "pair": "content.secondary / surface.current",
+      "ratio": 4.85,
       "min": 4.5,
       "ok": true
     },
@@ -2130,6 +2170,14 @@
     },
     {
       "mode": "dark",
+      "rule": "Fokus-Ring auf surface.current",
+      "pair": "focus.ring / surface.current",
+      "ratio": 7.52,
+      "min": 3,
+      "ok": true
+    },
+    {
+      "mode": "dark",
       "rule": "Fokus-Ring auf accent.tint",
       "pair": "focus.ring / accent.tint",
       "ratio": 8.77,
@@ -2252,7 +2300,7 @@
       "text": 75,
       "nonText": 45
     },
-    "pairs": 1066,
+    "pairs": 1072,
     "below": [
       {
         "mode": "light",
@@ -2280,6 +2328,13 @@
         "where": "content.secondary auf neutral.tint",
         "pair": "content.secondary / neutral.tint",
         "lc": 70.4,
+        "target": 75
+      },
+      {
+        "mode": "light",
+        "where": "content.secondary auf surface.current",
+        "pair": "content.secondary / surface.current",
+        "lc": 67,
         "target": 75
       },
       {
@@ -2574,6 +2629,13 @@
         "where": "content.secondary auf neutral.tint",
         "pair": "content.secondary / neutral.tint",
         "lc": 57.4,
+        "target": 75
+      },
+      {
+        "mode": "dark",
+        "where": "content.secondary auf surface.current",
+        "pair": "content.secondary / surface.current",
+        "lc": 55.7,
         "target": 75
       },
       {

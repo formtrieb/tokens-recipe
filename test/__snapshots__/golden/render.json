@@ -70,6 +70,13 @@
       "file": "model.css"
     },
     {
+      "theme": "Contrast/Forced-OnSelected",
+      "selector": "[data-on-selected-x]",
+      "media": "(forced-colors: active)",
+      "references": true,
+      "file": "model.css"
+    },
+    {
       "theme": "Pointer/Coarse",
       "selector": "[data-mode-x]",
       "media": "(pointer: coarse)",

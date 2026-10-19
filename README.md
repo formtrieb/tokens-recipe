@@ -188,6 +188,26 @@ then checks `fill` on paper at 4.5:1); `outline-fill` `hue` (default: rests
 like `outline-hue`) or `neutral` (rests like `outline`). A `rest` the style
 does not have stops the run.
 
+A row can be selected and current at once (the one open in the detail view,
+`aria-current`), so "current" is no selection value but a narrow role pair:
+`surface-current` (`neutral.tint-hover`, the first step that stands apart
+from a selected row; checked at 1.1:1 against it and the surface, text and
+focus ring on it like on any surface) and `line-current`, transparent on
+screen and `Highlight` in forced colours, where fills are gone.
+
+A selected row is `Highlight` in forced colours, so what sits on it must
+turn `HighlightText`. Set `data-on-selected-x` on the selected element: inside
+it, under `(forced-colors: active)`, the controls without a surface of their
+own (hierarchies in style `ghost`, by default `tertiary`), the focus ring and
+`line-current` switch to `HighlightText` (focus inverts). The component still
+stops the browser's forcing there and sets the text colour:
+
+```css
+@media (forced-colors: active) {
+  tr[aria-selected="true"] > td { forced-color-adjust: none; color: HighlightText; }
+}
+```
+
 Fields (text field, text area, the trigger of a select) are no emphasis
 level of an action, so they do not hang on a hierarchy: they have their own
 role set `field-*`, style fixed to `outline`, with only the axes a field has —

@@ -6,6 +6,7 @@
     "Direction/Rtl",
     "Pointer/Coarse",
     "Contrast/Forced",
+    "Contrast/Forced-OnSelected",
     "Motion/Expressive",
     "Motion/Productive-Reduced",
     "Motion/Expressive-Reduced",

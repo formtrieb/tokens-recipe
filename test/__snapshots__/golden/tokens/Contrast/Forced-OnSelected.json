@@ -1,0 +1,96 @@
+{
+  "focus": {
+    "ring": {
+      "$type": "color",
+      "$value": "HighlightText"
+    }
+  },
+  "line": {
+    "current": {
+      "$type": "color",
+      "$value": "HighlightText"
+    }
+  },
+  "ctl": {
+    "tertiary": {
+      "icon": {
+        "idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        }
+      },
+      "text": {
+        "idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        }
+      },
+      "text-subtle": {
+        "idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "focus": {
+          "$type": "color",
+          "$value": "Highlight"
+        }
+      },
+      "stroke": {
+        "idle": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": "HighlightText"
+        },
+        "focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        }
+      },
+      "background": {
+        "focus": {
+          "$type": "color",
+          "$value": "HighlightText"
+        }
+      }
+    }
+  }
+}
