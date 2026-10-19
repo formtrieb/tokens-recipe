@@ -100,6 +100,12 @@ export interface GenerateOptions {
    * `[data-reduced-motion-x]`); `''` for the plain names
    */
   attributeSuffix?: string;
+  /**
+   * where the model applies: `attribute` (default) under `[data-mode-x]`
+   * only; `root` also on `:root` — Light and every default set there, so a
+   * page needs no attribute, `[data-mode-x="Dark"]` still switches a subtree
+   */
+  scope?: 'attribute' | 'root';
 }
 
 export interface ModelOutput {
@@ -3650,7 +3656,16 @@ export function generateModel(
   // under which selector or media query. The theme ids are the ones emitDtcg
   // wrote; later blocks win on equal specificity.
   const REDUCED = '(prefers-reduced-motion: reduce)';
-  const ROOT = `[${attr('mode')}]`;
+  // scope `root`: what the attribute scope puts on [data-mode] also lands on
+  // :root. Base and the media sets stay on every [data-mode] as well — they
+  // are var() aliases onto the mode tokens, so a nested [data-mode="Dark"]
+  // has to declare them again to resolve them against Dark.
+  const onRoot = (options.scope ?? 'attribute') === 'root';
+  const MODE = `[${attr('mode')}]`;
+  const ROOT = onRoot ? `:root, ${MODE}` : MODE;
+  /** `sel` on the scope element(s): `:root${sel}, [data-mode]${sel}` */
+  const atRoot = (sel: string) =>
+    onRoot ? `:root${sel}, ${MODE}${sel}` : `${MODE}${sel}`;
   const motionSel = (c: string) => `[${attr('motion')}="${c}"]`;
   const reducedHook = `[${attr('reduced-motion')}]`;
   const rule = (theme: string, selector: string, media?: string): RenderRule => ({
@@ -3667,18 +3682,24 @@ export function generateModel(
       ...MODES.map((m) =>
         rule(
           THEME.mode(MODE_ATTR[m]),
-          `[${attr('mode')}="${MODE_ATTR[m]}"]`,
+          (onRoot && m === MODES[0] ? ':root, ' : '') +
+            `[${attr('mode')}="${MODE_ATTR[m]}"]`,
         ),
       ),
       rule(THEME.base, ROOT),
-      rule(THEME.rtl, `[dir="rtl"] ${ROOT}, ${ROOT}[dir="rtl"]`),
+      rule(
+        THEME.rtl,
+        onRoot
+          ? `:root[dir="rtl"], [dir="rtl"] ${MODE}, ${MODE}[dir="rtl"]`
+          : `[dir="rtl"] ${MODE}, ${MODE}[dir="rtl"]`,
+      ),
       ...otherCharacters.map((c) => rule(THEME.motion(c), motionSel(c))),
       // reduced motion: the real switch, then a test hook for previews
       rule(THEME.reduced(motion.character), ROOT, REDUCED),
       ...otherCharacters.map((c) =>
         rule(THEME.reduced(c), motionSel(c), REDUCED),
       ),
-      rule(THEME.reduced(motion.character), `${ROOT}${reducedHook}`),
+      rule(THEME.reduced(motion.character), atRoot(reducedHook)),
       ...otherCharacters.map((c) =>
         rule(THEME.reduced(c), `${motionSel(c)}${reducedHook}`),
       ),

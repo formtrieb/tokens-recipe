@@ -4,7 +4,7 @@
  * defaults, validates it, writes every artefact into the output directory
  * and prints the report.
  *
- *   tokens-recipe <recipe.json> [--out <dir>] [--prefix <p>] [--attribute-suffix <s>]
+ *   tokens-recipe <recipe.json> [--out <dir>] [--prefix <p>] [--attribute-suffix <s>] [--scope attribute|root]
  *   tokens-recipe --schema <file>
  */
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
@@ -16,7 +16,7 @@ import { overlay, parseRecipe, RecipeError } from '../recipe.js';
 import { recipeJsonSchema } from './schema.js';
 
 const USAGE = `usage:
-  tokens-recipe <recipe.json> [--out <dir>] [--prefix <p>] [--attribute-suffix <s>]
+  tokens-recipe <recipe.json> [--out <dir>] [--prefix <p>] [--attribute-suffix <s>] [--scope attribute|root]
   tokens-recipe --schema <file>`;
 
 function write(file: string, content: string) {
@@ -31,6 +31,7 @@ function main(): number {
       out: { type: 'string', default: 'tokens-model' },
       prefix: { type: 'string' },
       'attribute-suffix': { type: 'string' },
+      scope: { type: 'string' },
       schema: { type: 'string' },
       help: { type: 'boolean', short: 'h' },
     },
@@ -44,7 +45,10 @@ function main(): number {
     console.log(`JSON Schema written: ${values.schema}`);
     return 0;
   }
-  if (positionals.length !== 1) {
+  if (
+    positionals.length !== 1 ||
+    (values.scope !== undefined && !['attribute', 'root'].includes(values.scope))
+  ) {
     console.error(USAGE);
     return 2;
   }
@@ -52,7 +56,11 @@ function main(): number {
   try {
     const { files, log } = generateModel(
       parseRecipe(overlay(recipeDefaults, ds)),
-      { prefix: values.prefix, attributeSuffix: values['attribute-suffix'] },
+      {
+        prefix: values.prefix,
+        attributeSuffix: values['attribute-suffix'],
+        scope: values.scope as 'attribute' | 'root' | undefined,
+      },
     );
     const dest = resolve(values.out);
     for (const [name, content] of Object.entries(files))

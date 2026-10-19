@@ -273,6 +273,7 @@ const recipe = parseRecipe(overlay(recipeDefaults, myRecipe)); // throws RecipeE
 const { files, log } = generateModel(recipe, {
   prefix: 'ds-', //          --ds-accent-fill        (default 'x-')
   attributeSuffix: '', //    [data-mode="Dark"]      (default '-x')
+  scope: 'root', //          Light on :root as well  (default 'attribute')
 });
 ```
 
@@ -282,7 +283,7 @@ editor can show it at the field.
 The CLI does the same with files:
 
 ```bash
-tokens-recipe my-recipe.json --out tokens-model --prefix ds- --attribute-suffix ''
+tokens-recipe my-recipe.json --out tokens-model --prefix ds- --attribute-suffix '' [--scope root]
 tokens-recipe --schema recipe.schema.json   # JSON Schema for $schema in a recipe
 ```
 
@@ -301,6 +302,34 @@ The model's CSS hangs on data attributes (default suffix `-x`):
 
 Reduced motion, forced colours, coarse pointers and RTL switch by media query
 or `dir`. Nothing else is needed.
+
+### One build for everything
+
+With `scope: 'root'` (CLI `--scope root`) the model also applies on `:root`:
+Light and every default set (Base, forced colours, coarse pointer, reduced
+motion, RTL) sit there, so a page, a library or a story needs no attribute.
+`[data-mode="Dark"]` still switches any subtree, and the other shapes and
+motion characters keep their attributes. Base is declared again on every
+`[data-mode]` element: its tokens are `var()` aliases onto the mode tokens,
+and a custom property resolves its `var()` where it is declared — on `:root`
+alone, a nested Dark element would inherit aliases already resolved against
+Light.
+
+The render table the recipe writes (`render.json`) is all a consumer needs.
+`@formtrieb/tokens-cli` renders the tree with it to the same CSS as
+`model.css`; set only prefix, paths and the table, the options come from the
+table:
+
+```ts
+// formtrieb-tokens.config.ts
+import { defineConfig } from '@formtrieb/tokens-cli';
+
+export default defineConfig({
+  prefix: 'ds-', // the prefix the model was generated with
+  paths: { tokens: 'tokens-model/tokens', output: 'src/css', tokenMap: 'src/css/token-map.json' },
+  render: 'tokens-model/render.json',
+});
+```
 
 ### Reading a type role
 
