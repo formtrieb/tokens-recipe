@@ -129,6 +129,18 @@
         "$type": "duration",
         "$value": "{duration.instant}"
       }
+    },
+    "pulse": {
+      "duration": {
+        "$type": "duration",
+        "$value": "{duration.instant}"
+      }
+    },
+    "progress": {
+      "duration": {
+        "$type": "dimension",
+        "$value": "calc({duration.1000} * 2)"
+      }
     }
   }
 }

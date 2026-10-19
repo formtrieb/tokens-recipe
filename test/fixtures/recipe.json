@@ -738,7 +738,10 @@
           "loop": 800,
           "scroll": 150,
           "attention": 300,
-          "delay-hint": 400
+          "delay-hint": 400,
+          "delay-skeleton": 300,
+          "pulse": 1000,
+          "progress": 1000
         },
         "distance": {
           "sm": 4,
@@ -790,7 +793,10 @@
           "loop": 1000,
           "scroll": 200,
           "attention": 400,
-          "delay-hint": 500
+          "delay-hint": 500,
+          "delay-skeleton": 400,
+          "pulse": 1000,
+          "progress": 1000
         },
         "distance": {
           "sm": 8,

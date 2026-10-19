@@ -222,6 +222,22 @@ per state, or draw the difference inside:
 }
 ```
 
+Motion roles are named by purpose (`motion-{role}-{duration|easing|…}`),
+their durations per motion character on `motion.scale`. Gesture-bound
+transitions stay at `contract.motionMaxMs` (500) or below; loops and delays
+may run longer. Three roles cover waiting:
+
+| Role | What | Curve | Reduced motion | Without a duration of its own |
+|---|---|---|---|---|
+| `delay-skeleton` | delay before a placeholder appears, so fast loads never flash it | none (a delay) | kept (waiting is no movement) | `delay-hint` |
+| `pulse` | a placeholder breathes (loop) | standard | off (movement without information) | `loop` |
+| `progress` | indeterminate progress, one run of a loading line | linear | slowed (it says "running") | `loop` |
+
+The three are optional per character: without a duration of its own a role
+reads its partner's (`var(--x-motion-loop-duration)`), so a recipe from
+before keeps working. Reduced motion follows the role, not the partner — a
+`pulse` that reads `loop` is still off.
+
 `layer-*` are z-index values for the document only, in this order:
 `sticky` (table head, save bar) < `panel` (a non-modal surface over the
 content and under the frame: side panel, inspector; default 15) < `chrome`
