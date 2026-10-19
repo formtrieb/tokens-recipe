@@ -19731,6 +19731,16 @@
     "inverted": {
       "$type": "color",
       "$value": "{inverted.fill}"
+    },
+    "placeholder": {
+      "$type": "color",
+      "$value": "{neutral.tint}"
+    }
+  },
+  "content": {
+    "on-inverted": {
+      "$type": "color",
+      "$value": "{inverted.on-fill}"
     }
   },
   "scrim": {
@@ -22488,6 +22498,10 @@
         "$type": "dimension",
         "$value": "{size.8}"
       },
+      "checkbox-mark": {
+        "$type": "dimension",
+        "$value": "{size.12}"
+      },
       "gap": {
         "$type": "dimension",
         "$value": "{size.4}"
@@ -22635,6 +22649,10 @@
         "$value": "{size.16}"
       },
       "switch-mark": {
+        "$type": "dimension",
+        "$value": "{size.12}"
+      },
+      "checkbox-mark": {
         "$type": "dimension",
         "$value": "{size.12}"
       },
@@ -22788,6 +22806,10 @@
         "$type": "dimension",
         "$value": "{size.16}"
       },
+      "checkbox-mark": {
+        "$type": "dimension",
+        "$value": "{size.16}"
+      },
       "gap": {
         "$type": "dimension",
         "$value": "{size.6}"
@@ -22935,6 +22957,10 @@
         "$value": "{size.24}"
       },
       "switch-mark": {
+        "$type": "dimension",
+        "$value": "{size.20}"
+      },
+      "checkbox-mark": {
         "$type": "dimension",
         "$value": "{size.20}"
       },
@@ -23374,6 +23400,12 @@
     "md": {
       "$type": "dimension",
       "$value": "{size.40}"
+    }
+  },
+  "media": {
+    "md": {
+      "$type": "dimension",
+      "$value": "{size.64}"
     }
   },
   "dataviz": {

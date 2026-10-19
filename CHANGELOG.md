@@ -9,6 +9,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `--{prefix}media-{name}`: a fixed box for a picture or a file-type icon,
+  recipe `media.sizes` on the size scale (default `md` 64), no coarse step;
+  off the scale stops with a `RecipeError` at `media.sizes.{name}`.
+- `--{prefix}surface-placeholder` → `neutral.tint` (skeleton, empty picture
+  box); the surface contract checks it at ≥ 1.1:1 on page, raised and
+  overlay in each mode.
+- `--{prefix}content-on-inverted` → `inverted.on-fill`, text on
+  `surface-inverted`; contrast line at `textMin` in each mode.
+- `--{prefix}control-{size}-checkbox-mark`: the check in a checkbox box,
+  icon − 4px (`calc()` off the scale), in the coarse-pointer replacement
+  like `switch-*`.
+
 - `status.intents`: further status intents on a semantic hue
   (`{ "new": "brand" }` → `--{prefix}status-new-{surface|content|indicator}-{strong|subtle}`
   on the brand steps `status` assigns). They get every status contract (text

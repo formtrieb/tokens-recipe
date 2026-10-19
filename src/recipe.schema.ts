@@ -666,6 +666,14 @@ export const RecipeSchema = z
       .describe(
         'Avatare: Spot-Größen ohne Text und ohne Coarse-Sprung. Ein Avatar als Button nimmt die Control-Höhe.',
       ),
+    media: z
+      .object({
+        sizes: z.record(name, px).describe('Medienboxen in px auf der Größenskala: md'),
+      })
+      .optional()
+      .describe(
+        'Medienboxen: feste Box für ein Bild oder ein Dateityp-Icon (Vorschau), auf der Größenskala, ohne Coarse-Sprung.',
+      ),
     link: z
       .object({
         underline: z

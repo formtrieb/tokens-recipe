@@ -96,6 +96,14 @@ Spot sizes stand without text: `icon-spot-*` for icons, `avatar-*` for
 avatars (default `xs` 24, `sm` 32, `md` 40). Both point at `size-*` and must
 lie on the size scale; neither steps up under a coarse pointer — an avatar is
 no hit target, and an avatar that is a button takes the control height.
+`media-*` is a fixed box for a picture or a file-type icon (a record
+preview; default `md` 64): a box, not an icon, on the size scale the same
+way.
+
+`surface-placeholder` (skeletons, an empty picture box, `neutral.tint`) is
+decoration: it must show on page, raised and overlay at 1.1:1 at least, not
+3:1. `content-on-inverted` is the text partner of `surface-inverted` (toast,
+a pill on the inverted surface), checked at 4.5:1 in each mode.
 
 The link underline is typography of the inline text, next to `prose-*` and
 `type-inline-*`: `link-underline-offset` in em (default `0.2`),
@@ -119,7 +127,13 @@ recipe fields of their own: `control-{size}-switch-height` = `icon-alone`,
 (`border.width.default` + 1px), `-switch-mark` (the check in the thumb) =
 thumb − 4px. A value on the size scale reads `size-*`; off the scale it is a
 `calc()` over the roles. A size the coarse pointer replaces takes the
-replacement's switch as well.
+replacement's switch as well. `control-{size}-checkbox-mark` is the check in a
+checkbox box (box = `icon`, mark = icon − 4px), the same way.
+
+Content *on* a fill — the check in a box, a digit on a step, the day number
+in a selected calendar cell — reads the part `icon` of the cell; text *next
+to* the fill (the checkbox label) reads `text`. There is no part of its own
+for it.
 
 The same holds for every size the control bundle derives: inline padding
 (`height / 2 − actionInset` on the action ladder) and its icon side,
